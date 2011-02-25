@@ -10,7 +10,6 @@
 # Project files
 /config/database.php
 /config/core.php
-/config/bliptv.php
 /tmp/cache/*
 /tmp/cache/models/*
 /tmp/cache/persistent/*
