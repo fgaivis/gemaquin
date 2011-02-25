@@ -1,0 +1,30 @@
+# IDE Folders and files.
+.buildpath
+.settings
+.project
+.nbproject
+
+# OSX Files.
+.DS_Store
+
+# Project files
+/config/database.php
+/config/core.php
+/config/bliptv.php
+/tmp/cache/*
+/tmp/cache/models/*
+/tmp/cache/persistent/*
+/tmp/cache/views/*
+/tmp/logs/*
+/tmp/tests/*
+/tmp/sessions/*
+/media/*
+!empty
+
+
+## Development
+cake.bat
+case.bat
+grp.bat
+/plugins/rake/*
+/sources/*
