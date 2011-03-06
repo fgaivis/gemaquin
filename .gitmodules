@@ -13,3 +13,9 @@
 [submodule "plugins/search"]
 	path = plugins/search
 	url = git://github.com/CakeDC/search.git
+[submodule "templates"]
+	path = templates
+	url = git://github.com/CakeDC/templates.git
+[submodule "plugins/templates"]
+	path = plugins/templates
+	url = git://github.com/CakeDC/templates.git
