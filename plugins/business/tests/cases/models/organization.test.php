@@ -1,5 +1,5 @@
 <?php
-/* Organization Test cases generated on: 2011-03-05 21:03:21 : 1299375201*/
+/* Organization Test cases generated on: 2011-03-05 21:03:36 : 1299376416*/
 App::import('Model', 'business.Organization');
 
 App::import('Lib', 'Templates.AppTestCase');

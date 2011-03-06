@@ -26,9 +26,9 @@
 			<?php echo $organization['Organization']['country']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Fiscal Id'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Fiscalid'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $organization['Organization']['fiscal_id']; ?>
+			<?php echo $organization['Organization']['fiscalid']; ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Brand'); ?></dt>

@@ -17,7 +17,6 @@ class Organization extends BusinessAppModel {
 	public $validate = array();
 
 /**
-/**
  * hasMany association
  *
  * @var array $hasMany
@@ -83,18 +82,10 @@ class Organization extends BusinessAppModel {
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Code', true))),
 			'name' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Name', true))),
-			'description' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Description', true))),
 			'country' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Country', true))),
-			'fiscal_id' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Fiscal', true))),
-			'brand' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Brand', true))),
-			'business' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Business', true))),
-			'is_myself' => array(
-				'boolean' => array('rule' => array('boolean'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Is Myself', true))),
+			'fiscalid' => array(
+				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Fiscalid', true))),
 			'type' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Type', true))),
 		);

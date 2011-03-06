@@ -13,7 +13,7 @@ echo $this->Paginator->counter(array(
 	<th><?php echo $this->Paginator->sort('name');?></th>
 	<th><?php echo $this->Paginator->sort('description');?></th>
 	<th><?php echo $this->Paginator->sort('country');?></th>
-	<th><?php echo $this->Paginator->sort('fiscal_id');?></th>
+	<th><?php echo $this->Paginator->sort('fiscalid');?></th>
 	<th><?php echo $this->Paginator->sort('brand');?></th>
 	<th><?php echo $this->Paginator->sort('business');?></th>
 	<th><?php echo $this->Paginator->sort('is_myself');?></th>
@@ -47,7 +47,7 @@ foreach ($organizations as $organization):
 			<?php echo $organization['Organization']['country']; ?>
 		</td>
 		<td>
-			<?php echo $organization['Organization']['fiscal_id']; ?>
+			<?php echo $organization['Organization']['fiscalid']; ?>
 		</td>
 		<td>
 			<?php echo $organization['Organization']['brand']; ?>
