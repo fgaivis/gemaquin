@@ -8,6 +8,7 @@
 .DS_Store
 
 # Project files
+!empty
 /config/database.php
 /config/core.php
 /tmp/cache/*
@@ -18,7 +19,6 @@
 /tmp/tests/*
 /tmp/sessions/*
 /media/*
-!empty
 
 
 ## Development
