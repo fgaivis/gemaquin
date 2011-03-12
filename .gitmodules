@@ -19,3 +19,6 @@
 [submodule "plugins/templates"]
 	path = plugins/templates
 	url = git://github.com/CakeDC/templates.git
+[submodule "plugins/categories"]
+	path = plugins/categories
+	url = git://github.com/CakeDC/categories.git
