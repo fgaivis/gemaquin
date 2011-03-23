@@ -60,9 +60,7 @@ class BankAccountsController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$organizations = $this->BankAccount->Organization->find('list');
-		$this->set(compact('organizations'));
- 
+		$this->_setRelated(); 
 	}
 
 /**
@@ -85,9 +83,7 @@ class BankAccountsController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
-		$organizations = $this->BankAccount->Organization->find('list');
-		$this->set(compact('organizations'));
- 
+		$this->_setRelated();
 	}
 
 /**
@@ -110,6 +106,13 @@ class BankAccountsController extends BusinessAppController {
 		if (!empty($this->BankAccount->data['bankAccount'])) {
 			$this->set('bankAccount', $this->BankAccount->data['bankAccount']);
 		}
+	}
+
+	protected function _setRelated() {
+		$organizations = $this->BankAccount->Organization->find('list');
+		Configure::load('selectables');
+		$currencies = Configure::read('Selectables.currencies');
+		$this->set(compact('organizations', 'currencies'));
 	}
 
 }

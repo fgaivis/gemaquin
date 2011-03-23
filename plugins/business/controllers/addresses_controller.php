@@ -60,9 +60,7 @@ class AddressesController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$organizations = $this->Address->Organization->find('list');
-		$this->set(compact('organizations'));
- 
+		$this->_setRelated();
 	}
 
 /**
@@ -85,9 +83,7 @@ class AddressesController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
-		$organizations = $this->Address->Organization->find('list');
-		$this->set(compact('organizations'));
- 
+		$this->_setRelated();
 	}
 
 /**
@@ -110,6 +106,13 @@ class AddressesController extends BusinessAppController {
 		if (!empty($this->Address->data['address'])) {
 			$this->set('address', $this->Address->data['address']);
 		}
+	}
+
+	protected function _setRelated() {
+		$organizations = $this->Address->Organization->find('list');
+		Configure::load('selectables');
+		$types = Configure::read('Selectables.addressTypes');
+		$this->set(compact('organizations', 'types'));
 	}
 
 }
