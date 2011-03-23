@@ -19,21 +19,20 @@ class M4d8a7c7c8dc84eadb7c1232c94e05dd2 extends CakeMigration {
 		'up' => array(
 			'create_table' => array(
 				'items' => array(
-					'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'name' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'description' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 200, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'barcode' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'package_factor' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 10, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'sales_factor' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 10, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'weight' => array('type' => 'integer', 'null' => false, 'default' => NULL),
-					'country' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'industry' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'photo' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 100, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-					'category_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+					'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary'),
+					'name' => array('type' => 'string', 'null' => true, 'default' => NULL,'length' => 50),
+					'description' => array('type' => 'text', 'null' => false, 'default' => NULL),
+					'barcode' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50),
+					'package_factor' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 10),
+					'sales_factor' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 10),
+					'weight' => array('type' => 'integer', 'null' => true, 'default' => NULL),
+					'country' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50),
+					'industry' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50),
+					'category_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36),
 					'indexes' => array(
 						'PRIMARY' => array('column' => 'id', 'unique' => 1),
 					),
-					'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'MyISAM'),
+					'tableParameters' => array('engine' => 'InnoDb'),
 				),
 			),
 		),
@@ -67,3 +66,4 @@ class M4d8a7c7c8dc84eadb7c1232c94e05dd2 extends CakeMigration {
 	}
 }
 ?>
+
