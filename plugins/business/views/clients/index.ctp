@@ -16,8 +16,6 @@ echo $this->Paginator->counter(array(
 	<th><?php echo $this->Paginator->sort('fiscalid');?></th>
 	<th><?php echo $this->Paginator->sort('brand');?></th>
 	<th><?php echo $this->Paginator->sort('business');?></th>
-	<th><?php echo $this->Paginator->sort('is_myself');?></th>
-	<th><?php echo $this->Paginator->sort('type');?></th>
 	<th><?php echo $this->Paginator->sort('created');?></th>
 	<th><?php echo $this->Paginator->sort('modified');?></th>
 	<th class="actions"><?php __('Actions');?></th>
@@ -56,12 +54,6 @@ foreach ($clients as $client):
 			<?php echo $client['Client']['business']; ?>
 		</td>
 		<td>
-			<?php echo $client['Client']['is_myself']; ?>
-		</td>
-		<td>
-			<?php echo $client['Client']['type']; ?>
-		</td>
-		<td>
 			<?php echo $client['Client']['created']; ?>
 		</td>
 		<td>
@@ -89,3 +81,4 @@ foreach ($clients as $client):
 		<li><?php echo $this->Html->link(__('New Contact', true), array('controller' => 'contacts', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+

@@ -1,5 +1,5 @@
 <?php
-/* Address Fixture generated on: 2011-03-05 21:03:38 : 1299376418 */
+/* Address Fixture generated on: 2011-03-23 19:03:37 : 1300923217 */
 class AddressFixture extends CakeTestFixture {
 /**
  * Name
@@ -30,7 +30,7 @@ class AddressFixture extends CakeTestFixture {
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
-		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'MyISAM')
+		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);
 
 /**
@@ -41,7 +41,7 @@ class AddressFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '4d72e922-2e10-4a15-9f20-111e94e05dd2',
+			'id' => '4d8a8351-62dc-46dc-9a42-25da94e05dd2',
 			'organization_id' => 'Lorem ipsum dolor sit amet',
 			'type' => 'Lorem ipsum dolor sit amet',
 			'phone' => 'Lorem ipsum dolor sit amet',
@@ -52,8 +52,8 @@ class AddressFixture extends CakeTestFixture {
 			'country' => 'Lorem ipsum dolor sit amet',
 			'zip' => 'Lorem ip',
 			'notes' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-			'created' => '2011-03-05 21:23:38',
-			'modified' => '2011-03-05 21:23:38'
+			'created' => '2011-03-23 19:03:37',
+			'modified' => '2011-03-23 19:03:37'
 		),
 	);
 

@@ -11,7 +11,6 @@
 		echo $this->Form->input('fiscalid');
 		echo $this->Form->input('brand');
 		echo $this->Form->input('business');
-		echo $this->Form->input('is_myself');
 		echo $this->Form->input('type');
 	?>
 	</fieldset>

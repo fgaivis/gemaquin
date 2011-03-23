@@ -1,5 +1,5 @@
 <?php
-/* Organization Fixture generated on: 2011-03-05 21:03:36 : 1299376416 */
+/* Organization Fixture generated on: 2011-03-23 19:03:33 : 1300923273 */
 class OrganizationFixture extends CakeTestFixture {
 /**
  * Name
@@ -24,12 +24,11 @@ class OrganizationFixture extends CakeTestFixture {
 		'fiscalid' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'brand' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'business' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 100, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-		'is_myself' => array('type' => 'boolean', 'null' => true, 'default' => NULL),
 		'type' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 30, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'code' => array('column' => 'code', 'unique' => 1)),
-		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'MyISAM')
+		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);
 
 /**
@@ -40,7 +39,7 @@ class OrganizationFixture extends CakeTestFixture {
  */
 	public $records = array(
 		array(
-			'id' => '4d72e920-70ac-4c02-a469-10e294e05dd2',
+			'id' => '4d8a8389-472c-46ca-b450-25ef94e05dd2',
 			'code' => 'Lorem ipsum dolor ',
 			'name' => 'Lorem ipsum dolor sit amet',
 			'description' => 'Lorem ipsum dolor sit amet',
@@ -48,10 +47,9 @@ class OrganizationFixture extends CakeTestFixture {
 			'fiscalid' => 'Lorem ipsum dolor sit amet',
 			'brand' => 'Lorem ipsum dolor sit amet',
 			'business' => 'Lorem ipsum dolor sit amet',
-			'is_myself' => 1,
 			'type' => 'Lorem ipsum dolor sit amet',
-			'created' => '2011-03-05 21:23:36',
-			'modified' => '2011-03-05 21:23:36'
+			'created' => '2011-03-23 19:04:33',
+			'modified' => '2011-03-23 19:04:33'
 		),
 	);
 

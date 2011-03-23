@@ -1,5 +1,5 @@
 <?php
-/* Address Test cases generated on: 2011-03-05 21:03:38 : 1299376418*/
+/* Address Test cases generated on: 2011-03-23 19:03:37 : 1300923217*/
 App::import('Model', 'business.Address');
 
 App::import('Lib', 'Templates.AppTestCase');

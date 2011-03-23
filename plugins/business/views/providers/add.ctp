@@ -10,8 +10,6 @@
 		echo $this->Form->input('fiscalid');
 		echo $this->Form->input('brand');
 		echo $this->Form->input('business');
-		echo $this->Form->input('is_myself');
-		echo $this->Form->input('type');
 	?>
 	</fieldset>
 <?php echo $this->Form->end('Submit');?>
@@ -27,3 +25,4 @@
 		<li><?php echo $this->Html->link(__('New Contact', true), array('controller' => 'contacts', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+

@@ -17,7 +17,6 @@ echo $this->Paginator->counter(array(
 	<th><?php echo $this->Paginator->sort('weight');?></th>
 	<th><?php echo $this->Paginator->sort('country');?></th>
 	<th><?php echo $this->Paginator->sort('industry');?></th>
-	<th><?php echo $this->Paginator->sort('photo');?></th>
 	<th><?php echo $this->Paginator->sort('category_id');?></th>
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
@@ -56,9 +55,6 @@ foreach ($items as $item):
 		</td>
 		<td>
 			<?php echo $item['Item']['industry']; ?>
-		</td>
-		<td>
-			<?php echo $item['Item']['photo']; ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($item['Category']['name'], array('controller' => 'categories', 'action' => 'view', $item['Category']['id'])); ?>

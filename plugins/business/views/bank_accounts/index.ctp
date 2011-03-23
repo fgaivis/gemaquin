@@ -16,10 +16,7 @@ echo $this->Paginator->counter(array(
 	<th><?php echo $this->Paginator->sort('number');?></th>
 	<th><?php echo $this->Paginator->sort('address_1');?></th>
 	<th><?php echo $this->Paginator->sort('address_2');?></th>
-	<th><?php echo $this->Paginator->sort('city');?></th>
-	<th><?php echo $this->Paginator->sort('state');?></th>
 	<th><?php echo $this->Paginator->sort('country');?></th>
-	<th><?php echo $this->Paginator->sort('zip');?></th>
 	<th><?php echo $this->Paginator->sort('iban');?></th>
 	<th><?php echo $this->Paginator->sort('aba');?></th>
 	<th><?php echo $this->Paginator->sort('swift');?></th>
@@ -62,16 +59,7 @@ foreach ($bankAccounts as $bankAccount):
 			<?php echo $bankAccount['BankAccount']['address_2']; ?>
 		</td>
 		<td>
-			<?php echo $bankAccount['BankAccount']['city']; ?>
-		</td>
-		<td>
-			<?php echo $bankAccount['BankAccount']['state']; ?>
-		</td>
-		<td>
 			<?php echo $bankAccount['BankAccount']['country']; ?>
-		</td>
-		<td>
-			<?php echo $bankAccount['BankAccount']['zip']; ?>
 		</td>
 		<td>
 			<?php echo $bankAccount['BankAccount']['iban']; ?>

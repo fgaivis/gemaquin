@@ -1,5 +1,5 @@
 <?php
-/* BankAccount Test cases generated on: 2011-03-05 21:03:37 : 1299376417*/
+/* BankAccount Test cases generated on: 2011-03-23 19:03:12 : 1300923252*/
 App::import('Model', 'business.BankAccount');
 
 App::import('Lib', 'Templates.AppTestCase');

@@ -41,16 +41,6 @@
 			<?php echo $provider['Provider']['business']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Is Myself'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $provider['Provider']['is_myself']; ?>
-			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Type'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $provider['Provider']['type']; ?>
-			&nbsp;
-		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $provider['Provider']['created']; ?>
@@ -83,7 +73,7 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
-		<th><?php __('Provider Id'); ?></th>
+		<th><?php __('Organization Id'); ?></th>
 		<th><?php __('Type'); ?></th>
 		<th><?php __('Phone'); ?></th>
 		<th><?php __('Address 1'); ?></th>
@@ -107,7 +97,7 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $address['id'];?></td>
-			<td><?php echo $address['provider_id'];?></td>
+			<td><?php echo $address['organization_id'];?></td>
 			<td><?php echo $address['type'];?></td>
 			<td><?php echo $address['phone'];?></td>
 			<td><?php echo $address['address_1'];?></td>
@@ -141,17 +131,14 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
-		<th><?php __('Provider Id'); ?></th>
+		<th><?php __('Organization Id'); ?></th>
 		<th><?php __('Bank Name'); ?></th>
 		<th><?php __('Currency'); ?></th>
 		<th><?php __('Type'); ?></th>
 		<th><?php __('Number'); ?></th>
 		<th><?php __('Address 1'); ?></th>
 		<th><?php __('Address 2'); ?></th>
-		<th><?php __('City'); ?></th>
-		<th><?php __('State'); ?></th>
 		<th><?php __('Country'); ?></th>
-		<th><?php __('Zip'); ?></th>
 		<th><?php __('Iban'); ?></th>
 		<th><?php __('Aba'); ?></th>
 		<th><?php __('Swift'); ?></th>
@@ -170,17 +157,14 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $bankAccount['id'];?></td>
-			<td><?php echo $bankAccount['provider_id'];?></td>
+			<td><?php echo $bankAccount['organization_id'];?></td>
 			<td><?php echo $bankAccount['bank_name'];?></td>
 			<td><?php echo $bankAccount['currency'];?></td>
 			<td><?php echo $bankAccount['type'];?></td>
 			<td><?php echo $bankAccount['number'];?></td>
 			<td><?php echo $bankAccount['address_1'];?></td>
 			<td><?php echo $bankAccount['address_2'];?></td>
-			<td><?php echo $bankAccount['city'];?></td>
-			<td><?php echo $bankAccount['state'];?></td>
 			<td><?php echo $bankAccount['country'];?></td>
-			<td><?php echo $bankAccount['zip'];?></td>
 			<td><?php echo $bankAccount['iban'];?></td>
 			<td><?php echo $bankAccount['aba'];?></td>
 			<td><?php echo $bankAccount['swift'];?></td>
@@ -209,7 +193,7 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
-		<th><?php __('Provider Id'); ?></th>
+		<th><?php __('Organization Id'); ?></th>
 		<th><?php __('Name'); ?></th>
 		<th><?php __('Email'); ?></th>
 		<th><?php __('Phone'); ?></th>
@@ -230,7 +214,7 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $contact['id'];?></td>
-			<td><?php echo $contact['provider_id'];?></td>
+			<td><?php echo $contact['organization_id'];?></td>
 			<td><?php echo $contact['name'];?></td>
 			<td><?php echo $contact['email'];?></td>
 			<td><?php echo $contact['phone'];?></td>
@@ -255,3 +239,4 @@
 		</ul>
 	</div>
 </div>
+

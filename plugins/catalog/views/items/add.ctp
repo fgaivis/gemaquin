@@ -11,7 +11,6 @@
 		echo $this->Form->input('weight');
 		echo $this->Form->input('country');
 		echo $this->Form->input('industry');
-		echo $this->Form->input('photo');
 		echo $this->Form->input('category_id');
 	?>
 	</fieldset>

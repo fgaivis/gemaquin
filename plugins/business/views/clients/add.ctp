@@ -25,3 +25,4 @@
 		<li><?php echo $this->Html->link(__('New Contact', true), array('controller' => 'contacts', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+

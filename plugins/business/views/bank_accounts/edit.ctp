@@ -11,10 +11,7 @@
 		echo $this->Form->input('number');
 		echo $this->Form->input('address_1');
 		echo $this->Form->input('address_2');
-		echo $this->Form->input('city');
-		echo $this->Form->input('state');
 		echo $this->Form->input('country');
-		echo $this->Form->input('zip');
 		echo $this->Form->input('iban');
 		echo $this->Form->input('aba');
 		echo $this->Form->input('swift');

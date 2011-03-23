@@ -1,5 +1,5 @@
 <?php
-/* Item Test cases generated on: 2011-03-13 08:03:11 : 1300022711*/
+/* Item Test cases generated on: 2011-03-23 19:03:53 : 1300923293*/
 App::import('Model', 'catalog.Item');
 
 App::import('Lib', 'Templates.AppTestCase');
