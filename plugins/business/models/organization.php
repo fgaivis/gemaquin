@@ -86,8 +86,6 @@ class Organization extends BusinessAppModel {
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Country', true))),
 			'fiscalid' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Fiscalid', true))),
-			'type' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Type', true))),
 		);
 	}
 
