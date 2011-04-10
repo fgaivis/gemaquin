@@ -19,7 +19,7 @@
 /tmp/tests/*
 /tmp/sessions/*
 /media/*
-
+/webroot/index.php
 
 ## Development
 cake.bat
