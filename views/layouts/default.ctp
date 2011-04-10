@@ -74,7 +74,7 @@
 
 			<?php echo $content_for_layout; ?>
         </div>
-        <div style="clear:both;"></div>
+        <div style="clear:both; height: 24px;"></div>
         <div id="footer-wrap">
         	<div id="footer">
         		<span>&copy; Copyright 2011 - Desarrollado por Soluciones Dynamtek C.A.</span>
