@@ -55,7 +55,7 @@
             				<div class="session">
 								<?php echo $this->Html->link('Inicio','/', array('class' => 'start'))?>
 								<?php echo $this->Html->link('Salir', array('controller' => 'users', 'action' => 'logout', 'plugin' => 'users'), array('class' => 'logout'))?>
-							</div>	
+							</div>
             			</div>
             			<div id="bottom-info">
             				<div class="user">Bienvenido Francisco Gaivis, ultima sesi&oacute;n iniciada el: 05/04/2011</div>
@@ -68,20 +68,22 @@
                 	<?php echo $this->element('menu'); ?>
                 </div>
             </div>
-        </div>	
+        </div>
     	<div id="content">
         	<?php echo $this->Session->flash(); ?>
 
 			<?php echo $content_for_layout; ?>
         </div>
-        
+        <div style="clear:both;"></div>
         <div id="footer-wrap">
         	<div id="footer">
         		<span>&copy; Copyright 2011 - Desarrollado por Soluciones Dynamtek C.A.</span>
         		<a href="http://www.dynamtek.com"><?php echo $this->Html->image('dyn_small.png', array('class' => 'marg-small'))?></a>
         	</div>
         </div>
-    </div> 
+    </div>
 	<?php //echo $this->element('sql_dump'); ?>
+
 </body>
 </html>
+
