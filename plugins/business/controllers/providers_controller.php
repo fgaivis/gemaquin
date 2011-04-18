@@ -94,8 +94,7 @@ class ProvidersController extends BusinessAppController {
  */
 	public function delete($id = null) {
 		try {
-		    $this->Provider->data['provider'] = $this->Provider->findById($id);
-			$result = $this->Provider->validateAndDelete($id, $this->data);
+		    $result = $this->Provider->validateAndDelete($id, $this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('Provider deleted', true));
 				$this->redirect(array('action' => 'index'));

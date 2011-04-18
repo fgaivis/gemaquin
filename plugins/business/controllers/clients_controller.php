@@ -94,8 +94,7 @@ class ClientsController extends BusinessAppController {
  */
 	public function delete($id = null) {
 		try {
-		    $this->Client->data['client'] = $this->Client->findById($id);
-			$result = $this->Client->validateAndDelete($id, $this->data);
+		    $result = $this->Client->validateAndDelete($id, $this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('Client deleted', true));
 				$this->redirect(array('action' => 'index'));

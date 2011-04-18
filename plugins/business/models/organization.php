@@ -91,7 +91,7 @@ class Organization extends BusinessAppModel {
 
 
 
-	
+
 
 /**
  * Adds a new record to the database
@@ -117,7 +117,7 @@ class Organization extends BusinessAppModel {
 /**
  * Edits an existing Organization.
  *
- * @param string $id, organization id 
+ * @param string $id, organization id
  * @param array $data, controller post data usually $this->data
  * @return mixed True on successfully save else post data as array
  * @throws OutOfBoundsException If the element does not exists
@@ -171,7 +171,7 @@ class Organization extends BusinessAppModel {
 /**
  * Validates the deletion
  *
- * @param string $id, organization id 
+ * @param string $id, organization id
  * @param array $data, controller post data usually $this->data
  * @return boolean True on success
  * @throws OutOfBoundsException If the element does not exists
@@ -209,3 +209,4 @@ class Organization extends BusinessAppModel {
 
 }
 ?>
+

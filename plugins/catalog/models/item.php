@@ -19,7 +19,7 @@ class Item extends CatalogAppModel {
 /**
  * belongsTo association
  *
- * @var array $belongsTo 
+ * @var array $belongsTo
  * @access public
  */
 	public $belongsTo = array(
@@ -31,6 +31,8 @@ class Item extends CatalogAppModel {
 			'order' => ''
 		)
 	);
+
+	public $hasAndBelongsToMany = 'Provider';
 
 
 /**
@@ -61,7 +63,7 @@ class Item extends CatalogAppModel {
 
 
 
-	
+
 
 /**
  * Adds a new record to the database
@@ -87,7 +89,7 @@ class Item extends CatalogAppModel {
 /**
  * Edits an existing Item.
  *
- * @param string $id, item id 
+ * @param string $id, item id
  * @param array $data, controller post data usually $this->data
  * @return mixed True on successfully save else post data as array
  * @throws OutOfBoundsException If the element does not exists
@@ -141,7 +143,7 @@ class Item extends CatalogAppModel {
 /**
  * Validates the deletion
  *
- * @param string $id, item id 
+ * @param string $id, item id
  * @param array $data, controller post data usually $this->data
  * @return boolean True on success
  * @throws OutOfBoundsException If the element does not exists
@@ -179,3 +181,4 @@ class Item extends CatalogAppModel {
 
 }
 ?>
+
