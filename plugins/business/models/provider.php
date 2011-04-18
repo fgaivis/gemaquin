@@ -5,7 +5,6 @@ App::import('Model', 'Business.Organization');
 class Provider extends Organization {
 
 	public $actsAs = array('Utils.Inheritable');
-    public $hasAndBelongsToMany = 'Item';
 
     public function validateAndDelete($id = null, $data = array()) {
 		$provider = $this->find('first', array(

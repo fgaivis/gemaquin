@@ -65,7 +65,30 @@ class Organization extends BusinessAppModel {
 		)
 	);
 
+/**
+ * HABTM association
+ *
+ * @var array $hasAndBelongsToMany
+ * @access public
+ */
 
+	public $hasAndBelongsToMany = array(
+		'Item' => array(
+			'className' => 'Catalog.Item',
+			'joinTable' => 'items_organizations',
+			'foreignKey' => 'item_id',
+			'associationForeignKey' => 'organization_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		)
+	);
 
 /**
  * Constructor

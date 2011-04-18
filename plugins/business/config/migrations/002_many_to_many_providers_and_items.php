@@ -19,8 +19,9 @@ class M4dac68c84dbc41b385f51bc794e05dd2 extends CakeMigration {
 		'up' => array(
 		    'create_table' => array(
 			    'items_organizations' => array(
-				    	'item_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary'),
-				        'organization_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary'),
+				    	'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary'),
+				    	'item_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36),
+				        'organization_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36),
 			    	    'tableParameters' => array('engine' => 'InnoDb'),
 				),
             ),

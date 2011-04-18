@@ -1,5 +1,5 @@
 <?php
-class Item extends CatalogAppModel {
+class Item extends AppModel {
 /**
  * Name
  *
@@ -31,8 +31,31 @@ class Item extends CatalogAppModel {
 			'order' => ''
 		)
 	);
+/**
+ * HABTM association
+ *
+ * @var array $hasAndBelongsToMany
+ * @access public
+ */
 
-	public $hasAndBelongsToMany = 'Provider';
+	public $hasAndBelongsToMany = array(
+		'Organization' => array(
+			'className' => 'Business.Organization',
+			'joinTable' => 'items_organizations',
+			'foreignKey' => 'item_id',
+			'associationForeignKey' => 'organization_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => ''
+		)
+	);
+
 
 
 /**

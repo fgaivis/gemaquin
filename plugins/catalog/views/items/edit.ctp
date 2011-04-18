@@ -13,6 +13,7 @@
 		echo $this->Form->input('country');
 		echo $this->Form->input('industry');
 		echo $this->Form->input('category_id');
+		echo $this->Form->input('Organization');
 	?>
 	</fieldset>
 <?php echo $this->Form->end('Submit');?>
@@ -25,3 +26,4 @@
 		<li><?php echo $this->Html->link(__('New Category', true), array('controller' => 'categories', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+
