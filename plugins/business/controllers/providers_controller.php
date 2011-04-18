@@ -18,18 +18,18 @@ class ProvidersController extends BusinessAppController {
 
 /**
  * Index for provider.
- * 
+ *
  * @access public
  */
 	public function index() {
 		$this->Provider->recursive = 0;
-		$this->set('providers', $this->paginate()); 
+		$this->set('providers', $this->paginate());
 	}
 
 /**
  * View for provider.
  *
- * @param string $id, provider id 
+ * @param string $id, provider id
  * @access public
  */
 	public function view($id = null) {
@@ -39,12 +39,12 @@ class ProvidersController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set(compact('provider')); 
+		$this->set(compact('provider'));
 	}
 
 /**
  * Add for provider.
- * 
+ *
  * @access public
  */
 	public function add() {
@@ -60,13 +60,13 @@ class ProvidersController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
- 
+
 	}
 
 /**
  * Edit for provider.
  *
- * @param string $id, provider id 
+ * @param string $id, provider id
  * @access public
  */
 	public function edit($id = null) {
@@ -75,7 +75,7 @@ class ProvidersController extends BusinessAppController {
 			if ($result === true) {
 				$this->Session->setFlash(__('Provider saved', true));
 				$this->redirect(array('action' => 'view', $this->Provider->data['Provider']['id']));
-				
+
 			} else {
 				$this->data = $result;
 			}
@@ -83,17 +83,18 @@ class ProvidersController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
- 
+
 	}
 
 /**
  * Delete for provider.
  *
- * @param string $id, provider id 
+ * @param string $id, provider id
  * @access public
  */
 	public function delete($id = null) {
 		try {
+		    $this->Provider->data['provider'] = $this->Provider->findById($id);
 			$result = $this->Provider->validateAndDelete($id, $this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('Provider deleted', true));
@@ -110,3 +111,4 @@ class ProvidersController extends BusinessAppController {
 
 }
 ?>
+

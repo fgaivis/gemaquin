@@ -1,5 +1,5 @@
-<h2><?php echo sprintf(__('Delete Address "%s"?', true), $address['Address']['title']); ?></h2>
-<p>	
+<h2><?php echo sprintf(__('Delete Address of "%s"?', true), $address['Organization']['name']); ?></h2>
+<p>
 	<?php __('Be aware that your Address and all associated data will be deleted if you confirm!'); ?>
 </p>
 <?php
@@ -14,3 +14,4 @@
 	echo $form->submit(__('Continue', true));
 	echo $form->end();
 ?>
+

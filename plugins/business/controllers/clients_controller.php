@@ -18,18 +18,18 @@ class ClientsController extends BusinessAppController {
 
 /**
  * Index for client.
- * 
+ *
  * @access public
  */
 	public function index() {
 		$this->Client->recursive = 0;
-		$this->set('clients', $this->paginate()); 
+		$this->set('clients', $this->paginate());
 	}
 
 /**
  * View for client.
  *
- * @param string $id, client id 
+ * @param string $id, client id
  * @access public
  */
 	public function view($id = null) {
@@ -39,12 +39,12 @@ class ClientsController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set(compact('client')); 
+		$this->set(compact('client'));
 	}
 
 /**
  * Add for client.
- * 
+ *
  * @access public
  */
 	public function add() {
@@ -60,13 +60,13 @@ class ClientsController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
- 
+
 	}
 
 /**
  * Edit for client.
  *
- * @param string $id, client id 
+ * @param string $id, client id
  * @access public
  */
 	public function edit($id = null) {
@@ -75,7 +75,7 @@ class ClientsController extends BusinessAppController {
 			if ($result === true) {
 				$this->Session->setFlash(__('Client saved', true));
 				$this->redirect(array('action' => 'view', $this->Client->data['Client']['id']));
-				
+
 			} else {
 				$this->data = $result;
 			}
@@ -83,17 +83,18 @@ class ClientsController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
- 
+
 	}
 
 /**
  * Delete for client.
  *
- * @param string $id, client id 
+ * @param string $id, client id
  * @access public
  */
 	public function delete($id = null) {
 		try {
+		    $this->Client->data['client'] = $this->Client->findById($id);
 			$result = $this->Client->validateAndDelete($id, $this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('Client deleted', true));
@@ -110,3 +111,4 @@ class ClientsController extends BusinessAppController {
 
 }
 ?>
+

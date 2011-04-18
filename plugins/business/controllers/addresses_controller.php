@@ -18,18 +18,18 @@ class AddressesController extends BusinessAppController {
 
 /**
  * Index for address.
- * 
+ *
  * @access public
  */
 	public function index() {
 		$this->Address->recursive = 0;
-		$this->set('addresses', $this->paginate()); 
+		$this->set('addresses', $this->paginate());
 	}
 
 /**
  * View for address.
  *
- * @param string $id, address id 
+ * @param string $id, address id
  * @access public
  */
 	public function view($id = null) {
@@ -39,12 +39,12 @@ class AddressesController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set(compact('address')); 
+		$this->set(compact('address'));
 	}
 
 /**
  * Add for address.
- * 
+ *
  * @access public
  */
 	public function add() {
@@ -66,7 +66,7 @@ class AddressesController extends BusinessAppController {
 /**
  * Edit for address.
  *
- * @param string $id, address id 
+ * @param string $id, address id
  * @access public
  */
 	public function edit($id = null) {
@@ -75,7 +75,7 @@ class AddressesController extends BusinessAppController {
 			if ($result === true) {
 				$this->Session->setFlash(__('Address saved', true));
 				$this->redirect(array('action' => 'view', $this->Address->data['Address']['id']));
-				
+
 			} else {
 				$this->data = $result;
 			}
@@ -89,13 +89,13 @@ class AddressesController extends BusinessAppController {
 /**
  * Delete for address.
  *
- * @param string $id, address id 
+ * @param string $id, address id
  * @access public
  */
 	public function delete($id = null) {
 		try {
 			$result = $this->Address->validateAndDelete($id, $this->data);
-			if ($result === true) {
+            if ($result === true) {
 				$this->Session->setFlash(__('Address deleted', true));
 				$this->redirect(array('action' => 'index'));
 			}
@@ -104,7 +104,7 @@ class AddressesController extends BusinessAppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		if (!empty($this->Address->data['address'])) {
-			$this->set('address', $this->Address->data['address']);
+		    $this->set('address', $this->Address->data['address']);
 		}
 	}
 
@@ -117,3 +117,4 @@ class AddressesController extends BusinessAppController {
 
 }
 ?>
+
