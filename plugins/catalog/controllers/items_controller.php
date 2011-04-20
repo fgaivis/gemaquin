@@ -18,18 +18,18 @@ class ItemsController extends CatalogAppController {
 
 /**
  * Index for item.
- * 
+ *
  * @access public
  */
 	public function index() {
 		$this->Item->recursive = 0;
-		$this->set('items', $this->paginate()); 
+		$this->set('items', $this->paginate());
 	}
 
 /**
  * View for item.
  *
- * @param string $id, item id 
+ * @param string $id, item id
  * @access public
  */
 	public function view($id = null) {
@@ -39,12 +39,12 @@ class ItemsController extends CatalogAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set(compact('item')); 
+		$this->set(compact('item'));
 	}
 
 /**
  * Add for item.
- * 
+ *
  * @access public
  */
 	public function add() {
@@ -62,13 +62,14 @@ class ItemsController extends CatalogAppController {
 		}
 		$categories = $this->Item->Category->find('list');
 		$this->set(compact('categories'));
- 
+		$this->set('organizations', $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'))));
+
 	}
 
 /**
  * Edit for item.
  *
- * @param string $id, item id 
+ * @param string $id, item id
  * @access public
  */
 	public function edit($id = null) {
@@ -77,7 +78,7 @@ class ItemsController extends CatalogAppController {
 			if ($result === true) {
 				$this->Session->setFlash(__('Item saved', true));
 				$this->redirect(array('action' => 'view', $this->Item->data['Item']['id']));
-				
+
 			} else {
 				$this->data = $result;
 			}
@@ -87,13 +88,14 @@ class ItemsController extends CatalogAppController {
 		}
 		$categories = $this->Item->Category->find('list');
 		$this->set(compact('categories'));
- 
+		$this->set('organizations', $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'))));
+
 	}
 
 /**
  * Delete for item.
  *
- * @param string $id, item id 
+ * @param string $id, item id
  * @access public
  */
 	public function delete($id = null) {
@@ -114,3 +116,4 @@ class ItemsController extends CatalogAppController {
 
 }
 ?>
+
