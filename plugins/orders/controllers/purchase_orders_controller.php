@@ -18,18 +18,18 @@ class PurchaseOrdersController extends AppController {
 
 /**
  * Index for purchase order.
- * 
+ *
  * @access public
  */
 	public function index() {
 		$this->PurchaseOrder->recursive = 0;
-		$this->set('purchaseOrders', $this->paginate()); 
+		$this->set('purchaseOrders', $this->paginate());
 	}
 
 /**
  * View for purchase order.
  *
- * @param string $id, purchase order id 
+ * @param string $id, purchase order id
  * @access public
  */
 	public function view($id = null) {
@@ -39,12 +39,12 @@ class PurchaseOrdersController extends AppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set(compact('purchaseOrder')); 
+		$this->set(compact('purchaseOrder'));
 	}
 
 /**
  * Add for purchase order.
- * 
+ *
  * @access public
  */
 	public function add() {
@@ -60,17 +60,25 @@ class PurchaseOrdersController extends AppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$organizations = $this->PurchaseOrder->Organization->find('list');
-		$invoices = $this->PurchaseOrder->Invoice->find('list');
-		$items = $this->PurchaseOrder->Item->find('list');
-		$this->set(compact('organizations', 'invoices', 'items'));
- 
+		$organizations = $this->PurchaseOrder->Provider->find('list');
+		$this->set(compact('organizations'));
+	}
+
+	public function fill_items($organization_id) {
+		$items = $this->PurchaseOrder->Provider->ItemsOrganization->find('all',array(
+			'contain'=>'Item',
+			'conditions' => array(
+				'organization_id'=>$organization_id
+			)
+		));
+		$items = Set::combine($items,'/Item/id','/Item/name');
+		$this->set(compact('items'));
 	}
 
 /**
  * Edit for purchase order.
  *
- * @param string $id, purchase order id 
+ * @param string $id, purchase order id
  * @access public
  */
 	public function edit($id = null) {
@@ -79,7 +87,7 @@ class PurchaseOrdersController extends AppController {
 			if ($result === true) {
 				$this->Session->setFlash(__('Purchase Order saved', true));
 				$this->redirect(array('action' => 'view', $this->PurchaseOrder->data['PurchaseOrder']['id']));
-				
+
 			} else {
 				$this->data = $result;
 			}
@@ -91,13 +99,13 @@ class PurchaseOrdersController extends AppController {
 		$invoices = $this->PurchaseOrder->Invoice->find('list');
 		$items = $this->PurchaseOrder->Item->find('list');
 		$this->set(compact('organizations', 'invoices', 'items'));
- 
+
 	}
 
 /**
  * Delete for purchase order.
  *
- * @param string $id, purchase order id 
+ * @param string $id, purchase order id
  * @access public
  */
 	public function delete($id = null) {
@@ -118,3 +126,4 @@ class PurchaseOrdersController extends AppController {
 
 }
 ?>
+

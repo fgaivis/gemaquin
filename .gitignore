@@ -9,6 +9,7 @@
 
 # Project files
 !empty
+/webroot/orders
 /config/database.php
 /config/core.php
 /tmp/cache/*

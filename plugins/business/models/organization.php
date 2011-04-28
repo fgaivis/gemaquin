@@ -76,8 +76,8 @@ class Organization extends BusinessAppModel {
 		'Item' => array(
 			'className' => 'Catalog.Item',
 			'joinTable' => 'items_organizations',
-			'foreignKey' => 'item_id',
-			'associationForeignKey' => 'organization_id',
+			'foreignKey' => 'organization_id',
+			'associationForeignKey' => 'item_id',
 			'unique' => true,
 			'conditions' => '',
 			'fields' => '',
@@ -86,7 +86,8 @@ class Organization extends BusinessAppModel {
 			'offset' => '',
 			'finderQuery' => '',
 			'deleteQuery' => '',
-			'insertQuery' => ''
+			'insertQuery' => '',
+			'with' => 'Catalog.ItemsOrganization'
 		)
 	);
 

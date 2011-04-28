@@ -39,7 +39,14 @@
 
 		echo $this->Html->css('base');
 		echo $this->Html->css('style');
-
+		echo $this->Html->css('smoothness/jquery-ui');
+		echo $this->Html->script('jquery.min');
+		echo $this->Html->script('jquery-ui.min');
+		echo $this->Html->scriptBlock('
+			App = {};
+			App.basePath = "' . $this->Html->url('/') . '";
+ 			App.baseUrl = "' . $this->Html->url('/', true) . '";'
+ 		);
 		echo $scripts_for_layout;
 	?>
 </head>

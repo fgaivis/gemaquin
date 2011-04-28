@@ -23,8 +23,8 @@ class PurchaseOrder extends AppModel {
  * @access public
  */
 	public $belongsTo = array(
-		'Organization' => array(
-			'className' => 'Organization',
+		'Provider' => array(
+			'className' => 'Business.Provider',
 			'foreignKey' => 'organization_id',
 			'conditions' => '',
 			'fields' => '',
@@ -76,6 +76,9 @@ class PurchaseOrder extends AppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
+			'number' => array(
+				'NotEmpty' => array('rule' => 'notEmpty','message'=>__('Purchase Order Number is required',true))
+			)
 		);
 	}
 
