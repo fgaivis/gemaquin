@@ -496,27 +496,24 @@ margin-bottom: 8px}
 
 /* Content Manager */
 
-.tablesorter {
+table {
 width: 100%;
 margin: -5px 0 0 0;
 }
 
-.tablesorter td{
+table td {
 margin: 0;
 padding: 0;
 border-bottom: 1px dotted #ccc;
+padding: 15px 10px;
 }
 
-.tablesorter thead tr {
+table th {
 height: 34px;
 background: url(../img/table_sorter_header.png) repeat-x;
 text-align: left;
 text-indent: 10px;
 cursor: pointer;
-}
-
-.tablesorter td {
-padding: 15px 10px;
 }
 
 .tablesorter input[type=image] {
