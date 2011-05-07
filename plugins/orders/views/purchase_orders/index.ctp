@@ -1,5 +1,5 @@
 <div class="purchaseOrders index">
-<h2><?php __('Purchase Orders');?></h2>
+<header><h3><?php __('Purchase Orders');?></h3></header>
 <p>
 <?php
 echo $this->Paginator->counter(array(

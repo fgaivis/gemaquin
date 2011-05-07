@@ -1,5 +1,5 @@
 <div class="invoices index">
-<h2><?php __('Invoices');?></h2>
+<header><h3><?php __('Invoices');?></h3></header>
 <p>
 <?php
 echo $this->Paginator->counter(array(

@@ -1,4 +1,4 @@
-<h2><?php echo sprintf(__('Delete Item "%s"?', true), $item['Item']['name']); ?></h2>
+<header><h3><?php echo sprintf(__('Delete Item "%s"?', true), $item['Item']['name']); ?></h3></header>
 <p>
 	<?php __('Be aware that your Item and all associated data will be deleted if you confirm!'); ?>
 </p>

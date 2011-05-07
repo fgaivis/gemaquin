@@ -1,4 +1,4 @@
-<h2><?php echo sprintf(__('Delete Address of "%s"?', true), $address['Organization']['name']); ?></h2>
+<header><h3><?php echo sprintf(__('Delete Address of "%s"?', true), $address['Organization']['name']); ?></h3></header>
 <p>
 	<?php __('Be aware that your Address and all associated data will be deleted if you confirm!'); ?>
 </p>

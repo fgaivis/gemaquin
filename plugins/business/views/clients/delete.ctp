@@ -1,4 +1,4 @@
-<h2><?php echo sprintf(__('Delete Client "%s"?', true), $client['Client']['name']); ?></h2>
+<header><h3><?php echo sprintf(__('Delete Client "%s"?', true), $client['Client']['name']); ?></h3></header>
 <p>
 	<?php __('Be aware that your Client and all associated data will be deleted if you confirm!'); ?>
 </p>

@@ -1,4 +1,4 @@
-<h2><?php echo sprintf(__('Delete Bank Account "%s"?', true), $bankAccount['BankAccount']['number']); ?></h2>
+<header><h3><?php echo sprintf(__('Delete Bank Account "%s"?', true), $bankAccount['BankAccount']['number']); ?></h3></header>
 <p>
 	<?php __('Be aware that your Bank Account and all associated data will be deleted if you confirm!'); ?>
 </p>

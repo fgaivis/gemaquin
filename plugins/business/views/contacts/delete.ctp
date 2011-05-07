@@ -1,4 +1,4 @@
-<h2><?php echo sprintf(__('Delete Contact "%s"?', true), $contact['Contact']['name']); ?></h2>
+<header><h3><?php echo sprintf(__('Delete Contact "%s"?', true), $contact['Contact']['name']); ?></h3></header>
 <p>
 	<?php __('Be aware that your Contact and all associated data will be deleted if you confirm!'); ?>
 </p>

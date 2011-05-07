@@ -1,5 +1,5 @@
 <div class="home">
-<h2>Bienvenido a su sistema SiaPlus2</h2>
+<header><h3>Bienvenido a su sistema SiaPlus2</h3></header>
 
 <div class="home-info">
 	<p>Sistema administrativo basado en tecnología web, que busca optimizar los procesos administrativos de las empresas ajustándose 

@@ -1,4 +1,4 @@
-<h2><?php echo sprintf(__('Delete Provider "%s"?', true), $provider['Provider']['name']); ?></h2>
+<header><h3><?php echo sprintf(__('Delete Provider "%s"?', true), $provider['Provider']['name']); ?></h3></header>
 <p>
 	<?php __('Be aware that your Provider and all associated data will be deleted if you confirm!'); ?>
 </p>

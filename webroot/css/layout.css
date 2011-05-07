@@ -391,13 +391,19 @@ background: #ffffff;
 width:95%;
 }
 
-#main .module header h3 {
+#main .module header h3,
+#main .index header h3,
+#main .view header h3,
+#main .form header h3 {
 display: block;
 width: 90%;
 float: left;
 }
 
-.module header {
+.module header,
+#main .index header,
+#main .view header,
+#main .form header {
 height: 38px;
 width: 100%;
 background: #F1F1F4 url(../img/secondary_bar.png) repeat-x;

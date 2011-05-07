@@ -1,5 +1,5 @@
 <div class="bankAccounts index">
-<h2><?php __('Bank Accounts');?></h2>
+<header><h3><?php __('Bank Accounts');?></h3></header>
 <p>
 <?php
 echo $this->Paginator->counter(array(

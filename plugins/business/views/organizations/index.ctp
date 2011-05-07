@@ -1,5 +1,5 @@
 <div class="organizations index">
-<h2><?php __('Organizations');?></h2>
+<header><h3><?php __('Organizations');?></h3></header>
 <p>
 <?php
 echo $this->Paginator->counter(array(

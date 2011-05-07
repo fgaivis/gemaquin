@@ -1,5 +1,5 @@
 <div class="addresses index">
-<h2><?php __('Addresses');?></h2>
+<header><h3><?php __('Addresses');?></h3></header>
 <p>
 <?php
 echo $this->Paginator->counter(array(

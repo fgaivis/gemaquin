@@ -1,5 +1,5 @@
 <div class="purchaseOrders view">
-<h2><?php  __('Purchase Order');?></h2>
+<header><h3><?php  __('Purchase Order');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
