@@ -1,7 +1,9 @@
 <div class="bankAccounts form">
 <?php echo $this->Form->create('BankAccount', array('url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Bank Account');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Bank Account');?></legend>
+
 	<?php
 		echo $this->Form->input('organization_id');
 		echo $this->Form->input('bank_name');

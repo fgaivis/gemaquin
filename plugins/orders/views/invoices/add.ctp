@@ -1,7 +1,9 @@
 <div class="invoices form">
 <?php echo $this->Form->create('Invoice', array('url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Invoice');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Invoice');?></legend>
+
 	<?php
 		echo $this->Form->input('number');
 		echo $this->Form->input('organization_id');

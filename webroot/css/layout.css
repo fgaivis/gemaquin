@@ -21,6 +21,7 @@ clear: both;
 height: 20px;
 }
 
+
 a:link, a:visited {
 color: #77BACE;
 text-decoration: none;
@@ -379,7 +380,7 @@ margin: 8px 20px;
 
 /* Modules */
 
-.module, .index, .view {
+.module, .index, .view, .form {
 border: 1px solid #9BA0AF;
 width: 100%;
 margin: 20px 3% 0 3%;
