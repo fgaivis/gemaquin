@@ -21,6 +21,7 @@ clear: both;
 height: 20px;
 }
 
+
 a:link, a:visited {
 color: #77BACE;
 text-decoration: none;
@@ -379,7 +380,7 @@ margin: 8px 20px;
 
 /* Modules */
 
-.module, .index, .view {
+.module, .index, .view, .form {
 border: 1px solid #9BA0AF;
 width: 100%;
 margin: 20px 3% 0 3%;
@@ -603,6 +604,7 @@ padding: 0 10px;
 color: #666;
 text-shadow: 0 1px 0 #fff;
 cursor: pointer;
+margin: 10px 13px;
 }
 
 input[type=submit]:hover {
@@ -774,7 +776,6 @@ padding-left: 10px;
 background-position: 10px 6px;
 margin: 0 0.5%;
 display: block;
-float: left;
 width: 96%;
 margin: 0 10px;
 }
@@ -838,7 +839,7 @@ line-height: 150%;
 
 /* Alerts */
 
-#main h4.alert_info {
+#main h4.alert_info, #flashMessage.message {
 display: block;
 width: 95%;
 margin: 20px 3% 0 3%;

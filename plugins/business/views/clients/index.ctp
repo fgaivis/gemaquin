@@ -3,7 +3,6 @@
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('id');?></th>
 	<th><?php echo $this->Paginator->sort('code');?></th>
 	<th><?php echo $this->Paginator->sort('name');?></th>
 	<th><?php echo $this->Paginator->sort('description');?></th>
@@ -24,9 +23,6 @@ foreach ($clients as $client):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $client['Client']['id']; ?>
-		</td>
 		<td>
 			<?php echo $client['Client']['code']; ?>
 		</td>

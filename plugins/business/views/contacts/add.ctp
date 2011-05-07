@@ -1,7 +1,9 @@
 <div class="contacts form">
 <?php echo $this->Form->create('Contact', array('url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Contact');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Contact');?></legend>
+
 	<?php
 		echo $this->Form->input('organization_id');
 		echo $this->Form->input('name');

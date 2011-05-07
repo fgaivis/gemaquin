@@ -13,7 +13,7 @@
 <body>
 	<header id="header">
 		<hgroup>
-			<h1 class="site_title"><a href="index.html">Website Admin</a></h1>
+			<h1 class="site_title"><a href="/">Gemaquin</a></h1>
 			<h2 class="section_title">Dashboard</h2>
 			<div class="btn_view_site"><?php echo $this->Html->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout'))?></div>
 		</hgroup>

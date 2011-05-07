@@ -1,7 +1,9 @@
 <div class="clients form">
 <?php echo $this->Form->create('Client', array('url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Client');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Client');?></legend>
+
 	<?php
 		echo $this->Form->input('code');
 		echo $this->Form->input('name');

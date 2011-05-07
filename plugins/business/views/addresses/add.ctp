@@ -1,7 +1,9 @@
 <div class="addresses form">
 <?php echo $this->Form->create('Address', array('url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Address');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Address');?></legend>
+
 	<?php
 		echo $this->Form->input('organization_id');
 		echo $this->Form->input('type');

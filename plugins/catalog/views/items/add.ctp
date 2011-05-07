@@ -1,7 +1,9 @@
 <div class="items form">
 <?php echo $this->Form->create('Item', array('url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Item');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Item');?></legend>
+
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');

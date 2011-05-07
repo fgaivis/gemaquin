@@ -30,7 +30,8 @@
  * @package       cake
  * @subpackage    cake.app
  */
-class AppModel extends Model {
+App::import('Lib', 'LazyModel.LazyModel');
+class AppModel extends LazyModel {
 	public $actsAs=array('Containable');
 }
 

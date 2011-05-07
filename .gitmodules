@@ -22,3 +22,6 @@
 [submodule "plugins/categories"]
 	path = plugins/categories
 	url = git://github.com/CakeDC/categories.git
+[submodule "plugins/lazy_model"]
+	path = plugins/lazy_model
+	url = https://github.com/Phally/lazy_model

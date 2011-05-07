@@ -1,7 +1,9 @@
 <div class="purchaseOrders form">
 <?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'edit')));?>
+	<header><h3><?php __('Edit Purchase Order');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Edit Purchase Order');?></legend>
+
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('number');

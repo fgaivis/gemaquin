@@ -1,7 +1,9 @@
 <div class="invoices form">
 <?php echo $this->Form->create('Invoice', array('url' => array('action' => 'edit')));?>
+	<header><h3><?php __('Edit Invoice');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Edit Invoice');?></legend>
+
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('number');

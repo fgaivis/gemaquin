@@ -1,7 +1,9 @@
 <div class="organizations form">
 <?php echo $this->Form->create('Organization', array('url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Organization');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Organization');?></legend>
+
 	<?php
 		echo $this->Form->input('code');
 		echo $this->Form->input('name');
