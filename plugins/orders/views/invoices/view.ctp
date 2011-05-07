@@ -79,12 +79,7 @@
 	</table>
 <?php endif; ?>
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Purchase Order', true), array('controller' => 'purchase_orders', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+	
 <div class="related">
 	<h3><?php __('Related Items');?></h3>
 	<?php if (!empty($invoice['Item'])):?>
@@ -131,9 +126,4 @@
 	</table>
 <?php endif; ?>
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Item', true), array('controller' => 'items', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+	

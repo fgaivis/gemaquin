@@ -19,11 +19,5 @@
 	</fieldset>
 <?php echo $this->Form->end('Submit');?>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('List Items', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Categories', true), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category', true), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
 

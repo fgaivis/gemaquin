@@ -53,16 +53,7 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Item', true), array('action' => 'edit', $item['Item']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Item', true), array('action' => 'delete', $item['Item']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Items', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Categories', true), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category', true), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
 <div class="related">
 	<h3><?php __('Related Organizations');?></h3>
 	<?php if (!empty($item['Organization'])):?>
@@ -111,10 +102,5 @@
 	</table>
 <?php endif; ?>
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Organization', true), array('controller' => 'organizations', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+	
 

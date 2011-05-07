@@ -65,10 +65,4 @@ foreach ($items as $item):
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
 </div>
 
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('New Item', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories', true), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category', true), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
