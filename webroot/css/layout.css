@@ -1,8 +1,8 @@
 /* Essentials */
 
-html, div, map, dt, isindex, form, header, aside, section, section, article, footer {  
-    display: block;  
-} 
+html, div, map, dt, isindex, form, header, aside, section, section, article, footer {
+    display: block;
+}
 
 html, body {
 height: 100%;
@@ -898,3 +898,9 @@ color: #32510F;
 padding: 10px 0;
 text-indent: 40px;
 font-size: 14px;}
+
+.ui-selectable .ui-selecting { background: #FECA40; }
+.ui-selectable .ui-selected { background: #F39814; color: white; }
+.ui-selectable { list-style-type: none; margin: 0; padding: 0; width: 30%; }
+.ui-selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px;cursor: pointer;border:1px solid #ccc; }
+
