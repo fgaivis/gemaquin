@@ -18,7 +18,7 @@
 			<div class="btn_view_site"><?php echo $this->Html->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout'))?></div>
 		</hgroup>
 	</header> <!-- end of header bar -->
-	
+
 	<section id="secondary_bar">
 		<div class="user">
 			<p>John Doe (<a href="#">3 Messages</a>)</p>
@@ -28,7 +28,7 @@
 			<article class="breadcrumbs"><a href="index.html">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
 		</div>
 	</section><!-- end of secondary bar -->
-	
+
 	<aside id="sidebar" class="column">
 		<form class="quick_search">
 			<input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
@@ -60,16 +60,16 @@
 			<li class="icn_security"><a href="#">Security</a></li>
 			<li class="icn_jump_back"><a href="#">Logout</a></li>
 		</ul>
-		
+
 		<footer>
 			<hr />
 			<p><strong>Copyright &copy; 2011 Website Admin</strong></p>
 			<p>Theme by <a href="http://www.medialoot.com">MediaLoot</a></p>
 		</footer>
 	</aside><!-- end of sidebar -->
-	
+
 	<section id="main" class="column">
-		
+
 		<?php echo $this->Session->flash(); ?>
 		<?php echo $this->Session->flash('auth'); ?>
 		<?php echo $content_for_layout; ?>
@@ -80,7 +80,9 @@
 	<?php echo $this->Html->script('hideshow'); ?>
 	<?php echo $this->Html->script('jquery.tablesorter.min'); ?>
 	<?php echo $this->Html->script('jquery.equalHeight'); ?>
+	<?php echo $this->Html->scriptBlock('App = {};App.basePath = "' . $this->Html->url('/') . '";App.baseUrl = "' . $this->Html->url('/', true) . '";'); ?>
 	<?php echo $scripts_for_layout; ?>
 	<?php echo $this->Js->writeBuffer(); ?>
 </body>
 </html>
+
