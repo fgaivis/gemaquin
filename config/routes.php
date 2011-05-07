@@ -33,3 +33,9 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+
+	Router::connect('/categories/add/*', array('plugin' => 'categories', 'controller' => 'categories', 'action' => 'admin_add'));
+	Router::connect('/categories/edit/*', array('plugin' => 'categories', 'controller' => 'categories', 'action' => 'admin_edit'));
+	Router::connect('/categories/delete/*', array('plugin' => 'categories', 'controller' => 'categories', 'action' => 'admin_delete'));
+	Router::connect('/categories/view/*', array('plugin' => 'categories', 'controller' => 'categories', 'action' => 'admin_view'));
+	Router::connect('/categories/tree/*', array('plugin' => 'categories', 'controller' => 'categories', 'action' => 'admin_tree'));
