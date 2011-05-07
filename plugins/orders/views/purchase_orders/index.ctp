@@ -25,7 +25,7 @@ foreach ($purchaseOrders as $purchaseOrder):
 			<?php echo $purchaseOrder['PurchaseOrder']['number']; ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($purchaseOrder['Organization']['name'], array('controller' => 'organizations', 'action' => 'view', $purchaseOrder['Organization']['id'])); ?>
+			<?php echo $this->Html->link($purchaseOrder['Provider']['name'], array('controller' => 'organizations', 'action' => 'view', $purchaseOrder['Provider']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($purchaseOrder['Invoice']['number'], array('controller' => 'invoices', 'action' => 'view', $purchaseOrder['Invoice']['id'])); ?>
@@ -52,3 +52,4 @@ foreach ($purchaseOrders as $purchaseOrder):
 		<li><?php echo $this->Html->link(__('New Item', true), array('controller' => 'items', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
+

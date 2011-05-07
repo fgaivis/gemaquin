@@ -24,7 +24,7 @@ class Item extends CatalogAppModel {
  */
 	public $belongsTo = array(
 		'Category' => array(
-			'className' => 'Category',
+			'className' => 'Categories.Category',
 			'foreignKey' => 'category_id',
 			'conditions' => '',
 			'fields' => '',
@@ -54,6 +54,22 @@ class Item extends CatalogAppModel {
 			'deleteQuery' => '',
 			'insertQuery' => '',
 			'with' => 'Catalog.ItemsOrganization'
+		),
+		'PurchaseOrder' => array(
+			'className' => 'Orders.PurchaseOrder',
+			'joinTable' => 'items_purchase_orders',
+			'foreignKey' => 'item_id',
+			'associationForeignKey' => 'purchase_order_id',
+			'unique' => true,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'finderQuery' => '',
+			'deleteQuery' => '',
+			'insertQuery' => '',
+			'with' => 'Orders.ItemsPurchaseOrder'
 		)
 	);
 

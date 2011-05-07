@@ -1,5 +1,17 @@
 <?php
 class PurchaseOrder extends AppModel {
+
+/**
+ * Purchase Order Statuses
+ */
+	const DRAFT = 'DRAFT';
+	const CREATED = 'CREATED';
+	const APPROVED = 'APPROVED';
+	const INVOICED = 'INVOICED';
+	const CANCELED = 'CANCELED';
+	const DISPATCHED = 'DISPATCHED';
+	const COMPLETED = 'COMPLETED';
+
 /**
  * Name
  *
@@ -38,6 +50,22 @@ class PurchaseOrder extends AppModel {
 			'order' => ''
 		)
 	);
+
+	public $hasMany = array(
+		'ItemsPurchaseOrder' => array(
+			'className' => 'ItemsPurchaseOrder',
+			'foreignKey' => 'purchase_order_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+	);
 /**
  * HABTM association
  *
@@ -47,7 +75,7 @@ class PurchaseOrder extends AppModel {
 
 	public $hasAndBelongsToMany = array(
 		'Item' => array(
-			'className' => 'Item',
+			'className' => 'Catalog.Item',
 			'joinTable' => 'items_purchase_orders',
 			'foreignKey' => 'purchase_order_id',
 			'associationForeignKey' => 'item_id',
@@ -59,7 +87,8 @@ class PurchaseOrder extends AppModel {
 			'offset' => '',
 			'finderQuery' => '',
 			'deleteQuery' => '',
-			'insertQuery' => ''
+			'insertQuery' => '',
+			'with' => 'Orders.ItemsPurchaseOrder'
 		)
 	);
 
@@ -96,7 +125,7 @@ class PurchaseOrder extends AppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
-			$result = $this->save($data);
+			$result = $this->saveAll($data);
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;

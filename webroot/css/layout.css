@@ -904,6 +904,6 @@ font-size: 14px;}
 
 .ui-selectable .ui-selecting { background: #FECA40; }
 .ui-selectable .ui-selected { background: #F39814; color: white; }
-.ui-selectable { list-style-type: none; margin: 0; padding: 0; width: 30%; }
+.ui-selectable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
 .ui-selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px;cursor: pointer;border:1px solid #ccc; }
 

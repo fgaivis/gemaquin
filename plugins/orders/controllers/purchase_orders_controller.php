@@ -48,10 +48,12 @@ class PurchaseOrdersController extends AppController {
  * @access public
  */
 	public function add() {
+		debug($this->data);
+		//die();
 		try {
 			$result = $this->PurchaseOrder->add($this->data);
 			if ($result === true) {
-				$this->Session->setFlash(__('The purchase order has been saved', true));
+				$this->Session->setFlash(__('The invoice has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			}
 		} catch (OutOfBoundsException $e) {
@@ -73,6 +75,18 @@ class PurchaseOrdersController extends AppController {
 		));
 		$items = Set::combine($items,'/Item/id','/Item/name');
 		$this->set(compact('items'));
+	}
+
+	public function save_draft($id = null) {
+
+		if (empty($id)) {
+
+		} else {
+		}
+	}
+
+	public function send($id) {
+
 	}
 
 /**

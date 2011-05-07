@@ -19,19 +19,19 @@ class ItemsPurchaseOrder extends AppModel {
 /**
  * belongsTo association
  *
- * @var array $belongsTo 
+ * @var array $belongsTo
  * @access public
  */
 	public $belongsTo = array(
 		'Item' => array(
-			'className' => 'Item',
+			'className' => 'Catalog.Item',
 			'foreignKey' => 'item_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'PurchaseOrder' => array(
-			'className' => 'PurchaseOrder',
+			'className' => 'Orders.PurchaseOrder',
 			'foreignKey' => 'purchase_order_id',
 			'conditions' => '',
 			'fields' => '',
@@ -51,10 +51,6 @@ class ItemsPurchaseOrder extends AppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
-			'item_id' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Item', true))),
-			'purchase_order_id' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Purchase Order', true))),
 			'quantity' => array(
 				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Quantity', true))),
 		);
@@ -62,7 +58,7 @@ class ItemsPurchaseOrder extends AppModel {
 
 
 
-	
+
 
 /**
  * Adds a new record to the database
@@ -79,31 +75,31 @@ class ItemsPurchaseOrder extends AppModel {
 				$this->data = array_merge($data, $result);
 				return true;
 			} else {
-				throw new OutOfBoundsException(__('Could not save the purchaseOrder, please check your inputs.', true));
+				throw new OutOfBoundsException(__('Could not save the itemsPurchaseOrder, please check your inputs.', true));
 			}
 			return $return;
 		}
 	}
 
 /**
- * Edits an existing Purchase Order.
+ * Edits an existing Items Purchase Order.
  *
- * @param string $id, items purchase order id 
+ * @param string $id, items purchase order id
  * @param array $data, controller post data usually $this->data
  * @return mixed True on successfully save else post data as array
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function edit($id = null, $data = null) {
-		$purchaseOrder = $this->find('first', array(
+		$itemsPurchaseOrder = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
 
-		if (empty($purchaseOrder)) {
-			throw new OutOfBoundsException(__('Invalid Purchase Order', true));
+		if (empty($itemsPurchaseOrder)) {
+			throw new OutOfBoundsException(__('Invalid Items Purchase Order', true));
 		}
-		$this->set($purchaseOrder);
+		$this->set($itemsPurchaseOrder);
 
 		if (!empty($data)) {
 			$this->set($data);
@@ -115,12 +111,12 @@ class ItemsPurchaseOrder extends AppModel {
 				return $data;
 			}
 		} else {
-			return $purchaseOrder;
+			return $itemsPurchaseOrder;
 		}
 	}
 
 /**
- * Returns the record of a Purchase Order.
+ * Returns the record of a Items Purchase Order.
  *
  * @param string $id, items purchase order id.
  * @return array
@@ -128,37 +124,37 @@ class ItemsPurchaseOrder extends AppModel {
  * @access public
  */
 	public function view($id = null) {
-		$purchaseOrder = $this->find('first', array(
+		$itemsPurchaseOrder = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 
-		if (empty($purchaseOrder)) {
-			throw new OutOfBoundsException(__('Invalid Purchase Order', true));
+		if (empty($itemsPurchaseOrder)) {
+			throw new OutOfBoundsException(__('Invalid Items Purchase Order', true));
 		}
 
-		return $purchaseOrder;
+		return $itemsPurchaseOrder;
 	}
 
 /**
  * Validates the deletion
  *
- * @param string $id, items purchase order id 
+ * @param string $id, items purchase order id
  * @param array $data, controller post data usually $this->data
  * @return boolean True on success
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function validateAndDelete($id = null, $data = array()) {
-		$purchaseOrder = $this->find('first', array(
+		$itemsPurchaseOrder = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
 
-		if (empty($purchaseOrder)) {
-			throw new OutOfBoundsException(__('Invalid Purchase Order', true));
+		if (empty($itemsPurchaseOrder)) {
+			throw new OutOfBoundsException(__('Invalid Items Purchase Order', true));
 		}
 
-		$this->data['purchaseOrder'] = $purchaseOrder;
+		$this->data['itemsPurchaseOrder'] = $itemsPurchaseOrder;
 		if (!empty($data)) {
 			$data['ItemsPurchaseOrder']['id'] = $id;
 			$tmp = $this->validate;
@@ -173,10 +169,11 @@ class ItemsPurchaseOrder extends AppModel {
 				}
 			}
 			$this->validate = $tmp;
-			throw new Exception(__('You need to confirm to delete this Purchase Order', true));
+			throw new Exception(__('You need to confirm to delete this Items Purchase Order', true));
 		}
 	}
 
 
 }
 ?>
+
