@@ -53,13 +53,4 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Contact', true), array('action' => 'edit', $contact['Contact']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Contact', true), array('action' => 'delete', $contact['Contact']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Contacts', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Contact', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Organizations', true), array('controller' => 'organizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Organization', true), array('controller' => 'organizations', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+

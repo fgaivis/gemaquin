@@ -68,13 +68,4 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Address', true), array('action' => 'edit', $address['Address']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Address', true), array('action' => 'delete', $address['Address']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Addresses', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Address', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Organizations', true), array('controller' => 'organizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Organization', true), array('controller' => 'organizations', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+

@@ -53,20 +53,7 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Provider', true), array('action' => 'edit', $provider['Provider']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Provider', true), array('action' => 'delete', $provider['Provider']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Providers', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Provider', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Addresses', true), array('controller' => 'addresses', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Address', true), array('controller' => 'addresses', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Bank Accounts', true), array('controller' => 'bank_accounts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Bank Account', true), array('controller' => 'bank_accounts', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Contacts', true), array('controller' => 'contacts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Contact', true), array('controller' => 'contacts', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+
 <div class="related">
 	<h3><?php __('Related Addresses');?></h3>
 	<?php if (!empty($provider['Address'])):?>
@@ -119,12 +106,7 @@
 	</table>
 <?php endif; ?>
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Address', true), array('controller' => 'addresses', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+	
 <div class="related">
 	<h3><?php __('Related Bank Accounts');?></h3>
 	<?php if (!empty($provider['BankAccount'])):?>
@@ -181,12 +163,7 @@
 	</table>
 <?php endif; ?>
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Bank Account', true), array('controller' => 'bank_accounts', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+	
 <div class="related">
 	<h3><?php __('Related Contacts');?></h3>
 	<?php if (!empty($provider['Contact'])):?>
@@ -233,10 +210,5 @@
 	</table>
 <?php endif; ?>
 
-	<div class="actions">
-		<ul>
-			<li><?php echo $this->Html->link(__('New Contact', true), array('controller' => 'contacts', 'action' => 'add'));?> </li>
-		</ul>
-	</div>
-</div>
+	
 

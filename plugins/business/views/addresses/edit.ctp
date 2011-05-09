@@ -20,11 +20,3 @@
 	</fieldset>
 <?php echo $this->Form->end('Submit');?>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $this->Form->value('Address.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Addresses', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Organizations', true), array('controller' => 'organizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Organization', true), array('controller' => 'organizations', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
