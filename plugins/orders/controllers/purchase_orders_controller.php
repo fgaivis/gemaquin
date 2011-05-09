@@ -48,8 +48,6 @@ class PurchaseOrdersController extends AppController {
  * @access public
  */
 	public function add() {
-		debug($this->data);
-		//die();
 		try {
 			$result = $this->PurchaseOrder->add($this->data);
 			if ($result === true) {

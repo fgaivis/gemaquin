@@ -17,7 +17,7 @@ function addItem(itemId) {
 		dataType: 'json',
 		success: function(data){
 			var itemsQuantity = $(".item").length;
-			var row = $('<tr class="item">');
+			var row = $('<tr class="item" id="row' + data.content.Item.id + '">');
 			row.append('<td>'+ data.content.Item.barcode +'</td>');
 			row.append('<td>'+ data.content.Item.name +'</td>');
 			row.append('<td>'+ data.content.Item.description +'</td>');
@@ -25,11 +25,19 @@ function addItem(itemId) {
 			row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
 			row.append(
 				'<td>' +
-					'<a href="#">Delete</a>' +
+					'<a class="delete" item="'+ data.content.Item.id +'">Delete</a>' +
 					'<input type="hidden" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][item_id]" value="'+  data.content.Item.id +'">' +
 				'</td>'
 			);
+			$('#providers').attr('disabled', 'disabled');
 			$("#orderTable").show().find('table').append(row);
+			$(".delete").live("click",function() {
+				$(this).parent().parent().remove();
+				if ($(".delete").length==0) {
+					$('#providers').removeAttr('disabled');
+					$('#orderTable').hide();
+				}
+			});
 		}
 	});
 }
