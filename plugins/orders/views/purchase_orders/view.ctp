@@ -11,9 +11,9 @@
 			<?php echo $purchaseOrder['PurchaseOrder']['number']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Organization'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Provider'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($purchaseOrder['Organization']['name'], array('controller' => 'organizations', 'action' => 'view', $purchaseOrder['Organization']['id'])); ?>
+			<?php echo $this->Html->link($purchaseOrder['Provider']['name'], array('controller' => 'organizations', 'action' => 'view', $purchaseOrder['Provider']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Invoice'); ?></dt>
@@ -21,11 +21,16 @@
 			<?php echo $this->Html->link($purchaseOrder['Invoice']['number'], array('controller' => 'invoices', 'action' => 'view', $purchaseOrder['Invoice']['id'])); ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Status'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $purchaseOrder['PurchaseOrder']['status']; ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 
 <div class="related">
-	<h3><?php __('Related Items');?></h3>
+	<h3><?php __('Items');?></h3>
 	<?php if (!empty($purchaseOrder['Item'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
@@ -39,7 +44,7 @@
 		<th><?php __('Country'); ?></th>
 		<th><?php __('Industry'); ?></th>
 		<th><?php __('Category Id'); ?></th>
-		<th class="actions"><?php __('Actions');?></th>
+
 	</tr>
 	<?php
 		$i = 0;
@@ -60,14 +65,11 @@
 			<td><?php echo $item['country'];?></td>
 			<td><?php echo $item['industry'];?></td>
 			<td><?php echo $item['category_id'];?></td>
-			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('controller' => 'items', 'action' => 'view', $item['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'items', 'action' => 'edit', $item['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('controller' => 'items', 'action' => 'delete', $item['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $item['id'])); ?>
-			</td>
 		</tr>
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
+<?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'send')));?>
+<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
+<?php echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
 
-	

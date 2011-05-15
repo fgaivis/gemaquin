@@ -51,7 +51,7 @@ class PurchaseOrdersController extends AppController {
 		try {
 			$result = $this->PurchaseOrder->add($this->data);
 			if ($result === true) {
-				$this->Session->setFlash(__('The invoice has been saved', true));
+				$this->Session->setFlash(__('The purchase order has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			}
 		} catch (OutOfBoundsException $e) {
@@ -62,6 +62,17 @@ class PurchaseOrdersController extends AppController {
 		}
 		$organizations = $this->PurchaseOrder->Provider->find('list');
 		$this->set(compact('organizations'));
+	}
+
+	public function send() {
+		$result = $this->PurchaseOrder->send($this->data);
+		if ($result === true) {
+            //TODO Enviar correo al encargado
+            $this->Session->setFlash(__('The purchase order has been send', true));
+		} else {
+		    $this->Session->setFlash(__('An error has occurred sending the purchase order', true));
+		}
+	    $this->view($this->data['PurchaseOrder']['id']);
 	}
 
 	public function fill_items($organization_id) {
@@ -75,17 +86,6 @@ class PurchaseOrdersController extends AppController {
 		$this->set(compact('items'));
 	}
 
-	public function save_draft($id = null) {
-
-		if (empty($id)) {
-
-		} else {
-		}
-	}
-
-	public function send($id) {
-
-	}
 
 /**
  * Edit for purchase order.

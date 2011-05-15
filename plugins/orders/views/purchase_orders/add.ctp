@@ -1,12 +1,14 @@
 <div class="purchaseOrders form">
-<?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'add')));?>
+<?php echo $this->Form->create('PurchaseOrder', array('id'=>'poadd','url' => array('action' => 'add')));?>
 	<header><h3><?php __('Add Purchase Order');?></h3></header>
 
 	<fieldset>
 
 	<?php
-		echo $this->Form->input('number');
-		echo $this->Form->input('organization_id',array('id'=>'providers','empty' =>__('Select',true)));
+		echo $this->Form->input('organization_id',array('id'=>'providers',
+    	    'label'=>__('Provider',true),
+		    'empty' =>__('Select',true)
+        ));
 
 	?>
 
@@ -28,7 +30,8 @@
 			?>
 		</table>
 	</div>
-<?php echo $this->Form->end(__('Send', true));?>
+	<div style="clear:both;"></div>
+<?php echo $this->Form->end(array('label'=>__('Save', true),'id'=>'save'));?>
 </div>
 <?php $this->Html->script('/orders/js/views/purchase_orders/add',array('inline'=>false)) ?>
 
