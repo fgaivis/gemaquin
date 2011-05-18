@@ -5,7 +5,7 @@ class PurchaseOrder extends AppModel {
  * Purchase Order Statuses
  */
 	const DRAFT = 'DRAFT';
-	const CREATED = 'CREATED';
+	const SEND = 'SEND';
 	const APPROVED = 'APPROVED';
 	const INVOICED = 'INVOICED';
 	const CANCELED = 'CANCELED';
@@ -105,8 +105,8 @@ class PurchaseOrder extends AppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
-			'number' => array(
-				'NotEmpty' => array('rule' => 'notEmpty','message'=>__('Purchase Order Number is required',true))
+			'organization_id' => array(
+				'NotEmpty' => array('rule' => 'notEmpty','message'=>__('Provider is required',true))
 			)
 		);
 	}
@@ -125,12 +125,16 @@ class PurchaseOrder extends AppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
-			$result = $this->saveAll($data);
-			if ($result !== false) {
-				$this->data = array_merge($data, $result);
-				return true;
+			if (!empty($data['ItemsPurchaseOrder'])){
+			    $result = $this->saveAll($data);
+			    if ($result !== false) {
+				    $this->data = array_merge($data, $result);
+				    return true;
+			    } else {
+				    throw new OutOfBoundsException(__('Could not save the purchaseOrder, please check your inputs.', true));
+			    }
 			} else {
-				throw new OutOfBoundsException(__('Could not save the purchaseOrder, please check your inputs.', true));
+                throw new OutOfBoundsException(__('A purchase order must have at least one item', true));
 			}
 			return $return;
 		}
@@ -188,6 +192,16 @@ class PurchaseOrder extends AppModel {
 		}
 
 		return $purchaseOrder;
+	}
+
+	public function send($data) {
+	    $data['PurchaseOrder']['status'] = PurchaseOrder::SEND;
+		$result = $this->save($data);
+		if ($result) {
+            return true;
+        } else {
+            return false;
+        }
 	}
 
 /**
