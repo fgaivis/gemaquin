@@ -20,7 +20,9 @@ $(document).ready(function() {
 		return false;
 	});
 	$('.column').equalHeight();
-	createCalendar();
+	if ($('div.input.date select').length) {
+		createCalendar();
+	}
 });
 
 function createCalendar() {
@@ -59,7 +61,7 @@ function createCalendar() {
  
         function synchronizeDates(dateText,inst) {
             var parts = dateText.split('/');
-            var date = $.datepicker.parseDate( 'dd/mm/yy', dateText);
+            var date = $.datepicker.parseDate('dd/mm/yy', dateText);
             day.val(parts[0]);
             month.val(parts[1]);
             year.val(parts[2]);

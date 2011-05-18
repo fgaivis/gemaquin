@@ -9,10 +9,9 @@ echo $this->Paginator->counter(array(
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('id');?></th>
-	<th><?php echo $this->Paginator->sort('code');?></th>
 	<th><?php echo $this->Paginator->sort('item_id');?></th>
 	<th><?php echo $this->Paginator->sort('batch');?></th>
-	<th><?php echo $this->Paginator->sort(' expitarion_date');?></th>
+	<th><?php echo $this->Paginator->sort('expiration_date');?></th>
 	<th><?php echo $this->Paginator->sort('quantity');?></th>
 	<th><?php echo $this->Paginator->sort('created');?></th>
 	<th><?php echo $this->Paginator->sort('modified');?></th>
@@ -31,16 +30,13 @@ foreach ($inventoryItems as $inventoryItem):
 			<?php echo $inventoryItem['InventoryItem']['id']; ?>
 		</td>
 		<td>
-			<?php echo $inventoryItem['InventoryItem']['code']; ?>
-		</td>
-		<td>
 			<?php echo $this->Html->link($inventoryItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $inventoryItem['Item']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $inventoryItem['InventoryItem']['batch']; ?>
 		</td>
 		<td>
-			<?php echo $inventoryItem['InventoryItem'][' expitarion_date']; ?>
+			<?php echo $inventoryItem['InventoryItem']['expiration_date']; ?>
 		</td>
 		<td>
 			<?php echo $inventoryItem['InventoryItem']['quantity']; ?>
@@ -60,12 +56,4 @@ foreach ($inventoryItems as $inventoryItem):
 <?php endforeach; ?>
 </table>
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
-</div>
-
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('New Inventory Item', true), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Items', true), array('controller' => 'items', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item', true), array('controller' => 'items', 'action' => 'add')); ?> </li>
-	</ul>
 </div>

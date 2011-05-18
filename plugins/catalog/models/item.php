@@ -74,6 +74,20 @@ class Item extends CatalogAppModel {
 	);
 
 
+	public $actsAs = array('Search.Searchable');
+
+
+/**
+ * Filter args attribute to be used by the Searchable behavior
+ *
+ * @var array
+ * @access public
+ */
+	public $filterArgs = array(
+		array('name' => 'name', 'type' => 'like', 'field' => 'name'),
+		array('name' => 'barcode', 'type' => 'like', 'field' => 'barcode')
+	);
+
 
 /**
  * Constructor

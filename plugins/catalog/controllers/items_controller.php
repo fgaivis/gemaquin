@@ -17,11 +17,31 @@ class ItemsController extends CatalogAppController {
 	public $helpers = array('Html', 'Form');
 
 /**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Search.Prg');
+
+
+ /**
+ * Valid search fields
+ *
+ * @var array
+ */
+	public $presetVars = array(
+		array('field' => 'name', 'type' => 'value'),
+		array('field' => 'barcode', 'type' => 'value')
+	);
+
+/**
  * Index for item.
  *
  * @access public
  */
 	public function index() {
+		$this->Prg->commonProcess();
+		$this->paginate['conditions'] = $this->Item->parseCriteria($this->passedArgs);
 		$this->Item->recursive = 0;
 		$this->set('items', $this->paginate());
 	}

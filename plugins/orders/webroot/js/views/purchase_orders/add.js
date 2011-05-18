@@ -23,6 +23,14 @@ $(function(){
 			$('#providers').removeAttr('disabled');
 			return true;
 	});
+	$(".delete").live("click",function() {
+	    $(this).parent().parent().remove();
+	    if ($(".delete").length==0) {
+		    $('#providers').removeAttr('disabled');
+		    $('#orderTable').hide();
+		    $('#save').attr('disabled','disabled');
+	    }
+    });
 });
 
 function addItem(itemId) {
@@ -49,14 +57,6 @@ function addItem(itemId) {
 			    $('#providers').attr('disabled', 'disabled');
 			    $("#orderTable").show().find('table').append(row);
 			    $('#save').removeAttr('disabled');
-			    $(".delete").live("click",function() {
-				    $(this).parent().parent().remove();
-				    if ($(".delete").length==0) {
-					    $('#providers').removeAttr('disabled');
-					    $('#orderTable').hide();
-					    $('#save').attr('disabled','disabled');
-				    }
-			    });
 			} else {
 			    var quantityTB = $(currentItem).find("input[type=text]");
 			    $(quantityTB).val(parseInt($(quantityTB).val())+1);

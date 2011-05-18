@@ -44,22 +44,16 @@ class InventoryItem extends InventoryAppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
-			'code' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Code', true))),
 			'item_id' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Item', true))),
 			'batch' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Batch', true))),
-			' expitarion_date' => array(
+			'expiration_date' => array(
 				'date' => array('rule' => array('date'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a  Expitarion Date', true))),
 			'quantity' => array(
 				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Quantity', true))),
 		);
-	}
-
-
-
-	
+	}	
 
 /**
  * Adds a new record to the database
@@ -70,8 +64,24 @@ class InventoryItem extends InventoryAppModel {
  */
 	public function add($data = null) {
 		if (!empty($data)) {
+			if (isset($data[0])) {
+				foreach ($data as &$item) {
+					$inStock = $this->find('first', array(
+						'fields' => array('id', 'quantity'),
+						'recursive' => -1,
+						'conditions' => array(
+							'item_id' => $item['item_id'],
+							'batch' => $item['batch']
+						)
+					));
+					if ($inStock) {
+						$item['id'] = $inStock[$this->alias]['id'];
+						$item['quantity'] += $inStock[$this->alias]['quantity'];
+					}
+				}
+			}
 			$this->create();
-			$result = $this->save($data);
+			$result = $this->saveAll($data);
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;

@@ -49,7 +49,7 @@ class InventoryItemsController extends InventoryAppController {
  */
 	public function add() {
 		try {
-			$result = $this->InventoryItem->add($this->data);
+			$result = $this->InventoryItem->add($this->data['InventoryItem']);
 			if ($result === true) {
 				$this->Session->setFlash(__('The inventory item has been saved', true));
 				$this->redirect(array('action' => 'index'));
