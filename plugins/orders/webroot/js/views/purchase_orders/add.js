@@ -40,7 +40,6 @@ function addItem(itemId) {
 		success: function(data){
 			var itemsQuantity = $(".item").length;
 			var currentItem = $("#row" + data.content.Item.id);
-			alert(currentItem);
 			if (currentItem.length == 0) {
 			    var row = $('<tr class="item" id="row' + data.content.Item.id + '">');
 			    row.append('<td>'+ data.content.Item.barcode +'</td>');
