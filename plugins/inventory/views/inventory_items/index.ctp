@@ -1,14 +1,8 @@
-<div class="inventoryItems index">
-<h2><?php __('Inventory Items');?></h2>
-<p>
-<?php
-echo $this->Paginator->counter(array(
-'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
-));
-?></p>
+<div class="items index">
+<header><h3><?php __('Inventory');?></h3></header>
+
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('id');?></th>
 	<th><?php echo $this->Paginator->sort('item_id');?></th>
 	<th><?php echo $this->Paginator->sort('batch');?></th>
 	<th><?php echo $this->Paginator->sort('expiration_date');?></th>
@@ -26,9 +20,6 @@ foreach ($inventoryItems as $inventoryItem):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $inventoryItem['InventoryItem']['id']; ?>
-		</td>
 		<td>
 			<?php echo $this->Html->link($inventoryItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $inventoryItem['Item']['id'])); ?>
 		</td>

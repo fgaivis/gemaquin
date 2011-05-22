@@ -7,8 +7,12 @@ $(function(){
 	        $.ajax({
 			    url: App.basePath+'orders/purchase_orders/fill_items/'+$(this).val()+'?t='+(new Date()).getTime(),
 			    success: function(msg){
-				    $("#items").html(msg).find("ul").selectable()
-					    .delegate('li', 'dblclick', function() { addItem(this.id);});
+				    $("#items").html(msg)
+						.find("ul")
+						.addClass('ui-selectable')
+					    .delegate('li', 'dblclick', function() { addItem(this.id); })
+							.find('li')
+								.addClass('ui-selectee')
 				    $('#items').show();
 
 			    }
