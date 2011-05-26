@@ -1,13 +1,15 @@
 <div class="inventoryItem form">
-<?php echo $this->Form->create(null, array('id' => 'inventoryLoad'));?>
 	<header><h3><?php __('Add Items to Inventory');?></h3></header>
-
 	<fieldset>
+			<?php echo $this->Form->input('InventoryItem.order_id', array('empty' => __('Select Order', true))); ?>
+			<?php echo $this->Form->hidden('InventoryItem.transaction', array('value' => $transaction)); ?>
+	</fieldset>
 	<div class="module width_quarter" id="items">
 		<?php echo $this->Form->input('Search.code', array('class' => 'quick_search', 'div' => false, 'label' => false)); ?>
 		<ul>
 		</ul>
 	</div>
+	<?php echo $this->Form->create(null, array('id' => 'inventoryLoad'));?>
 	<div class="module width_3_quarter" id="inventoryTable">
 		<header>
 		<h3><?php __('Added Items') ?></h3>

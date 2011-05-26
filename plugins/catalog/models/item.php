@@ -85,9 +85,9 @@ class Item extends CatalogAppModel {
  */
 	public $filterArgs = array(
 		array('name' => 'name', 'type' => 'like', 'field' => 'name'),
-		array('name' => 'barcode', 'type' => 'like', 'field' => 'barcode')
+		array('name' => 'barcode', 'type' => 'like', 'field' => 'barcode'),
+		array('name' => 'purchase_order', 'type' => 'query', 'method' => 'makeOrderCondition')
 	);
-
 
 /**
  * Constructor
@@ -232,7 +232,16 @@ class Item extends CatalogAppModel {
 		}
 	}
 
+	public function makeOrderCondition($data) {
+		$order = $data['purchase_order'];
+		$this->bindModel(array('belongsTo' => array(
+			'ItemsPurchaseOrder' => array(
+				'className' => 'Orders.ItemsPurchaseOrder',
+				'foreignKey' => false,
+				'type' => 'inner',
+				'conditions' => array('ItemsPurchaseOrder.purchase_order_id' => $order, 'ItemsPurchaseOrder.item_id = Item.id')
+			)
+		)), true);
+	}
 
 }
-?>
-

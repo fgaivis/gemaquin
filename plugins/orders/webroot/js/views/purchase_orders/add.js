@@ -59,10 +59,14 @@ function addItem(itemId) {
 			    );
 			    $('#providers').attr('disabled', 'disabled');
 			    $("#orderTable").show().find('table').append(row);
+				row.effect('highlight');
 			    $('#save').removeAttr('disabled');
 			} else {
 			    var quantityTB = $(currentItem).find("input[type=text]");
-			    $(quantityTB).val(parseInt($(quantityTB).val())+1);
+			    $(quantityTB)
+					.val(parseInt($(quantityTB).val())+1)
+					.effect('highlight');
+				
 			}
 		}
 	});

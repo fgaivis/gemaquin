@@ -29,6 +29,13 @@ class InventoryItem extends InventoryAppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'PurchaseOrder' => array(
+			'className' => 'Orders.PurchaseOrder',
+			'foreignKey' => 'purchase_order_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 

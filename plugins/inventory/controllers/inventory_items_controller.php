@@ -60,8 +60,9 @@ class InventoryItemsController extends InventoryAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$items = $this->InventoryItem->Item->find('list');
-		$this->set(compact('items'));
+		$orders = $this->InventoryItem->PurchaseOrder->find('list');
+		$transaction = String::uuid();
+		$this->set(compact('orders', 'transaction'));
  
 	}
 
