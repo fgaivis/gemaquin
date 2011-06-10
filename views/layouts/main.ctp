@@ -54,7 +54,7 @@
                 
 				<a href="http://www.dynamtek.com"><?php echo $this->Html->image('dyn_small.png', array('class' => 'marg-small'))?></a>
                 <br />
-                <span>&copy; Copyright 2011 - Soluciones Dynamtek C.A. <br /> RIF.: J-29775955-7</span>
+                <span><strong>Copyright &copy; 2011 - Soluciones Dynamtek C.A. <br /> RIF.: J-29775955-7</strong></span>
             </div>
             <div class="login-fields">
             	<?php echo $this->Session->flash(); ?>

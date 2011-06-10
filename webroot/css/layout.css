@@ -358,6 +358,10 @@ text-decoration: underline;
 margin-top: 20%;
 }
 
+#sidebar footer p{
+padding-left: 0;
+}
+
 
 /* Main Content */
 

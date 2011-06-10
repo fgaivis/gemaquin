@@ -1,5 +1,5 @@
 <div class="home">
-<header><h3>Bienvenido a su sistema SiaPlus2</h3></header>
+<header><h3>Bienvenido a su sistema SiaPlus 2 - Representaciones IV Gemaquin C.A.</h3></header>
 
 <div class="home-info">
 	<p>Sistema administrativo basado en tecnología web, que busca optimizar los procesos administrativos de las empresas ajustándose 
