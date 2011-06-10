@@ -10,12 +10,12 @@
 
 <div class="home-menu">
 	<ul>
-		<li><?php echo $this->Html->link('Clientes', array('controller' => 'clients', 'action' => 'index', 'plugin' => 'business'))?></li>
-		<li><?php echo $this->Html->link('Proveedores', array('controller' => 'providers', 'action' => 'index', 'plugin' => 'business'))?></li>
-		<li><?php echo $this->Html->link('Contactos', array('controller' => 'contacts', 'action' => 'index', 'plugin' => 'business'))?></li>
-		<li><?php echo $this->Html->link('Categorías', array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories'))?></li>
-		<li><?php echo $this->Html->link('Items', array('controller' => 'items', 'action' => 'index', 'plugin' => 'catalog'))?></li>
-		<li><?php echo $this->Html->link('Usuarios', array('controller' => 'users', 'action' => 'index', 'plugin' => 'users'))?></li>
+		<li><?php echo $this->Html->link(__('Clientes', true), array('controller' => 'clients', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Proveedores', true), array('controller' => 'providers', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Contactos', true), array('controller' => 'contacts', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Categorías', true), array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Items', true), array('controller' => 'items', 'action' => 'index', 'plugin' => 'catalog', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users', 'admin' => true))?></li>
 	</ul>
 </div>
 

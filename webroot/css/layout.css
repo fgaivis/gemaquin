@@ -841,6 +841,54 @@ margin: 8px 0px;
 line-height: 150%;
 }
 
+/* Main - Home Container */
+
+div.home
+{
+	width: 800px; margin: 0 auto;
+}
+div.home header
+{
+	margin: 32px 0; text-align: center;
+}
+div.home-info
+{
+	float: left; width: 400px; border: 1px solid #CCC; font-size: 16px; padding: 24px; text-align: justify;
+}
+div.home-menu
+{
+	margin-left: 70px;
+	float: left; padding-left: 30px;
+	border-left: 1px solid #CCC;
+}
+div.home-menu ul
+{
+	list-style-type: none;
+}
+div.home-menu ul li
+{
+	margin: 14px 0;
+	width: 140px;
+	background: -moz-linear-gradient(center top , #EEE, #BBB) repeat scroll 0 0 #BBB;
+	border: 1px solid #CCC;
+	border-radius: 6px 6px 6px 6px;
+	padding: 6px;
+	text-align: center;
+}
+div.home-menu ul li a
+{
+	margin: 4px;
+	color: #514C46;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+}
+div.home-menu ul li a:hover
+{
+	color: #FFF;
+	text-decoration: underline;
+}
+
 /* Alerts */
 
 #main h4.alert_info, #flashMessage.message {

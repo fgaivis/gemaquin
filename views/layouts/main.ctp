@@ -36,10 +36,8 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
 		echo $this->Html->css('main');
 		echo $this->Html->css('style');
-
 		echo $scripts_for_layout;
 	?>
 </head>

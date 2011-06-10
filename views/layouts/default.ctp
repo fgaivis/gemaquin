@@ -33,7 +33,10 @@
 	<title><?php echo __('Siaplus 2 - ').$title_for_layout; ?></title>
 	
 	<?php echo $this->Html->meta('icon'); ?>
-	<?php echo $this->Html->css('layout'); ?>
+	<?php 
+		echo $this->Html->css('layout');
+		//echo $this->Html->css('style'); 
+	?>
 	<!--[if lt IE 9]>
 		<?php echo $this->Html->css('ie'); ?>
 		<?php echo $this->Html->script('http://html5shim.googlecode.com/svn/trunk/html5.js'); ?>
