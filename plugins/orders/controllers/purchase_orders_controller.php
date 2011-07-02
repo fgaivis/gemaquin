@@ -107,9 +107,11 @@ class PurchaseOrdersController extends AppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
-		$organizations = $this->PurchaseOrder->Organization->find('list');
+		
+		$organizations = $this->PurchaseOrder->Provider->find('list');
 		$invoices = $this->PurchaseOrder->Invoice->find('list');
 		$items = $this->PurchaseOrder->Item->find('list');
+		$this->set('purchaseOrder', $this->data);
 		$this->set(compact('organizations', 'invoices', 'items'));
 
 	}
