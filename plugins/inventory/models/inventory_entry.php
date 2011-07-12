@@ -1,12 +1,12 @@
 <?php
-class InventoryItem extends InventoryAppModel {
+class InventoryEntry extends InventoryAppModel {
 /**
  * Name
  *
  * @var string $name
  * @access public
  */
-	public $name = 'InventoryItem';
+	public $name = 'InventoryEntry';
 
 /**
  * Validation parameters - initialized in constructor
@@ -23,16 +23,9 @@ class InventoryItem extends InventoryAppModel {
  * @access public
  */
 	public $belongsTo = array(
-		'InventoryEntry' => array(
-			'className' => 'Inventory.InventoryEntry',
-			'foreignKey' => 'inventory_entry_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Item' => array(
-			'className' => 'Catalog.Item',
-			'foreignKey' => 'item_id',
+		'User' => array(
+			'className' => 'User.User',
+			'foreignKey' => 'user_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
@@ -58,16 +51,16 @@ class InventoryItem extends InventoryAppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
-			'item_id' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Item', true))),
-			'batch' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Batch', true))),
-			'expiration_date' => array(
-				'date' => array('rule' => array('date'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a  Expitarion Date', true))),
-			'quantity' => array(
-				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Quantity', true))),
+			'user_id' => array(
+				'uuid' => array('rule' => array('uuid'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a User', true))),
+			'purchase_order_id' => array(
+				'uuid' => array('rule' => array('uuid'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Purchase Order', true))),
 		);
-	}	
+	}
+
+
+
+	
 
 /**
  * Adds a new record to the database
@@ -78,53 +71,37 @@ class InventoryItem extends InventoryAppModel {
  */
 	public function add($data = null) {
 		if (!empty($data)) {
-			if (isset($data[0])) {
-				foreach ($data as &$item) {
-					$inStock = $this->find('first', array(
-						'fields' => array('id', 'quantity'),
-						'recursive' => -1,
-						'conditions' => array(
-							'item_id' => $item['item_id'],
-							'batch' => $item['batch']
-						)
-					));
-					if ($inStock) {
-						$item['id'] = $inStock[$this->alias]['id'];
-						$item['quantity'] += $inStock[$this->alias]['quantity'];
-					}
-				}
-			}
 			$this->create();
-			$result = $this->saveAll($data);
+			$result = $this->save($data);
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;
 			} else {
-				throw new OutOfBoundsException(__('Could not save the inventoryItem, please check your inputs.', true));
+				throw new OutOfBoundsException(__('Could not save the inventoryEntry, please check your inputs.', true));
 			}
 			return $return;
 		}
 	}
 
 /**
- * Edits an existing Inventory Item.
+ * Edits an existing Inventory Entry.
  *
- * @param string $id, inventory item id 
+ * @param string $id, inventory entry id 
  * @param array $data, controller post data usually $this->data
  * @return mixed True on successfully save else post data as array
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function edit($id = null, $data = null) {
-		$inventoryItem = $this->find('first', array(
+		$inventoryEntry = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
 
-		if (empty($inventoryItem)) {
-			throw new OutOfBoundsException(__('Invalid Inventory Item', true));
+		if (empty($inventoryEntry)) {
+			throw new OutOfBoundsException(__('Invalid Inventory Entry', true));
 		}
-		$this->set($inventoryItem);
+		$this->set($inventoryEntry);
 
 		if (!empty($data)) {
 			$this->set($data);
@@ -136,52 +113,52 @@ class InventoryItem extends InventoryAppModel {
 				return $data;
 			}
 		} else {
-			return $inventoryItem;
+			return $inventoryEntry;
 		}
 	}
 
 /**
- * Returns the record of a Inventory Item.
+ * Returns the record of a Inventory Entry.
  *
- * @param string $id, inventory item id.
+ * @param string $id, inventory entry id.
  * @return array
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function view($id = null) {
-		$inventoryItem = $this->find('first', array(
+		$inventoryEntry = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 
-		if (empty($inventoryItem)) {
-			throw new OutOfBoundsException(__('Invalid Inventory Item', true));
+		if (empty($inventoryEntry)) {
+			throw new OutOfBoundsException(__('Invalid Inventory Entry', true));
 		}
 
-		return $inventoryItem;
+		return $inventoryEntry;
 	}
 
 /**
  * Validates the deletion
  *
- * @param string $id, inventory item id 
+ * @param string $id, inventory entry id 
  * @param array $data, controller post data usually $this->data
  * @return boolean True on success
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function validateAndDelete($id = null, $data = array()) {
-		$inventoryItem = $this->find('first', array(
+		$inventoryEntry = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
 
-		if (empty($inventoryItem)) {
-			throw new OutOfBoundsException(__('Invalid Inventory Item', true));
+		if (empty($inventoryEntry)) {
+			throw new OutOfBoundsException(__('Invalid Inventory Entry', true));
 		}
 
-		$this->data['inventoryItem'] = $inventoryItem;
+		$this->data['inventoryEntry'] = $inventoryEntry;
 		if (!empty($data)) {
-			$data['InventoryItem']['id'] = $id;
+			$data['InventoryEntry']['id'] = $id;
 			$tmp = $this->validate;
 			$this->validate = array(
 				'id' => array('rule' => 'notEmpty'),
@@ -189,12 +166,12 @@ class InventoryItem extends InventoryAppModel {
 
 			$this->set($data);
 			if ($this->validates()) {
-				if ($this->delete($data['InventoryItem']['id'])) {
+				if ($this->delete($data['InventoryEntry']['id'])) {
 					return true;
 				}
 			}
 			$this->validate = $tmp;
-			throw new Exception(__('You need to confirm to delete this Inventory Item', true));
+			throw new Exception(__('You need to confirm to delete this Inventory Entry', true));
 		}
 	}
 

@@ -13,9 +13,9 @@
 		<li><?php echo $this->Html->link(__('Clientes', true), array('controller' => 'clients', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Proveedores', true), array('controller' => 'providers', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Contactos', true), array('controller' => 'contacts', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
-		<li><?php echo $this->Html->link(__('Categorías', true), array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Categorías', true), array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories'))?></li>
 		<li><?php echo $this->Html->link(__('Items', true), array('controller' => 'items', 'action' => 'index', 'plugin' => 'catalog', 'admin' => false))?></li>
-		<li><?php echo $this->Html->link(__('Usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users', 'admin' => true))?></li>
+		<li><?php echo $this->Html->link(__('Usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users'))?></li>
 	</ul>
 </div>
 

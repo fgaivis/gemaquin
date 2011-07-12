@@ -7,8 +7,6 @@
 	<th><?php echo $this->Paginator->sort('batch');?></th>
 	<th><?php echo $this->Paginator->sort('expiration_date');?></th>
 	<th><?php echo $this->Paginator->sort('quantity');?></th>
-	<th><?php echo $this->Paginator->sort('created');?></th>
-	<th><?php echo $this->Paginator->sort('modified');?></th>
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
 <?php
@@ -31,12 +29,6 @@ foreach ($inventoryItems as $inventoryItem):
 		</td>
 		<td>
 			<?php echo $inventoryItem['InventoryItem']['quantity']; ?>
-		</td>
-		<td>
-			<?php echo $inventoryItem['InventoryItem']['created']; ?>
-		</td>
-		<td>
-			<?php echo $inventoryItem['InventoryItem']['modified']; ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $inventoryItem['InventoryItem']['id'])); ?>

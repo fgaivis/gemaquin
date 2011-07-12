@@ -87,8 +87,8 @@
 		</ul>
 		<h3><?php echo __('Categorias', true); ?></h3>
 		<ul class="toggle">
-			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva categoria', true), array('controller' => 'categories', 'action' => 'add', 'plugin' => 'categories', 'admin' => false))?></li>
-			<li class="icn_categories"><?php echo $this->Html->link(__('Listar categorias', true), array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories', 'admin' => false))?></li>
+			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva categoria', true), array('controller' => 'categories', 'action' => 'admin_add', 'plugin' => 'categories'))?></li>
+			<li class="icn_categories"><?php echo $this->Html->link(__('Listar categorias', true), array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories'))?></li>
 		</ul>
 		<h3><?php echo __('Items', true); ?></h3>
 		<ul class="toggle">
@@ -97,8 +97,8 @@
 		</ul>
 		<h3><?php echo __('Usuarios', true); ?></h3>
 		<ul class="toggle">
-			<li class="icn_add_user"><?php echo $this->Html->link(__('Nuevo usuario', true), array('controller' => 'users', 'action' => 'add', 'plugin' => 'users', 'admin' => true))?></li>
-			<li class="icn_view_users"><?php echo $this->Html->link(__('Listar usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users', 'admin' => true))?></li>
+			<li class="icn_add_user"><?php echo $this->Html->link(__('Nuevo usuario', true), array('controller' => 'users', 'action' => 'admin_add', 'plugin' => 'users'))?></li>
+			<li class="icn_view_users"><?php echo $this->Html->link(__('Listar usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users'))?></li>
 			<!-- <li class="icn_profile"><a href="#">Your Profile</a></li> -->
 		</ul>
 		<h3><?php echo __('Sistema', true); ?></h3>
