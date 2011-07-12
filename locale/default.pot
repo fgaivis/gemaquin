@@ -1,0 +1,1479 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-07-12 22:07+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app_controller.php:83
+msgid "Sorry, but you need to be logged in to access this location."
+msgstr ""
+
+#: app_controller.php:84
+msgid "Invalid credentials. Please try again or create an account."
+msgstr ""
+
+#: config/selectables.php:5
+msgid "Billing Address"
+msgstr ""
+
+#: config/selectables.php:6
+msgid "Shipping Address"
+msgstr ""
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "The address has been saved"
+msgstr ""
+
+#: plugins/business/controllers/addresses_controller.php:76
+msgid "Address saved"
+msgstr ""
+
+#: plugins/business/controllers/addresses_controller.php:99
+msgid "Address deleted"
+msgstr ""
+
+#: plugins/business/controllers/bank_accounts_controller.php:54
+msgid "The bank account has been saved"
+msgstr ""
+
+#: plugins/business/controllers/bank_accounts_controller.php:76
+msgid "Bank Account saved"
+msgstr ""
+
+#: plugins/business/controllers/bank_accounts_controller.php:99
+msgid "Bank account deleted"
+msgstr ""
+
+#: plugins/business/controllers/clients_controller.php:54
+msgid "The client has been saved"
+msgstr ""
+
+#: plugins/business/controllers/clients_controller.php:76
+msgid "Client saved"
+msgstr ""
+
+#: plugins/business/controllers/clients_controller.php:99
+msgid "Client deleted"
+msgstr ""
+
+#: plugins/business/controllers/contacts_controller.php:54
+msgid "The contact has been saved"
+msgstr ""
+
+#: plugins/business/controllers/contacts_controller.php:78
+msgid "Contact saved"
+msgstr ""
+
+#: plugins/business/controllers/contacts_controller.php:103
+msgid "Contact deleted"
+msgstr ""
+
+#: plugins/business/controllers/organizations_controller.php:54
+msgid "The organization has been saved"
+msgstr ""
+
+#: plugins/business/controllers/organizations_controller.php:76
+msgid "Organization saved"
+msgstr ""
+
+#: plugins/business/controllers/organizations_controller.php:99
+msgid "Organization deleted"
+msgstr ""
+
+#: plugins/business/controllers/providers_controller.php:54
+msgid "The provider has been saved"
+msgstr ""
+
+#: plugins/business/controllers/providers_controller.php:76
+msgid "Provider saved"
+msgstr ""
+
+#: plugins/business/controllers/providers_controller.php:99
+msgid "Provider deleted"
+msgstr ""
+
+#: plugins/business/models/Address.php:48
+#: plugins/business/models/Contact.php:48
+#: plugins/business/models/bank_account.php:48
+#: plugins/catalog/models/items_organization.php:57
+msgid "Please enter a Organization"
+msgstr ""
+
+#: plugins/business/models/Address.php:50
+msgid "Please enter a Type"
+msgstr ""
+
+#: plugins/business/models/Address.php:52
+#: plugins/business/models/Contact.php:54
+msgid "Please enter a Phone"
+msgstr ""
+
+#: plugins/business/models/Address.php:54
+msgid "Please enter a Address 1"
+msgstr ""
+
+#: plugins/business/models/Address.php:56
+msgid "Please enter a City"
+msgstr ""
+
+#: plugins/business/models/Address.php:58
+msgid "Please enter a State"
+msgstr ""
+
+#: plugins/business/models/Address.php:60
+#: plugins/business/models/Organization.php:110
+#: plugins/business/models/bank_account.php:56
+#: plugins/catalog/models/Item.php:110
+msgid "Please enter a Country"
+msgstr ""
+
+#: plugins/business/models/Address.php:83
+msgid "Could not save the address, please check your inputs."
+msgstr ""
+
+#: plugins/business/models/Address.php:105;137;159
+msgid "Invalid Address"
+msgstr ""
+
+#: plugins/business/models/Address.php:177
+msgid "You need to confirm to delete this Address"
+msgstr ""
+
+#: plugins/business/models/Client.php:16
+msgid "Invalid Client"
+msgstr ""
+
+#: plugins/business/models/Client.php:34
+msgid "You need to confirm to delete this Client"
+msgstr ""
+
+#: plugins/business/models/Contact.php:50
+#: plugins/business/models/Organization.php:108
+msgid "Please enter a Name"
+msgstr ""
+
+#: plugins/business/models/Contact.php:52
+msgid "Please enter a Email"
+msgstr ""
+
+#: plugins/business/models/Contact.php:77
+msgid "Could not save the contact, please check your inputs."
+msgstr ""
+
+#: plugins/business/models/Contact.php:99;131;153
+msgid "Invalid Contact"
+msgstr ""
+
+#: plugins/business/models/Contact.php:171
+msgid "You need to confirm to delete this Contact"
+msgstr ""
+
+#: plugins/business/models/Organization.php:106
+msgid "Please enter a Code"
+msgstr ""
+
+#: plugins/business/models/Organization.php:112
+msgid "Please enter a Fiscalid"
+msgstr ""
+
+#: plugins/business/models/Organization.php:135
+msgid "Could not save the organization, please check your inputs."
+msgstr ""
+
+#: plugins/business/models/Organization.php:157;189;211
+msgid "Invalid Organization"
+msgstr ""
+
+#: plugins/business/models/Organization.php:229
+msgid "You need to confirm to delete this Organization"
+msgstr ""
+
+#: plugins/business/models/Provider.php:16
+msgid "Invalid Provider"
+msgstr ""
+
+#: plugins/business/models/Provider.php:34
+msgid "You need to confirm to delete this Provider"
+msgstr ""
+
+#: plugins/business/models/bank_account.php:50
+msgid "Please enter a Bank Name"
+msgstr ""
+
+#: plugins/business/models/bank_account.php:52
+msgid "Please enter a Currency"
+msgstr ""
+
+#: plugins/business/models/bank_account.php:54
+msgid "Please enter a Number"
+msgstr ""
+
+#: plugins/business/models/bank_account.php:79
+msgid "Could not save the bankAccount, please check your inputs."
+msgstr ""
+
+#: plugins/business/models/bank_account.php:101;133;155
+msgid "Invalid Bank Account"
+msgstr ""
+
+#: plugins/business/models/bank_account.php:173
+msgid "You need to confirm to delete this Bank Account"
+msgstr ""
+
+#: plugins/business/views/addresses/add.ctp:3
+msgid "Add Address"
+msgstr ""
+
+#: plugins/business/views/addresses/delete.ctp:1
+msgid "Delete Address of \"%s\"?"
+msgstr ""
+
+#: plugins/business/views/addresses/delete.ctp:3
+msgid "Be aware that your Address and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/business/views/addresses/delete.ctp:11
+#: plugins/business/views/bank_accounts/delete.ctp:11
+#: plugins/business/views/clients/delete.ctp:11
+#: plugins/business/views/contacts/delete.ctp:11
+#: plugins/business/views/organizations/delete.ctp:11
+#: plugins/business/views/providers/delete.ctp:11
+#: plugins/catalog/views/items/delete.ctp:11
+#: plugins/inventory/views/inventory_entries/delete.ctp:11
+#: plugins/inventory/views/inventory_items/delete.ctp:11
+msgid "Confirm"
+msgstr ""
+
+#: plugins/business/views/addresses/delete.ctp:13
+#: plugins/business/views/bank_accounts/delete.ctp:13
+#: plugins/business/views/clients/delete.ctp:13
+#: plugins/business/views/contacts/delete.ctp:13
+#: plugins/business/views/organizations/delete.ctp:13
+#: plugins/business/views/providers/delete.ctp:13
+#: plugins/catalog/views/items/delete.ctp:13
+#: plugins/inventory/views/inventory_entries/delete.ctp:13
+#: plugins/inventory/views/inventory_items/delete.ctp:13
+msgid "You have to confirm."
+msgstr ""
+
+#: plugins/business/views/addresses/delete.ctp:14
+#: plugins/business/views/bank_accounts/delete.ctp:14
+#: plugins/business/views/clients/delete.ctp:14
+#: plugins/business/views/contacts/delete.ctp:14
+#: plugins/business/views/organizations/delete.ctp:14
+#: plugins/business/views/providers/delete.ctp:14
+#: plugins/catalog/views/items/delete.ctp:14
+#: plugins/inventory/views/inventory_entries/delete.ctp:14
+#: plugins/inventory/views/inventory_items/delete.ctp:14
+msgid "Continue"
+msgstr ""
+
+#: plugins/business/views/addresses/edit.ctp:3
+msgid "Edit Address"
+msgstr ""
+
+#: plugins/business/views/addresses/index.ctp:2
+msgid "Addresses"
+msgstr ""
+
+#: plugins/business/views/addresses/index.ctp:19
+#: plugins/business/views/bank_accounts/index.ctp:21
+#: plugins/business/views/clients/index.ctp:15
+#: plugins/business/views/clients/view.ctp:75;130;182
+#: plugins/business/views/contacts/index.ctp:16
+#: plugins/business/views/organizations/index.ctp:17
+#: plugins/business/views/organizations/view.ctp:80;135;187
+#: plugins/business/views/providers/index.ctp:16
+#: plugins/business/views/providers/view.ctp:75;130;182
+#: plugins/catalog/views/items/index.ctp:16
+#: plugins/catalog/views/items/view.ctp:73
+#: plugins/inventory/views/inventory_entries/index.ctp:9
+#: plugins/inventory/views/inventory_items/add.ctp:25
+#: plugins/inventory/views/inventory_items/index.ctp:10
+#: plugins/orders/views/invoices/index.ctp:12
+#: plugins/orders/views/invoices/view.ctp:58;98
+#: plugins/orders/views/invoices_items/index.ctp:12
+#: plugins/orders/views/items_purchase_orders/index.ctp:10
+#: plugins/orders/views/purchase_orders/add.ctp:29
+#: plugins/orders/views/purchase_orders/edit.ctp:28
+#: plugins/orders/views/purchase_orders/index.ctp:19
+msgid "Actions"
+msgstr ""
+
+#: plugins/business/views/addresses/index.ctp:70
+#: plugins/business/views/bank_accounts/index.ctp:78
+#: plugins/business/views/clients/index.ctp:54
+#: plugins/business/views/clients/view.ctp:100;157;204
+#: plugins/business/views/contacts/index.ctp:58
+#: plugins/business/views/organizations/index.ctp:62
+#: plugins/business/views/organizations/view.ctp:105;162;209
+#: plugins/business/views/providers/index.ctp:58
+#: plugins/business/views/providers/view.ctp:100;157;204
+#: plugins/catalog/views/items/index.ctp:58
+#: plugins/catalog/views/items/view.ctp:96
+#: plugins/inventory/views/inventory_items/index.ctp:34
+#: plugins/orders/views/invoices/index.ctp:42
+#: plugins/orders/views/invoices/view.ctp:73;120
+#: plugins/orders/views/invoices_items/index.ctp:42
+#: plugins/orders/views/items_purchase_orders/index.ctp:34
+#: plugins/orders/views/purchase_orders/index.ctp:49
+msgid "View"
+msgstr ""
+
+#: plugins/business/views/addresses/index.ctp:71
+#: plugins/business/views/bank_accounts/index.ctp:79
+#: plugins/business/views/clients/index.ctp:55
+#: plugins/business/views/clients/view.ctp:101;158;205
+#: plugins/business/views/contacts/index.ctp:59
+#: plugins/business/views/organizations/index.ctp:63
+#: plugins/business/views/organizations/view.ctp:106;163;210
+#: plugins/business/views/providers/index.ctp:59
+#: plugins/business/views/providers/view.ctp:101;158;205
+#: plugins/catalog/views/items/index.ctp:59
+#: plugins/catalog/views/items/view.ctp:97
+#: plugins/inventory/views/inventory_items/index.ctp:35
+#: plugins/orders/views/invoices/index.ctp:43
+#: plugins/orders/views/invoices/view.ctp:74;121
+#: plugins/orders/views/invoices_items/index.ctp:43
+#: plugins/orders/views/items_purchase_orders/index.ctp:35
+#: plugins/orders/views/purchase_orders/index.ctp:51
+msgid "Edit"
+msgstr ""
+
+#: plugins/business/views/addresses/index.ctp:72
+#: plugins/business/views/bank_accounts/index.ctp:80
+#: plugins/business/views/clients/index.ctp:56
+#: plugins/business/views/clients/view.ctp:102;159;206
+#: plugins/business/views/contacts/index.ctp:60
+#: plugins/business/views/organizations/index.ctp:64
+#: plugins/business/views/organizations/view.ctp:107;164;211
+#: plugins/business/views/providers/index.ctp:60
+#: plugins/business/views/providers/view.ctp:102;159;206
+#: plugins/catalog/views/items/index.ctp:60
+#: plugins/catalog/views/items/view.ctp:98
+#: plugins/inventory/views/inventory_items/index.ctp:36
+#: plugins/orders/views/invoices/index.ctp:44
+#: plugins/orders/views/invoices/view.ctp:75;122
+#: plugins/orders/views/invoices_items/index.ctp:44
+#: plugins/orders/views/items_purchase_orders/index.ctp:36
+#: plugins/orders/views/purchase_orders/edit.ctp:39
+#: plugins/orders/views/purchase_orders/index.ctp:52
+msgid "Delete"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:2
+msgid "Address"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:4
+#: plugins/business/views/bank_accounts/view.ctp:4
+#: plugins/business/views/clients/view.ctp:4;62;115;172
+#: plugins/business/views/contacts/view.ctp:4
+#: plugins/business/views/organizations/view.ctp:4;67;120;177
+#: plugins/business/views/providers/view.ctp:4;62;115;172
+#: plugins/catalog/views/items/view.ctp:4;62
+#: plugins/orders/views/invoices/view.ctp:4;55;88
+#: plugins/orders/views/invoices_items/view.ctp:4
+#: plugins/orders/views/items_purchase_orders/view.ctp:4
+#: plugins/orders/views/purchase_orders/send.ctp:4;37
+#: plugins/orders/views/purchase_orders/view.ctp:4;37
+msgid "Id"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:9
+#: plugins/business/views/bank_accounts/view.ctp:9
+#: plugins/business/views/contacts/view.ctp:9
+#: plugins/business/views/organizations/view.ctp:2
+#: plugins/orders/views/invoices/view.ctp:14
+msgid "Organization"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:14
+#: plugins/business/views/bank_accounts/view.ctp:24
+#: plugins/business/views/clients/view.ctp:64;119
+#: plugins/business/views/organizations/view.ctp:44;69;124
+#: plugins/business/views/providers/view.ctp:64;119
+#: plugins/catalog/views/items/view.ctp:70
+msgid "Type"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:19
+#: plugins/business/views/clients/view.ctp:65;176
+#: plugins/business/views/contacts/view.ctp:24
+#: plugins/business/views/organizations/view.ctp:70;181
+#: plugins/business/views/providers/view.ctp:65;176
+msgid "Phone"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:24
+#: plugins/business/views/bank_accounts/view.ctp:34
+#: plugins/business/views/clients/view.ctp:66;121
+#: plugins/business/views/organizations/view.ctp:71;126
+#: plugins/business/views/providers/view.ctp:66;121
+msgid "Address 1"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:29
+#: plugins/business/views/bank_accounts/view.ctp:39
+#: plugins/business/views/clients/view.ctp:67;122
+#: plugins/business/views/organizations/view.ctp:72;127
+#: plugins/business/views/providers/view.ctp:67;122
+msgid "Address 2"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:34
+#: plugins/business/views/clients/view.ctp:68
+#: plugins/business/views/organizations/view.ctp:73
+#: plugins/business/views/providers/view.ctp:68
+msgid "City"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:39
+#: plugins/business/views/clients/view.ctp:69
+#: plugins/business/views/organizations/view.ctp:74
+#: plugins/business/views/providers/view.ctp:69
+msgid "State"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:44
+#: plugins/business/views/bank_accounts/view.ctp:44
+#: plugins/business/views/clients/view.ctp:24;70;123
+#: plugins/business/views/organizations/view.ctp:24;75;128
+#: plugins/business/views/providers/view.ctp:24;70;123
+#: plugins/catalog/views/items/view.ctp:39;66
+#: plugins/orders/views/invoices/view.ctp:95
+#: plugins/orders/views/purchase_orders/send.ctp:44
+#: plugins/orders/views/purchase_orders/view.ctp:44
+msgid "Country"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:49
+#: plugins/business/views/clients/view.ctp:71
+#: plugins/business/views/organizations/view.ctp:76
+#: plugins/business/views/providers/view.ctp:71
+msgid "Zip"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:54
+#: plugins/business/views/bank_accounts/view.ctp:64
+#: plugins/business/views/clients/view.ctp:72;127
+#: plugins/business/views/organizations/view.ctp:77;132
+#: plugins/business/views/providers/view.ctp:72;127
+msgid "Notes"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:59
+#: plugins/business/views/bank_accounts/view.ctp:69
+#: plugins/business/views/clients/view.ctp:44;73;128;180
+#: plugins/business/views/contacts/view.ctp:44
+#: plugins/business/views/organizations/view.ctp:49;78;133;185
+#: plugins/business/views/providers/view.ctp:44;73;128;180
+#: plugins/catalog/views/items/view.ctp:71
+#: plugins/inventory/views/inventory_items/view.ctp:24
+msgid "Created"
+msgstr ""
+
+#: plugins/business/views/addresses/view.ctp:64
+#: plugins/business/views/bank_accounts/view.ctp:74
+#: plugins/business/views/clients/view.ctp:49;74;129;181
+#: plugins/business/views/contacts/view.ctp:49
+#: plugins/business/views/organizations/view.ctp:54;79;134;186
+#: plugins/business/views/providers/view.ctp:49;74;129;181
+#: plugins/catalog/views/items/view.ctp:72
+#: plugins/inventory/views/inventory_items/view.ctp:29
+msgid "Modified"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/add.ctp:3
+msgid "Add Bank Account"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/delete.ctp:1
+msgid "Delete Bank Account \"%s\"?"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/delete.ctp:3
+msgid "Be aware that your Bank Account and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/edit.ctp:3
+msgid "Edit Bank Account"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/index.ctp:2
+msgid "Bank Accounts"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/view.ctp:2
+msgid "Bank Account"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/view.ctp:14
+#: plugins/business/views/clients/view.ctp:117
+#: plugins/business/views/organizations/view.ctp:122
+#: plugins/business/views/providers/view.ctp:117
+msgid "Bank Name"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/view.ctp:19
+#: plugins/business/views/clients/view.ctp:118
+#: plugins/business/views/organizations/view.ctp:123
+#: plugins/business/views/providers/view.ctp:118
+msgid "Currency"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/view.ctp:29
+#: plugins/business/views/clients/view.ctp:120
+#: plugins/business/views/organizations/view.ctp:125
+#: plugins/business/views/providers/view.ctp:120
+#: plugins/orders/views/invoices/view.ctp:9
+#: plugins/orders/views/purchase_orders/send.ctp:9
+#: plugins/orders/views/purchase_orders/view.ctp:9
+msgid "Number"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/view.ctp:49
+#: plugins/business/views/clients/view.ctp:124
+#: plugins/business/views/organizations/view.ctp:129
+#: plugins/business/views/providers/view.ctp:124
+msgid "Iban"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/view.ctp:54
+#: plugins/business/views/clients/view.ctp:125
+#: plugins/business/views/organizations/view.ctp:130
+#: plugins/business/views/providers/view.ctp:125
+msgid "Aba"
+msgstr ""
+
+#: plugins/business/views/bank_accounts/view.ctp:59
+#: plugins/business/views/clients/view.ctp:126
+#: plugins/business/views/organizations/view.ctp:131
+#: plugins/business/views/providers/view.ctp:126
+msgid "Swift"
+msgstr ""
+
+#: plugins/business/views/clients/add.ctp:3
+msgid "Add Client"
+msgstr ""
+
+#: plugins/business/views/clients/delete.ctp:1
+msgid "Delete Client \"%s\"?"
+msgstr ""
+
+#: plugins/business/views/clients/delete.ctp:3
+msgid "Be aware that your Client and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/business/views/clients/edit.ctp:3
+msgid "Edit Client"
+msgstr ""
+
+#: plugins/business/views/clients/index.ctp:2
+msgid "Clients"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:2
+msgid "Client"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:9
+#: plugins/business/views/organizations/view.ctp:9
+#: plugins/business/views/providers/view.ctp:9
+#: plugins/catalog/views/items/view.ctp:63
+#: plugins/orders/views/purchase_orders/add.ctp:24
+#: plugins/orders/views/purchase_orders/edit.ctp:23
+msgid "Code"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:14;174
+#: plugins/business/views/contacts/view.ctp:14
+#: plugins/business/views/organizations/view.ctp:14;179
+#: plugins/business/views/providers/view.ctp:14;174
+#: plugins/catalog/views/items/view.ctp:9;64
+#: plugins/orders/views/invoices/view.ctp:89
+#: plugins/orders/views/purchase_orders/send.ctp:38
+#: plugins/orders/views/purchase_orders/view.ctp:38
+msgid "Name"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:19
+#: plugins/business/views/organizations/view.ctp:19
+#: plugins/business/views/providers/view.ctp:19
+#: plugins/catalog/views/items/view.ctp:14;65
+#: plugins/orders/views/invoices/view.ctp:90
+#: plugins/orders/views/purchase_orders/add.ctp:26
+#: plugins/orders/views/purchase_orders/edit.ctp:25
+#: plugins/orders/views/purchase_orders/send.ctp:39
+#: plugins/orders/views/purchase_orders/view.ctp:39
+msgid "Description"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:29
+#: plugins/business/views/organizations/view.ctp:29
+#: plugins/business/views/providers/view.ctp:29
+#: plugins/catalog/views/items/view.ctp:67
+msgid "Fiscalid"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:34
+#: plugins/business/views/organizations/view.ctp:34
+#: plugins/business/views/providers/view.ctp:34
+#: plugins/catalog/views/items/view.ctp:68
+msgid "Brand"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:39
+#: plugins/business/views/organizations/view.ctp:39
+#: plugins/business/views/providers/view.ctp:39
+#: plugins/catalog/views/items/view.ctp:69
+msgid "Business"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:58
+#: plugins/business/views/organizations/view.ctp:63
+#: plugins/business/views/providers/view.ctp:58
+msgid "Related Addresses"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:63;116;173
+#: plugins/business/views/organizations/view.ctp:68;121;178
+#: plugins/business/views/providers/view.ctp:63;116;173
+#: plugins/orders/views/invoices/view.ctp:56
+msgid "Organization Id"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:102;159;206
+#: plugins/business/views/organizations/view.ctp:107;164;211
+#: plugins/business/views/providers/view.ctp:102;159;206
+#: plugins/catalog/views/items/view.ctp:98
+#: plugins/orders/views/invoices/view.ctp:75;122
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:111
+#: plugins/business/views/organizations/view.ctp:116
+#: plugins/business/views/providers/view.ctp:111
+msgid "Related Bank Accounts"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:168
+#: plugins/business/views/organizations/view.ctp:173
+#: plugins/business/views/providers/view.ctp:168
+msgid "Related Contacts"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:175
+#: plugins/business/views/contacts/view.ctp:19
+#: plugins/business/views/organizations/view.ctp:180
+#: plugins/business/views/providers/view.ctp:175
+msgid "Email"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:177
+#: plugins/business/views/contacts/view.ctp:29
+#: plugins/business/views/organizations/view.ctp:182
+#: plugins/business/views/providers/view.ctp:177
+msgid "Mobile"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:178
+#: plugins/business/views/contacts/view.ctp:34
+#: plugins/business/views/organizations/view.ctp:183
+#: plugins/business/views/providers/view.ctp:178
+msgid "Position"
+msgstr ""
+
+#: plugins/business/views/clients/view.ctp:179
+#: plugins/business/views/contacts/view.ctp:39
+#: plugins/business/views/organizations/view.ctp:184
+#: plugins/business/views/providers/view.ctp:179
+msgid "Role"
+msgstr ""
+
+#: plugins/business/views/contacts/add.ctp:3
+msgid "Add Contact"
+msgstr ""
+
+#: plugins/business/views/contacts/delete.ctp:1
+msgid "Delete Contact \"%s\"?"
+msgstr ""
+
+#: plugins/business/views/contacts/delete.ctp:3
+msgid "Be aware that your Contact and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/business/views/contacts/edit.ctp:3
+msgid "Edit Contact"
+msgstr ""
+
+#: plugins/business/views/contacts/index.ctp:2
+msgid "Contacts"
+msgstr ""
+
+#: plugins/business/views/contacts/view.ctp:2
+msgid "Contact"
+msgstr ""
+
+#: plugins/business/views/organizations/add.ctp:3
+msgid "Add Organization"
+msgstr ""
+
+#: plugins/business/views/organizations/delete.ctp:1
+msgid "Delete Organization \"%s\"?"
+msgstr ""
+
+#: plugins/business/views/organizations/delete.ctp:3
+msgid "Be aware that your Organization and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/business/views/organizations/edit.ctp:3
+msgid "Edit Organization"
+msgstr ""
+
+#: plugins/business/views/organizations/index.ctp:2
+msgid "Organizations"
+msgstr ""
+
+#: plugins/business/views/providers/add.ctp:3
+msgid "Add Provider"
+msgstr ""
+
+#: plugins/business/views/providers/delete.ctp:1
+msgid "Delete Provider \"%s\"?"
+msgstr ""
+
+#: plugins/business/views/providers/delete.ctp:3
+msgid "Be aware that your Provider and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/business/views/providers/edit.ctp:3
+msgid "Edit Provider"
+msgstr ""
+
+#: plugins/business/views/providers/index.ctp:2
+msgid "Providers"
+msgstr ""
+
+#: plugins/business/views/providers/view.ctp:2
+#: plugins/orders/views/purchase_orders/add.ctp:10
+#: plugins/orders/views/purchase_orders/edit.ctp:9
+#: plugins/orders/views/purchase_orders/send.ctp:14
+#: plugins/orders/views/purchase_orders/view.ctp:14
+msgid "Provider"
+msgstr ""
+
+#: plugins/catalog/controllers/items_controller.php:75
+msgid "The item has been saved"
+msgstr ""
+
+#: plugins/catalog/controllers/items_controller.php:100
+msgid "Item saved"
+msgstr ""
+
+#: plugins/catalog/controllers/items_controller.php:126
+msgid "Item deleted"
+msgstr ""
+
+#: plugins/catalog/models/Item.php:104
+msgid "Please enter a Barcode"
+msgstr ""
+
+#: plugins/catalog/models/Item.php:106
+msgid "Please enter a Package Factor"
+msgstr ""
+
+#: plugins/catalog/models/Item.php:108
+msgid "Please enter a Sales Factor"
+msgstr ""
+
+#: plugins/catalog/models/Item.php:112
+msgid "Please enter a Industry"
+msgstr ""
+
+#: plugins/catalog/models/Item.php:114
+msgid "Please enter a Category"
+msgstr ""
+
+#: plugins/catalog/models/Item.php:137
+msgid "Could not save the item, please check your inputs."
+msgstr ""
+
+#: plugins/catalog/models/Item.php:159;191;213
+msgid "Invalid Item"
+msgstr ""
+
+#: plugins/catalog/models/Item.php:231
+msgid "You need to confirm to delete this Item"
+msgstr ""
+
+#: plugins/catalog/models/items_organization.php:55
+#: plugins/inventory/models/inventory_item.php:62
+#: plugins/orders/models/invoices_item.php:57
+msgid "Please enter a Item"
+msgstr ""
+
+#: plugins/catalog/models/items_organization.php:80
+msgid "Could not save the itemsOrganization, please check your inputs."
+msgstr ""
+
+#: plugins/catalog/models/items_organization.php:102;134;156
+msgid "Invalid Items Organization"
+msgstr ""
+
+#: plugins/catalog/models/items_organization.php:174
+msgid "You need to confirm to delete this Items Organization"
+msgstr ""
+
+#: plugins/catalog/views/items/add.ctp:3
+msgid "Add Item"
+msgstr ""
+
+#: plugins/catalog/views/items/delete.ctp:1
+msgid "Delete Item \"%s\"?"
+msgstr ""
+
+#: plugins/catalog/views/items/delete.ctp:3
+msgid "Be aware that your Item and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/catalog/views/items/edit.ctp:3
+msgid "Edit Item"
+msgstr ""
+
+#: plugins/catalog/views/items/index.ctp:2
+#: plugins/orders/views/purchase_orders/fill_items.ctp:2
+#: plugins/orders/views/purchase_orders/send.ctp:33
+#: plugins/orders/views/purchase_orders/view.ctp:33
+#: views/layouts/default.ctp:93
+#: views/pages/home.ctp:17
+msgid "Items"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:2
+#: plugins/inventory/views/inventory_items/add.ctp:21
+#: plugins/inventory/views/inventory_items/view.ctp:4
+#: plugins/orders/views/invoices_items/view.ctp:14
+#: plugins/orders/views/items_purchase_orders/view.ctp:9
+#: plugins/orders/views/purchase_orders/add.ctp:25
+#: plugins/orders/views/purchase_orders/edit.ctp:24
+msgid "Item"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:19
+#: plugins/orders/views/invoices/view.ctp:91
+#: plugins/orders/views/purchase_orders/send.ctp:40
+#: plugins/orders/views/purchase_orders/view.ctp:40
+msgid "Barcode"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:24
+#: plugins/orders/views/invoices/view.ctp:92
+#: plugins/orders/views/purchase_orders/send.ctp:41
+#: plugins/orders/views/purchase_orders/view.ctp:41
+msgid "Package Factor"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:29
+#: plugins/orders/views/invoices/view.ctp:93
+#: plugins/orders/views/purchase_orders/send.ctp:42
+#: plugins/orders/views/purchase_orders/view.ctp:42
+msgid "Sales Factor"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:34
+#: plugins/orders/views/invoices/view.ctp:94
+#: plugins/orders/views/purchase_orders/send.ctp:43
+#: plugins/orders/views/purchase_orders/view.ctp:43
+msgid "Weight"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:44
+#: plugins/orders/views/invoices/view.ctp:96
+#: plugins/orders/views/purchase_orders/send.ctp:45
+#: plugins/orders/views/purchase_orders/view.ctp:45
+msgid "Industry"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:49
+msgid "Category"
+msgstr ""
+
+#: plugins/catalog/views/items/view.ctp:58
+msgid "Related Organizations"
+msgstr ""
+
+#: plugins/categories/libs/app_test_case.php:106
+#: plugins/templates/libs/app_test_case.php:121
+msgid "AppTestCase::load() - no variable $config found in %s.php"
+msgstr ""
+
+#: plugins/inventory/controllers/inventory_entries_controller.php:84
+msgid "Inventory Entry saved"
+msgstr ""
+
+#: plugins/inventory/controllers/inventory_entries_controller.php:110
+msgid "Inventory entry deleted"
+msgstr ""
+
+#: plugins/inventory/controllers/inventory_items_controller.php:55
+msgid "Invalid inventory entry"
+msgstr ""
+
+#: plugins/inventory/controllers/inventory_items_controller.php:59
+msgid "The inventory item has been saved"
+msgstr ""
+
+#: plugins/inventory/controllers/inventory_items_controller.php:86
+msgid "Inventory Item saved"
+msgstr ""
+
+#: plugins/inventory/controllers/inventory_items_controller.php:111
+msgid "Inventory item deleted"
+msgstr ""
+
+#: plugins/inventory/models/inventory_entry.php:55
+msgid "Please enter a User"
+msgstr ""
+
+#: plugins/inventory/models/inventory_entry.php:57
+msgid "Please enter a Purchase Order"
+msgstr ""
+
+#: plugins/inventory/models/inventory_entry.php:80
+msgid "Could not save the inventoryEntry, please check your inputs."
+msgstr ""
+
+#: plugins/inventory/models/inventory_entry.php:102;134;156
+msgid "Invalid Inventory Entry"
+msgstr ""
+
+#: plugins/inventory/models/inventory_entry.php:174
+msgid "You need to confirm to delete this Inventory Entry"
+msgstr ""
+
+#: plugins/inventory/models/inventory_item.php:64
+msgid "Please enter a Batch"
+msgstr ""
+
+#: plugins/inventory/models/inventory_item.php:66
+msgid "Please enter a  Expitarion Date"
+msgstr ""
+
+#: plugins/inventory/models/inventory_item.php:68
+#: plugins/orders/models/invoices_item.php:59
+#: plugins/orders/models/items_purchase_order.php:55
+msgid "Please enter a Quantity"
+msgstr ""
+
+#: plugins/inventory/models/inventory_item.php:103
+msgid "Could not save the inventoryItem, please check your inputs."
+msgstr ""
+
+#: plugins/inventory/models/inventory_item.php:125;157;179
+msgid "Invalid Inventory Item"
+msgstr ""
+
+#: plugins/inventory/models/inventory_item.php:197
+msgid "You need to confirm to delete this Inventory Item"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/add.ctp:2
+msgid "Select purchase order the new items belong to"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/add.ctp:7
+msgid "Select Order"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/add.ctp:14
+msgid "Start loading items"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/delete.ctp:1
+msgid "Delete Inventory Entry \"%s\"?"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/delete.ctp:3
+msgid "Be aware that your Inventory Entry and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/index.ctp:2
+msgid "Inventory Entries"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/index.ctp:6
+msgid "Date"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/index.ctp:7
+msgid "User"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/index.ctp:8
+msgid "PurchaseOrder"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/index.ctp:30
+msgid "Report"
+msgstr ""
+
+#: plugins/inventory/views/inventory_entries/index.ctp:31
+msgid "Labels"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/add.ctp:2
+msgid "Add Items to Inventory"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/add.ctp:16
+msgid "Added Items"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/add.ctp:22
+#: plugins/inventory/views/inventory_items/view.ctp:9
+msgid "Batch"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Expiration Date"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/add.ctp:24
+#: plugins/inventory/views/inventory_items/view.ctp:19
+#: plugins/orders/views/invoices_items/view.ctp:19
+#: plugins/orders/views/items_purchase_orders/view.ctp:19
+#: plugins/orders/views/purchase_orders/add.ctp:28
+#: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Quantity"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/add.ctp:31
+#: plugins/orders/views/purchase_orders/add.ctp:35
+#: plugins/orders/views/purchase_orders/edit.ctp:48
+#: plugins/orders/views/purchase_orders/send.ctp:74
+msgid "Save"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/delete.ctp:1
+msgid "Delete Inventory Item \"%s\"?"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/delete.ctp:3
+msgid "Be aware that your Inventory Item and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/edit.ctp:3
+msgid "Edit Inventory Item"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/index.ctp:2
+msgid "Inventory"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/view.ctp:2
+msgid "Inventory Item"
+msgstr ""
+
+#: plugins/inventory/views/inventory_items/view.ctp:14
+msgid " Expitarion Date"
+msgstr ""
+
+#: plugins/orders/controllers/invoices_controller.php:54
+msgid "The invoice has been saved"
+msgstr ""
+
+#: plugins/orders/controllers/invoices_controller.php:79
+msgid "Invoice saved"
+msgstr ""
+
+#: plugins/orders/controllers/invoices_controller.php:105
+msgid "Invoice deleted"
+msgstr ""
+
+#: plugins/orders/controllers/invoices_items_controller.php:54
+msgid "The invoices item has been saved"
+msgstr ""
+
+#: plugins/orders/controllers/invoices_items_controller.php:79
+msgid "Invoices Item saved"
+msgstr ""
+
+#: plugins/orders/controllers/invoices_items_controller.php:105
+msgid "Invoices item deleted"
+msgstr ""
+
+#: plugins/orders/controllers/items_purchase_orders_controller.php:54
+msgid "The items purchase order has been saved"
+msgstr ""
+
+#: plugins/orders/controllers/items_purchase_orders_controller.php:79
+msgid "Items Purchase Order saved"
+msgstr ""
+
+#: plugins/orders/controllers/items_purchase_orders_controller.php:105
+msgid "Items purchase order deleted"
+msgstr ""
+
+#: plugins/orders/controllers/purchase_orders_controller.php:54
+msgid "The purchase order has been saved"
+msgstr ""
+
+#: plugins/orders/controllers/purchase_orders_controller.php:71
+msgid "The purchase order has been send"
+msgstr ""
+
+#: plugins/orders/controllers/purchase_orders_controller.php:73
+msgid "An error has occurred sending the purchase order"
+msgstr ""
+
+#: plugins/orders/controllers/purchase_orders_controller.php:100
+msgid "Purchase Order saved"
+msgstr ""
+
+#: plugins/orders/controllers/purchase_orders_controller.php:129
+msgid "Purchase order deleted"
+msgstr ""
+
+#: plugins/orders/models/Invoice.php:117
+msgid "Could not save the invoice, please check your inputs."
+msgstr ""
+
+#: plugins/orders/models/Invoice.php:139;171;193
+msgid "Invalid Invoice"
+msgstr ""
+
+#: plugins/orders/models/Invoice.php:211
+msgid "You need to confirm to delete this Invoice"
+msgstr ""
+
+#: plugins/orders/models/invoices_item.php:55
+msgid "Please enter a Invoice"
+msgstr ""
+
+#: plugins/orders/models/invoices_item.php:61
+msgid "Please enter a Tax"
+msgstr ""
+
+#: plugins/orders/models/invoices_item.php:84
+#: plugins/orders/models/purchase_order.php:136;173
+msgid "Could not save the purchaseOrder, please check your inputs."
+msgstr ""
+
+#: plugins/orders/models/invoices_item.php:106;138;160
+#: plugins/orders/models/purchase_order.php:161;194;226
+msgid "Invalid Purchase Order"
+msgstr ""
+
+#: plugins/orders/models/invoices_item.php:178
+#: plugins/orders/models/purchase_order.php:244
+msgid "You need to confirm to delete this Purchase Order"
+msgstr ""
+
+#: plugins/orders/models/items_purchase_order.php:78
+msgid "Could not save the itemsPurchaseOrder, please check your inputs."
+msgstr ""
+
+#: plugins/orders/models/items_purchase_order.php:100;132;154
+msgid "Invalid Items Purchase Order"
+msgstr ""
+
+#: plugins/orders/models/items_purchase_order.php:172
+msgid "You need to confirm to delete this Items Purchase Order"
+msgstr ""
+
+#: plugins/orders/models/purchase_order.php:111
+msgid "Provider is required"
+msgstr ""
+
+#: plugins/orders/models/purchase_order.php:139
+msgid "A purchase order must have at least one item"
+msgstr ""
+
+#: plugins/orders/views/invoices/add.ctp:3
+msgid "Add Invoice"
+msgstr ""
+
+#: plugins/orders/views/invoices/edit.ctp:3
+#: plugins/orders/views/invoices/view.ctp:38
+msgid "Edit Invoice"
+msgstr ""
+
+#: plugins/orders/views/invoices/index.ctp:2
+msgid "Invoices"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:2
+#: plugins/orders/views/invoices_items/view.ctp:9
+#: plugins/orders/views/purchase_orders/send.ctp:19
+#: plugins/orders/views/purchase_orders/view.ctp:19
+msgid "Invoice"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:19
+msgid "Subtotal"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:24
+#: plugins/orders/views/invoices_items/view.ctp:29
+msgid "Tax"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:29
+msgid "Total"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:39
+msgid "Delete Invoice"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:40
+msgid "List Invoices"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:41
+msgid "New Invoice"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:42
+msgid "List Organizations"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:43
+msgid "New Organization"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:44
+msgid "List Purchase Orders"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:45
+msgid "New Purchase Order"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:46
+msgid "List Items"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:47
+msgid "New Item"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:51
+msgid "Related Purchase Orders"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:57
+msgid "Invoice Id"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:84
+msgid "Related Items"
+msgstr ""
+
+#: plugins/orders/views/invoices/view.ctp:97
+#: plugins/orders/views/purchase_orders/send.ctp:46
+#: plugins/orders/views/purchase_orders/view.ctp:46
+msgid "Category Id"
+msgstr ""
+
+#: plugins/orders/views/invoices_items/add.ctp:3
+msgid "Add Invoices Item"
+msgstr ""
+
+#: plugins/orders/views/invoices_items/edit.ctp:3
+msgid "Edit Invoices Item"
+msgstr ""
+
+#: plugins/orders/views/invoices_items/index.ctp:2
+msgid "Invoices Items"
+msgstr ""
+
+#: plugins/orders/views/invoices_items/view.ctp:2
+msgid "Invoices Item"
+msgstr ""
+
+#: plugins/orders/views/invoices_items/view.ctp:24
+msgid "Price"
+msgstr ""
+
+#: plugins/orders/views/items_purchase_orders/add.ctp:3
+msgid "Add Items Purchase Order"
+msgstr ""
+
+#: plugins/orders/views/items_purchase_orders/edit.ctp:3
+msgid "Edit Items Purchase Order"
+msgstr ""
+
+#: plugins/orders/views/items_purchase_orders/index.ctp:2
+msgid "Items Purchase Orders"
+msgstr ""
+
+#: plugins/orders/views/items_purchase_orders/view.ctp:2
+msgid "Items Purchase Order"
+msgstr ""
+
+#: plugins/orders/views/items_purchase_orders/view.ctp:14
+#: plugins/orders/views/purchase_orders/send.ctp:2
+#: plugins/orders/views/purchase_orders/view.ctp:2
+msgid "Purchase Order"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/add.ctp:4
+msgid "Add Purchase Order"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/add.ctp:11
+#: plugins/orders/views/purchase_orders/edit.ctp:10
+msgid "Select"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/add.ctp:19
+#: plugins/orders/views/purchase_orders/edit.ctp:18
+msgid "Order Content"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/add.ctp:27
+#: plugins/orders/views/purchase_orders/edit.ctp:26
+msgid "Package"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/edit.ctp:3
+msgid "Edit Purchase Order"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/index.ctp:4
+msgid "Purchase Orders"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/send.ctp:24
+#: plugins/orders/views/purchase_orders/view.ctp:24
+msgid "Status"
+msgstr ""
+
+#: plugins/orders/views/purchase_orders/view.ctp:74
+msgid "Send"
+msgstr ""
+
+#: plugins/templates/vendors/subtemplate.php:183
+msgid "Could not find template for %s"
+msgstr ""
+
+#: views/layouts/default.ctp:33
+msgid "Siaplus 2 - "
+msgstr ""
+
+#: views/layouts/default.ctp:50
+msgid "Representaciones IV Gemaquin - "
+msgstr ""
+
+#: views/layouts/default.ctp:51;108
+msgid "Logout"
+msgstr ""
+
+#: views/layouts/default.ctp:67
+msgid "Buscar"
+msgstr ""
+
+#: views/layouts/default.ctp:70
+#: views/pages/home.ctp:13
+msgid "Clientes"
+msgstr ""
+
+#: views/layouts/default.ctp:72
+msgid "Nuevo cliente"
+msgstr ""
+
+#: views/layouts/default.ctp:73
+msgid "Listar clientes"
+msgstr ""
+
+#: views/layouts/default.ctp:78
+#: views/pages/home.ctp:14
+msgid "Proveedores"
+msgstr ""
+
+#: views/layouts/default.ctp:80
+msgid "Nuevo proveedor"
+msgstr ""
+
+#: views/layouts/default.ctp:81
+msgid "Listar proveedores"
+msgstr ""
+
+#: views/layouts/default.ctp:83
+#: views/pages/home.ctp:15
+msgid "Contactos"
+msgstr ""
+
+#: views/layouts/default.ctp:85
+msgid "Nuevo contacto"
+msgstr ""
+
+#: views/layouts/default.ctp:86
+msgid "Listar contactos"
+msgstr ""
+
+#: views/layouts/default.ctp:88
+msgid "Categorias"
+msgstr ""
+
+#: views/layouts/default.ctp:90
+msgid "Nueva categoria"
+msgstr ""
+
+#: views/layouts/default.ctp:91
+msgid "Listar categorias"
+msgstr ""
+
+#: views/layouts/default.ctp:95
+msgid "Nuevo item"
+msgstr ""
+
+#: views/layouts/default.ctp:96
+msgid "Listar items"
+msgstr ""
+
+#: views/layouts/default.ctp:98
+#: views/pages/home.ctp:18
+msgid "Usuarios"
+msgstr ""
+
+#: views/layouts/default.ctp:100
+msgid "Nuevo usuario"
+msgstr ""
+
+#: views/layouts/default.ctp:101
+msgid "Listar usuarios"
+msgstr ""
+
+#: views/layouts/default.ctp:104
+msgid "Sistema"
+msgstr ""
+
+#: views/layouts/main.ctp:34
+msgid "Siaplus 2 - Representaciones IV Gemaquin C.A."
+msgstr ""
+
+#: views/pages/home.ctp:16
+msgid "Categorías"
+msgstr ""
+
+#: views/plugins/categories/categories/index.ctp:37
+msgid "View as Tree"
+msgstr ""
+
+#: webroot/test.php:88
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
