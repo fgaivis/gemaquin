@@ -12,6 +12,8 @@
 			</th>
 			<th><?php echo $this->Paginator->sort('organization_id');?>
 			</th>
+			<th><?php echo $this->Paginator->sort('status');?>
+			</th>
 			<th><?php echo $this->Paginator->sort('invoice_id');?>
 			</th>
 			<th class="actions"><?php __('Actions');?>
@@ -36,6 +38,9 @@ foreach ($purchaseOrders as $purchaseOrder):
 		</td>
 		<td>
 			<?php echo $this->Html->link($purchaseOrder['Provider']['name'], array('controller' => 'organizations', 'action' => 'view', $purchaseOrder['Provider']['id'])); ?>
+		</td>
+		<td>
+			<?php echo $purchaseOrder['PurchaseOrder']['status'];  ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($purchaseOrder['Invoice']['number'], array('controller' => 'invoices', 'action' => 'view', $purchaseOrder['Invoice']['id'])); ?>
