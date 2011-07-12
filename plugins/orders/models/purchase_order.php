@@ -55,7 +55,7 @@ class PurchaseOrder extends AppModel {
 
 	public $hasMany = array(
 		'ItemsPurchaseOrder' => array(
-			'className' => 'ItemsPurchaseOrder',
+			'className' => 'Orders.ItemsPurchaseOrder',
 			'foreignKey' => 'purchase_order_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -162,14 +162,15 @@ class PurchaseOrder extends AppModel {
 		}
 		$this->set($purchaseOrder);
 
-		if (!empty($data)) {
-			$this->set($data);
-			$result = $this->save(null, true);
-			if ($result) {
-				$this->data = $result;
+		if (!empty($data['ItemsPurchaseOrder'])){
+			$data['PurchaseOrder']['id'] = $id;
+			$this->ItemsPurchaseOrder->deleteAll(array('purchase_order_id' => $id));
+			$result = $this->saveAll($data);
+			if ($result !== false) {
+				$this->data = $data;
 				return true;
 			} else {
-				return $data;
+				throw new OutOfBoundsException(__('Could not save the purchaseOrder, please check your inputs.', true));
 			}
 		} else {
 			return $purchaseOrder;
@@ -246,5 +247,4 @@ class PurchaseOrder extends AppModel {
 
 
 }
-?>
 

@@ -14,7 +14,6 @@ $(function(){
 							.find('li')
 								.addClass('ui-selectee')
 				    $('#items').show();
-
 			    }
 		    });
 		} else {
@@ -23,6 +22,12 @@ $(function(){
             $('#save').attr('disabled','disabled');
 		}
 	});
+   	if ($("#providers").val() != '') { //edit
+   	   	$("#providers").change();
+   	   	$("#orderTable").show();
+	    $('#save').removeAttr('disabled');
+	    $('#providers').attr('disabled', 'disabled');
+   	}
 	$("#poadd").submit(function(){
 			$('#providers').removeAttr('disabled');
 			return true;
@@ -34,6 +39,7 @@ $(function(){
 		    $('#orderTable').hide();
 		    $('#save').attr('disabled','disabled');
 	    }
+	    return false;
     });
 });
 
@@ -53,7 +59,7 @@ function addItem(itemId) {
 			    row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
 			    row.append(
 				    '<td>' +
-					    '<a class="delete" item="'+ data.content.Item.id +'">Delete</a>' +
+					    '<a href="#" class="delete" item="'+ data.content.Item.id +'">Delete</a>' +
 					    '<input type="hidden" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][item_id]" value="'+  data.content.Item.id +'">' +
 				    '</td>'
 			    );
