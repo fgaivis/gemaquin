@@ -1,3 +1,4 @@
+<?php $this->layout = 'main'; ?>
 <article class="module width_full">
 	<!-- <header><h3><?php //__d('users', 'Login') ?></h3></header>  -->
 	<fieldset>

@@ -21,8 +21,9 @@ class InventoryItemsController extends InventoryAppController {
  * 
  * @access public
  */
-	public function index() {
+	public function index($entry) {
 		$this->InventoryItem->recursive = 0;
+		$this->paginate['conditions'] = array('inventory_entry_id' => $entry);
 		$this->set('inventoryItems', $this->paginate()); 
 	}
 
@@ -47,12 +48,16 @@ class InventoryItemsController extends InventoryAppController {
  * 
  * @access public
  */
-	public function add() {
+	public function add($entry) {
 		try {
+			$order = $this->InventoryItem->InventoryEntry->field('purchase_order_id', array('InventoryEntry.id' => $entry));
+			if (!$order) {
+				throw new Exception(__('Invalid inventory entry', true));
+			}
 			$result = $this->InventoryItem->add($this->data['InventoryItem']);
 			if ($result === true) {
 				$this->Session->setFlash(__('The inventory item has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller' => 'inventory_entries', 'action' => 'index'));
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
@@ -60,10 +65,12 @@ class InventoryItemsController extends InventoryAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$orders = $this->InventoryItem->PurchaseOrder->find('list');
 		$transaction = String::uuid();
-		$this->set(compact('orders', 'transaction'));
- 
+		$items = $this->InventoryItem->Item->find('all', array(
+			'contain' => array(),
+			'conditions' => $this->InventoryItem->Item->parseCriteria(array('purchase_order' => $order))
+		));
+		$this->set(compact('order', 'transaction', 'items', 'entry'));
 	}
 
 /**
