@@ -786,6 +786,10 @@ div.input select {
 	color: #666666;
 }
 
+div.input select[multiple] {
+	height:100px;
+}
+
 div.input textarea {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
