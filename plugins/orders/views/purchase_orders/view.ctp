@@ -69,7 +69,8 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
+<?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) :?>
 <?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'send')));?>
 <?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
 <?php echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
-
+<?php endif;?>

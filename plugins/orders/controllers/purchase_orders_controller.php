@@ -72,7 +72,7 @@ class PurchaseOrdersController extends AppController {
 		} else {
 		    $this->Session->setFlash(__('An error has occurred sending the purchase order', true));
 		}
-	    $this->view($this->data['PurchaseOrder']['id']);
+	    $this->redirect(array('action' => 'view',$this->data['PurchaseOrder']['id']));
 	}
 
 	public function fill_items($organization_id) {
