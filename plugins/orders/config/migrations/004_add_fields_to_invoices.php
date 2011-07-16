@@ -17,7 +17,7 @@ class M4e21d9ebea6046e799071a1e94e05dd2 extends CakeMigration {
  */
 	public $migration = array(
 		'up' => array(
-			'add_field' => array(
+			'create_field' => array(
 				'invoices' => array(
 					'insurance' => array('type' => 'float', 'null' => false, 'default' => '0'),
 					'shipping' => array('type' => 'float', 'null' => false, 'default' => '0'),
