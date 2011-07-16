@@ -229,6 +229,10 @@ class Invoice extends OrdersAppModel {
 		}
 	}
 
-
+	public function afterSave() {
+		unset($this->data['Invoice']);
+		$this->data['PurchaseOrder']['invoice_id'] = $this->id;
+		$result = $this->PurchaseOrder->save($this->data);
+	}
 }
 ?>

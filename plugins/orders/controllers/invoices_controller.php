@@ -65,7 +65,10 @@ class InvoicesController extends AppController {
 		$organizations = $this->Invoice->Organization->find('list');
 		$items = $this->Invoice->Item->find('list');
 		if (isset($this->data['PurchaseOrder'])) {
-			//TODO set purchase order
+			$purchaseOrder = $this->Invoice->PurchaseOrder->find('first', array(
+				'conditions' => array(
+					'id' => $this->data['PurchaseOrder']['id'])));
+			$this->data['Invoice']['organization_id'] = $purchaseOrder['PurchaseOrder']['organization_id'];
 		} else if (isset($this->data['SalesOrder'])) {
 			//TODO set sales order
 		}
