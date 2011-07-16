@@ -74,3 +74,11 @@
 <?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
 <?php echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
 <?php endif;?>
+<?php echo $this->Form->create('PurchaseOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
+<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
+<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::PURCHASE));?>
+<?php echo $this->Form->end(array('label'=>__('Add Invoice', true),'id'=>'addInvoice'));?>
+<?php echo $this->Form->create('PurchaseOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
+<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
+<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::DRAFT));?>
+<?php echo $this->Form->end(array('label'=>__('Add Draft Invoice', true),'id'=>'addInvoice'));?>

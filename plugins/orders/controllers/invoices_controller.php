@@ -49,10 +49,12 @@ class InvoicesController extends AppController {
  */
 	public function add() {
 		try {
-			$result = $this->Invoice->add($this->data);
-			if ($result === true) {
-				$this->Session->setFlash(__('The invoice has been saved', true));
-				$this->redirect(array('action' => 'index'));
+			if (isset($this->data['Invoice']) && isset($this->data['Invoice']['organization_id'])) {
+				$result = $this->Invoice->add($this->data);
+				if ($result === true) {
+					$this->Session->setFlash(__('The invoice has been saved', true));
+					$this->redirect(array('action' => 'index'));
+				}
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
@@ -62,6 +64,11 @@ class InvoicesController extends AppController {
 		}
 		$organizations = $this->Invoice->Organization->find('list');
 		$items = $this->Invoice->Item->find('list');
+		if (isset($this->data['PurchaseOrder'])) {
+			//TODO set purchase order
+		} else if (isset($this->data['SalesOrder'])) {
+			//TODO set sales order
+		}
 		$this->set(compact('organizations', 'items'));
  
 	}
