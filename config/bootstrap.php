@@ -49,4 +49,4 @@
  *
  */
 
-Configure::write('config.language','spa');
+Configure::write('Config.language','spa');
