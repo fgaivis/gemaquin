@@ -1,8 +1,6 @@
 # LANGUAGE translation of CakePHP Application
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 #
-msgid ""
-msgstr ""
 "Project-Id-Version: GEMAQUIN\n"
 "POT-Creation-Date: 2011-07-12 22:07+0000\n"
 "PO-Revision-Date: 2011-07-16 13:59-0430\n"
