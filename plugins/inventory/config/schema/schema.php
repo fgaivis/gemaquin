@@ -1,5 +1,5 @@
 <?php 
-/* inventory schema generated on: 2011-07-12 01:52:38 : 1310435558*/
+/* inventory schema generated on: 2011-07-18 02:27:22 : 1310956042*/
 class inventorySchema extends CakeSchema {
 	var $name = 'inventory';
 
@@ -10,6 +10,15 @@ class inventorySchema extends CakeSchema {
 	function after($event = array()) {
 	}
 
+	var $inventory = array(
+		'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8', 'key' => 'primary'),
+		'item_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'batch' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 100, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'expiration_date' => array('type' => 'date', 'null' => false, 'default' => NULL),
+		'quantity' => array('type' => 'integer', 'null' => false, 'default' => NULL),
+		'indexes' => array(),
+		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
+	);
 	var $inventory_entries = array(
 		'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'user_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),

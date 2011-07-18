@@ -98,7 +98,7 @@
 		<h3><?php echo __('Inventario', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Ingresar a inventario', true), array('controller' => 'inventory_entries', 'action' => 'add', 'plugin' => 'inventory', 'admin' => false))?></li>
-			<li class="icn_categories"><?php echo $this->Html->link(__('Ver entradas de inventario', true), array('controller' => 'inventory_entries', 'action' => 'index', 'plugin' => 'inventory', 'admin' => false))?></li>
+			<li class="icn_categories"><?php echo $this->Html->link(__('Ver entradas de inventario', true), array('controller' => 'inventory', 'action' => 'stock', 'plugin' => 'inventory', 'admin' => false))?></li>
 			<!-- <li class="icn_categories"><?php //echo $this->Html->link(__('Ver entradas de inventario', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li> -->
 		</ul>
 		<h3><?php echo __('Ordenes de compra', true); ?></h3>
