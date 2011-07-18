@@ -6,5 +6,7 @@ $map = array(
 		'002_add_status_to_purchase_order' => 'M4dc59b3eb87845ba94346ff794e05dd2'),
 	3 => array(
 		'003_purchase_order_number_autoincrement' => 'M4e0f97ae87e44d1abdfd49b294e05dd2'),
+	4 => array(
+		'004_add_fields_to_invoices' => 'M4e21d9ebea6046e799071a1e94e05dd2'),
 );
 ?>

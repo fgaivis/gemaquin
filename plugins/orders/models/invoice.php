@@ -1,5 +1,5 @@
 <?php
-class Invoice extends AppModel {
+class Invoice extends OrdersAppModel {
 /**
  * Name
  *
@@ -7,14 +7,25 @@ class Invoice extends AppModel {
  * @access public
  */
 	public $name = 'Invoice';
+	
+/**
+ * Types
+ */
+	const DRAFT = 'DRAFT';
+	const CREDITNOTE = 'CREDITNOTE';
+	const DEBITNOTE = 'DEBITNOTE';
+	const SALES = 'SALES';
+	const PURCHASE = 'PURCHASE';
+	const SERVICE = 'SERVICE';
+	
 
 /**
- * Display field name
+ * Validation parameters - initialized in constructor
  *
- * @var string
+ * @var array
  * @access public
  */
-	public $displayField = 'number';
+	public $validate = array();
 
 /**
  * belongsTo association
@@ -92,6 +103,12 @@ class Invoice extends AppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
+			'number' => array(
+				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Number', true))),
+			'organization_id' => array(
+				'uuid' => array('rule' => array('uuid'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Organization', true))),
+			'type' => array(
+				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Type', true))),
 		);
 	}
 
@@ -212,6 +229,10 @@ class Invoice extends AppModel {
 		}
 	}
 
-
+	public function afterSave() {
+		unset($this->data['Invoice']);
+		$this->data['PurchaseOrder']['invoice_id'] = $this->id;
+		$result = $this->PurchaseOrder->save($this->data);
+	}
 }
 ?>

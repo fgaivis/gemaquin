@@ -1,5 +1,5 @@
 <div class="invoices view">
-<header><h3><?php  __('Invoice');?></h3></header>
+<h2><?php  __('Invoice');?></h2>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
@@ -31,21 +31,37 @@
 			<?php echo $invoice['Invoice']['total']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Insurance'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $invoice['Invoice']['insurance']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Shipping'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $invoice['Invoice']['shipping']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Customs Tax'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $invoice['Invoice']['customs_tax']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Customs Adm'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $invoice['Invoice']['customs_adm']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Internal Shipping'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $invoice['Invoice']['internal_shipping']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Type'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $invoice['Invoice']['type']; ?>
+			&nbsp;
+		</dd>
 	</dl>
-</div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Invoice', true), array('action' => 'edit', $invoice['Invoice']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Invoice', true), array('action' => 'delete', $invoice['Invoice']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Invoices', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Invoice', true), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Organizations', true), array('controller' => 'organizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Organization', true), array('controller' => 'organizations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Purchase Orders', true), array('controller' => 'purchase_orders', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Purchase Order', true), array('controller' => 'purchase_orders', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Items', true), array('controller' => 'items', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item', true), array('controller' => 'items', 'action' => 'add')); ?> </li>
-	</ul>
 </div>
 <div class="related">
 	<h3><?php __('Related Purchase Orders');?></h3>
@@ -53,8 +69,10 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Id'); ?></th>
+		<th><?php __('Number'); ?></th>
 		<th><?php __('Organization Id'); ?></th>
 		<th><?php __('Invoice Id'); ?></th>
+		<th><?php __('Status'); ?></th>
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -67,8 +85,10 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $purchaseOrder['id'];?></td>
+			<td><?php echo $purchaseOrder['number'];?></td>
 			<td><?php echo $purchaseOrder['organization_id'];?></td>
 			<td><?php echo $purchaseOrder['invoice_id'];?></td>
+			<td><?php echo $purchaseOrder['status'];?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'purchase_orders', 'action' => 'view', $purchaseOrder['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'purchase_orders', 'action' => 'edit', $purchaseOrder['id'])); ?>
@@ -78,9 +98,8 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-
-	
-<div class="related">
+</div>
+<!--  <div class="related">
 	<h3><?php __('Related Items');?></h3>
 	<?php if (!empty($invoice['Item'])):?>
 	<table cellpadding = "0" cellspacing = "0">
@@ -125,5 +144,4 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-
-	
+-->
