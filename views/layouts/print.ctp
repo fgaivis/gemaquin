@@ -12,5 +12,6 @@
 		<?php echo $content_for_layout; ?>
   </div>
 </div>
+<script> window.print(); </script>
 </body>
 </html>
