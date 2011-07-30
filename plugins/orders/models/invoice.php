@@ -1,4 +1,6 @@
 <?php
+App::import('Model', 'Orders.PurchaseOrder');
+
 class Invoice extends OrdersAppModel {
 /**
  * Name
@@ -49,10 +51,23 @@ class Invoice extends OrdersAppModel {
  * @access public
  */
 
-	public $hasMany = array(
+	public $hasOne = array(
 		'PurchaseOrder' => array(
 			'className' => 'PurchaseOrder',
 			'foreignKey' => 'invoice_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+		'PrePurchaseOrder' => array(
+			'className' => 'PurchaseOrder',
+			'foreignKey' => 'draft_invoice_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
@@ -105,8 +120,6 @@ class Invoice extends OrdersAppModel {
 		$this->validate = array(
 			'number' => array(
 				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Number', true))),
-			'organization_id' => array(
-				'uuid' => array('rule' => array('uuid'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Organization', true))),
 			'type' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Type', true))),
 		);
@@ -126,7 +139,13 @@ class Invoice extends OrdersAppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
-			$result = $this->save($data);
+			if (isset($data['PurchaseOrder'])) {
+				$data['PurchaseOrder']['status'] = PurchaseOrder::INVOICED;
+			} else if (isset($data['PrePurchaseOrder'])) {
+				$data['PrePurchaseOrder']['status'] = PurchaseOrder::PREINVOICED;
+			}
+			$result = $this->saveAll($data);
+			$result = $this->InvoicesItem->saveAll($data['InvoicesItem']);
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;
@@ -229,10 +248,5 @@ class Invoice extends OrdersAppModel {
 		}
 	}
 
-	public function afterSave() {
-		unset($this->data['Invoice']);
-		$this->data['PurchaseOrder']['invoice_id'] = $this->id;
-		$result = $this->PurchaseOrder->save($this->data);
-	}
 }
 ?>

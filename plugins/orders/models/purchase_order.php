@@ -5,7 +5,7 @@ class PurchaseOrder extends AppModel {
  * Purchase Order Statuses
  */
 	const DRAFT = 'DRAFT';
-	const SEND = 'SEND';
+	const SENT = 'SENT';
 	const APPROVED = 'APPROVED';
 	const PREINVOICED = 'PREINVOICED'; //FACTURA PROFORMA PARA CADIVI. SE GUARDAN CAMPOS ADICIONALES TALES COMO: NRO PLANILLA, SEGURO, ENVIO, PESO, NACIONALIZACION,
 	const INVOICED = 'INVOICED';
@@ -50,7 +50,14 @@ class PurchaseOrder extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
+		),
+		'PreInvoice' => array(
+			'className' => 'Orders.Invoice',
+			'foreignKey' => 'draft_invoice_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)	
 	);
 
 	public $hasMany = array(
