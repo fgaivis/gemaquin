@@ -63,12 +63,12 @@ class InvoicesController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 		$organizations = $this->Invoice->Organization->find('list');
-		$items = $this->Invoice->Item->find('list');
-		if (isset($this->data['PurchaseOrder'])) {
-			$purchaseOrder = $this->Invoice->PurchaseOrder->find('first', array(
+		$items = array();
+		if (isset($this->data['PrePurchaseOrder'])) {
+			$items = $this->Invoice->PrePurchaseOrder->ItemsPurchaseOrder->find('all', array(
+				'contain' => array('Item'),
 				'conditions' => array(
-					'id' => $this->data['PurchaseOrder']['id'])));
-			$this->data['Invoice']['organization_id'] = $purchaseOrder['PurchaseOrder']['organization_id'];
+					'ItemsPurchaseOrder.purchase_order_id' => $this->data['PrePurchaseOrder']['id'])));
 		} else if (isset($this->data['SalesOrder'])) {
 			//TODO set sales order
 		}

@@ -1,26 +1,20 @@
 <?php
-App::import('Model', 'Orders.PurchaseOrder');
-
-class Invoice extends OrdersAppModel {
+class SalesOrder extends AppModel {
 /**
  * Name
  *
  * @var string $name
  * @access public
  */
-	public $name = 'Invoice';
-	
-/**
- * Types
- */
-	const DRAFT = 'DRAFT';
-	const CREDITNOTE = 'CREDITNOTE';
-	const DEBITNOTE = 'DEBITNOTE';
-	const SALES = 'SALES';
-	const PURCHASE = 'PURCHASE';
-	const SERVICE = 'SERVICE';
-	
+	public $name = 'SalesOrder';
 
+/**
+ * Display field name
+ *
+ * @var string
+ * @access public
+ */
+	public $displayField = 'number';
 /**
  * Validation parameters - initialized in constructor
  *
@@ -42,44 +36,31 @@ class Invoice extends OrdersAppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
-	);
-/**
- * hasMany association
- *
- * @var array $hasMany
- * @access public
- */
-
-	public $hasOne = array(
-		'PurchaseOrder' => array(
-			'className' => 'PurchaseOrder',
-			'foreignKey' => 'invoice_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		),
-		'PrePurchaseOrder' => array(
-			'className' => 'PurchaseOrder',
-			'foreignKey' => 'draft_invoice_id',
-			'dependent' => false,
+		'Invoice' => array(
+			'className' => 'Invoice',
+			'foreignKey' => 'invoice_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
+			'order' => ''
 		)
 	);
-
+	
+	public $hasMany = array(
+			'InvItemsSalesOrder' => array(
+				'className' => 'Orders.InvItemsSalesOrder',
+				'foreignKey' => 'sales_order_id',
+				'dependent' => false,
+				'conditions' => '',
+				'fields' => '',
+				'order' => '',
+				'limit' => '',
+				'offset' => '',
+				'exclusive' => '',
+				'finderQuery' => '',
+				'counterQuery' => ''
+			),
+	);
 /**
  * HABTM association
  *
@@ -88,11 +69,11 @@ class Invoice extends OrdersAppModel {
  */
 
 	public $hasAndBelongsToMany = array(
-		'Item' => array(
-			'className' => 'Item',
-			'joinTable' => 'invoices_items',
-			'foreignKey' => 'invoice_id',
-			'associationForeignKey' => 'item_id',
+		'InventoryItem' => array(
+			'className' => 'InventoryItem',
+			'joinTable' => 'inv_items_sales_orders',
+			'foreignKey' => 'sales_order_id',
+			'associationForeignKey' => 'inventory_item_id',
 			'unique' => true,
 			'conditions' => '',
 			'fields' => '',
@@ -120,8 +101,8 @@ class Invoice extends OrdersAppModel {
 		$this->validate = array(
 			'number' => array(
 				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Number', true))),
-			'type' => array(
-				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Type', true))),
+			'organization_id' => array(
+				'uuid' => array('rule' => array('uuid'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Organization', true))),
 		);
 	}
 
@@ -139,42 +120,36 @@ class Invoice extends OrdersAppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
-			if (isset($data['PurchaseOrder'])) {
-				$data['PurchaseOrder']['status'] = PurchaseOrder::INVOICED;
-			} else if (isset($data['PrePurchaseOrder'])) {
-				$data['PrePurchaseOrder']['status'] = PurchaseOrder::PREINVOICED;
-			}
-			$result = $this->saveAll($data);
-			$result = $this->InvoicesItem->saveAll($data['InvoicesItem']);
+			$result = $this->save($data);
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;
 			} else {
-				throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
+				throw new OutOfBoundsException(__('Could not save the salesOrder, please check your inputs.', true));
 			}
 			return $return;
 		}
 	}
 
 /**
- * Edits an existing Invoice.
+ * Edits an existing Sales Order.
  *
- * @param string $id, invoice id 
+ * @param string $id, sales order id 
  * @param array $data, controller post data usually $this->data
  * @return mixed True on successfully save else post data as array
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function edit($id = null, $data = null) {
-		$invoice = $this->find('first', array(
+		$salesOrder = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
 
-		if (empty($invoice)) {
-			throw new OutOfBoundsException(__('Invalid Invoice', true));
+		if (empty($salesOrder)) {
+			throw new OutOfBoundsException(__('Invalid Sales Order', true));
 		}
-		$this->set($invoice);
+		$this->set($salesOrder);
 
 		if (!empty($data)) {
 			$this->set($data);
@@ -186,52 +161,52 @@ class Invoice extends OrdersAppModel {
 				return $data;
 			}
 		} else {
-			return $invoice;
+			return $salesOrder;
 		}
 	}
 
 /**
- * Returns the record of a Invoice.
+ * Returns the record of a Sales Order.
  *
- * @param string $id, invoice id.
+ * @param string $id, sales order id.
  * @return array
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function view($id = null) {
-		$invoice = $this->find('first', array(
+		$salesOrder = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 
-		if (empty($invoice)) {
-			throw new OutOfBoundsException(__('Invalid Invoice', true));
+		if (empty($salesOrder)) {
+			throw new OutOfBoundsException(__('Invalid Sales Order', true));
 		}
 
-		return $invoice;
+		return $salesOrder;
 	}
 
 /**
  * Validates the deletion
  *
- * @param string $id, invoice id 
+ * @param string $id, sales order id 
  * @param array $data, controller post data usually $this->data
  * @return boolean True on success
  * @throws OutOfBoundsException If the element does not exists
  * @access public
  */
 	public function validateAndDelete($id = null, $data = array()) {
-		$invoice = $this->find('first', array(
+		$salesOrder = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
 
-		if (empty($invoice)) {
-			throw new OutOfBoundsException(__('Invalid Invoice', true));
+		if (empty($salesOrder)) {
+			throw new OutOfBoundsException(__('Invalid Sales Order', true));
 		}
 
-		$this->data['invoice'] = $invoice;
+		$this->data['salesOrder'] = $salesOrder;
 		if (!empty($data)) {
-			$data['Invoice']['id'] = $id;
+			$data['SalesOrder']['id'] = $id;
 			$tmp = $this->validate;
 			$this->validate = array(
 				'id' => array('rule' => 'notEmpty'),
@@ -239,14 +214,15 @@ class Invoice extends OrdersAppModel {
 
 			$this->set($data);
 			if ($this->validates()) {
-				if ($this->delete($data['Invoice']['id'])) {
+				if ($this->delete($data['SalesOrder']['id'])) {
 					return true;
 				}
 			}
 			$this->validate = $tmp;
-			throw new Exception(__('You need to confirm to delete this Invoice', true));
+			throw new Exception(__('You need to confirm to delete this Sales Order', true));
 		}
 	}
+
 
 }
 ?>

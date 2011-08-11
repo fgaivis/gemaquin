@@ -14,7 +14,7 @@ class InventoryItemsController extends InventoryAppController {
  * @var array
  * @access public
  */
-	public $helpers = array('Html', 'Form');
+	public $helpers = array('Html', 'Form', 'Time');
 
 /**
  * Index for inventory item.
@@ -120,5 +120,13 @@ class InventoryItemsController extends InventoryAppController {
 		}
 	}
 
+
+	public function report($entry) {
+		$this->paginate['contain'] = array(
+			'PurchaseOrder' => array('Provider', 'Invoice'),
+			'Item'
+		);
+		$this->index($entry);
+		$this->layout = 'print';
+	}
 }
-?>

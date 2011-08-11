@@ -1,0 +1,17 @@
+/* import core styles | Basis-Stylesheets einbinden */
+@import url(../yaml/core/base.css);
+/* import print layout | Druck-Layout einbinden */
+@import url(../yaml/print/print_100_draft.css);
+
+.pagebreak {
+	page-break-after:always;
+	visibility:hidden;
+}
+
+table {
+	border-collapse:collapse;
+}
+table tr td {
+	border:1px solid #ccc;
+	padding:3px 7px;
+}

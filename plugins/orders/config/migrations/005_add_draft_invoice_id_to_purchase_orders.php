@@ -1,5 +1,5 @@
 <?php
-class M4e1ba8e10abc4529b69cac7694e05dd2 extends CakeMigration {
+class M4e34518e0ef441dabd2f58cc94e05dd2 extends CakeMigration {
 
 /**
  * Migration description
@@ -17,8 +17,16 @@ class M4e1ba8e10abc4529b69cac7694e05dd2 extends CakeMigration {
  */
 	public $migration = array(
 		'up' => array(
+			'create_field' => array(
+				'purchase_orders' => array(
+					'draft_invoice_id' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_spanish_ci', 'charset' => 'utf8'),
+				),
+			),
 		),
 		'down' => array(
+			'drop_field' => array(
+				'purchase_orders' => array('draft_invoice_id',),
+			),
 		),
 	);
 

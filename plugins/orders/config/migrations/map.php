@@ -8,5 +8,9 @@ $map = array(
 		'003_purchase_order_number_autoincrement' => 'M4e0f97ae87e44d1abdfd49b294e05dd2'),
 	4 => array(
 		'004_add_fields_to_invoices' => 'M4e21d9ebea6046e799071a1e94e05dd2'),
+	5 => array(
+		'005_add_draft_invoice_id_to_purchase_orders' => 'M4e34518e0ef441dabd2f58cc94e05dd2'),
+	6 => array(
+		'006_create_table_sales_order' => 'M4e3488cb213c4d01984367be94e05dd2'),
 );
 ?>

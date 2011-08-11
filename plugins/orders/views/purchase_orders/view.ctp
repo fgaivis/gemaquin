@@ -72,16 +72,22 @@
 </div>
 <div class="actions">
 <?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) :?>
-<?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'send')));?>
-<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
-<?php echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
+	<?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'send')));?>
+	<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
+	<?php echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
 <?php endif;?>
-<?php echo $this->Form->create('PurchaseOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
-<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
-<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::PURCHASE));?>
-<?php echo $this->Form->end(array('label'=>__('Add Invoice', true),'id'=>'addInvoice'));?>
-<?php echo $this->Form->create('PurchaseOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
-<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
-<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::DRAFT));?>
-<?php echo $this->Form->end(array('label'=>__('Add Draft Invoice', true),'id'=>'addInvoice'));?>
+<?php if (in_array($purchaseOrder['PurchaseOrder']['status'], array(PurchaseOrder::DRAFT, PurchaseOrder::SENT, PurchaseOrder::PREINVOICED))) : ?>
+	<?php echo $this->Form->create('PurchaseOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
+	<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
+	<?php echo $this->Form->hidden('Organization.id', array('value' => $purchaseOrder['Provider']['id']));?>
+	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::PURCHASE));?>
+	<?php echo $this->Form->end(array('label'=>__('Add Invoice', true),'id'=>'addInvoice'));?>
+<?php endif;?>
+<?php if (in_array($purchaseOrder['PurchaseOrder']['status'], array(PurchaseOrder::DRAFT, PurchaseOrder::SENT))) : ?>
+	<?php echo $this->Form->create('PurchaseOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
+	<?php echo $this->Form->hidden('PrePurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
+	<?php echo $this->Form->hidden('Organization.id', array('value' => $purchaseOrder['Provider']['id']));?>
+	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::DRAFT));?>
+	<?php echo $this->Form->end(array('label'=>__('Add Draft Invoice', true),'id'=>'addInvoice'));?>
+<?php endif;?>
 </div>
