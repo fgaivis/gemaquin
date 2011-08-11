@@ -1,0 +1,239 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-07-18 14:35+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: \plugins\categories\controllers\categories_controller.php:113
+#: \plugins\categories\controllers\i18n_categories_controller.php:121
+msgid "The category has been saved"
+msgstr ""
+
+#: \plugins\categories\controllers\categories_controller.php:139
+#: \plugins\categories\controllers\i18n_categories_controller.php:152
+msgid "Category saved"
+msgstr ""
+
+#: \plugins\categories\controllers\categories_controller.php:164
+#: \plugins\categories\controllers\i18n_categories_controller.php:177
+msgid "Category deleted"
+msgstr ""
+
+#: \plugins\categories\models\categorized.php:53
+msgid "Foreign key can not be empty"
+msgstr ""
+
+#: \plugins\categories\models\categorized.php:55
+msgid "Category id can not be empty"
+msgstr ""
+
+#: \plugins\categories\models\categorized.php:57
+msgid "Model field can not be empty"
+msgstr ""
+
+#: \plugins\categories\models\category.php:84
+#: \plugins\categories\models\i18n_category.php:104
+msgid "Please enter a category name"
+msgstr ""
+
+#: \plugins\categories\models\category.php:103
+#: \plugins\categories\models\i18n_category.php:124
+msgid "Could not save the category, please check your inputs."
+msgstr ""
+
+#: \plugins\categories\models\category.php:128;162;185
+#: \plugins\categories\models\i18n_category.php:149;228;253
+msgid "Invalid Category"
+msgstr ""
+
+#: \plugins\categories\models\category.php:203
+#: \plugins\categories\models\i18n_category.php:271
+msgid "You need to confirm to delete this Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_add.ctp:14
+#: \views\plugins\categories\categories\admin_add.ctp:3
+#: \views\plugins\categories\categories\admin_edit.ctp:3
+msgid "Add Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_add.ctp:21
+#: \plugins\categories\views\categories\admin_edit.ctp:22
+#: \plugins\categories\views\i18n_categories\admin_add.ctp:21
+#: \plugins\categories\views\i18n_categories\admin_edit.ctp:30
+#: \views\plugins\categories\categories\admin_add.ctp:14
+#: \views\plugins\categories\categories\admin_edit.ctp:13
+msgid "Submit"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_edit.ctp:14
+#: \plugins\categories\views\categories\admin_view.ctp:43
+#: \plugins\categories\views\i18n_categories\admin_edit.ctp:14
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:43
+msgid "Edit Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:12
+#: \plugins\categories\views\categories\admin_tree.ctp:12
+#: \plugins\categories\views\categories\index.ctp:12
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:12
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:12
+#: \plugins\categories\views\i18n_categories\index.ctp:12
+#: \views\plugins\categories\categories\admin_tree.ctp:2
+#: \views\plugins\categories\categories\index.ctp:2
+msgid "Categories"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:16
+#: \plugins\categories\views\categories\index.ctp:16
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:16
+#: \plugins\categories\views\i18n_categories\index.ctp:16
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:26
+#: \plugins\categories\views\categories\index.ctp:26
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:26
+#: \plugins\categories\views\i18n_categories\index.ctp:26
+#: \views\plugins\categories\categories\index.ctp:8
+msgid "Actions"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:53
+#: \plugins\categories\views\categories\admin_tree.ctp:50
+#: \plugins\categories\views\categories\index.ctp:53
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:53
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:50
+#: \plugins\categories\views\i18n_categories\index.ctp:53
+msgid "View"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:54
+#: \plugins\categories\views\categories\admin_tree.ctp:52
+#: \plugins\categories\views\categories\index.ctp:54
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:54
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:52
+#: \plugins\categories\views\i18n_categories\index.ctp:54
+#: \views\plugins\categories\categories\admin_tree.ctp:41
+#: \views\plugins\categories\categories\index.ctp:29
+msgid "Edit"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:55
+#: \plugins\categories\views\categories\admin_tree.ctp:53
+#: \plugins\categories\views\categories\index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:53
+#: \plugins\categories\views\i18n_categories\index.ctp:55
+#: \views\plugins\categories\categories\admin_tree.ctp:42
+#: \views\plugins\categories\categories\index.ctp:30
+msgid "Delete"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:55
+#: \plugins\categories\views\categories\admin_view.ctp:44
+#: \plugins\categories\views\categories\index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:44
+#: \plugins\categories\views\i18n_categories\index.ctp:55
+#: \views\plugins\categories\categories\index.ctp:30
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:35
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:35
+#: \views\plugins\categories\categories\admin_tree.ctp:25
+msgid "No categories were added yet. :add-a-new-one now!"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:36
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:36
+#: \views\plugins\categories\categories\admin_tree.ctp:26
+msgid "Add a new one"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:43
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:43
+#: \views\plugins\categories\categories\admin_tree.ctp:33
+msgid "Add category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:51
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:51
+#: \views\plugins\categories\categories\admin_tree.ctp:40
+msgid "Add a child"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:12
+#: \plugins\categories\views\categories\view.ctp:12
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:12
+#: \plugins\categories\views\i18n_categories\view.ctp:12
+msgid "Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:14
+#: \plugins\categories\views\categories\view.ctp:14
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:14
+#: \plugins\categories\views\i18n_categories\view.ctp:14
+msgid "Parent Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:19
+#: \plugins\categories\views\categories\view.ctp:19
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:19
+#: \plugins\categories\views\i18n_categories\view.ctp:19
+msgid "User"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:24
+#: \plugins\categories\views\categories\view.ctp:24
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:24
+#: \plugins\categories\views\i18n_categories\view.ctp:24
+msgid "Name"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:29
+#: \plugins\categories\views\categories\view.ctp:29
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:29
+#: \plugins\categories\views\i18n_categories\view.ctp:29
+msgid "Description"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:34
+#: \plugins\categories\views\categories\view.ctp:34
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:34
+#: \plugins\categories\views\i18n_categories\view.ctp:34
+msgid "Created"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:44
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:44
+msgid "Delete Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:45
+#: \plugins\categories\views\categories\view.ctp:43
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:45
+#: \plugins\categories\views\i18n_categories\view.ctp:43
+msgid "List Categories"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:46
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:46
+msgid "New Category"
+msgstr ""
+
+#: \plugins\categories\views\i18n_categories\admin_add.ctp:14
+msgid "Add i18n Category"
+msgstr ""
+

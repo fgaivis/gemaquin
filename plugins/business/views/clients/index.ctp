@@ -60,6 +60,10 @@ foreach ($clients as $client):
 </table>
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
 </div>
-
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('Nuevo cliente', true), array('controller' => 'clients', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+	</ul>
+</div>
 
 

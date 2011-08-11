@@ -452,13 +452,13 @@ section#main {
 }
 
 .width_quarter {
-	width: 26%;
+	width: 30%;
 	margin-right: 0;
-	float: left;
+	/*float: left;*/
 }
 
 .width_3_quarter {
-	width: 66%;
+	width: 80%;
 	margin-right: 0;
 	float: left;
 }
@@ -609,6 +609,60 @@ html ul.tabs li:last-child,html ul.tabs li:last-child a {
 /* Messages */
 .message {
 	border-bottom: 1px dotted #cccccc;
+}
+
+/* View */
+.view dl {
+	margin: 20px;
+	margin-top: 10px;	
+}
+
+.view dl dt {
+	font-weight:  bold;	
+}
+
+.view dl dd {
+	font-weight: normal;
+}
+
+/* Actions on index */
+.actions {
+	margin-top: 12px;
+}
+
+.actions ul {
+	list-style: none;
+	padding: 0;
+	padding-left: 18px;
+	display: inline;
+}
+
+.actions ul li{
+	padding: 0;
+	display: inline;
+}
+
+.actions ul li a {
+	background: #D0D1D4 url(../img/btn_submit.png) repeat-x;
+	border: 1px solid #A8A9A8;
+	-webkit-box-shadow: 0 1px 0 #fff;
+	-moz-box-shadow: 0 1px 0 #fff;
+	box-shadow: 0 1px 0 #fff;
+	font-weight: bold;
+	height: 22px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 4px 10px;
+	color: #666;
+	text-shadow: 0 1px 0 #fff;
+	cursor: pointer;
+	margin: 10px 13px;
+}
+
+.actions ul li a:hover {
+	color: #333333;
+	text-decoration: none;
 }
 
 input[type=submit] {

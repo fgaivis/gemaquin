@@ -54,12 +54,12 @@
 	</dl>
 </div>
 
-<div class="related">
+<div class="related index">
 	<h3><?php __('Related Organizations');?></h3>
 	<?php if (!empty($item['Organization'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
+		<!-- <th><?php //__('Id'); ?></th> -->
 		<th><?php __('Code'); ?></th>
 		<th><?php __('Name'); ?></th>
 		<th><?php __('Description'); ?></th>
@@ -68,8 +68,8 @@
 		<th><?php __('Brand'); ?></th>
 		<th><?php __('Business'); ?></th>
 		<th><?php __('Type'); ?></th>
-		<th><?php __('Created'); ?></th>
-		<th><?php __('Modified'); ?></th>
+		<!-- <th><?php //__('Created'); ?></th>
+		<th><?php //__('Modified'); ?></th> -->
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -81,7 +81,7 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $organization['id'];?></td>
+			<!-- <td><?php //echo $organization['id'];?></td> -->
 			<td><?php echo $organization['code'];?></td>
 			<td><?php echo $organization['name'];?></td>
 			<td><?php echo $organization['description'];?></td>
@@ -90,8 +90,8 @@
 			<td><?php echo $organization['brand'];?></td>
 			<td><?php echo $organization['business'];?></td>
 			<td><?php echo $organization['type'];?></td>
-			<td><?php echo $organization['created'];?></td>
-			<td><?php echo $organization['modified'];?></td>
+			<!-- <td><?php //echo $organization['created'];?></td>
+			<td><?php //echo $organization['modified'];?></td> -->
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'organizations', 'action' => 'view', $organization['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'organizations', 'action' => 'edit', $organization['id'])); ?>
@@ -101,6 +101,7 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
+</div>
 
 	
 

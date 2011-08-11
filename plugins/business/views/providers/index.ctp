@@ -3,7 +3,7 @@
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('id');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
 	<th><?php echo $this->Paginator->sort('code');?></th>
 	<th><?php echo $this->Paginator->sort('name');?></th>
 	<th><?php echo $this->Paginator->sort('description');?></th>
@@ -24,9 +24,9 @@ foreach ($providers as $provider):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $provider['Provider']['id']; ?>
-		</td>
+		<!-- <td>
+			<?php //echo $provider['Provider']['id']; ?>
+		</td>  -->
 		<td>
 			<?php echo $provider['Provider']['code']; ?>
 		</td>
@@ -64,6 +64,10 @@ foreach ($providers as $provider):
 </table>
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
 </div>
-
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('Nuevo proveedor', true), array('controller' => 'providers', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+	</ul>
+</div>
 
 

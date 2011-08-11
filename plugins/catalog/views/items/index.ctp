@@ -3,7 +3,7 @@
 
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('id');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
 	<th><?php echo $this->Paginator->sort('name');?></th>
 	<th><?php echo $this->Paginator->sort('description');?></th>
 	<th><?php echo $this->Paginator->sort('barcode');?></th>
@@ -24,9 +24,9 @@ foreach ($items as $item):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $item['Item']['id']; ?>
-		</td>
+		<!-- <td>
+			<?php //echo $item['Item']['id']; ?>
+		</td> -->
 		<td>
 			<?php echo $item['Item']['name']; ?>
 		</td>
@@ -64,5 +64,9 @@ foreach ($items as $item):
 </table>
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
 </div>
-
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('Nuevo item', true), array('controller' => 'items', 'action' => 'add', 'plugin' => 'catalog', 'admin' => false))?></li>
+	</ul>
+</div>
 

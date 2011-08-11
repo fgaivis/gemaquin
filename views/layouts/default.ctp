@@ -109,7 +109,7 @@
 		<h3><?php echo __('Usuarios', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_add_user"><?php echo $this->Html->link(__('Nuevo usuario', true), array('controller' => 'users', 'action' => 'admin_add', 'plugin' => 'users'))?></li>
-			<li class="icn_view_users"><?php echo $this->Html->link(__('Listar usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users'))?></li>
+			<li class="icn_view_users"><?php echo $this->Html->link(__('Listar usuarios', true), array('controller' => 'users', 'action' => 'admin_index', 'plugin' => 'users'))?></li>
 			<!-- <li class="icn_profile"><a href="#">Your Profile</a></li> -->
 		</ul>
 		<h3><?php echo __('Sistema', true); ?></h3>

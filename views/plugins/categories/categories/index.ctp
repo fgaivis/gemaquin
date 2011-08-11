@@ -34,6 +34,11 @@ foreach ($categories as $category):
 </table>
 <?php echo $this->element('paging');?>
 <footer>
-	<p><?php echo $this->Html->link(__('View as Tree', true), array('action' => 'admin_tree')); ?></p>
+	<p style="margin-left: 10px;"><?php echo $this->Html->link(__('View as Tree', true), array('action' => 'admin_tree')); ?></p>
 </footer>
+</div>
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('Nueva categoria', true), array('controller' => 'categories', 'action' => 'admin_add', 'plugin' => 'categories'))?></li>
+	</ul>
 </div>
