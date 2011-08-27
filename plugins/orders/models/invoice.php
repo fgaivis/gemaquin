@@ -87,24 +87,21 @@ class Invoice extends OrdersAppModel {
  * @access public
  */
 
-	public $hasAndBelongsToMany = array(
-		'Item' => array(
-			'className' => 'Item',
-			'joinTable' => 'invoices_items',
+	public $hasMany = array(
+		'InvoicesItem' => array(
+			'className' => 'Orders.InvoicesItem',
 			'foreignKey' => 'invoice_id',
-			'associationForeignKey' => 'item_id',
-			'unique' => true,
+			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
+			'exclusive' => '',
 			'finderQuery' => '',
-			'deleteQuery' => '',
-			'insertQuery' => ''
-		)
+			'counterQuery' => ''
+		),
 	);
-
 
 
 /**
@@ -144,8 +141,15 @@ class Invoice extends OrdersAppModel {
 			} else if (isset($data['PrePurchaseOrder'])) {
 				$data['PrePurchaseOrder']['status'] = PurchaseOrder::PREINVOICED;
 			}
+			$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
+			unset($data['InvoicesItem']);
+			$data['Invoice'] = array_filter($data['Invoice']);
 			$result = $this->saveAll($data);
-			$result = $this->InvoicesItem->saveAll($data['InvoicesItem']);
+			
+			foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
+				$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
+			}
+			$result = $this->InvoicesItem->saveAll($invoicesItem['InvoicesItem']);
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;
@@ -155,6 +159,7 @@ class Invoice extends OrdersAppModel {
 			return $return;
 		}
 	}
+
 
 /**
  * Edits an existing Invoice.
@@ -202,7 +207,6 @@ class Invoice extends OrdersAppModel {
 		$invoice = $this->find('first', array(
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
-
 		if (empty($invoice)) {
 			throw new OutOfBoundsException(__('Invalid Invoice', true));
 		}
