@@ -1,0 +1,2706 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2011-07-18 14:35+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: \app_controller.php:83
+msgid "Sorry, but you need to be logged in to access this location."
+msgstr ""
+
+#: \app_controller.php:84
+msgid "Invalid credentials. Please try again or create an account."
+msgstr ""
+
+#: \config\selectables.php:5
+msgid "Billing Address"
+msgstr ""
+
+#: \config\selectables.php:6
+msgid "Shipping Address"
+msgstr ""
+
+#: \plugins\business\controllers\addresses_controller.php:54
+msgid "The address has been saved"
+msgstr ""
+
+#: \plugins\business\controllers\addresses_controller.php:76
+msgid "Address saved"
+msgstr ""
+
+#: \plugins\business\controllers\addresses_controller.php:99
+msgid "Address deleted"
+msgstr ""
+
+#: \plugins\business\controllers\bank_accounts_controller.php:54
+msgid "The bank account has been saved"
+msgstr ""
+
+#: \plugins\business\controllers\bank_accounts_controller.php:76
+msgid "Bank Account saved"
+msgstr ""
+
+#: \plugins\business\controllers\bank_accounts_controller.php:99
+msgid "Bank account deleted"
+msgstr ""
+
+#: \plugins\business\controllers\clients_controller.php:54
+msgid "The client has been saved"
+msgstr ""
+
+#: \plugins\business\controllers\clients_controller.php:76
+msgid "Client saved"
+msgstr ""
+
+#: \plugins\business\controllers\clients_controller.php:99
+msgid "Client deleted"
+msgstr ""
+
+#: \plugins\business\controllers\contacts_controller.php:54
+msgid "The contact has been saved"
+msgstr ""
+
+#: \plugins\business\controllers\contacts_controller.php:78
+msgid "Contact saved"
+msgstr ""
+
+#: \plugins\business\controllers\contacts_controller.php:103
+msgid "Contact deleted"
+msgstr ""
+
+#: \plugins\business\controllers\organizations_controller.php:54
+msgid "The organization has been saved"
+msgstr ""
+
+#: \plugins\business\controllers\organizations_controller.php:76
+msgid "Organization saved"
+msgstr ""
+
+#: \plugins\business\controllers\organizations_controller.php:99
+msgid "Organization deleted"
+msgstr ""
+
+#: \plugins\business\controllers\providers_controller.php:54
+msgid "The provider has been saved"
+msgstr ""
+
+#: \plugins\business\controllers\providers_controller.php:76
+msgid "Provider saved"
+msgstr ""
+
+#: \plugins\business\controllers\providers_controller.php:99
+msgid "Provider deleted"
+msgstr ""
+
+#: \plugins\business\models\address.php:48
+#: \plugins\business\models\bank_account.php:48
+#: \plugins\business\models\contact.php:48
+#: \plugins\catalog\models\items_organization.php:57
+#: \plugins\orders\models\invoice.php:109
+msgid "Please enter a Organization"
+msgstr ""
+
+#: \plugins\business\models\address.php:50
+#: \plugins\orders\models\invoice.php:111
+msgid "Please enter a Type"
+msgstr ""
+
+#: \plugins\business\models\address.php:52
+#: \plugins\business\models\contact.php:54
+msgid "Please enter a Phone"
+msgstr ""
+
+#: \plugins\business\models\address.php:54
+msgid "Please enter a Address 1"
+msgstr ""
+
+#: \plugins\business\models\address.php:56
+msgid "Please enter a City"
+msgstr ""
+
+#: \plugins\business\models\address.php:58
+msgid "Please enter a State"
+msgstr ""
+
+#: \plugins\business\models\address.php:60
+#: \plugins\business\models\bank_account.php:56
+#: \plugins\business\models\organization.php:110
+#: \plugins\catalog\models\item.php:110
+msgid "Please enter a Country"
+msgstr ""
+
+#: \plugins\business\models\address.php:83
+msgid "Could not save the address, please check your inputs."
+msgstr ""
+
+#: \plugins\business\models\address.php:105;137;159
+msgid "Invalid Address"
+msgstr ""
+
+#: \plugins\business\models\address.php:177
+msgid "You need to confirm to delete this Address"
+msgstr ""
+
+#: \plugins\business\models\bank_account.php:50
+msgid "Please enter a Bank Name"
+msgstr ""
+
+#: \plugins\business\models\bank_account.php:52
+msgid "Please enter a Currency"
+msgstr ""
+
+#: \plugins\business\models\bank_account.php:54
+#: \plugins\orders\models\invoice.php:107
+msgid "Please enter a Number"
+msgstr ""
+
+#: \plugins\business\models\bank_account.php:79
+msgid "Could not save the bankAccount, please check your inputs."
+msgstr ""
+
+#: \plugins\business\models\bank_account.php:101;133;155
+msgid "Invalid Bank Account"
+msgstr ""
+
+#: \plugins\business\models\bank_account.php:173
+msgid "You need to confirm to delete this Bank Account"
+msgstr ""
+
+#: \plugins\business\models\client.php:16
+msgid "Invalid Client"
+msgstr ""
+
+#: \plugins\business\models\client.php:34
+msgid "You need to confirm to delete this Client"
+msgstr ""
+
+#: \plugins\business\models\contact.php:50
+#: \plugins\business\models\organization.php:108
+msgid "Please enter a Name"
+msgstr ""
+
+#: \plugins\business\models\contact.php:52
+msgid "Please enter a Email"
+msgstr ""
+
+#: \plugins\business\models\contact.php:77
+msgid "Could not save the contact, please check your inputs."
+msgstr ""
+
+#: \plugins\business\models\contact.php:99;131;153
+msgid "Invalid Contact"
+msgstr ""
+
+#: \plugins\business\models\contact.php:171
+msgid "You need to confirm to delete this Contact"
+msgstr ""
+
+#: \plugins\business\models\organization.php:106
+msgid "Please enter a Code"
+msgstr ""
+
+#: \plugins\business\models\organization.php:112
+msgid "Please enter a Fiscalid"
+msgstr ""
+
+#: \plugins\business\models\organization.php:135
+msgid "Could not save the organization, please check your inputs."
+msgstr ""
+
+#: \plugins\business\models\organization.php:157;189;211
+msgid "Invalid Organization"
+msgstr ""
+
+#: \plugins\business\models\organization.php:229
+msgid "You need to confirm to delete this Organization"
+msgstr ""
+
+#: \plugins\business\models\provider.php:16
+msgid "Invalid Provider"
+msgstr ""
+
+#: \plugins\business\models\provider.php:34
+msgid "You need to confirm to delete this Provider"
+msgstr ""
+
+#: \plugins\business\views\addresses\add.ctp:3
+msgid "Add Address"
+msgstr ""
+
+#: \plugins\business\views\addresses\delete.ctp:1
+msgid "Delete Address of \"%s\"?"
+msgstr ""
+
+#: \plugins\business\views\addresses\delete.ctp:3
+msgid "Be aware that your Address and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\business\views\addresses\delete.ctp:11
+#: \plugins\business\views\bank_accounts\delete.ctp:11
+#: \plugins\business\views\clients\delete.ctp:11
+#: \plugins\business\views\contacts\delete.ctp:11
+#: \plugins\business\views\organizations\delete.ctp:11
+#: \plugins\business\views\providers\delete.ctp:11
+#: \plugins\catalog\views\items\delete.ctp:11
+#: \plugins\inventory\views\inventory_entries\delete.ctp:11
+#: \plugins\inventory\views\inventory_items\delete.ctp:11
+#: \plugins\orders\views\purchase_orders\delete.ctp:11
+#: \plugins\users\views\users\change_password.ctp:25
+#: \plugins\users\views\users\reset_password.ctp:12
+msgid "Confirm"
+msgstr ""
+
+#: \plugins\business\views\addresses\delete.ctp:13
+#: \plugins\business\views\bank_accounts\delete.ctp:13
+#: \plugins\business\views\clients\delete.ctp:13
+#: \plugins\business\views\contacts\delete.ctp:13
+#: \plugins\business\views\organizations\delete.ctp:13
+#: \plugins\business\views\providers\delete.ctp:13
+#: \plugins\catalog\views\items\delete.ctp:13
+#: \plugins\inventory\views\inventory_entries\delete.ctp:13
+#: \plugins\inventory\views\inventory_items\delete.ctp:13
+#: \plugins\orders\views\purchase_orders\delete.ctp:13
+msgid "You have to confirm."
+msgstr ""
+
+#: \plugins\business\views\addresses\delete.ctp:14
+#: \plugins\business\views\bank_accounts\delete.ctp:14
+#: \plugins\business\views\clients\delete.ctp:14
+#: \plugins\business\views\contacts\delete.ctp:14
+#: \plugins\business\views\organizations\delete.ctp:14
+#: \plugins\business\views\providers\delete.ctp:14
+#: \plugins\catalog\views\items\delete.ctp:14
+#: \plugins\inventory\views\inventory_entries\delete.ctp:14
+#: \plugins\inventory\views\inventory_items\delete.ctp:14
+#: \plugins\orders\views\purchase_orders\delete.ctp:14
+msgid "Continue"
+msgstr ""
+
+#: \plugins\business\views\addresses\edit.ctp:3
+msgid "Edit Address"
+msgstr ""
+
+#: \plugins\business\views\addresses\index.ctp:2
+msgid "Addresses"
+msgstr ""
+
+#: \plugins\business\views\addresses\index.ctp:19
+#: \plugins\business\views\bank_accounts\index.ctp:21
+#: \plugins\business\views\clients\index.ctp:15
+#: \plugins\business\views\clients\view.ctp:75;130;182
+#: \plugins\business\views\contacts\index.ctp:16
+#: \plugins\business\views\organizations\index.ctp:17
+#: \plugins\business\views\organizations\view.ctp:80;135;187
+#: \plugins\business\views\providers\index.ctp:16
+#: \plugins\business\views\providers\view.ctp:75;130;182
+#: \plugins\catalog\views\items\index.ctp:16
+#: \plugins\catalog\views\items\view.ctp:73
+#: \plugins\inventory\views\inventory_entries\index.ctp:9
+#: \plugins\inventory\views\inventory_items\add.ctp:25
+#: \plugins\inventory\views\inventory_items\index.ctp:10
+#: \plugins\orders\views\invoices\index.ctp:23
+#: \plugins\orders\views\invoices\view.ctp:76;117
+#: \plugins\orders\views\purchase_orders\add.ctp:29
+#: \plugins\orders\views\purchase_orders\edit.ctp:28
+#: \plugins\orders\views\purchase_orders\index.ctp:19
+#: \plugins\categories\views\categories\admin_index.ctp:26
+#: \plugins\categories\views\categories\index.ctp:26
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:26
+#: \plugins\categories\views\i18n_categories\index.ctp:26
+#: \views\plugins\categories\categories\index.ctp:8
+#: \plugins\users\views\details\admin_index.ctp:29
+#: \plugins\users\views\users\admin_index.ctp:33
+#: \plugins\users\views\users\index.ctp:24
+msgid "Actions"
+msgstr ""
+
+#: \plugins\business\views\addresses\index.ctp:70
+#: \plugins\business\views\bank_accounts\index.ctp:78
+#: \plugins\business\views\clients\index.ctp:54
+#: \plugins\business\views\clients\view.ctp:100;157;204
+#: \plugins\business\views\contacts\index.ctp:58
+#: \plugins\business\views\organizations\index.ctp:62
+#: \plugins\business\views\organizations\view.ctp:105;162;209
+#: \plugins\business\views\providers\index.ctp:58
+#: \plugins\business\views\providers\view.ctp:100;157;204
+#: \plugins\catalog\views\items\index.ctp:58
+#: \plugins\catalog\views\items\view.ctp:96
+#: \plugins\inventory\views\inventory_items\index.ctp:34
+#: \plugins\orders\views\invoices\index.ctp:71
+#: \plugins\orders\views\invoices\view.ctp:93;139
+#: \plugins\orders\views\purchase_orders\index.ctp:49
+#: \plugins\categories\views\categories\admin_index.ctp:53
+#: \plugins\categories\views\categories\admin_tree.ctp:50
+#: \plugins\categories\views\categories\index.ctp:53
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:53
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:50
+#: \plugins\categories\views\i18n_categories\index.ctp:53
+#: \plugins\users\views\details\admin_index.ctp:62
+#: \plugins\users\views\users\admin_index.ctp:60
+#: \plugins\users\views\users\index.ctp:42
+msgid "View"
+msgstr ""
+
+#: \plugins\business\views\addresses\index.ctp:71
+#: \plugins\business\views\bank_accounts\index.ctp:79
+#: \plugins\business\views\clients\index.ctp:55
+#: \plugins\business\views\clients\view.ctp:101;158;205
+#: \plugins\business\views\contacts\index.ctp:59
+#: \plugins\business\views\organizations\index.ctp:63
+#: \plugins\business\views\organizations\view.ctp:106;163;210
+#: \plugins\business\views\providers\index.ctp:59
+#: \plugins\business\views\providers\view.ctp:101;158;205
+#: \plugins\catalog\views\items\index.ctp:59
+#: \plugins\catalog\views\items\view.ctp:97
+#: \plugins\inventory\views\inventory_items\index.ctp:35
+#: \plugins\orders\views\invoices\index.ctp:72
+#: \plugins\orders\views\invoices\view.ctp:94;140
+#: \plugins\orders\views\purchase_orders\index.ctp:51
+#: \plugins\categories\views\categories\admin_index.ctp:54
+#: \plugins\categories\views\categories\admin_tree.ctp:52
+#: \plugins\categories\views\categories\index.ctp:54
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:54
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:52
+#: \plugins\categories\views\i18n_categories\index.ctp:54
+#: \views\plugins\categories\categories\admin_tree.ctp:41
+#: \views\plugins\categories\categories\index.ctp:29
+#: \plugins\users\views\details\admin_index.ctp:63
+#: \plugins\users\views\users\admin_index.ctp:61
+#: \plugins\users\views\users\index.ctp:43
+msgid "Edit"
+msgstr ""
+
+#: \plugins\business\views\addresses\index.ctp:72
+#: \plugins\business\views\bank_accounts\index.ctp:80
+#: \plugins\business\views\clients\index.ctp:56
+#: \plugins\business\views\clients\view.ctp:102;159;206
+#: \plugins\business\views\contacts\index.ctp:60
+#: \plugins\business\views\organizations\index.ctp:64
+#: \plugins\business\views\organizations\view.ctp:107;164;211
+#: \plugins\business\views\providers\index.ctp:60
+#: \plugins\business\views\providers\view.ctp:102;159;206
+#: \plugins\catalog\views\items\index.ctp:60
+#: \plugins\catalog\views\items\view.ctp:98
+#: \plugins\inventory\views\inventory_items\index.ctp:36
+#: \plugins\orders\views\invoices\edit.ctp:25
+#: \plugins\orders\views\invoices\index.ctp:73
+#: \plugins\orders\views\invoices\view.ctp:95;141
+#: \plugins\orders\views\purchase_orders\edit.ctp:39
+#: \plugins\orders\views\purchase_orders\index.ctp:52
+#: \plugins\categories\views\categories\admin_index.ctp:55
+#: \plugins\categories\views\categories\admin_tree.ctp:53
+#: \plugins\categories\views\categories\index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:53
+#: \plugins\categories\views\i18n_categories\index.ctp:55
+#: \views\plugins\categories\categories\admin_tree.ctp:42
+#: \views\plugins\categories\categories\index.ctp:30
+#: \plugins\users\views\details\admin_edit.ctp:28
+#: \plugins\users\views\details\admin_index.ctp:64
+#: \plugins\users\views\users\admin_edit.ctp:25
+#: \plugins\users\views\users\admin_index.ctp:62
+#: \plugins\users\views\users\index.ctp:44
+msgid "Delete"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:2
+msgid "Address"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:4
+#: \plugins\business\views\bank_accounts\view.ctp:4
+#: \plugins\business\views\clients\view.ctp:4;62;115;172
+#: \plugins\business\views\contacts\view.ctp:4
+#: \plugins\business\views\organizations\view.ctp:4;67;120;177
+#: \plugins\business\views\providers\view.ctp:4;62;115;172
+#: \plugins\catalog\views\items\view.ctp:4;62
+#: \plugins\orders\views\invoices\view.ctp:4;71;107
+#: \plugins\orders\views\purchase_orders\send.ctp:4;37
+#: \plugins\orders\views\purchase_orders\view.ctp:4;37
+#: \plugins\users\views\details\admin_view.ctp:15
+#: \plugins\users\views\details\view.ctp:15
+msgid "Id"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:9
+#: \plugins\business\views\bank_accounts\view.ctp:9
+#: \plugins\business\views\contacts\view.ctp:9
+#: \plugins\business\views\organizations\view.ctp:2
+#: \plugins\orders\views\invoices\view.ctp:14
+msgid "Organization"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:14
+#: \plugins\business\views\bank_accounts\view.ctp:24
+#: \plugins\business\views\clients\view.ctp:64;119
+#: \plugins\business\views\organizations\view.ctp:44;69;124
+#: \plugins\business\views\providers\view.ctp:64;119
+#: \plugins\catalog\views\items\view.ctp:70
+#: \plugins\orders\views\invoices\view.ctp:59
+msgid "Type"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:19
+#: \plugins\business\views\clients\view.ctp:65;176
+#: \plugins\business\views\contacts\view.ctp:24
+#: \plugins\business\views\organizations\view.ctp:70;181
+#: \plugins\business\views\providers\view.ctp:65;176
+msgid "Phone"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:24
+#: \plugins\business\views\bank_accounts\view.ctp:34
+#: \plugins\business\views\clients\view.ctp:66;121
+#: \plugins\business\views\organizations\view.ctp:71;126
+#: \plugins\business\views\providers\view.ctp:66;121
+msgid "Address 1"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:29
+#: \plugins\business\views\bank_accounts\view.ctp:39
+#: \plugins\business\views\clients\view.ctp:67;122
+#: \plugins\business\views\organizations\view.ctp:72;127
+#: \plugins\business\views\providers\view.ctp:67;122
+msgid "Address 2"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:34
+#: \plugins\business\views\clients\view.ctp:68
+#: \plugins\business\views\organizations\view.ctp:73
+#: \plugins\business\views\providers\view.ctp:68
+msgid "City"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:39
+#: \plugins\business\views\clients\view.ctp:69
+#: \plugins\business\views\organizations\view.ctp:74
+#: \plugins\business\views\providers\view.ctp:69
+msgid "State"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:44
+#: \plugins\business\views\bank_accounts\view.ctp:44
+#: \plugins\business\views\clients\view.ctp:24;70;123
+#: \plugins\business\views\organizations\view.ctp:24;75;128
+#: \plugins\business\views\providers\view.ctp:24;70;123
+#: \plugins\catalog\views\items\view.ctp:39;66
+#: \plugins\orders\views\invoices\view.ctp:114
+#: \plugins\orders\views\purchase_orders\send.ctp:44
+#: \plugins\orders\views\purchase_orders\view.ctp:44
+msgid "Country"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:49
+#: \plugins\business\views\clients\view.ctp:71
+#: \plugins\business\views\organizations\view.ctp:76
+#: \plugins\business\views\providers\view.ctp:71
+msgid "Zip"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:54
+#: \plugins\business\views\bank_accounts\view.ctp:64
+#: \plugins\business\views\clients\view.ctp:72;127
+#: \plugins\business\views\organizations\view.ctp:77;132
+#: \plugins\business\views\providers\view.ctp:72;127
+msgid "Notes"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:59
+#: \plugins\business\views\bank_accounts\view.ctp:69
+#: \plugins\business\views\clients\view.ctp:44;73;128;180
+#: \plugins\business\views\contacts\view.ctp:44
+#: \plugins\business\views\organizations\view.ctp:49;78;133;185
+#: \plugins\business\views\providers\view.ctp:44;73;128;180
+#: \plugins\catalog\views\items\view.ctp:71
+#: \plugins\inventory\views\inventory_items\view.ctp:24
+#: \plugins\categories\views\categories\admin_view.ctp:34
+#: \plugins\categories\views\categories\view.ctp:34
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:34
+#: \plugins\categories\views\i18n_categories\view.ctp:34
+#: \plugins\users\views\details\admin_view.ctp:40
+#: \plugins\users\views\details\view.ctp:40
+#: \plugins\users\views\users\admin_view.ctp:20
+#: \plugins\users\views\users\view.ctp:20
+msgid "Created"
+msgstr ""
+
+#: \plugins\business\views\addresses\view.ctp:64
+#: \plugins\business\views\bank_accounts\view.ctp:74
+#: \plugins\business\views\clients\view.ctp:49;74;129;181
+#: \plugins\business\views\contacts\view.ctp:49
+#: \plugins\business\views\organizations\view.ctp:54;79;134;186
+#: \plugins\business\views\providers\view.ctp:49;74;129;181
+#: \plugins\catalog\views\items\view.ctp:72
+#: \plugins\inventory\views\inventory_items\view.ctp:29
+#: \plugins\users\views\details\admin_view.ctp:45
+#: \plugins\users\views\details\view.ctp:45
+#: \plugins\users\views\users\admin_view.ctp:25
+msgid "Modified"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\add.ctp:3
+msgid "Add Bank Account"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\delete.ctp:1
+msgid "Delete Bank Account \"%s\"?"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\delete.ctp:3
+msgid "Be aware that your Bank Account and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\edit.ctp:3
+msgid "Edit Bank Account"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\index.ctp:2
+msgid "Bank Accounts"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\view.ctp:2
+msgid "Bank Account"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\view.ctp:14
+#: \plugins\business\views\clients\view.ctp:117
+#: \plugins\business\views\organizations\view.ctp:122
+#: \plugins\business\views\providers\view.ctp:117
+msgid "Bank Name"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\view.ctp:19
+#: \plugins\business\views\clients\view.ctp:118
+#: \plugins\business\views\organizations\view.ctp:123
+#: \plugins\business\views\providers\view.ctp:118
+msgid "Currency"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\view.ctp:29
+#: \plugins\business\views\clients\view.ctp:120
+#: \plugins\business\views\organizations\view.ctp:125
+#: \plugins\business\views\providers\view.ctp:120
+#: \plugins\orders\views\invoices\view.ctp:9;72
+#: \plugins\orders\views\purchase_orders\send.ctp:9
+#: \plugins\orders\views\purchase_orders\view.ctp:9
+msgid "Number"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\view.ctp:49
+#: \plugins\business\views\clients\view.ctp:124
+#: \plugins\business\views\organizations\view.ctp:129
+#: \plugins\business\views\providers\view.ctp:124
+msgid "Iban"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\view.ctp:54
+#: \plugins\business\views\clients\view.ctp:125
+#: \plugins\business\views\organizations\view.ctp:130
+#: \plugins\business\views\providers\view.ctp:125
+msgid "Aba"
+msgstr ""
+
+#: \plugins\business\views\bank_accounts\view.ctp:59
+#: \plugins\business\views\clients\view.ctp:126
+#: \plugins\business\views\organizations\view.ctp:131
+#: \plugins\business\views\providers\view.ctp:126
+msgid "Swift"
+msgstr ""
+
+#: \plugins\business\views\clients\add.ctp:3
+msgid "Add Client"
+msgstr ""
+
+#: \plugins\business\views\clients\delete.ctp:1
+msgid "Delete Client \"%s\"?"
+msgstr ""
+
+#: \plugins\business\views\clients\delete.ctp:3
+#: \plugins\orders\views\purchase_orders\delete.ctp:3
+msgid "Be aware that your Client and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\business\views\clients\edit.ctp:3
+msgid "Edit Client"
+msgstr ""
+
+#: \plugins\business\views\clients\index.ctp:2
+msgid "Clients"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:2
+msgid "Client"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:9
+#: \plugins\business\views\organizations\view.ctp:9
+#: \plugins\business\views\providers\view.ctp:9
+#: \plugins\catalog\views\items\view.ctp:63
+#: \plugins\orders\views\purchase_orders\add.ctp:24
+#: \plugins\orders\views\purchase_orders\edit.ctp:23
+msgid "Code"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:14;174
+#: \plugins\business\views\contacts\view.ctp:14
+#: \plugins\business\views\organizations\view.ctp:14;179
+#: \plugins\business\views\providers\view.ctp:14;174
+#: \plugins\catalog\views\items\view.ctp:9;64
+#: \plugins\orders\views\invoices\view.ctp:108
+#: \plugins\orders\views\purchase_orders\send.ctp:38
+#: \plugins\orders\views\purchase_orders\view.ctp:38
+#: \plugins\categories\views\categories\admin_view.ctp:24
+#: \plugins\categories\views\categories\view.ctp:24
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:24
+#: \plugins\categories\views\i18n_categories\view.ctp:24
+#: \plugins\users\views\users\search.ctp:20
+msgid "Name"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:19
+#: \plugins\business\views\organizations\view.ctp:19
+#: \plugins\business\views\providers\view.ctp:19
+#: \plugins\catalog\views\items\view.ctp:14;65
+#: \plugins\orders\views\invoices\view.ctp:109
+#: \plugins\orders\views\purchase_orders\add.ctp:26
+#: \plugins\orders\views\purchase_orders\edit.ctp:25
+#: \plugins\orders\views\purchase_orders\send.ctp:39
+#: \plugins\orders\views\purchase_orders\view.ctp:39
+#: \plugins\categories\views\categories\admin_view.ctp:29
+#: \plugins\categories\views\categories\view.ctp:29
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:29
+#: \plugins\categories\views\i18n_categories\view.ctp:29
+msgid "Description"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:29
+#: \plugins\business\views\organizations\view.ctp:29
+#: \plugins\business\views\providers\view.ctp:29
+#: \plugins\catalog\views\items\view.ctp:67
+msgid "Fiscalid"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:34
+#: \plugins\business\views\organizations\view.ctp:34
+#: \plugins\business\views\providers\view.ctp:34
+#: \plugins\catalog\views\items\view.ctp:68
+msgid "Brand"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:39
+#: \plugins\business\views\organizations\view.ctp:39
+#: \plugins\business\views\providers\view.ctp:39
+#: \plugins\catalog\views\items\view.ctp:69
+msgid "Business"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:58
+#: \plugins\business\views\organizations\view.ctp:63
+#: \plugins\business\views\providers\view.ctp:58
+msgid "Related Addresses"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:63;116;173
+#: \plugins\business\views\organizations\view.ctp:68;121;178
+#: \plugins\business\views\providers\view.ctp:63;116;173
+#: \plugins\orders\views\invoices\view.ctp:73
+msgid "Organization Id"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:102;159;206
+#: \plugins\business\views\organizations\view.ctp:107;164;211
+#: \plugins\business\views\providers\view.ctp:102;159;206
+#: \plugins\catalog\views\items\view.ctp:98
+#: \plugins\orders\views\invoices\view.ctp:95;141
+#: \plugins\categories\views\categories\admin_index.ctp:55
+#: \plugins\categories\views\categories\admin_view.ctp:44
+#: \plugins\categories\views\categories\index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:55
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:44
+#: \plugins\categories\views\i18n_categories\index.ctp:55
+#: \views\plugins\categories\categories\index.ctp:30
+#: \plugins\users\views\details\admin_edit.ctp:28
+#: \plugins\users\views\details\admin_index.ctp:64
+#: \plugins\users\views\details\admin_view.ctp:55
+#: \plugins\users\views\details\view.ctp:56
+#: \plugins\users\views\users\admin_edit.ctp:25
+#: \plugins\users\views\users\admin_index.ctp:62
+#: \plugins\users\views\users\admin_view.ctp:35
+#: \plugins\users\views\users\index.ctp:44
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:111
+#: \plugins\business\views\organizations\view.ctp:116
+#: \plugins\business\views\providers\view.ctp:111
+msgid "Related Bank Accounts"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:168
+#: \plugins\business\views\organizations\view.ctp:173
+#: \plugins\business\views\providers\view.ctp:168
+msgid "Related Contacts"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:175
+#: \plugins\business\views\contacts\view.ctp:19
+#: \plugins\business\views\organizations\view.ctp:180
+#: \plugins\business\views\providers\view.ctp:175
+#: \plugins\users\views\elements\login.ctp:21
+#: \plugins\users\views\users\admin_index.ctp:21
+#: \plugins\users\views\users\login.ctp:19
+#: \plugins\users\views\users\register.ctp:82;89
+#: \plugins\users\views\users\search.ctp:18
+#: \views\plugins\users\users\login.ctp:9
+msgid "Email"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:177
+#: \plugins\business\views\contacts\view.ctp:29
+#: \plugins\business\views\organizations\view.ctp:182
+#: \plugins\business\views\providers\view.ctp:177
+msgid "Mobile"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:178
+#: \plugins\business\views\contacts\view.ctp:34
+#: \plugins\business\views\organizations\view.ctp:183
+#: \plugins\business\views\providers\view.ctp:178
+#: \plugins\users\views\details\admin_view.ctp:25
+#: \plugins\users\views\details\view.ctp:25
+msgid "Position"
+msgstr ""
+
+#: \plugins\business\views\clients\view.ctp:179
+#: \plugins\business\views\contacts\view.ctp:39
+#: \plugins\business\views\organizations\view.ctp:184
+#: \plugins\business\views\providers\view.ctp:179
+msgid "Role"
+msgstr ""
+
+#: \plugins\business\views\contacts\add.ctp:3
+msgid "Add Contact"
+msgstr ""
+
+#: \plugins\business\views\contacts\delete.ctp:1
+msgid "Delete Contact \"%s\"?"
+msgstr ""
+
+#: \plugins\business\views\contacts\delete.ctp:3
+msgid "Be aware that your Contact and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\business\views\contacts\edit.ctp:3
+msgid "Edit Contact"
+msgstr ""
+
+#: \plugins\business\views\contacts\index.ctp:2
+msgid "Contacts"
+msgstr ""
+
+#: \plugins\business\views\contacts\view.ctp:2
+msgid "Contact"
+msgstr ""
+
+#: \plugins\business\views\organizations\add.ctp:3
+msgid "Add Organization"
+msgstr ""
+
+#: \plugins\business\views\organizations\delete.ctp:1
+msgid "Delete Organization \"%s\"?"
+msgstr ""
+
+#: \plugins\business\views\organizations\delete.ctp:3
+msgid "Be aware that your Organization and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\business\views\organizations\edit.ctp:3
+msgid "Edit Organization"
+msgstr ""
+
+#: \plugins\business\views\organizations\index.ctp:2
+msgid "Organizations"
+msgstr ""
+
+#: \plugins\business\views\providers\add.ctp:3
+msgid "Add Provider"
+msgstr ""
+
+#: \plugins\business\views\providers\delete.ctp:1
+msgid "Delete Provider \"%s\"?"
+msgstr ""
+
+#: \plugins\business\views\providers\delete.ctp:3
+msgid "Be aware that your Provider and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\business\views\providers\edit.ctp:3
+msgid "Edit Provider"
+msgstr ""
+
+#: \plugins\business\views\providers\index.ctp:2
+msgid "Providers"
+msgstr ""
+
+#: \plugins\business\views\providers\view.ctp:2
+#: \plugins\orders\views\purchase_orders\add.ctp:10
+#: \plugins\orders\views\purchase_orders\edit.ctp:9
+#: \plugins\orders\views\purchase_orders\send.ctp:14
+#: \plugins\orders\views\purchase_orders\view.ctp:14
+msgid "Provider"
+msgstr ""
+
+#: \plugins\catalog\controllers\items_controller.php:75
+msgid "The item has been saved"
+msgstr ""
+
+#: \plugins\catalog\controllers\items_controller.php:100
+msgid "Item saved"
+msgstr ""
+
+#: \plugins\catalog\controllers\items_controller.php:126
+msgid "Item deleted"
+msgstr ""
+
+#: \plugins\catalog\models\item.php:104
+msgid "Please enter a Barcode"
+msgstr ""
+
+#: \plugins\catalog\models\item.php:106
+msgid "Please enter a Package Factor"
+msgstr ""
+
+#: \plugins\catalog\models\item.php:108
+msgid "Please enter a Sales Factor"
+msgstr ""
+
+#: \plugins\catalog\models\item.php:112
+msgid "Please enter a Industry"
+msgstr ""
+
+#: \plugins\catalog\models\item.php:114
+msgid "Please enter a Category"
+msgstr ""
+
+#: \plugins\catalog\models\item.php:137
+msgid "Could not save the item, please check your inputs."
+msgstr ""
+
+#: \plugins\catalog\models\item.php:159;191;213
+msgid "Invalid Item"
+msgstr ""
+
+#: \plugins\catalog\models\item.php:231
+msgid "You need to confirm to delete this Item"
+msgstr ""
+
+#: \plugins\catalog\models\items_organization.php:55
+#: \plugins\inventory\models\inventory_item.php:62
+#: \plugins\orders\models\invoices_item.php:57
+msgid "Please enter a Item"
+msgstr ""
+
+#: \plugins\catalog\models\items_organization.php:80
+msgid "Could not save the itemsOrganization, please check your inputs."
+msgstr ""
+
+#: \plugins\catalog\models\items_organization.php:102;134;156
+msgid "Invalid Items Organization"
+msgstr ""
+
+#: \plugins\catalog\models\items_organization.php:174
+msgid "You need to confirm to delete this Items Organization"
+msgstr ""
+
+#: \plugins\catalog\views\items\add.ctp:3
+msgid "Add Item"
+msgstr ""
+
+#: \plugins\catalog\views\items\delete.ctp:1
+msgid "Delete Item \"%s\"?"
+msgstr ""
+
+#: \plugins\catalog\views\items\delete.ctp:3
+msgid "Be aware that your Item and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\catalog\views\items\edit.ctp:3
+msgid "Edit Item"
+msgstr ""
+
+#: \plugins\catalog\views\items\index.ctp:2
+#: \plugins\orders\views\purchase_orders\fill_items.ctp:2
+#: \plugins\orders\views\purchase_orders\send.ctp:33
+#: \plugins\orders\views\purchase_orders\view.ctp:33
+#: \views\layouts\default.ctp:93
+#: \views\pages\home.ctp:17
+msgid "Items"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:2
+#: \plugins\inventory\views\inventory_items\add.ctp:21
+#: \plugins\inventory\views\inventory_items\view.ctp:4
+#: \plugins\orders\views\purchase_orders\add.ctp:25
+#: \plugins\orders\views\purchase_orders\edit.ctp:24
+msgid "Item"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:19
+#: \plugins\orders\views\invoices\view.ctp:110
+#: \plugins\orders\views\purchase_orders\send.ctp:40
+#: \plugins\orders\views\purchase_orders\view.ctp:40
+msgid "Barcode"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:24
+#: \plugins\orders\views\invoices\view.ctp:111
+#: \plugins\orders\views\purchase_orders\send.ctp:41
+#: \plugins\orders\views\purchase_orders\view.ctp:41
+msgid "Package Factor"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:29
+#: \plugins\orders\views\invoices\view.ctp:112
+#: \plugins\orders\views\purchase_orders\send.ctp:42
+#: \plugins\orders\views\purchase_orders\view.ctp:42
+msgid "Sales Factor"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:34
+#: \plugins\orders\views\invoices\view.ctp:113
+#: \plugins\orders\views\purchase_orders\send.ctp:43
+#: \plugins\orders\views\purchase_orders\view.ctp:43
+msgid "Weight"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:44
+#: \plugins\orders\views\invoices\view.ctp:115
+#: \plugins\orders\views\purchase_orders\send.ctp:45
+#: \plugins\orders\views\purchase_orders\view.ctp:45
+msgid "Industry"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:49
+#: \plugins\categories\views\categories\admin_view.ctp:12
+#: \plugins\categories\views\categories\view.ctp:12
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:12
+#: \plugins\categories\views\i18n_categories\view.ctp:12
+msgid "Category"
+msgstr ""
+
+#: \plugins\catalog\views\items\view.ctp:58
+msgid "Related Organizations"
+msgstr ""
+
+#: \plugins\categories\libs\app_test_case.php:106
+#: \plugins\templates\libs\app_test_case.php:121
+msgid "AppTestCase::load() - no variable $config found in %s.php"
+msgstr ""
+
+#: \plugins\inventory\controllers\inventory_entries_controller.php:84
+msgid "Inventory Entry saved"
+msgstr ""
+
+#: \plugins\inventory\controllers\inventory_entries_controller.php:110
+msgid "Inventory entry deleted"
+msgstr ""
+
+#: \plugins\inventory\controllers\inventory_items_controller.php:55
+msgid "Invalid inventory entry"
+msgstr ""
+
+#: \plugins\inventory\controllers\inventory_items_controller.php:59
+msgid "The inventory item has been saved"
+msgstr ""
+
+#: \plugins\inventory\controllers\inventory_items_controller.php:86
+msgid "Inventory Item saved"
+msgstr ""
+
+#: \plugins\inventory\controllers\inventory_items_controller.php:111
+msgid "Inventory item deleted"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_entry.php:55
+msgid "Please enter a User"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_entry.php:57
+msgid "Please enter a Purchase Order"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_entry.php:80
+msgid "Could not save the inventoryEntry, please check your inputs."
+msgstr ""
+
+#: \plugins\inventory\models\inventory_entry.php:102;134;156
+msgid "Invalid Inventory Entry"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_entry.php:174
+msgid "You need to confirm to delete this Inventory Entry"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_item.php:64
+msgid "Please enter a Batch"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_item.php:66
+msgid "Please enter a  Expitarion Date"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_item.php:68
+#: \plugins\orders\models\invoices_item.php:59
+#: \plugins\orders\models\items_purchase_order.php:55
+msgid "Please enter a Quantity"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_item.php:103
+msgid "Could not save the inventoryItem, please check your inputs."
+msgstr ""
+
+#: \plugins\inventory\models\inventory_item.php:125;157;179
+msgid "Invalid Inventory Item"
+msgstr ""
+
+#: \plugins\inventory\models\inventory_item.php:197
+msgid "You need to confirm to delete this Inventory Item"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\add.ctp:2
+msgid "Select purchase order the new items belong to"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\add.ctp:7
+msgid "Select Order"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\add.ctp:14
+msgid "Start loading items"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\delete.ctp:1
+msgid "Delete Inventory Entry \"%s\"?"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\delete.ctp:3
+msgid "Be aware that your Inventory Entry and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\index.ctp:2
+msgid "Inventory Entries"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\index.ctp:6
+msgid "Date"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\index.ctp:7
+#: \plugins\categories\views\categories\admin_view.ctp:19
+#: \plugins\categories\views\categories\view.ctp:19
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:19
+#: \plugins\categories\views\i18n_categories\view.ctp:19
+#: \plugins\users\views\details\admin_view.ctp:20
+#: \plugins\users\views\details\view.ctp:20
+#: \plugins\users\views\users\admin_view.ctp:13
+#: \plugins\users\views\users\view.ctp:13
+msgid "User"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\index.ctp:8
+msgid "PurchaseOrder"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\index.ctp:30
+msgid "Report"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_entries\index.ctp:31
+msgid "Labels"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\add.ctp:2
+msgid "Add Items to Inventory"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\add.ctp:16
+msgid "Added Items"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\add.ctp:22
+#: \plugins\inventory\views\inventory_items\view.ctp:9
+msgid "Batch"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\add.ctp:23
+msgid "Expiration Date"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\add.ctp:24
+#: \plugins\inventory\views\inventory_items\view.ctp:19
+#: \plugins\orders\views\purchase_orders\add.ctp:28
+#: \plugins\orders\views\purchase_orders\edit.ctp:27
+msgid "Quantity"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\add.ctp:31
+#: \plugins\orders\views\purchase_orders\add.ctp:35
+#: \plugins\orders\views\purchase_orders\edit.ctp:48
+#: \plugins\orders\views\purchase_orders\send.ctp:74
+msgid "Save"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\delete.ctp:1
+msgid "Delete Inventory Item \"%s\"?"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\delete.ctp:3
+msgid "Be aware that your Inventory Item and all associated data will be deleted if you confirm!"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\edit.ctp:3
+msgid "Edit Inventory Item"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\index.ctp:2
+msgid "Inventory"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\view.ctp:2
+msgid "Inventory Item"
+msgstr ""
+
+#: \plugins\inventory\views\inventory_items\view.ctp:14
+msgid " Expitarion Date"
+msgstr ""
+
+#: \plugins\orders\controllers\invoices_controller.php:55
+msgid "The invoice has been saved"
+msgstr ""
+
+#: \plugins\orders\controllers\invoices_controller.php:89
+msgid "Invoice saved"
+msgstr ""
+
+#: \plugins\orders\controllers\invoices_controller.php:115
+msgid "Invoice deleted"
+msgstr ""
+
+#: \plugins\orders\controllers\invoices_items_controller.php:54
+msgid "The invoices item has been saved"
+msgstr ""
+
+#: \plugins\orders\controllers\invoices_items_controller.php:79
+msgid "Invoices Item saved"
+msgstr ""
+
+#: \plugins\orders\controllers\invoices_items_controller.php:105
+msgid "Invoices item deleted"
+msgstr ""
+
+#: \plugins\orders\controllers\items_purchase_orders_controller.php:54
+msgid "The items purchase order has been saved"
+msgstr ""
+
+#: \plugins\orders\controllers\items_purchase_orders_controller.php:79
+msgid "Items Purchase Order saved"
+msgstr ""
+
+#: \plugins\orders\controllers\items_purchase_orders_controller.php:105
+msgid "Items purchase order deleted"
+msgstr ""
+
+#: \plugins\orders\controllers\purchase_orders_controller.php:54
+msgid "The purchase order has been saved"
+msgstr ""
+
+#: \plugins\orders\controllers\purchase_orders_controller.php:71
+msgid "The purchase order has been send"
+msgstr ""
+
+#: \plugins\orders\controllers\purchase_orders_controller.php:73
+msgid "An error has occurred sending the purchase order"
+msgstr ""
+
+#: \plugins\orders\controllers\purchase_orders_controller.php:100
+msgid "Purchase Order saved"
+msgstr ""
+
+#: \plugins\orders\controllers\purchase_orders_controller.php:129
+msgid "Purchase order deleted"
+msgstr ""
+
+#: \plugins\orders\models\invoice.php:134
+msgid "Could not save the invoice, please check your inputs."
+msgstr ""
+
+#: \plugins\orders\models\invoice.php:156;188;210
+msgid "Invalid Invoice"
+msgstr ""
+
+#: \plugins\orders\models\invoice.php:228
+msgid "You need to confirm to delete this Invoice"
+msgstr ""
+
+#: \plugins\orders\models\invoices_item.php:55
+msgid "Please enter a Invoice"
+msgstr ""
+
+#: \plugins\orders\models\invoices_item.php:61
+msgid "Please enter a Tax"
+msgstr ""
+
+#: \plugins\orders\models\invoices_item.php:84
+#: \plugins\orders\models\purchase_order.php:136;173
+msgid "Could not save the purchaseOrder, please check your inputs."
+msgstr ""
+
+#: \plugins\orders\models\invoices_item.php:106;138;160
+#: \plugins\orders\models\purchase_order.php:161;194;226
+msgid "Invalid Purchase Order"
+msgstr ""
+
+#: \plugins\orders\models\invoices_item.php:178
+#: \plugins\orders\models\purchase_order.php:244
+msgid "You need to confirm to delete this Purchase Order"
+msgstr ""
+
+#: \plugins\orders\models\items_purchase_order.php:78
+msgid "Could not save the itemsPurchaseOrder, please check your inputs."
+msgstr ""
+
+#: \plugins\orders\models\items_purchase_order.php:100;132;154
+msgid "Invalid Items Purchase Order"
+msgstr ""
+
+#: \plugins\orders\models\items_purchase_order.php:172
+msgid "You need to confirm to delete this Items Purchase Order"
+msgstr ""
+
+#: \plugins\orders\models\purchase_order.php:111
+msgid "Provider is required"
+msgstr ""
+
+#: \plugins\orders\models\purchase_order.php:139
+msgid "A purchase order must have at least one item"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:4
+msgid "Edit Invoice"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:26
+msgid "List Invoices"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:27
+msgid "List Organizations"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:28
+msgid "New Organization"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:29
+msgid "List Purchase Orders"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:30
+msgid "New Purchase Order"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:31
+msgid "List Items"
+msgstr ""
+
+#: \plugins\orders\views\invoices\edit.ctp:32
+msgid "New Item"
+msgstr ""
+
+#: \plugins\orders\views\invoices\index.ctp:2
+msgid "Invoices"
+msgstr ""
+
+#: \plugins\orders\views\invoices\index.ctp:6
+#: \plugins\categories\views\categories\admin_index.ctp:16
+#: \plugins\categories\views\categories\index.ctp:16
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:16
+#: \plugins\categories\views\i18n_categories\index.ctp:16
+#: \plugins\users\views\details\admin_index.ctp:17
+#: \plugins\users\views\users\index.ctp:17
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:2
+#: \plugins\orders\views\purchase_orders\send.ctp:19
+#: \plugins\orders\views\purchase_orders\view.ctp:19
+msgid "Invoice"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:19
+msgid "Subtotal"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:24
+msgid "Tax"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:29
+msgid "Total"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:34
+msgid "Insurance"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:39
+msgid "Shipping"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:44
+msgid "Customs Tax"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:49
+msgid "Customs Adm"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:54
+msgid "Internal Shipping"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:67
+msgid "Related Purchase Orders"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:74
+msgid "Invoice Id"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:75
+#: \plugins\orders\views\purchase_orders\send.ctp:24
+#: \plugins\orders\views\purchase_orders\view.ctp:24
+msgid "Status"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:103
+msgid "Related Items"
+msgstr ""
+
+#: \plugins\orders\views\invoices\view.ctp:116
+#: \plugins\orders\views\purchase_orders\send.ctp:46
+#: \plugins\orders\views\purchase_orders\view.ctp:46
+msgid "Category Id"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\add.ctp:4
+msgid "Add Purchase Order"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\add.ctp:11
+#: \plugins\orders\views\purchase_orders\edit.ctp:10
+msgid "Select"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\add.ctp:19
+#: \plugins\orders\views\purchase_orders\edit.ctp:18
+msgid "Order Content"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\add.ctp:27
+#: \plugins\orders\views\purchase_orders\edit.ctp:26
+msgid "Package"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\delete.ctp:1
+msgid "Delete Purchase Order \"%s\"?"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\edit.ctp:3
+msgid "Edit Purchase Order"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\index.ctp:4
+msgid "Purchase Orders"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\send.ctp:2
+#: \plugins\orders\views\purchase_orders\view.ctp:2
+msgid "Purchase Order"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\view.ctp:75
+msgid "Send"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\view.ctp:80
+msgid "Add Invoice"
+msgstr ""
+
+#: \plugins\orders\views\purchase_orders\view.ctp:84
+msgid "Add Draft Invoice"
+msgstr ""
+
+#: \plugins\templates\vendors\subtemplate.php:183
+msgid "Could not find template for %s"
+msgstr ""
+
+#: \views\layouts\default.ctp:33
+msgid "Siaplus 2 - "
+msgstr ""
+
+#: \views\layouts\default.ctp:50
+msgid "Representaciones IV Gemaquin - "
+msgstr ""
+
+#: \views\layouts\default.ctp:51;119
+msgid "Logout"
+msgstr ""
+
+#: \views\layouts\default.ctp:67
+msgid "Buscar"
+msgstr ""
+
+#: \views\layouts\default.ctp:70
+#: \views\pages\home.ctp:13
+msgid "Clientes"
+msgstr ""
+
+#: \views\layouts\default.ctp:72
+msgid "Nuevo cliente"
+msgstr ""
+
+#: \views\layouts\default.ctp:73
+msgid "Listar clientes"
+msgstr ""
+
+#: \views\layouts\default.ctp:78
+#: \views\pages\home.ctp:14
+msgid "Proveedores"
+msgstr ""
+
+#: \views\layouts\default.ctp:80
+msgid "Nuevo proveedor"
+msgstr ""
+
+#: \views\layouts\default.ctp:81
+msgid "Listar proveedores"
+msgstr ""
+
+#: \views\layouts\default.ctp:83
+#: \views\pages\home.ctp:15
+msgid "Contactos"
+msgstr ""
+
+#: \views\layouts\default.ctp:85
+msgid "Nuevo contacto"
+msgstr ""
+
+#: \views\layouts\default.ctp:86
+msgid "Listar contactos"
+msgstr ""
+
+#: \views\layouts\default.ctp:88
+msgid "Categorias"
+msgstr ""
+
+#: \views\layouts\default.ctp:90
+msgid "Nueva categoria"
+msgstr ""
+
+#: \views\layouts\default.ctp:91
+msgid "Listar categorias"
+msgstr ""
+
+#: \views\layouts\default.ctp:95
+msgid "Nuevo item"
+msgstr ""
+
+#: \views\layouts\default.ctp:96
+msgid "Listar items"
+msgstr ""
+
+#: \views\layouts\default.ctp:98
+msgid "Inventario"
+msgstr ""
+
+#: \views\layouts\default.ctp:100
+msgid "Ingresar a inventario"
+msgstr ""
+
+#: \views\layouts\default.ctp:101
+msgid "Ver entradas de inventario"
+msgstr ""
+
+#: \views\layouts\default.ctp:104
+msgid "Ordenes de compra"
+msgstr ""
+
+#: \views\layouts\default.ctp:106
+msgid "Nueva orden de compra"
+msgstr ""
+
+#: \views\layouts\default.ctp:107
+msgid "Listar ordenes de compra"
+msgstr ""
+
+#: \views\layouts\default.ctp:109
+#: \views\pages\home.ctp:18
+msgid "Usuarios"
+msgstr ""
+
+#: \views\layouts\default.ctp:111
+msgid "Nuevo usuario"
+msgstr ""
+
+#: \views\layouts\default.ctp:112
+msgid "Listar usuarios"
+msgstr ""
+
+#: \views\layouts\default.ctp:115
+msgid "Sistema"
+msgstr ""
+
+#: \views\layouts\main.ctp:34
+msgid "Siaplus 2 - Representaciones IV Gemaquin C.A."
+msgstr ""
+
+#: \views\pages\home.ctp:16
+msgid "Categorías"
+msgstr ""
+
+#: \views\plugins\categories\categories\index.ctp:37
+msgid "View as Tree"
+msgstr ""
+
+#: \webroot\test.php:88
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
+#: \plugins\categories\controllers\categories_controller.php:113
+#: \plugins\categories\controllers\i18n_categories_controller.php:121
+msgid "The category has been saved"
+msgstr ""
+
+#: \plugins\categories\controllers\categories_controller.php:139
+#: \plugins\categories\controllers\i18n_categories_controller.php:152
+msgid "Category saved"
+msgstr ""
+
+#: \plugins\categories\controllers\categories_controller.php:164
+#: \plugins\categories\controllers\i18n_categories_controller.php:177
+msgid "Category deleted"
+msgstr ""
+
+#: \plugins\categories\models\categorized.php:53
+msgid "Foreign key can not be empty"
+msgstr ""
+
+#: \plugins\categories\models\categorized.php:55
+msgid "Category id can not be empty"
+msgstr ""
+
+#: \plugins\categories\models\categorized.php:57
+msgid "Model field can not be empty"
+msgstr ""
+
+#: \plugins\categories\models\category.php:84
+#: \plugins\categories\models\i18n_category.php:104
+msgid "Please enter a category name"
+msgstr ""
+
+#: \plugins\categories\models\category.php:103
+#: \plugins\categories\models\i18n_category.php:124
+msgid "Could not save the category, please check your inputs."
+msgstr ""
+
+#: \plugins\categories\models\category.php:128;162;185
+#: \plugins\categories\models\i18n_category.php:149;228;253
+msgid "Invalid Category"
+msgstr ""
+
+#: \plugins\categories\models\category.php:203
+#: \plugins\categories\models\i18n_category.php:271
+msgid "You need to confirm to delete this Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_add.ctp:14
+#: \views\plugins\categories\categories\admin_add.ctp:3
+#: \views\plugins\categories\categories\admin_edit.ctp:3
+msgid "Add Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_add.ctp:21
+#: \plugins\categories\views\categories\admin_edit.ctp:22
+#: \plugins\categories\views\i18n_categories\admin_add.ctp:21
+#: \plugins\categories\views\i18n_categories\admin_edit.ctp:30
+#: \views\plugins\categories\categories\admin_add.ctp:14
+#: \views\plugins\categories\categories\admin_edit.ctp:13
+#: \plugins\users\views\details\index.ctp:27
+#: \plugins\users\views\users\change_password.ctp:27
+#: \plugins\users\views\users\login.ctp:24
+#: \plugins\users\views\users\register.ctp:44;100
+#: \plugins\users\views\users\request_password_change.ctp:23
+#: \plugins\users\views\users\reset_password.ctp:14
+#: \views\plugins\users\users\login.ctp:14
+#: \views\plugins\users\users\register.ctp:30
+msgid "Submit"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_edit.ctp:14
+#: \plugins\categories\views\categories\admin_view.ctp:43
+#: \plugins\categories\views\i18n_categories\admin_edit.ctp:14
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:43
+msgid "Edit Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_index.ctp:12
+#: \plugins\categories\views\categories\admin_tree.ctp:12
+#: \plugins\categories\views\categories\index.ctp:12
+#: \plugins\categories\views\i18n_categories\admin_index.ctp:12
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:12
+#: \plugins\categories\views\i18n_categories\index.ctp:12
+#: \views\plugins\categories\categories\admin_tree.ctp:2
+#: \views\plugins\categories\categories\index.ctp:2
+msgid "Categories"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:35
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:35
+#: \views\plugins\categories\categories\admin_tree.ctp:25
+msgid "No categories were added yet. :add-a-new-one now!"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:36
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:36
+#: \views\plugins\categories\categories\admin_tree.ctp:26
+msgid "Add a new one"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:43
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:43
+#: \views\plugins\categories\categories\admin_tree.ctp:33
+msgid "Add category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_tree.ctp:51
+#: \plugins\categories\views\i18n_categories\admin_tree.ctp:51
+#: \views\plugins\categories\categories\admin_tree.ctp:40
+msgid "Add a child"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:14
+#: \plugins\categories\views\categories\view.ctp:14
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:14
+#: \plugins\categories\views\i18n_categories\view.ctp:14
+msgid "Parent Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:44
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:44
+msgid "Delete Category"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:45
+#: \plugins\categories\views\categories\view.ctp:43
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:45
+#: \plugins\categories\views\i18n_categories\view.ctp:43
+msgid "List Categories"
+msgstr ""
+
+#: \plugins\categories\views\categories\admin_view.ctp:46
+#: \plugins\categories\views\i18n_categories\admin_view.ctp:46
+msgid "New Category"
+msgstr ""
+
+#: \plugins\categories\views\i18n_categories\admin_add.ctp:14
+msgid "Add i18n Category"
+msgstr ""
+
+#: \plugins\debug_kit\controllers\components\toolbar.php:107
+msgid "Component initialization"
+msgstr ""
+
+#: \plugins\debug_kit\controllers\components\toolbar.php:108
+msgid "Component initialization and startup"
+msgstr ""
+
+#: \plugins\debug_kit\controllers\components\toolbar.php:180
+msgid "Controller action"
+msgstr ""
+
+#: \plugins\debug_kit\controllers\components\toolbar.php:181
+msgid "Controller action start"
+msgstr ""
+
+#: \plugins\debug_kit\controllers\components\toolbar.php:211
+msgid "Render Controller Action"
+msgstr ""
+
+#: \plugins\debug_kit\controllers\components\toolbar.php:212
+msgid "Controller render start"
+msgstr ""
+
+#: \plugins\debug_kit\controllers\components\toolbar.php:282
+msgid "Could not load DebugToolbar panel %s"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\debug_kit_debugger.php:185
+msgid "Core Processing (Derived)"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\fire_cake.php:297
+msgid "Headers already sent in %s on line %s. Cannot send log data to FirePHP."
+msgstr ""
+
+#: \plugins\debug_kit\vendors\fire_cake.php:318
+msgid "Incorrect parameter count for FireCake::fb()"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\fire_cake.php:397
+msgid "Maximum number (99,999) of messages reached!"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:50
+msgid "-> Testing :url"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:76
+msgid "Total Requests made: :requests"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:77
+msgid "Total Time elapsed: :duration (seconds)"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:81
+msgid "Requests/Second: :rps req/sec"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:85
+msgid "Average request time: :average-time seconds"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:89
+msgid "Standard deviation of average request time: :std-dev"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:93
+msgid "Longest/shortest request: :longest sec/:shortest sec"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:145
+msgid "DebugKit Benchmark Shell"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:147
+msgid "\tAllows you to obtain some rough benchmarking statistics \n\tabout a fully qualified URL."
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:149
+msgid "\tUse:"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:150
+msgid "\t\tcake benchmark [-n iterations] [-t timeout] url"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:152
+msgid "\tParams:"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:153
+msgid "\t\t-n Number of iterations to perform. Defaults to 10. \n\t\t   Must be an integer."
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:154
+msgid "\t\t-t Maximum total time for all iterations, in seconds. \n\t\t   Defaults to 100. Must be an integer."
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:156
+msgid "\tIf a single iteration takes more than the \n\ttimeout specified, only one request will be made."
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:158
+msgid "\tExample Use:"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:159
+msgid "\t\tcake benchmark -n 10 -t 100 http://localhost/testsite"
+msgstr ""
+
+#: \plugins\debug_kit\vendors\shells\benchmark.php:161
+msgid "\tNote that this benchmark does not include browser render time"
+msgstr ""
+
+#: \plugins\debug_kit\views\debug.php:41
+msgid "Rendering %s"
+msgstr ""
+
+#: \plugins\debug_kit\views\debug.php:63
+msgid "Starting to render"
+msgstr ""
+
+#: \plugins\debug_kit\views\debug.php:67
+msgid "Finished"
+msgstr ""
+
+#: \plugins\debug_kit\views\debug.php:83
+msgid "Rendering View"
+msgstr ""
+
+#: \plugins\debug_kit\views\debug.php:89
+msgid "View render complete"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\debug_toolbar.ctp:25
+msgid "There are no active panels. You must enable a panel to see its output."
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\history_panel.ctp:21
+msgid "Request History"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\history_panel.ctp:23
+msgid "No previous requests logged."
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\history_panel.ctp:25
+msgid "previous requests available"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\history_panel.ctp:27
+msgid "Restore to current request"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\log_panel.ctp:21
+msgid "Logs"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\log_panel.ctp:28
+msgid "Time"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\log_panel.ctp:28
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:40;64
+msgid "Message"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\log_panel.ctp:37
+msgid "There were no log entries made this request"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\request_panel.ctp:21
+msgid "Request"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\request_panel.ctp:35
+msgid "Current Route"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\session_panel.ctp:21
+msgid "Session"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\sql_log_panel.ctp:25
+msgid "Sql Logs"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\sql_log_panel.ctp:40
+msgid "Query Explain:"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\sql_log_panel.ctp:43
+msgid "Click an \"Explain\" link above, to see the query explanation."
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\sql_log_panel.ctp:48
+msgid "No active database connections"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:33
+msgid "Memory"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:36
+msgid "Peak Memory Use"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:40
+msgid "Memory use"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:53
+msgid "Timers"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:55
+msgid "%s (ms)"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:56
+msgid "Total Request Time:"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:65
+msgid "Time in ms"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\timer_panel.ctp:66
+msgid "Graph"
+msgstr ""
+
+#: \plugins\debug_kit\views\elements\variables_panel.ctp:21
+msgid "View Variables"
+msgstr ""
+
+#: \plugins\debug_kit\views\helpers\html_toolbar.php:184
+msgid "Explain"
+msgstr ""
+
+#: \plugins\debug_kit\views\helpers\simple_graph.php:77
+msgid "Starting %sms into the request, taking %sms"
+msgstr ""
+
+#: \plugins\debug_kit\views\helpers\toolbar.php:158
+msgid "maybe slow"
+msgstr ""
+
+#: \plugins\migrations\libs\migration_version.php:162
+msgid "Class `%1$s` not found on file `%2$s` for %3$s."
+msgstr ""
+
+#: \plugins\migrations\libs\migration_version.php:271
+msgid "File `%1$s` not found in the %2$s."
+msgstr ""
+
+#: \plugins\migrations\libs\migration_version.php:281
+msgid "%2$s does not contain a proper map.php file."
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:156
+msgid "Migration direction (%s) is not one of valid directions."
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:216
+msgid "Migration action type (%s) is not one of valid actions type."
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:236;293
+msgid "Table \"%s\" already exists in database."
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:243;269;300;372;388
+msgid "SQL Error: %s"
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:262;289
+msgid "Table \"%s\" does not exists in database."
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:332
+msgid "Field \"%s\" does not exists in \"%s\"."
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:340
+msgid "Field \"%s\" already exists in \"%s\"."
+msgstr ""
+
+#: \plugins\migrations\libs\model\cake_migration.php:423
+msgid "Interrupted when running \"%s\" callback."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:76
+msgid "Cake Migration Shell"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:92
+msgid "Creating table :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:93
+msgid "Dropping table :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:94
+msgid "Renaming table :old_name to :new_name."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:95
+msgid "Adding field :field to :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:96
+msgid "Dropping field :field from :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:97
+msgid "Changing field :field from :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:98
+msgid "Renaming field :old_name to :new_name on :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:99
+msgid "Adding index :index to :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:100
+msgid "Dropping index :index from :table."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:129
+msgid "No migrations available."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:145;159;181
+msgid "Not a valid migration version."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:167
+msgid "Please, choose what version you want to migrate to. [q]uit or [c]lean."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:188
+msgid "Running migrations:"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:192
+msgid "An error occurred when processing the migration:"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:193
+msgid "Migration: %s"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:194
+msgid "Error: %s"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:200
+msgid "All migrations have completed."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:213
+msgid "Please enter the descriptive name of the migration to generate:"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:216
+msgid "Migration name (%s) is invalid. It must only contain alphanumeric characters."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:229
+msgid "Do you want compare the schema.php file to the database?"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:232
+msgid "Comparing schema.php to the database..."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:243
+msgid "Do you want generate a dump from current database?"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:246
+msgid "Generating dump from current database..."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:260
+msgid "Generating Migration..."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:276
+msgid "Mapping Migrations..."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:284
+msgid "Done."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:321
+msgid "Current version:"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:326
+msgid "None applied."
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:329
+msgid "Latest version:"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:397
+msgid "Current migration version:"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:402
+msgid "Available migrations:"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:408
+msgid "applied"
+msgstr ""
+
+#: \plugins\migrations\vendors\shells\migration.php:410
+msgid "not applied"
+msgstr ""
+
+#: \plugins\search\controllers\components\prg.php:232
+msgid "Please correct the errors below."
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:57;145
+msgid "Invalid Detail."
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:79
+msgid "Saved"
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:100
+msgid "%s details saved"
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:118;206
+msgid "Invalid id for Detail"
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:122;210
+msgid "Detail deleted"
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:160;184
+msgid "The Detail has been saved"
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:163;187
+msgid "The Detail could not be saved. Please, try again."
+msgstr ""
+
+#: \plugins\users\controllers\details_controller.php:179
+msgid "Invalid Detail"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:146
+msgid "Profile saved."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:148
+msgid "Could not save your profile."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:182
+msgid "Invalid User."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:195
+msgid "The User has been saved"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:210
+msgid "User saved"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:233
+msgid "User deleted"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:235
+#: \plugins\users\models\user.php:671
+msgid "Invalid User"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:257
+msgid "You are already registered and logged in!"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:266
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:207
+msgid "Your account has been created. You should receive an e-mail shortly to authenticate your account. Once validated you will be able to login."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:271
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:218
+msgid "Your account could not be created. Please, try again."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:292
+msgid "%s you have successfully logged in"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:354
+msgid "%s you have successfully logged out"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:380
+msgid "There url you accessed is not longer valid"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:403;516
+msgid "Password Reset"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:405
+msgid "Your password has been reset"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:406
+msgid "Please login using this password and change your password"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:409
+msgid "Your password was sent to your registered email account"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:415
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:231
+msgid "Your e-mail has been validated!"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:419
+msgid "There was an error trying to validate your e-mail address. Please check your e-mail for the URL you should use to verify your e-mail address."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:423
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:236
+msgid "The url you accessed is not longer valid"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:437
+msgid "Password changed."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:492
+msgid "Account verification"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:534
+msgid "%s has been sent an email with instruction to reset their password."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:538
+msgid "You should receive an email with further instructions shortly"
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:542
+msgid "No user was found with that email."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:589
+msgid "Invalid password reset token, try again."
+msgstr ""
+
+#: \plugins\users\controllers\users_controller.php:595
+msgid "Password changed, you can now login with your new password."
+msgstr ""
+
+#: \plugins\users\models\user.php:92
+msgid "Please enter a username"
+msgstr ""
+
+#: \plugins\users\models\user.php:95
+msgid "The username must be alphanumeric"
+msgstr ""
+
+#: \plugins\users\models\user.php:98
+msgid "This username is already in use."
+msgstr ""
+
+#: \plugins\users\models\user.php:101
+msgid "The username must have at least 3 characters."
+msgstr ""
+
+#: \plugins\users\models\user.php:106
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: \plugins\users\models\user.php:109
+msgid "This email is already in use."
+msgstr ""
+
+#: \plugins\users\models\user.php:113
+msgid "The password must have at least 6 characters."
+msgstr ""
+
+#: \plugins\users\models\user.php:116
+msgid "Please enter a password."
+msgstr ""
+
+#: \plugins\users\models\user.php:119
+msgid "The passwords are not equal, please try again."
+msgstr ""
+
+#: \plugins\users\models\user.php:122
+msgid "You must agree to the terms of use."
+msgstr ""
+
+#: \plugins\users\models\user.php:127;327
+msgid "The passwords are not equal."
+msgstr ""
+
+#: \plugins\users\models\user.php:129
+msgid "Invalid password."
+msgstr ""
+
+#: \plugins\users\models\user.php:148
+msgid "Invalid date"
+msgstr ""
+
+#: \plugins\users\models\user.php:287
+msgid "This Email Address exists but was never validated."
+msgstr ""
+
+#: \plugins\users\models\user.php:289
+msgid "This Email Address does not exist in the system."
+msgstr ""
+
+#: \plugins\users\models\user.php:374
+msgid "$this->data['"
+msgstr ""
+
+#: \plugins\users\models\user.php:424
+msgid "The user does not exist."
+msgstr ""
+
+#: \plugins\users\models\user.php:461
+msgid "Please enter your email address."
+msgstr ""
+
+#: \plugins\users\models\user.php:471
+msgid "The email address does not exist in the system"
+msgstr ""
+
+#: \plugins\users\models\user.php:476
+msgid "Your account is already authenticaed."
+msgstr ""
+
+#: \plugins\users\models\user.php:481
+msgid "Your account is disabled."
+msgstr ""
+
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:48
+msgid "Sorry, but you need to login to access this location."
+msgstr ""
+
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:49;188
+msgid "Invalid e-mail / password combination.  Please try again"
+msgstr ""
+
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:182
+msgid "testuser you have successfully logged in"
+msgstr ""
+
+#: \plugins\users\tests\cases\controllers\users_controller.test.php:248
+msgid "floriank you have successfully logged out"
+msgstr ""
+
+#: \plugins\users\views\details\add.ctp:15
+#: \plugins\users\views\details\admin_add.ctp:15
+msgid "Add Detail"
+msgstr ""
+
+#: \plugins\users\views\details\add.ctp:27
+#: \plugins\users\views\details\admin_add.ctp:27
+#: \plugins\users\views\details\admin_edit.ctp:29
+#: \plugins\users\views\details\admin_view.ctp:56
+#: \plugins\users\views\details\view.ctp:57
+msgid "List Details"
+msgstr ""
+
+#: \plugins\users\views\details\add.ctp:28
+#: \plugins\users\views\details\admin_add.ctp:28
+#: \plugins\users\views\details\admin_edit.ctp:30
+#: \plugins\users\views\details\admin_index.ctp:78
+#: \plugins\users\views\details\admin_view.ctp:58
+#: \plugins\users\views\details\view.ctp:59
+#: \plugins\users\views\users\admin_add.ctp:24
+#: \plugins\users\views\users\admin_edit.ctp:26
+#: \plugins\users\views\users\admin_view.ctp:36
+msgid "List Users"
+msgstr ""
+
+#: \plugins\users\views\details\add.ctp:29
+#: \plugins\users\views\details\admin_add.ctp:29
+#: \plugins\users\views\details\admin_edit.ctp:31
+#: \plugins\users\views\details\admin_index.ctp:79
+#: \plugins\users\views\details\admin_view.ctp:59
+#: \plugins\users\views\details\view.ctp:60
+#: \plugins\users\views\users\admin_view.ctp:37
+msgid "New User"
+msgstr ""
+
+#: \plugins\users\views\details\admin_edit.ctp:15
+#: \plugins\users\views\details\admin_view.ctp:54
+#: \plugins\users\views\details\edit.ctp:16
+#: \plugins\users\views\details\view.ctp:55
+msgid "Edit Detail"
+msgstr ""
+
+#: \plugins\users\views\details\admin_index.ctp:13
+#: \plugins\users\views\users\register.ctp:15
+msgid "Details"
+msgstr ""
+
+#: \plugins\users\views\details\admin_index.ctp:71
+#: \plugins\users\views\users\index.ctp:51
+msgid "previous"
+msgstr ""
+
+#: \plugins\users\views\details\admin_index.ctp:73
+#: \plugins\users\views\users\index.ctp:53
+msgid "next"
+msgstr ""
+
+#: \plugins\users\views\details\admin_index.ctp:77
+#: \plugins\users\views\details\admin_view.ctp:57
+#: \plugins\users\views\details\view.ctp:58
+msgid "New Detail"
+msgstr ""
+
+#: \plugins\users\views\details\admin_view.ctp:13
+#: \plugins\users\views\details\view.ctp:13
+msgid "Detail"
+msgstr ""
+
+#: \plugins\users\views\details\admin_view.ctp:30
+#: \plugins\users\views\details\view.ctp:30
+msgid "Field"
+msgstr ""
+
+#: \plugins\users\views\details\admin_view.ctp:35
+#: \plugins\users\views\details\view.ctp:35
+msgid "Value"
+msgstr ""
+
+#: \plugins\users\views\details\admin_view.ctp:55
+#: \plugins\users\views\details\view.ctp:56
+msgid "Delete Detail"
+msgstr ""
+
+#: \plugins\users\views\elements\login.ctp:23
+#: \plugins\users\views\users\login.ctp:21
+#: \plugins\users\views\users\register.ctp:30
+#: \views\plugins\users\users\login.ctp:11
+#: \views\plugins\users\users\register.ctp:17
+msgid "Password"
+msgstr ""
+
+#: \plugins\users\views\elements\login.ctp:25
+#: \plugins\users\views\users\login.ctp:12;14
+msgid "Login"
+msgstr ""
+
+#: \plugins\users\views\elements\email\text\account_verification.ctp:12
+msgid "Hello %s,"
+msgstr ""
+
+#: \plugins\users\views\elements\email\text\account_verification.ctp:14
+msgid "to validate your account, you must visit the URL below within 24 hours"
+msgstr ""
+
+#: \plugins\users\views\elements\email\text\password_reset_request.ctp:12
+msgid "A request to reset your password was sent. To change your password click the link below."
+msgstr ""
+
+#: \plugins\users\views\users\admin_add.ctp:15
+msgid "Add User"
+msgstr ""
+
+#: \plugins\users\views\users\admin_edit.ctp:15
+#: \plugins\users\views\users\admin_view.ctp:34
+#: \plugins\users\views\users\edit.ctp:14
+msgid "Edit User"
+msgstr ""
+
+#: \plugins\users\views\users\admin_index.ctp:13
+#: \plugins\users\views\users\index.ctp:13
+msgid "Users"
+msgstr ""
+
+#: \plugins\users\views\users\admin_index.ctp:15
+msgid "Filter"
+msgstr ""
+
+#: \plugins\users\views\users\admin_index.ctp:19
+#: \plugins\users\views\users\admin_view.ctp:15
+#: \plugins\users\views\users\register.ctp:68;74
+#: \plugins\users\views\users\search.ctp:16
+#: \plugins\users\views\users\view.ctp:15
+msgid "Username"
+msgstr ""
+
+#: \plugins\users\views\users\admin_index.ctp:22
+#: \plugins\users\views\users\search.ctp:21
+msgid "Search"
+msgstr ""
+
+#: \plugins\users\views\users\admin_view.ctp:35
+msgid "Delete User"
+msgstr ""
+
+#: \plugins\users\views\users\change_password.ctp:12
+msgid "Change your password"
+msgstr ""
+
+#: \plugins\users\views\users\change_password.ctp:14
+msgid "Please enter your old password because of security reasons and then your new password twice."
+msgstr ""
+
+#: \plugins\users\views\users\change_password.ctp:19
+msgid "Old Password"
+msgstr ""
+
+#: \plugins\users\views\users\change_password.ctp:22
+#: \plugins\users\views\users\reset_password.ctp:9
+msgid "New Password"
+msgstr ""
+
+#: \plugins\users\views\users\dashboard.ctp:13
+msgid "Welcome"
+msgstr ""
+
+#: \plugins\users\views\users\dashboard.ctp:14
+msgid "Recent broadcasts"
+msgstr ""
+
+#: \plugins\users\views\users\index.ctp:57
+msgid "Register an account"
+msgstr ""
+
+#: \plugins\users\views\users\login.ctp:22
+msgid "Remember Me"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:13
+#: \views\plugins\users\users\register.ctp:2
+msgid "Account registration"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:21
+#: \views\plugins\users\users\register.ctp:8
+msgid "Please select a username that is not already in use"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:22
+#: \views\plugins\users\users\register.ctp:9
+msgid "Must be at least 3 characters"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:23
+#: \views\plugins\users\users\register.ctp:10
+msgid "Username must contain numbers and letters only"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:24
+#: \views\plugins\users\users\register.ctp:11
+msgid "Please choose username"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:26
+#: \views\plugins\users\users\register.ctp:13
+msgid "E-mail (used as login)"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:27
+#: \views\plugins\users\users\register.ctp:14
+msgid "Must be a valid email address"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:28
+#: \views\plugins\users\users\register.ctp:15
+msgid "An account with that email already exists"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:32
+#: \views\plugins\users\users\register.ctp:19
+msgid "Must be at least 5 characters long"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:34
+#: \views\plugins\users\users\register.ctp:21
+msgid "Password (confirm)"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:36
+#: \views\plugins\users\users\register.ctp:23
+msgid "Passwords must match"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:40;96
+#: \views\plugins\users\users\register.ctp:27
+msgid "I have read and agreed to "
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:40;96
+#: \views\plugins\users\users\register.ctp:27
+msgid "Terms of Service"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:41;97
+#: \views\plugins\users\users\register.ctp:28
+msgid "You must verify you have read the Terms of Service"
+msgstr ""
+
+#: \plugins\users\views\users\register.ctp:57
+msgid "Openid Identifier"
+msgstr ""
+
+#: \plugins\users\views\users\request_password_change.ctp:12
+msgid "Forgot your password?"
+msgstr ""
+
+#: \plugins\users\views\users\request_password_change.ctp:14
+msgid "Please enter the email you used for registration and you'll get an email with further instructions."
+msgstr ""
+
+#: \plugins\users\views\users\request_password_change.ctp:22
+msgid "Your Email"
+msgstr ""
+
+#: \plugins\users\views\users\reset_password.ctp:1
+msgid "Reset your password"
+msgstr ""
+
+#: \plugins\users\views\users\search.ctp:12
+msgid "Search for users"
+msgstr ""
+
+#: \plugins\utils\controllers\components\archive.php:156
+msgid "No %s found for that date range"
+msgstr ""
+
+#: \plugins\utils\controllers\components\form_preserver.php:77
+msgid "Your form data is preserved you'll be redirected to it after login."
+msgstr ""
+
+#: \plugins\utils\models\behaviors\csv_import.php:142
+msgid "%s for Row %d failed to save."
+msgstr ""
+
+#: \plugins\utils\models\behaviors\toggleable.php:48
+msgid "You need to define at least one field to be toggleable."
+msgstr ""
+
+#: \plugins\utils\models\behaviors\toggleable.php:69
+msgid "The field %s is not in the list of toggleable fields."
+msgstr ""
+
+#: \plugins\utils\models\behaviors\toggleable.php:73
+msgid "The field %s does not have two toggleable states defined."
+msgstr ""
+
+#: \plugins\utils\models\behaviors\toggleable.php:93
+msgid "Invalid record"
+msgstr ""
+

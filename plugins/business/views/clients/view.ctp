@@ -54,13 +54,13 @@
 	</dl>
 </div>
 
-<div class="related">
+<div class="related index">
 	<h3><?php __('Related Addresses');?></h3>
 	<?php if (!empty($client['Address'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Organization Id'); ?></th>
+		<!-- <th><?php //__('Id'); ?></th>
+		<th><?php //__('Organization Id'); ?></th>  -->
 		<th><?php __('Type'); ?></th>
 		<th><?php __('Phone'); ?></th>
 		<th><?php __('Address 1'); ?></th>
@@ -68,10 +68,10 @@
 		<th><?php __('City'); ?></th>
 		<th><?php __('State'); ?></th>
 		<th><?php __('Country'); ?></th>
-		<th><?php __('Zip'); ?></th>
-		<th><?php __('Notes'); ?></th>
-		<th><?php __('Created'); ?></th>
-		<th><?php __('Modified'); ?></th>
+		<!-- <th><?php //__('Zip'); ?></th>
+		<th><?php //__('Notes'); ?></th>
+		<th><?php //__('Created'); ?></th>
+		<th><?php //__('Modified'); ?></th>  -->
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -83,8 +83,8 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $address['id'];?></td>
-			<td><?php echo $address['organization_id'];?></td>
+			<!-- <td><?php //echo $address['id'];?></td>
+			<td><?php //echo $address['organization_id'];?></td>  -->
 			<td><?php echo $address['type'];?></td>
 			<td><?php echo $address['phone'];?></td>
 			<td><?php echo $address['address_1'];?></td>
@@ -92,10 +92,10 @@
 			<td><?php echo $address['city'];?></td>
 			<td><?php echo $address['state'];?></td>
 			<td><?php echo $address['country'];?></td>
-			<td><?php echo $address['zip'];?></td>
-			<td><?php echo $address['notes'];?></td>
-			<td><?php echo $address['created'];?></td>
-			<td><?php echo $address['modified'];?></td>
+			<!-- <td><?php //echo $address['zip'];?></td>
+			<td><?php //echo $address['notes'];?></td>
+			<td><?php //echo $address['created'];?></td>
+			<td><?php //echo $address['modified'];?></td>  -->
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'addresses', 'action' => 'view', $address['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'addresses', 'action' => 'edit', $address['id'])); ?>
@@ -105,15 +105,21 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
+</div>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nueva dirección', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+		</ul>
+	</div>
 
 	
-<div class="related">
+<div class="related index">
 	<h3><?php __('Related Bank Accounts');?></h3>
 	<?php if (!empty($client['BankAccount'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Organization Id'); ?></th>
+		<!-- <th><?php //__('Id'); ?></th>
+		<th><?php //__('Organization Id'); ?></th>  -->
 		<th><?php __('Bank Name'); ?></th>
 		<th><?php __('Currency'); ?></th>
 		<th><?php __('Type'); ?></th>
@@ -121,12 +127,12 @@
 		<th><?php __('Address 1'); ?></th>
 		<th><?php __('Address 2'); ?></th>
 		<th><?php __('Country'); ?></th>
-		<th><?php __('Iban'); ?></th>
-		<th><?php __('Aba'); ?></th>
-		<th><?php __('Swift'); ?></th>
-		<th><?php __('Notes'); ?></th>
-		<th><?php __('Created'); ?></th>
-		<th><?php __('Modified'); ?></th>
+		<!-- <th><?php //__('Iban'); ?></th>
+		<th><?php //__('Aba'); ?></th>
+		<th><?php //__('Swift'); ?></th>
+		<th><?php //__('Notes'); ?></th>
+		<th><?php //__('Created'); ?></th>
+		<th><?php //__('Modified'); ?></th>  -->
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -138,8 +144,8 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $bankAccount['id'];?></td>
-			<td><?php echo $bankAccount['organization_id'];?></td>
+			<!-- <td><?php //echo $bankAccount['id'];?></td>
+			<td><?php //echo $bankAccount['organization_id'];?></td> -->
 			<td><?php echo $bankAccount['bank_name'];?></td>
 			<td><?php echo $bankAccount['currency'];?></td>
 			<td><?php echo $bankAccount['type'];?></td>
@@ -147,12 +153,12 @@
 			<td><?php echo $bankAccount['address_1'];?></td>
 			<td><?php echo $bankAccount['address_2'];?></td>
 			<td><?php echo $bankAccount['country'];?></td>
-			<td><?php echo $bankAccount['iban'];?></td>
-			<td><?php echo $bankAccount['aba'];?></td>
-			<td><?php echo $bankAccount['swift'];?></td>
-			<td><?php echo $bankAccount['notes'];?></td>
-			<td><?php echo $bankAccount['created'];?></td>
-			<td><?php echo $bankAccount['modified'];?></td>
+			<!-- <td><?php //echo $bankAccount['iban'];?></td>
+			<td><?php //echo $bankAccount['aba'];?></td>
+			<td><?php //echo $bankAccount['swift'];?></td>
+			<td><?php //echo $bankAccount['notes'];?></td>
+			<td><?php //echo $bankAccount['created'];?></td>
+			<td><?php //echo $bankAccount['modified'];?></td>  -->
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'bank_accounts', 'action' => 'view', $bankAccount['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'bank_accounts', 'action' => 'edit', $bankAccount['id'])); ?>
@@ -162,23 +168,29 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
+</div>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'bank_accounts', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+		</ul>
+	</div>
 
 	
-<div class="related">
+<div class="related index">
 	<h3><?php __('Related Contacts');?></h3>
 	<?php if (!empty($client['Contact'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Organization Id'); ?></th>
+		<!-- <th><?php //__('Id'); ?></th>
+		<th><?php //__('Organization Id'); ?></th>  -->
 		<th><?php __('Name'); ?></th>
 		<th><?php __('Email'); ?></th>
 		<th><?php __('Phone'); ?></th>
 		<th><?php __('Mobile'); ?></th>
 		<th><?php __('Position'); ?></th>
-		<th><?php __('Role'); ?></th>
-		<th><?php __('Created'); ?></th>
-		<th><?php __('Modified'); ?></th>
+		<!-- <th><?php //__('Role'); ?></th>
+		<th><?php //__('Created'); ?></th>
+		<th><?php //__('Modified'); ?></th>  -->
 		<th class="actions"><?php __('Actions');?></th>
 	</tr>
 	<?php
@@ -190,16 +202,16 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $contact['id'];?></td>
-			<td><?php echo $contact['organization_id'];?></td>
+			<!-- <td><?php //echo $contact['id'];?></td>
+			<td><?php //echo $contact['organization_id'];?></td>  -->
 			<td><?php echo $contact['name'];?></td>
 			<td><?php echo $contact['email'];?></td>
 			<td><?php echo $contact['phone'];?></td>
 			<td><?php echo $contact['mobile'];?></td>
 			<td><?php echo $contact['position'];?></td>
-			<td><?php echo $contact['role'];?></td>
-			<td><?php echo $contact['created'];?></td>
-			<td><?php echo $contact['modified'];?></td>
+			<!-- <td><?php //echo $contact['role'];?></td>
+			<td><?php //echo $contact['created'];?></td>
+			<td><?php //echo $contact['modified'];?></td>  -->
 			<td class="actions">
 				<?php echo $this->Html->link(__('View', true), array('controller' => 'contacts', 'action' => 'view', $contact['id'])); ?>
 				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'contacts', 'action' => 'edit', $contact['id'])); ?>
@@ -209,6 +221,10 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-
-	
+</div>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Nueva contacto', true), array('controller' => 'contacts', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+		</ul>
+	</div>	
 

@@ -1,18 +1,17 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Francisco Gaivis <francisco.gaivis@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 # LANGUAGE translation of CakePHP Application
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 #
-"Project-Id-Version: GEMAQUIN\n"
-"POT-Creation-Date: 2011-07-12 22:07+0000\n"
-"PO-Revision-Date: 2011-07-16 13:59-0430\n"
-"Last-Translator: Francisco Gaivis <francisco.gaivis@gmail.com>\n"
-"Language-Team: Dynamtek-Cake\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: VENEZUELA\n"
-
 #: app_controller.php:83
 msgid "Sorry, but you need to be logged in to access this location."
 msgstr "Disculpa, debes iniciar sesion para acceder esta seccion"
@@ -1382,7 +1381,7 @@ msgstr "Salir"
 
 #: views/layouts/default.ctp:67
 msgid "Buscar"
-msgstr "Busacar"
+msgstr "Buscar"
 
 #: views/layouts/default.ctp:70
 #: views/pages/home.ctp:13
@@ -1475,4 +1474,36 @@ msgstr "Ver como árbol"
 #: webroot/test.php:88
 msgid "Debug setting does not allow access to this url."
 msgstr "Debug setting does not allow access to this url."
+
+#: webroot/*.php:88
+msgid "Submit"
+msgstr "Enviar"
+
+#: webroot/*.php
+msgid "New client"
+msgstr "Nuevo cliente"
+
+#: webroot/*.php
+msgid "Add Draft Invoice"
+msgstr "Agregar factura proforma"
+
+#: webroot/*.php
+msgid "Insurance"
+msgstr "Seguro"
+
+#: webroot/*.php
+msgid "Shipping"
+msgstr "Envio"
+
+#: webroot/*.php
+msgid "Customs Tax"
+msgstr "Impuestos aduaneros"
+
+#: webroot/*.php
+msgid "Customs Adm"
+msgstr "Costos aduanales"
+
+#: webroot/*.php
+msgid "Internal Shipping"
+msgstr "Envio interno"
 

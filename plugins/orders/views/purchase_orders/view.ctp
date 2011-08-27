@@ -29,21 +29,21 @@
 	</dl>
 </div>
 
-<div class="related">
+<div class="related index">
 	<h3><?php __('Items');?></h3>
 	<?php if (!empty($purchaseOrder['Item'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
+		<!-- <th><?php //__('Id'); ?></th> -->
 		<th><?php __('Name'); ?></th>
 		<th><?php __('Description'); ?></th>
 		<th><?php __('Barcode'); ?></th>
 		<th><?php __('Package Factor'); ?></th>
 		<th><?php __('Sales Factor'); ?></th>
 		<th><?php __('Weight'); ?></th>
-		<th><?php __('Country'); ?></th>
-		<th><?php __('Industry'); ?></th>
-		<th><?php __('Category Id'); ?></th>
+		<!-- <th><?php //__('Country'); ?></th>
+		<th><?php //__('Industry'); ?></th> 
+		<th><?php //__('Category Id'); ?></th> -->
 
 	</tr>
 	<?php
@@ -55,20 +55,22 @@
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $item['id'];?></td>
+			<!-- <td><?php //echo $item['id'];?></td> -->
 			<td><?php echo $item['name'];?></td>
 			<td><?php echo $item['description'];?></td>
 			<td><?php echo $item['barcode'];?></td>
 			<td><?php echo $item['package_factor'];?></td>
 			<td><?php echo $item['sales_factor'];?></td>
 			<td><?php echo $item['weight'];?></td>
-			<td><?php echo $item['country'];?></td>
-			<td><?php echo $item['industry'];?></td>
-			<td><?php echo $item['category_id'];?></td>
+			<!-- <td><?php //echo $item['country'];?></td>
+			<td><?php //echo $item['industry'];?></td>
+			<td><?php //echo $item['category_id'];?></td> -->
 		</tr>
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
+</div>
+<div class="actions">
 <?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) :?>
 	<?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'send')));?>
 	<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
@@ -88,3 +90,4 @@
 	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::DRAFT));?>
 	<?php echo $this->Form->end(array('label'=>__('Add Draft Invoice', true),'id'=>'addInvoice'));?>
 <?php endif;?>
+</div>

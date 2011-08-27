@@ -6,8 +6,8 @@
 
 	<table cellpadding="0" cellspacing="0">
 		<tr>
-			<th><?php echo $this->Paginator->sort('id');?>
-			</th>
+			<!-- <th><?php //echo $this->Paginator->sort('id');?>
+			</th> -->
 			<th><?php echo $this->Paginator->sort('number');?>
 			</th>
 			<th><?php echo $this->Paginator->sort('organization_id');?>
@@ -30,9 +30,9 @@ foreach ($purchaseOrders as $purchaseOrder):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $purchaseOrder['PurchaseOrder']['id']; ?>
-		</td>
+		<!-- <td>
+			<?php //echo $purchaseOrder['PurchaseOrder']['id']; ?>
+		</td> -->
 		<td>
 			<?php echo $purchaseOrder['PurchaseOrder']['number']; ?>
 		</td>
@@ -59,6 +59,10 @@ foreach ($purchaseOrders as $purchaseOrder):
 	
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
 </div>
-
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('Nueva orden de compras', true), array('controller' => 'purchase_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
+	</ul>
+</div>
 
 
