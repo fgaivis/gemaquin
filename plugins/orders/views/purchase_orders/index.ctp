@@ -37,7 +37,7 @@ foreach ($purchaseOrders as $purchaseOrder):
 			<?php echo $purchaseOrder['PurchaseOrder']['number']; ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($purchaseOrder['Provider']['name'], array('controller' => 'organizations', 'action' => 'view', $purchaseOrder['Provider']['id'])); ?>
+			<?php echo $this->Html->link($purchaseOrder['Provider']['name'], array('controller' => 'providers', 'action' => 'view', 'plugin' => 'business', $purchaseOrder['Provider']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $purchaseOrder['PurchaseOrder']['status'];  ?>

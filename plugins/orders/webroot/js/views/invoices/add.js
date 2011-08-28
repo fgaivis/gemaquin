@@ -7,20 +7,21 @@ $(function(){
 		var customsAdm = (isNaN(parseFloat($('#InvoiceCustomsAdm').val())) ? 0 : parseFloat($('#InvoiceCustomsAdm').val()));
 		var intShipping = (isNaN(parseFloat($('#InvoiceInternalShipping').val())) ? 0 : parseFloat($('#InvoiceInternalShipping').val()));
 		var outgoings  = insurance + shipping + customsTax + customsAdm + intShipping;
-		if (total > 0 && outgoings > 0) {
+		total = total + outgoings;
+		if (total > 0) {
 			var index = $(this).attr('index');
 			if (index === undefined) {
 				$('.item-price').each(function(index){
 					var price = (isNaN(parseFloat($(this).val())) ? 0 : parseFloat($(this).val()));
 					var tax = (isNaN(parseFloat($('.item-tax[index=' + index + ']').val())) ? 0 : parseFloat($('.item-tax[index=' + index + ']').val()));
-					var apportionment = ((outgoings * (price + tax)) / total);
+					var apportionment = ((price + tax) / total);
 					$('#InvoicesItem' + index + 'Apportionment').val(apportionment);
 					$('.apportionment-label[index=' + index + ']').html(apportionment);
 				});
 			} else {
 				var price = (isNaN(parseFloat($('.item-price[index=' + index + ']').val())) ? 0 : parseFloat($('.item-price[index=' + index + ']').val()));
 				var tax = (isNaN(parseFloat($('.item-tax[index=' + index + ']').val())) ? 0 : parseFloat($('.item-tax[index=' + index + ']').val()));
-				var apportionment = ((outgoings * (price + tax)) / total);
+				var apportionment = ((price + tax) / total);
 				$('#InvoicesItem' + index + 'Apportionment').val(apportionment);
 				$('.apportionment-label[index=' + index + ']').html(apportionment);
 			}

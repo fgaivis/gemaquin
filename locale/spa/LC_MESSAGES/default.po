@@ -1510,3 +1510,8 @@ msgstr "Envio interno"
 #: alejandro's apportionment
 msgid "Apportionment"
 msgstr "Prorrateo"
+
+#: Invoice Content
+msgid "Invoice Content"
+msgstr "Contenido de la Factura"
+

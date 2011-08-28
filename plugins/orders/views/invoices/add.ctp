@@ -90,7 +90,7 @@
 		</div>	
 	</fieldset>
 	
-<?php echo $this->Form->end('Submit');?>
+<?php echo $this->Form->end(__('Submit', true));?>
 </div>
 <?php $this->Html->script('/orders/js/views/invoices/add',array('inline'=>false)) ?>
 
