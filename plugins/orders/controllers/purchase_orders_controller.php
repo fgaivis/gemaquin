@@ -60,7 +60,7 @@ class PurchaseOrdersController extends AppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$organizations = $this->PurchaseOrder->Provider->find('list');
+		$organizations = $this->PurchaseOrder->Provider->find('list', array('order' => array('name' => 'asc')));
 		$this->set(compact('organizations'));
 	}
 

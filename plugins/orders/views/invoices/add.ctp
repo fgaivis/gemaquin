@@ -15,7 +15,7 @@
 			echo $this->Form->hidden('Invoice.type', array('value' => $this->data['Invoice']['type']));
 			echo $this->Form->hidden('PurchaseOrder.id', array('value' => $this->data['PurchaseOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));						
-		} if (isset($this->data['PrePurchaseOrder'])) {
+		} else if (isset($this->data['PrePurchaseOrder'])) {
 			echo $this->Form->input('number');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
