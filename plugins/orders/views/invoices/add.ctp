@@ -88,11 +88,10 @@
 				<?php endforeach; ?>	
 				
 			</table>
-		</div>	
+		</div>
+<?php endif; ?>	
 	</fieldset>
-	
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
 <?php $this->Html->script('/orders/js/views/invoices/add',array('inline'=>false)) ?>
-<?php endif; ?>
 
