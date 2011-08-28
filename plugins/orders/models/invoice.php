@@ -141,15 +141,20 @@ class Invoice extends OrdersAppModel {
 			} else if (isset($data['PrePurchaseOrder'])) {
 				$data['PrePurchaseOrder']['status'] = PurchaseOrder::PREINVOICED;
 			}
-			$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
-			unset($data['InvoicesItem']);
+			if (!empty($data['InvoicesItem'])) {
+				$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
+				unset($data['InvoicesItem']);
+			}
 			$data['Invoice'] = array_filter($data['Invoice']);
 			$result = $this->saveAll($data);
 			
-			foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
-				$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
+			if (!empty($data['InvoicesItem'])) {
+				foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
+					$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
+				}
+				$result = $this->InvoicesItem->saveAll($invoicesItem['InvoicesItem']);
 			}
-			$result = $this->InvoicesItem->saveAll($invoicesItem['InvoicesItem']);
+			
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;
