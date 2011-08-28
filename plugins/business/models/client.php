@@ -16,7 +16,7 @@ class Client extends Organization {
 			throw new OutOfBoundsException(__('Invalid Client', true));
 		}
 
-		$this->data['client'] = $organization;
+		$this->data['client'] = $client;
 		if (!empty($data)) {
 			$data['Client']['id'] = $id;
 			$tmp = $this->validate;

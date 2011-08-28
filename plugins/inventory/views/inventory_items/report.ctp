@@ -30,7 +30,11 @@
 					<td style="width:25%"><?php __('Purchase Order'); ?></td>
 					<td style="width:25%"><?php echo $item['PurchaseOrder']['number']; ?></td>
 					<td style="width:25%"><?php __('Invoice'); ?></td>
-					<td style="width:25%"><?php echo $item['PurchaseOrder']['Invoice']['number']; ?></td>
+					<td style="width:25%">
+						<?php if (!empty($item['PurchaseOrder']['Invoice']['number'])) : ?>
+							<?php echo $item['PurchaseOrder']['Invoice']['number']; ?>
+						<?php endif; ?>
+					</td>
 				</tr>
 			</table>
 			<h2><?php __('Goods'); ?></h2>
