@@ -47,6 +47,7 @@
 		}
 		
 	?>
+<?php if (!empty($items)) : ?>
 	<div class="module width_full" id="orderTable">
 	<header>
 	<h3><?php __('Invoice Content') ?></h3>
@@ -93,4 +94,5 @@
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
 <?php $this->Html->script('/orders/js/views/invoices/add',array('inline'=>false)) ?>
+<?php endif; ?>
 
