@@ -230,7 +230,16 @@ class Organization extends BusinessAppModel {
 		}
 	}
 
-
+	public function beforeImport($data) {
+		$this->validate = array();
+		if (!empty($data[$this->alias]['code']) && !empty($data[$this->alias]['name'])) {
+			$id = $this->field('id', array(
+				'code' => $data[$this->alias]['code'],
+				'name' => $data[$this->alias]['name']
+			));
+			$data[$this->alias]['id'] = $id;
+		}
+		$data['Contact'] = array($data['Contact']);
+		return $data;
+	}
 }
-?>
-

@@ -244,4 +244,13 @@ class Item extends CatalogAppModel {
 		)), true);
 	}
 
+	public function beforeImport($data) {
+		if (!empty($data[$this->alias]['provider'])) {
+			$data['Organization']['Organization'][] = $this->Organization->field('id', array('name' => $data[$this->alias]['provider']));
+		}
+		if (!empty($data[$this->alias]['package_factor'])) {
+			$data[$this->alias]['package_factor'] = strtoupper($data[$this->alias]['package_factor']);
+		}
+		return $data;
+	}
 }

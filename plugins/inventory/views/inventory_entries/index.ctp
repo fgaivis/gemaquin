@@ -28,7 +28,7 @@ foreach ($inventoryEntries as $inventoryEntry):
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Report', true), array('controller' => 'inventory_items', 'action' => 'report', $inventoryEntry['InventoryEntry']['id'])); ?>
-			<?php echo $this->Html->link(__('Labels', true), '#'); ?>
+			<?php echo $this->Html->link(__('Labels', true), array('controller' => 'inventory_items', 'action' => 'labels', $inventoryEntry['InventoryEntry']['id'])); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

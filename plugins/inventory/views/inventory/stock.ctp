@@ -18,7 +18,8 @@ foreach ($items as $item):
 ?>
 	<tr<?php echo $class;?>>
 		<td>
-			<?php echo $this->Html->link($item['Item']['name'], array('controller' => 'items', 'action' => 'view', $item['Item']['id'])); ?>
+			<?php echo $this->Html->link($item['Item']['name'], array(
+				'plugin' => 'catalog', 'controller' => 'items', 'action' => 'view', $item['Item']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $item['Inventory']['batch']; ?>

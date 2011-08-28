@@ -19,7 +19,8 @@ foreach ($inventoryItems as $inventoryItem):
 ?>
 	<tr<?php echo $class;?>>
 		<td>
-			<?php echo $this->Html->link($inventoryItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $inventoryItem['Item']['id'])); ?>
+			<?php echo $this->Html->link($inventoryItem['Item']['name'], array(
+				'plugin' => 'catalog', 'controller' => 'items', 'action' => 'view', $inventoryItem['Item']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $inventoryItem['InventoryItem']['batch']; ?>

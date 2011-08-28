@@ -129,4 +129,17 @@ class InventoryItemsController extends InventoryAppController {
 		$this->index($entry);
 		$this->layout = 'print';
 	}
+
+	public function labels($entry) {
+		$this->report($entry);
+	}
+
+	public function barcode($id) {
+		$path = APP . 'vendors';
+		ini_set('include_path', $path . PATH_SEPARATOR . ini_get('include_path'));
+		include_once 'Zend/Barcode.php';
+		$barcodeOptions = array('text' => strtoupper(str_replace('-', '', $id)));
+		$renderer = Zend_Barcode::factory('code39', 'image', $barcodeOptions, array());
+		$renderer->render();
+	}
 }

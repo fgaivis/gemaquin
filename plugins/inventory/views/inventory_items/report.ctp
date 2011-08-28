@@ -116,6 +116,20 @@
 					<td style="width:15%;"></td>
 				</tr>
 			</table>
+			<table width="100%" style="margin-top:50px; text-align:center">
+				<tr>
+					<td width="50%">______________________________________________</td>
+					<td>______________________________________________</td>
+				</tr>
+				<tr>
+					<td>Elaborado Por</td>
+					<td>Revisado Por</td>
+				</tr>
+				<tr style="text-align:left">
+					<td>Fecha:</td>
+					<td>Fecha:</td>
+				</tr>
+			</table>
 			<hr class="pagebreak"/>
 			<?php endforeach; ?>
         </div>
