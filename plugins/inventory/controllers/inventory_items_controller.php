@@ -139,7 +139,7 @@ class InventoryItemsController extends InventoryAppController {
 		ini_set('include_path', $path . PATH_SEPARATOR . ini_get('include_path'));
 		include_once 'Zend/Barcode.php';
 		$barcodeOptions = array('text' => strtoupper(str_replace('-', '', $id)));
-		$renderer = Zend_Barcode::factory('code39', 'image', $barcodeOptions, array());
+		$renderer = Zend_Barcode::factory('code128', 'image', $barcodeOptions, array());
 		$renderer->render();
 	}
 }
