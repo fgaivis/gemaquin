@@ -1477,3 +1477,7 @@ msgstr ""
 msgid "Debug setting does not allow access to this url."
 msgstr ""
 
+#: alejandro's apportionment
+msgid "Apportionment"
+msgstr ""
+
