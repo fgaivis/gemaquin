@@ -1,26 +1,38 @@
-<div class="salesOrders form">
-<?php echo $this->Form->create('SalesOrder', array('url' => array('action' => 'add')));?>
+
+<div class="purchaseOrders form">
+<?php echo $this->Form->create('SalesOrder', array('id'=>'soadd','url' => array('action' => 'add')));?>
+	<header><h3><?php __('Add Sales Order');?></h3></header>
+
 	<fieldset>
- 		<legend><?php __('Add Sales Order');?></legend>
+
 	<?php
-		echo $this->Form->input('number');
-		echo $this->Form->input('organization_id');
-		echo $this->Form->input('invoice_id');
-		echo $this->Form->input('InventoryItem');
+		echo $this->Form->input('organization_id',array('id'=>'clients',
+    	    'label'=>__('Provider',true),
+		    'empty' =>__('Select',true)
+        ));
+
 	?>
-	</fieldset>
-<?php echo $this->Form->end('Submit');?>
+
+	<div class="module width_quarter" id="items"></div>
+	<div class="module width_3_quarter" id="orderTable">
+		<header>
+		<h3><?php __('Order Content') ?></h3>
+		</header>
+		<table>
+			<?php
+				echo $html->tableHeaders(array(
+					__('Code', true),
+					__('Item', true),
+					__('Description', true),
+					__('Package', true),
+					__('Quantity', true),
+					__('Actions', true)
+					));
+			?>
+		</table>
+	</div>
+	<div style="clear:both;"></div>
+<?php echo $this->Form->end(array('label'=>__('Save', true),'id'=>'save'));?>
 </div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('List Sales Orders', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Organizations', true), array('controller' => 'organizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Organization', true), array('controller' => 'organizations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Invoices', true), array('controller' => 'invoices', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Invoice', true), array('controller' => 'invoices', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Inv Items Sales Orders', true), array('controller' => 'inv_items_sales_orders', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Inv Items Sales Order', true), array('controller' => 'inv_items_sales_orders', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Inventory Items', true), array('controller' => 'inventory_items', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Inventory Item', true), array('controller' => 'inventory_items', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<?php $this->Html->script('/orders/js/views/sales_orders/add',array('inline'=>false)) ?>
+

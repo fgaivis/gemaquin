@@ -9,6 +9,18 @@ class SalesOrder extends AppModel {
 	public $name = 'SalesOrder';
 
 /**
+ * Sales Order Statuses
+ */
+	const DRAFT = 'DRAFT';
+	const SENT = 'SENT';
+	const APPROVED = 'APPROVED';
+	const INVOICED = 'INVOICED';
+	const DISPATCHED = 'DISPATCHED';
+	const RECEIVED = 'RECEIVED';
+	const COMPLETED = 'COMPLETED';
+	const VOID = 'VOID';
+
+/**
  * Display field name
  *
  * @var string
@@ -30,8 +42,8 @@ class SalesOrder extends AppModel {
  * @access public
  */
 	public $belongsTo = array(
-		'Organization' => array(
-			'className' => 'Organization',
+		'Client' => array(
+			'className' => 'Business.Client',
 			'foreignKey' => 'organization_id',
 			'conditions' => '',
 			'fields' => '',
@@ -70,7 +82,7 @@ class SalesOrder extends AppModel {
 
 	public $hasAndBelongsToMany = array(
 		'InventoryItem' => array(
-			'className' => 'InventoryItem',
+			'className' => 'Inventory.InventoryItem',
 			'joinTable' => 'inv_items_sales_orders',
 			'foreignKey' => 'sales_order_id',
 			'associationForeignKey' => 'inventory_item_id',
@@ -99,11 +111,9 @@ class SalesOrder extends AppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
-			'number' => array(
-				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Number', true))),
 			'organization_id' => array(
-				'uuid' => array('rule' => array('uuid'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Organization', true))),
-		);
+				'NotEmpty' => array('rule' => 'notEmpty','message'=>__('Client is required',true))
+			));
 	}
 
 
@@ -120,12 +130,16 @@ class SalesOrder extends AppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
-			$result = $this->save($data);
-			if ($result !== false) {
-				$this->data = array_merge($data, $result);
-				return true;
+			if (!empty($data['InvItemsSalesOrder'])){
+			    $result = $this->saveAll($data);
+			    if ($result !== false) {
+				    $this->data = array_merge($data, $result);
+				    return true;
+			    } else {
+				    throw new OutOfBoundsException(__('Could not save the Sales Order, please check your inputs.', true));
+			    }
 			} else {
-				throw new OutOfBoundsException(__('Could not save the salesOrder, please check your inputs.', true));
+                throw new OutOfBoundsException(__('A sales order must have at least one item', true));
 			}
 			return $return;
 		}
@@ -175,14 +189,24 @@ class SalesOrder extends AppModel {
  */
 	public function view($id = null) {
 		$salesOrder = $this->find('first', array(
+			'contain' => array('InventoryItem.Item', 'Client', 'Invoice', 'InvItemsSalesOrder'),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
-
 		if (empty($salesOrder)) {
 			throw new OutOfBoundsException(__('Invalid Sales Order', true));
 		}
 
 		return $salesOrder;
+	}
+	
+	public function send($data) {
+		$data['SalesOrder']['status'] = PurchaseOrder::SENT;
+		$result = $this->save($data);
+		if ($result) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 /**

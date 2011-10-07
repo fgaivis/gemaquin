@@ -1,5 +1,6 @@
 <?php
 App::import('Model', 'Orders.PurchaseOrder');
+App::import('Model', 'Orders.SalesOrder');
 
 class Invoice extends OrdersAppModel {
 /**
@@ -77,7 +78,20 @@ class Invoice extends OrdersAppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
+		),
+		'SalesOrder' => array(
+			'className' => 'SalesOrder',
+			'foreignKey' => 'invoice_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 	);
 
 /**

@@ -60,10 +60,9 @@ class SalesOrdersController extends OrdersAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$organizations = $this->SalesOrder->Organization->find('list');
-		$invoices = $this->SalesOrder->Invoice->find('list');
-		$inventoryItems = $this->SalesOrder->InventoryItem->find('list');
-		$this->set(compact('organizations', 'invoices', 'inventoryItems'));
+		$organizations = $this->SalesOrder->Client->find('list');
+		//$inventoryItems = $this->SalesOrder->InventoryItem->find('all', array('contain' => array('Item')));
+		$this->set(compact('organizations'));
  
 	}
 
@@ -114,6 +113,17 @@ class SalesOrdersController extends OrdersAppController {
 		if (!empty($this->SalesOrder->data['salesOrder'])) {
 			$this->set('salesOrder', $this->SalesOrder->data['salesOrder']);
 		}
+	}
+	
+	public function fill_items() {
+		$result = $this->SalesOrder->InventoryItem->find('all',array(
+				'contain'=>'Item',
+		));
+		$result = Set::combine($items,'/Item/id','/Item/name');
+// 		foreach($result as $item) {
+// 			$items[$item['InventoryItem']['id']] = 'Prueba' . substr($item['InventoryItem']['item_id'], 15, 5); 
+// 		}
+		$this->set(compact('items'));
 	}
 
 }

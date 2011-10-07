@@ -31,6 +31,22 @@ class Item extends CatalogAppModel {
 			'order' => ''
 		)
 	);
+	
+	public $hasMany = array(
+		'InventoryItem' => array(
+			'className' => 'Inventory.InventoryItem',
+			'foreignKey' => 'item_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
+	);
 /**
  * HABTM association
  *
