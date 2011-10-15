@@ -88,7 +88,6 @@ class M4d8a7b88c2544244bb7221f494e05dd2 extends CakeMigration {
 					'modified' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 					'indexes' => array(
 						'PRIMARY' => array('column' => 'id', 'unique' => 1),
-						'code' => array('column' => 'code', 'unique' => 1),
 					),
 					'tableParameters' => array('engine' => 'InnoDb'),
 				),
