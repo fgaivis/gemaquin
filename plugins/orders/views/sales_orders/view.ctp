@@ -81,7 +81,7 @@
 	<?php echo $this->Form->create('SalesOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
 	<?php echo $this->Form->hidden('SalesOrder.id', array('value' => $salesOrder['SalesOrder']['id']));?>
 	<?php echo $this->Form->hidden('Organization.id', array('value' => $salesOrder['Client']['id']));?>
-	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::PURCHASE));?>
+	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::SALES));?>
 	<?php echo $this->Form->end(array('label'=>__('Add Invoice', true),'id'=>'addInvoice'));?>
 <?php endif;?>
 </div>
