@@ -17,6 +17,9 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('username');
+		echo $this->Form->hidden('tos', array('value' => true));
+		echo $this->Form->hidden('active', array('value' => true));
+		echo $this->Form->hidden('email_authenticated', array('value' => true));
 	?>
 	</fieldset>
 <?php //echo $this->Form->end(__('Submit'));?>

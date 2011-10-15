@@ -2,6 +2,12 @@
 
 class ImporterShell extends Shell {
 
+	public function main() {
+		$this->clients();
+		$this->providers();
+		$this->items();
+	}
+
 	public function clients() {
 		$Client = ClassRegistry::init('Business.Client');
 		$Client->Behaviors->attach('Utils.CsvImport', array('delimiter' => ','));
