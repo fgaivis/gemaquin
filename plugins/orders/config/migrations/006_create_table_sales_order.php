@@ -30,7 +30,7 @@ class M4e3488cb213c4d01984367be94e05dd2 extends CakeMigration {
                 		),
                 		'inv_items_sales_orders' => array(
 					'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary'),
-			                'inventory_item__id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36),
+			                'inventory_item_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36),
                     			'sales_order_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36),
 			                'quantity' => array('type' => 'integer', 'null' => false, 'default' => NULL),
 					'indexes' => array(
