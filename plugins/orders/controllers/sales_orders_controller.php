@@ -119,7 +119,7 @@ class SalesOrdersController extends OrdersAppController {
 		$result = $this->SalesOrder->InventoryItem->find('all',array(
 				'contain'=>'Item',
 		));
-		$result = Set::combine($items,'/Item/id','/Item/name');
+		$items = Set::combine($result, '/Item/id','/Item/name');
 // 		foreach($result as $item) {
 // 			$items[$item['InventoryItem']['id']] = 'Prueba' . substr($item['InventoryItem']['item_id'], 15, 5); 
 // 		}

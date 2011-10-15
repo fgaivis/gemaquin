@@ -7,7 +7,7 @@
 
 	<?php
 		echo $this->Form->input('organization_id',array('id'=>'clients',
-    	    'label'=>__('Provider',true),
+    	    'label'=>__('Client',true),
 		    'empty' =>__('Select',true)
         ));
 

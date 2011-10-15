@@ -19,7 +19,7 @@ class M4e34518e0ef441dabd2f58cc94e05dd2 extends CakeMigration {
 		'up' => array(
 			'create_field' => array(
 				'purchase_orders' => array(
-					'draft_invoice_id' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_spanish_ci', 'charset' => 'utf8'),
+					'draft_invoice_id' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 				),
 			),
 		),

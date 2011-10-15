@@ -16,9 +16,9 @@ class InvoiceFixture extends CakeTestFixture {
  * @access public
  */
 	public $fields = array(
-		'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary', 'collate' => 'utf8_spanish_ci', 'charset' => 'utf8'),
+		'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'number' => array('type' => 'integer', 'null' => false, 'default' => NULL),
-		'organization_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_spanish_ci', 'charset' => 'utf8'),
+		'organization_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'subtotal' => array('type' => 'float', 'null' => false, 'default' => NULL),
 		'tax' => array('type' => 'float', 'null' => false, 'default' => '0'),
 		'total' => array('type' => 'float', 'null' => false, 'default' => NULL),
@@ -29,7 +29,7 @@ class InvoiceFixture extends CakeTestFixture {
 		'internal_shipping' => array('type' => 'float', 'null' => false, 'default' => '0'),
 		'type' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
-		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_spanish_ci', 'engine' => 'InnoDB')
+		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);
 
 /**
