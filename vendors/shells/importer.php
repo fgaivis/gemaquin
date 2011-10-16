@@ -6,6 +6,7 @@ class ImporterShell extends Shell {
 		$this->clients();
 		$this->providers();
 		$this->items();
+		$this->out('Todo pepito papaaa!');
 	}
 
 	public function clients() {
