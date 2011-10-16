@@ -64,6 +64,11 @@ class M4e3488cb213c4d01984367be94e05dd2 extends CakeMigration {
  * @access public
  */
 	public function after($direction) {
+		if ($direction == 'up') {
+			$SalesOrder = $this->generateModel('SalesOrder');
+			$SalesOrder->query("ALTER TABLE  `sales_orders` ADD UNIQUE (`number`)");
+			$SalesOrder->query("ALTER TABLE  `sales_orders` CHANGE  `number`  `number` INT( 11 ) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;");
+		}
 		return true;
 	}
 }

@@ -90,6 +90,11 @@ class M4dac6698b3f442f1bf181ac894e05dd2 extends CakeMigration {
  * @access public
  */
 	public function after($direction) {
+		if ($direction == 'up') {
+			$PurchaseOrder = $this->generateModel('PurchaseOrder');
+			$PurchaseOrder->query("ALTER TABLE  `purchase_orders` ADD UNIQUE (`number`)");
+			$PurchaseOrder->query("ALTER TABLE  `purchase_orders` CHANGE  `number`  `number` INT( 11 ) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;");
+		}
 		return true;
 	}
 }
