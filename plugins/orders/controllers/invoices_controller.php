@@ -70,7 +70,11 @@ class InvoicesController extends AppController {
 				'conditions' => array(
 					'ItemsPurchaseOrder.purchase_order_id' => $this->data['PrePurchaseOrder']['id'])));
 		} else if (isset($this->data['SalesOrder'])) {
-			//TODO set sales order
+			$items = $this->Invoice->SalesOrder->find('first', array(
+				'contain' => array('InventoryItem.Item'),
+				'conditions' => array(
+					'SalesOrder.id' => $this->data['SalesOrder']['id'])));
+			$items = $items['InventoryItem'];
 		}
 		$this->set(compact('organizations', 'items'));
  

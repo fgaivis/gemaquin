@@ -50,7 +50,7 @@ class SalesOrder extends AppModel {
 			'order' => ''
 		),
 		'Invoice' => array(
-			'className' => 'Invoice',
+			'className' => 'Orders.Invoice',
 			'foreignKey' => 'invoice_id',
 			'conditions' => '',
 			'fields' => '',

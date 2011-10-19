@@ -30,13 +30,14 @@
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else if (isset($this->data['SalesOrder'])) {
 			echo $this->Form->input('number');
-			echo $this->Form->input('organization_id');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total');
 			echo $this->Form->input('insurance', array('class' => 'outgoings'));
 			echo $this->Form->input('internal_shipping', array('class' => 'outgoings'));
 			echo $this->Form->hidden('Invoice.type', array('value' => $this->data['Invoice']['type']));
+			echo $this->Form->hidden('SalesOrder.id', array('value' => $this->data['SalesOrder']['id']));
+			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else {
 			echo $this->Form->input('number');
 			echo $this->Form->input('organization_id');
@@ -69,11 +70,19 @@
 						<td><?php echo $item['Item']['barcode']; ?></td>
 						<td><?php echo $item['Item']['name']; ?></td>
 						<td><?php echo $item['Item']['description']; ?></td>
-						<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
+						<?php if (isset($this->data['PrePurchaseOrder'])): ?>
+							<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
+						<?php elseif (isset($this->data['SalesOrder'])): ?>
+							<td><?php echo $item['InvItemsSalesOrder']['quantity']; ?></td>
+						<?php endif;?>
 						<td>
 							<?php 
 								echo $this->Form->hidden('InvoicesItem.' . $index . '.item_id', array('value' => $item['Item']['id']));
-								echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['ItemsPurchaseOrder']['quantity']));
+								if (isset($this->data['PrePurchaseOrder'])) {
+									echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['ItemsPurchaseOrder']['quantity']));
+								} else if (isset($this->data['SalesOrder'])) {
+									echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['InvItemsSalesOrder']['quantity']));
+								}
 								echo $this->Form->input('InvoicesItem.' . $index . '.price', array('index' => $index, 'label' => false, 'div' => false, 'class' => 'item-price'));
 							?>
 						</td>

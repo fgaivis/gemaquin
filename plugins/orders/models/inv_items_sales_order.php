@@ -17,14 +17,14 @@ class InvItemsSalesOrder extends AppModel {
  */
 	public $belongsTo = array(
 		'InventoryItem' => array(
-			'className' => 'InventoryItem',
+			'className' => 'Inventory.InventoryItem',
 			'foreignKey' => 'inventory_item__id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'SalesOrder' => array(
-			'className' => 'SalesOrder',
+			'className' => 'Orders.SalesOrder',
 			'foreignKey' => 'sales_order_id',
 			'conditions' => '',
 			'fields' => '',

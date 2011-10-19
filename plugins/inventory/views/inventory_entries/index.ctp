@@ -24,7 +24,7 @@ foreach ($inventoryEntries as $inventoryEntry):
 			<?php echo $this->Html->link($inventoryEntry['User']['username'], array('controller' => 'users', 'action' => 'view', $inventoryEntry['User']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($inventoryEntry['PurchaseOrder']['number'], array('controller' => 'purchase_orders', 'action' => 'view', $inventoryEntry['PurchaseOrder']['id'])); ?>
+			<?php echo $this->Html->link($inventoryEntry['PurchaseOrder']['number'], array('plugin' => 'orders', 'controller' => 'purchase_orders', 'action' => 'view', $inventoryEntry['PurchaseOrder']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('Report', true), array('controller' => 'inventory_items', 'action' => 'report', $inventoryEntry['InventoryEntry']['id'])); ?>

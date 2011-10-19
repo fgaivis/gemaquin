@@ -54,7 +54,7 @@ class Invoice extends OrdersAppModel {
 
 	public $hasOne = array(
 		'PurchaseOrder' => array(
-			'className' => 'PurchaseOrder',
+			'className' => 'Orders.PurchaseOrder',
 			'foreignKey' => 'invoice_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -67,7 +67,7 @@ class Invoice extends OrdersAppModel {
 			'counterQuery' => ''
 		),
 		'PrePurchaseOrder' => array(
-			'className' => 'PurchaseOrder',
+			'className' => 'Orders.PurchaseOrder',
 			'foreignKey' => 'draft_invoice_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -80,7 +80,7 @@ class Invoice extends OrdersAppModel {
 			'counterQuery' => ''
 		),
 		'SalesOrder' => array(
-			'className' => 'SalesOrder',
+			'className' => 'Orders.SalesOrder',
 			'foreignKey' => 'invoice_id',
 			'dependent' => false,
 			'conditions' => '',
