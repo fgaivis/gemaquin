@@ -44,7 +44,7 @@ class AppController extends Controller {
  * @var array
  * @access public
  */
-	public $helpers = array('Session', 'Html', 'AutoJavascript', 'Js');
+	public $helpers = array('Session', 'Html', 'AutoJavascript', 'Js', 'Time', 'Number');
 
 /**
  * Object constructor - Adds the Debugkit panel if in development mode

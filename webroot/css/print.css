@@ -3,6 +3,10 @@
 /* import print layout | Druck-Layout einbinden */
 @import url(../yaml/print/print_100_draft.css);
 
+body {
+	font-family: "Courier New", Courier, monospace
+}
+
 .pagebreak {
 	page-break-after:always;
 	visibility:hidden;
@@ -14,4 +18,12 @@ table {
 table tr td {
 	border:1px solid #ccc;
 	padding:3px 7px;
+}
+
+table.invoice-date tr, table.invoice-date th {
+	border:1px solid #ccc;
+}
+
+table.invoice-date th, table.invoice-date td {
+	text-align:center;
 }

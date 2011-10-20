@@ -20,5 +20,7 @@ $map = array(
 		'009_add_control_field_to_invoices' => 'M4e9f4f4038744fd2848d3ca794e05dd2'),
 	10 => array(
 		'010_add_autogenerate_number_to_invoices' => 'M4e9f95bc11b045a08b76551694e05dd2'),
+	11 => array(
+		'add_created_date_for_invoices' => 'M4ea08b1db0a84a4ca665031b94e05dd2'),
 );
 ?>
