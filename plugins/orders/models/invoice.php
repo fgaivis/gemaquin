@@ -129,8 +129,6 @@ class Invoice extends OrdersAppModel {
 	public function __construct($id = false, $table = null, $ds = null) {
 		parent::__construct($id, $table, $ds);
 		$this->validate = array(
-			'number' => array(
-				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Number', true))),
 			'type' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Type', true))),
 		);
@@ -154,21 +152,23 @@ class Invoice extends OrdersAppModel {
 				$data['PurchaseOrder']['status'] = PurchaseOrder::INVOICED;
 			} else if (isset($data['PrePurchaseOrder'])) {
 				$data['PrePurchaseOrder']['status'] = PurchaseOrder::PREINVOICED;
+			} else if (isset($data['SalesOrder'])) {
+				$data['SalesOrder']['status'] = SalesOrder::INVOICED;
 			}
 			if (!empty($data['InvoicesItem'])) {
 				$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
 				unset($data['InvoicesItem']);
 			}
 			$data['Invoice'] = array_filter($data['Invoice']);
-			$result = $this->saveAll($data);
+			$resultinv = $this->saveAll($data);
 			
 			if (!empty($invoicesItem['InvoicesItem'])) {
 				foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
 					$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
 				}
-				$result = $this->InvoicesItem->saveAll($invoicesItem['InvoicesItem']);
+				$resultitem = $this->InvoicesItem->saveAll($invoicesItem['InvoicesItem']);
 			}
-			
+			$result = $resultinv && $resultitem;
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;

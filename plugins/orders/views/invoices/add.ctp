@@ -3,7 +3,6 @@
 	<fieldset>
 	<?php
 		if (isset($this->data['PurchaseOrder'])) {
-			echo $this->Form->input('number');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total', array('class' => 'total'));
@@ -16,7 +15,6 @@
 			echo $this->Form->hidden('PurchaseOrder.id', array('value' => $this->data['PurchaseOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));						
 		} else if (isset($this->data['PrePurchaseOrder'])) {
-			echo $this->Form->input('number');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total', array('class' => 'total'));
@@ -29,7 +27,6 @@
 			echo $this->Form->hidden('PrePurchaseOrder.id', array('value' => $this->data['PrePurchaseOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else if (isset($this->data['SalesOrder'])) {
-			echo $this->Form->input('number');
 			echo $this->Form->input('control');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
@@ -40,7 +37,6 @@
 			echo $this->Form->hidden('SalesOrder.id', array('value' => $this->data['SalesOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else {
-			echo $this->Form->input('number');
 			echo $this->Form->input('organization_id');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');

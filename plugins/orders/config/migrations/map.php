@@ -18,5 +18,7 @@ $map = array(
 		'008_add_status_to_sales_order' => 'M4e8ebddd320c4f5db578143a94e05dd2'),
 	9 => array(
 		'009_add_control_field_to_invoices' => 'M4e9f4f4038744fd2848d3ca794e05dd2'),
+	10 => array(
+		'010_add_autogenerate_number_to_invoices' => 'M4e9f95bc11b045a08b76551694e05dd2'),
 );
 ?>
