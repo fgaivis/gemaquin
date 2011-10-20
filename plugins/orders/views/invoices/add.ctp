@@ -30,6 +30,7 @@
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else if (isset($this->data['SalesOrder'])) {
 			echo $this->Form->input('number');
+			echo $this->Form->input('control');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total');

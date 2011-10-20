@@ -162,7 +162,7 @@ class Invoice extends OrdersAppModel {
 			$data['Invoice'] = array_filter($data['Invoice']);
 			$result = $this->saveAll($data);
 			
-			if (!empty($data['InvoicesItem'])) {
+			if (!empty($invoicesItem['InvoicesItem'])) {
 				foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
 					$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
 				}
@@ -224,6 +224,7 @@ class Invoice extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$invoice = $this->find('first', array(
+			'contain' => array('InvoicesItem.Item', 'PrePurchaseOrder', 'PurchaseOrder', 'SalesOrder', 'Organization'),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 		if (empty($invoice)) {

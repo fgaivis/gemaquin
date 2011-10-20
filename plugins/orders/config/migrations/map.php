@@ -16,5 +16,7 @@ $map = array(
 		'007_add_apportionment_field_to_invoice_item' => 'M4e589472d8ac4ff6b3603bcb94e05dd2'),
 	8 => array(
 		'008_add_status_to_sales_order' => 'M4e8ebddd320c4f5db578143a94e05dd2'),
+	9 => array(
+		'009_add_control_field_to_invoices' => 'M4e9f4f4038744fd2848d3ca794e05dd2'),
 );
 ?>
