@@ -1,14 +1,14 @@
 <div class="invoices index">
-<h2><?php __('Invoices');?></h2>
+<header><h3><?php __('Invoices');?></h3></header>
 <p>
 <?php
-echo $this->Paginator->counter(array(
+/*echo $this->Paginator->counter(array(
 'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
-));
+));*/
 ?></p>
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('id');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
 	<th><?php echo $this->Paginator->sort('number');?></th>
 	<th><?php echo $this->Paginator->sort('organization_id');?></th>
 	<th><?php echo $this->Paginator->sort('subtotal');?></th>
@@ -31,9 +31,9 @@ foreach ($invoices as $invoice):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php echo $invoice['Invoice']['id']; ?>
-		</td>
+		<!-- <td>
+			<?php //echo $invoice['Invoice']['id']; ?>
+		</td> -->
 		<td>
 			<?php echo $invoice['Invoice']['number']; ?>
 		</td>

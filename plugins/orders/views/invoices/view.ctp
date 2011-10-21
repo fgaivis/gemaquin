@@ -1,5 +1,5 @@
 <div class="invoices view">
-<h2><?php  __('Invoice');?></h2>
+<header><h3><?php  __('Invoice');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
@@ -67,8 +67,13 @@
 			&nbsp;
 		</dd>
 	</dl>
+	<?php if($invoice['Invoice']['type'] === Invoice::SALES) : ?>
+	<footer>
+		<p style="margin-left: 10px;"><?php echo $this->Html->link(__('Print invoice', true), array('action' => 'print_invoice', $invoice['Invoice']['id'])); ?></p>
+	</footer>
+	<?php endif; ?>
 </div>
-<div class="related">
+<div class="view related">
 	<?php if (isset($invoice['PurchaseOrder']['id']) || isset($invoice['PrePurchaseOrder']['id']) || isset($invoice['SalesOrder']['id'])):?>
 		<?php 
 			if (isset($invoice['PurchaseOrder']['id'])) {
@@ -83,21 +88,25 @@
 		?>
 	<h3><?php __('Related Orders');?></h3>
 	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php __('Number'); ?></th>
-		<th><?php __('Organization Id'); ?></th>
-		<th><?php __('Status'); ?></th>
-	</tr>
-		
+		<tr>
+			<th><?php __('Number'); ?></th>
+			<th><?php __('Organization Name'); ?></th>
+			<th><?php __('Status'); ?></th>
+		</tr>		
 		<tr>
 			<td><?php echo $order['number'];?></td>
-			<td><?php echo $order['organization_id'];?></td>
+			<?php if(isset($invoice['SalesOrder']['id'])): ?>
+			<td><?php echo $order['Client']['name'];?></td>
 			<td><?php echo $order['status'];?></td>
+			<?php else:?>
+			<td><?php echo $order['Provider']['name'];?></td>
+			<td><?php echo $order['status'];?></td>
+			<?php endif; ?>
 		</tr>
 	</table>
 	<?php endif;?>
 </div>
-<div class="related">
+<div class="view related">
 	<h3><?php __('Related Items');?></h3>
 	<?php if (!empty($invoice['InvoicesItem'])):?>
 	<table cellpadding = "0" cellspacing = "0">
@@ -133,3 +142,4 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
+</div>

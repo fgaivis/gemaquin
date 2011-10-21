@@ -51,6 +51,7 @@
 	<h3><?php __('Invoice Content') ?></h3>
 			</header>
 			<table>
+			<?php if(!(isset($this->data['SalesOrder']))): ?>
 				<?php
 					echo $html->tableHeaders(array(
 							__('Code', true),
@@ -62,6 +63,17 @@
 							__('Apportionment', true),
 						));
 				?>
+			<?php else: ?>
+				<?php
+					echo $html->tableHeaders(array(
+							__('Code', true),
+							__('Item', true),
+							__('Description', true),
+							__('Quantity', true),
+							__('Price', true),
+							__('Tax', true),
+						));
+				?>	<?php endif; ?>
 				<?php foreach ($items as $index => $item) : ?>
 					<tr class="item">
 						<td><?php echo $item['Item']['barcode']; ?></td>
@@ -86,10 +98,12 @@
 						<td>
 							<?php echo $this->Form->input('InvoicesItem.' . $index . '.tax', array('class' => 'item-tax', 'index' => $index, 'label' => false, 'div' => false)); ?>
 						</td>
+						<?php if(!(isset($this->data['SalesOrder']))): ?>
 						<td>
 							<?php echo $this->Form->hidden('InvoicesItem.' . $index . '.apportionment', array('index' => $index)); ?>
 							<?php echo '<span class="apportionment-label" index="' . $index .'"></span>'?> 
 						</td>
+						<?php endif; ?>
 					</tr>	
 				<?php endforeach; ?>	
 				
