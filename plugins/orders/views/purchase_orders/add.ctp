@@ -23,7 +23,6 @@
 				echo $html->tableHeaders(array(
 					__('Code', true),
 					__('Item', true),
-					__('Description', true),
 					__('Package', true),
 					__('Quantity', true),
 					__('Actions', true)

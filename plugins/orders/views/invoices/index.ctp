@@ -1,24 +1,13 @@
 <div class="invoices index">
-<h2><?php __('Invoices');?></h2>
-<p>
-<?php
-echo $this->Paginator->counter(array(
-'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
-));
-?></p>
+<header><h3><?php __('Invoices');?></h3></header>
+
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('id');?></th>
 	<th><?php echo $this->Paginator->sort('number');?></th>
 	<th><?php echo $this->Paginator->sort('organization_id');?></th>
 	<th><?php echo $this->Paginator->sort('subtotal');?></th>
 	<th><?php echo $this->Paginator->sort('tax');?></th>
 	<th><?php echo $this->Paginator->sort('total');?></th>
-	<th><?php echo $this->Paginator->sort('insurance');?></th>
-	<th><?php echo $this->Paginator->sort('shipping');?></th>
-	<th><?php echo $this->Paginator->sort('customs_tax');?></th>
-	<th><?php echo $this->Paginator->sort('customs_adm');?></th>
-	<th><?php echo $this->Paginator->sort('internal_shipping');?></th>
 	<th><?php echo $this->Paginator->sort('type');?></th>
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
@@ -32,37 +21,28 @@ foreach ($invoices as $invoice):
 ?>
 	<tr<?php echo $class;?>>
 		<td>
-			<?php echo $invoice['Invoice']['id']; ?>
-		</td>
-		<td>
 			<?php echo $invoice['Invoice']['number']; ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($invoice['Organization']['name'], array('controller' => 'organizations', 'action' => 'view', $invoice['Organization']['id'])); ?>
+			<?php
+				$controller = $invoice['Invoice']['type'] === Invoice::SALES ? 'clients' : 'providers';
+			?>
+			<?php
+				echo $this->Html->link(
+					$invoice['Organization']['name'], array(
+						'plugin' => 'business',
+						'controller' => $controller, 'action' => 'view', $invoice['Organization']['id']
+				));
+			?>
 		</td>
 		<td>
-			<?php echo $invoice['Invoice']['subtotal']; ?>
+			<?php echo $this->Number->format($invoice['Invoice']['subtotal']); ?>
+		</td>   
+		<td>           
+			<?php echo $this->Number->format($invoice['Invoice']['tax']); ?>
 		</td>
 		<td>
-			<?php echo $invoice['Invoice']['tax']; ?>
-		</td>
-		<td>
-			<?php echo $invoice['Invoice']['total']; ?>
-		</td>
-		<td>
-			<?php echo $invoice['Invoice']['insurance']; ?>
-		</td>
-		<td>
-			<?php echo $invoice['Invoice']['shipping']; ?>
-		</td>
-		<td>
-			<?php echo $invoice['Invoice']['customs_tax']; ?>
-		</td>
-		<td>
-			<?php echo $invoice['Invoice']['customs_adm']; ?>
-		</td>
-		<td>
-			<?php echo $invoice['Invoice']['internal_shipping']; ?>
+			<?php echo $this->Number->format($invoice['Invoice']['total']); ?>
 		</td>
 		<td>
 			<?php echo $invoice['Invoice']['type']; ?>

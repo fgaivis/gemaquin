@@ -454,11 +454,11 @@ section#main {
 .width_quarter {
 	width: 30%;
 	margin-right: 0;
-	/*float: left;*/
+	float: left;
 }
 
 .width_3_quarter {
-	width: 80%;
+	width: 62%;
 	margin-right: 0;
 	float: left;
 }
@@ -1061,7 +1061,7 @@ div.home-menu ul li a:hover {
 .ui-selectable li {
 	margin: 3px;
 	padding: 0.4em;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	height: 18px;
 	cursor: pointer;
 	border: 1px solid #ccc;

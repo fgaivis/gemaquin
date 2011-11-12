@@ -54,14 +54,10 @@ class SalesOrdersController extends OrdersAppController {
 				$this->Session->setFlash(__('The sales order has been saved', true));
 				$this->redirect(array('action' => 'index'));
 			}
-		} catch (OutOfBoundsException $e) {
-			$this->Session->setFlash($e->getMessage());
 		} catch (Exception $e) {
 			$this->Session->setFlash($e->getMessage());
-			$this->redirect(array('action' => 'index'));
 		}
 		$organizations = $this->SalesOrder->Client->find('list', array('order' => 'name'));
-		//$inventoryItems = $this->SalesOrder->InventoryItem->find('all', array('contain' => array('Item')));
 		$this->set(compact('organizations'));
  
 	}
@@ -116,10 +112,12 @@ class SalesOrdersController extends OrdersAppController {
 	}
 	
 	public function fill_items() {
-		$result = $this->SalesOrder->InventoryItem->find('all',array(
-				'contain'=>'Item',
+		$items = $this->SalesOrder->InventoryItem->find('all',array(
+			'contain'=>'Item',
+			'conditions' => array(
+				'InventoryItem.quantity_left >' => 0
+			)
 		));
-		$items = Set::combine($result, '/InventoryItem/id', '/Item/name');
 		$this->set(compact('items'));
 	}
 

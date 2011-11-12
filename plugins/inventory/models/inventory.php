@@ -173,6 +173,16 @@ class Inventory extends InventoryAppModel {
 		}
 	}
 
+	public function decrement($itemId, $quantity) {
+		$item = $this->find('first', array(
+			'contain' => false,
+			'conditions' => array('Inventory.item_id' => $itemId)
+		));
+		if ($item[$this->alias]['quantity'] < $quantity) {
+			throw new Exception(__('No enough quantity left for this item', true));
+		}
+		$this->id = $item[$this->alias]['id'];
+		$this->saveField('quantity', $item[$this->alias]['quantity'] - $quantity);
+	}
 
 }
-?>

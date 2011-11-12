@@ -67,7 +67,7 @@ class PurchaseOrder extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'ItemsPurchaseOrder.item_id',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',

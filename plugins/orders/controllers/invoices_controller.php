@@ -64,17 +64,28 @@ class InvoicesController extends AppController {
 		}
 		$organizations = $this->Invoice->Organization->find('list');
 		$items = array();
-		if (isset($this->data['PrePurchaseOrder'])) {
+		if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])) {
+			$type = isset($this->data['PrePurchaseOrder']) ? 'PrePurchaseOrder' : 'PurchaseOrder';
 			$items = $this->Invoice->PrePurchaseOrder->ItemsPurchaseOrder->find('all', array(
 				'contain' => array('Item'),
+				'order' => 'ItemsPurchaseOrder.item_id',
 				'conditions' => array(
-					'ItemsPurchaseOrder.purchase_order_id' => $this->data['PrePurchaseOrder']['id'])));
+					'ItemsPurchaseOrder.purchase_order_id' => $this->data[$type]['id'])));
 		} else if (isset($this->data['SalesOrder'])) {
 			$items = $this->Invoice->SalesOrder->find('first', array(
 				'contain' => array('InventoryItem.Item'),
 				'conditions' => array(
 					'SalesOrder.id' => $this->data['SalesOrder']['id'])));
 			$items = $items['InventoryItem'];
+			$this->data['Invoice']['control'] = $this->Invoice->getControlNumber();
+		}
+		if (isset($this->data['PurchaseOrder']) && count($this->data['Invoice']) === 1) { //Significa que solo esta cargado el tipo del Invoice
+			$invoice = $this->Invoice->getDraft($this->data['PurchaseOrder']['id']);
+			if ($invoice) {
+				$this->data['Invoice'] = $invoice['Invoice'];
+				$this->data['InvoicesItem'] = $invoice['InvoicesItem'];
+				$this->data['Invoice']['type'] = Invoice::PURCHASE;
+			}
 		}
 		$this->set(compact('organizations', 'items'));
  

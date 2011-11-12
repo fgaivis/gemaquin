@@ -79,6 +79,7 @@ class InventoryItem extends InventoryAppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
+			$data[$this->alias]['quantity_left'] = $data[$this->alias]['quantity'];
 			$result = $this->saveAll($data);
 			if ($result !== false) {
 				ClassRegistry::init('Inventory.Inventory')->add($data);
@@ -182,6 +183,15 @@ class InventoryItem extends InventoryAppModel {
 		}
 	}
 
+	public function decrement($id, $quantity) {
+		$item = $this->read(array('quantity_left', 'item_id'), $id);
+		if ($item[$this->alias]['quantity_left'] < $quantity) {
+			throw new Exception(__('No enough quantity left for this item', true));
+		}
+		$this->id = $id;
+		$this->saveField('quantity_left', $item[$this->alias]['quantity_left'] - $quantity);
+		ClassRegistry::init('Inventory.Inventory')->decrement($item[$this->alias]['item_id'], $quantity);
+	}
 
 }
 ?>

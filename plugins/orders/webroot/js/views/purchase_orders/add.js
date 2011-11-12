@@ -54,7 +54,6 @@ function addItem(itemId) {
 			    var row = $('<tr class="item" id="row' + data.content.Item.id + '">');
 			    row.append('<td>'+ data.content.Item.barcode +'</td>');
 			    row.append('<td>'+ data.content.Item.name +'</td>');
-			    row.append('<td>'+ data.content.Item.description +'</td>');
 			    row.append('<td>'+ data.content.Item.package_factor +'</td>');
 			    row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
 			    row.append(

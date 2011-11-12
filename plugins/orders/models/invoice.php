@@ -108,7 +108,7 @@ class Invoice extends OrdersAppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'InvoicesItem.item_id',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
@@ -179,6 +179,33 @@ class Invoice extends OrdersAppModel {
 		}
 	}
 
+/**
+ * Sets the invoice number
+ *
+ * @return boolean
+ */
+    public function beforeSave() {
+        if (!$this->exists()) {
+            $this->data['Invoice']['number'] = $this->_invoiceNumber($this->data['Invoice']['type']);
+        }
+        return true;
+    }
+
+/**
+ * Returns the next invoice number for a type
+ *
+ */
+    protected function _invoiceNumber($type) {
+        return $this->field('MAX(number)', array('type' => $type)) + 1;
+    }
+
+/**
+ * Returns the next invoice number for a type
+ *
+ */
+    public function getControlNumber() {
+        return str_pad($this->field('MAX(control)') + 1, 11, '0', STR_PAD_LEFT);
+    }
 
 /**
  * Edits an existing Invoice.
@@ -272,5 +299,18 @@ class Invoice extends OrdersAppModel {
 		}
 	}
 
+	public function getDraft($orderId) {
+		$this->hasOne['PrePurchaseOrder']['type'] = 'inner';
+		$result = $this->find('first', array(
+			'contain' => array(
+				'InvoicesItem',
+				'PrePurchaseOrder' => array(
+					'conditions' => array('PrePurchaseOrder.id' => $orderId)
+				)
+			),
+			'conditions' => array('type' => self::DRAFT)
+		));
+		unset($this->hasOne['PrePurchaseOrder']['type']);
+		return $result;
+	}
 }
-?>
