@@ -251,9 +251,11 @@ class Invoice extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$invoice = $this->find('first', array(
-			'contain' => array('InvoicesItem.Item', 'PrePurchaseOrder', 'PurchaseOrder', 'SalesOrder', 'Organization'),
+			'contain' => array('InvoicesItem.Item', 'PrePurchaseOrder', 'PurchaseOrder' => 'Provider', 'SalesOrder' => 'Client', 'Organization'),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
+		//debug($invoice);
+		//die();
 		if (empty($invoice)) {
 			throw new OutOfBoundsException(__('Invalid Invoice', true));
 		}

@@ -53,6 +53,7 @@
 	<h3><?php __('Invoice Content') ?></h3>
 			</header>
 			<table>
+			<?php if(!(isset($this->data['SalesOrder']))): ?>
 				<?php
 				$headers = array(
 						__('Code', true),
@@ -66,6 +67,17 @@
 				}
 					echo $html->tableHeaders($headers);
 				?>
+			<?php else: ?>
+				<?php
+					echo $html->tableHeaders(array(
+							__('Code', true),
+							__('Item', true),
+							__('Description', true),
+							__('Quantity', true),
+							__('Price', true),
+							__('Tax', true),
+						));
+				?>	<?php endif; ?>
 				<?php foreach ($items as $index => $item) : ?>
 					<tr class="item">
 						<td><?php echo $item['Item']['barcode']; ?></td>

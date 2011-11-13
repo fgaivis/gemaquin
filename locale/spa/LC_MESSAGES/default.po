@@ -651,6 +651,13 @@ msgstr "Dirección relacionada"
 msgid "Organization Id"
 msgstr "Id de Organización"
 
+#: plugins/business/views/clients/view.ctp:63;116;173
+#: plugins/business/views/organizations/view.ctp:68;121;178
+#: plugins/business/views/providers/view.ctp:63;116;173
+#: plugins/orders/views/invoices/view.ctp:56
+msgid "Organization Name"
+msgstr "Nombre de Organización"
+
 #: plugins/business/views/clients/view.ctp:102;159;206
 #: plugins/business/views/organizations/view.ctp:107;164;211
 #: plugins/business/views/providers/view.ctp:102;159;206
@@ -1515,3 +1522,18 @@ msgstr "Prorrateo"
 msgid "Invoice Content"
 msgstr "Contenido de la Factura"
 
+#: Invoice Content
+msgid "New Sales Order"
+msgstr "Nueva orden de venta"
+
+#: Invoice Content
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#: Invoice Content
+msgid "Related Orders"
+msgstr "Ordenes relacionadas"
+
+#: Invoice Content
+msgid "Print invoice"
+msgstr "Imprimir factura"
