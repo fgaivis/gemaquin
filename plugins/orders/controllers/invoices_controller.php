@@ -35,6 +35,11 @@ class InvoicesController extends AppController {
 	public function view($id = null) {
 		try {
 			$invoice = $this->Invoice->view($id);
+			if ($invoice['Invoice']['type'] == Invoice::SALES) {
+				for($i = 0; $i < count($invoice['InvoicesItem']); $i++){
+					$invoice['InvoicesItem'][$i]['InventoryItem'] = $this->Invoice->findInventoryItem($invoice['SalesOrder']['id'], $invoice['InvoicesItem'][$i]['item_id']);
+				}
+			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
@@ -141,6 +146,7 @@ class InvoicesController extends AppController {
 
 	public function print_invoice($id) {
 		$this->view($id);
+		
 		$this->layout = 'print';
 	}
 }

@@ -315,4 +315,16 @@ class Invoice extends OrdersAppModel {
 		unset($this->hasOne['PrePurchaseOrder']['type']);
 		return $result;
 	}
+	
+	public function findInventoryItem($orderId, $itemId) {
+		ClassRegistry::flush();
+		$inventoryItem =  ClassRegistry::init('Orders.InvItemsSalesOrder')->find('first', array(
+			'contain' => array(
+				'InventoryItem' => array(
+					'conditions' => array('InventoryItem.item_id' => $itemId))),
+			'conditions' => array('InvItemsSalesOrder.sales_order_id' => $orderId)
+		));
+		return $inventoryItem['InventoryItem'];
+	}
+	
 }

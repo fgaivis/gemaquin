@@ -59,19 +59,19 @@ class SalesOrder extends AppModel {
 	);
 	
 	public $hasMany = array(
-			'InvItemsSalesOrder' => array(
-				'className' => 'Orders.InvItemsSalesOrder',
-				'foreignKey' => 'sales_order_id',
-				'dependent' => false,
-				'conditions' => '',
-				'fields' => '',
-				'order' => '',
-				'limit' => '',
-				'offset' => '',
-				'exclusive' => '',
-				'finderQuery' => '',
-				'counterQuery' => ''
-			),
+		'InvItemsSalesOrder' => array(
+			'className' => 'Orders.InvItemsSalesOrder',
+			'foreignKey' => 'sales_order_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 	);
 /**
  * HABTM association

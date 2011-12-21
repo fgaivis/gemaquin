@@ -18,7 +18,7 @@ class InvItemsSalesOrder extends AppModel {
 	public $belongsTo = array(
 		'InventoryItem' => array(
 			'className' => 'Inventory.InventoryItem',
-			'foreignKey' => 'inventory_item__id',
+			'foreignKey' => 'inventory_item_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
