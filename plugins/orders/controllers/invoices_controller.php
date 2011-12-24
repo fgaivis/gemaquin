@@ -146,7 +146,6 @@ class InvoicesController extends AppController {
 
 	public function print_invoice($id) {
 		$this->view($id);
-		
 		$this->layout = 'print';
 	}
 }

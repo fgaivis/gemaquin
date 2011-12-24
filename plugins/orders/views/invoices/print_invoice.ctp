@@ -9,7 +9,7 @@
 			
 		</tr>
 		<tr>
-			<td colspan="3">Dirección Fiscal: Completar</td>
+			<td colspan="3">Dirección Fiscal: <?php echo (isset($invoice['Organization']['Contact'][0]) ? $invoice['Organization']['Contact'][0]['name'] : 'N/A'); ?></td>
 		</tr>
 		<tr>
 			<td>Rif: <?php echo $invoice['Organization']['fiscalid']; ?></td>
@@ -69,12 +69,12 @@
 					<?php echo $item['Item']['barcode']; ?>
 				</td>
 				<td>
-					<?php echo $item['InventoryItem']['batch']; ?> <br />
-					<i><?php echo $item['InventoryItem']['elaboration_date']; ?></i> <br />
+					<?php echo $item['InventoryItem']['batch']; ?><br />
+					<i><?php echo $item['InventoryItem']['elaboration_date']; ?></i><br />
 					<i><?php echo $item['InventoryItem']['expiration_date']; ?></i>
 				</td>
 				<td>
-					<?php echo $item['Item']['name'] . ' (' . $item['Item']['package_factor']  . ')'; ?>
+					<?php echo $item['Item']['name'] . ' (' . $item['Item']['package_factor']  . ')' .  ($item['exempt'] ? ' (E)' : '') ; ?>
 				</td>
 				<td>
 					<?php echo $item['quantity']; ?>
@@ -86,20 +86,20 @@
 					<?php echo $this->Number->currency($item['price'] * $item['quantity'], ''); ?>
 				</td>
 				<td align="right">
-					<?php echo '12' ?>
+					<?php echo (!$item['exempt'] ? ' 12' : 'N/A') ?>
 				</td>
 		</tr>
 		<?php endforeach; ?>
 		<tr>
 		<tr>
 			<td colspan="3" align="right">Total Exento</td>
-			<td><?php echo "Completar"; ?></td>
+			<td><?php echo $this->Number->currency($invoice['Invoice']['total_exempt'], ''); ?></td>
 			<td align="right">Subtotal</td>
 			<td align="right"><?php echo $this->Number->currency($invoice['Invoice']['subtotal'], ''); ?></td>
 		</tr>
 		<tr>
 			<td colspan="3" align="right">Base Imponible</td>
-			<td><?php echo "Completar"; ?></td>
+			<td><?php echo $this->Number->currency($invoice['Invoice']['total_no_exempt'], ''); ?></td>
 			<td align="right">IVA</td>
 			<td align="right"><?php echo $this->Number->currency($invoice['Invoice']['tax'], ''); ?></td>
 		</tr>

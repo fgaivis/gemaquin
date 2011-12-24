@@ -40,5 +40,19 @@ $(function(){
 			
 		}
 	});
+	$('.item-exempt').change(function() {
+		var index = $(this).attr('index');
+		var checked = $(this).attr('checked');
+		if (index != undefined) {
+			$('.invoice-tax[index=' + index + ']').val(0);
+			if (checked) {
+				$('.item-tax[index=' + index + ']').attr('disabled', 'disabled');
+			} else {
+				$('.item-tax[index=' + index + ']').removeAttr('disabled');
+			}
+			
+		} 
+	});
+		
 });
 

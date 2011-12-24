@@ -1,5 +1,5 @@
 <?php 
-/* orders schema generated on: 2011-12-20 21:36:08 : 1324433168*/
+/* orders schema generated on: 2011-12-24 17:15:31 : 1324763131*/
 class ordersSchema extends CakeSchema {
 	var $name = 'orders';
 
@@ -33,6 +33,8 @@ class ordersSchema extends CakeSchema {
 		'type' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'control' => array('type' => 'integer', 'null' => false, 'default' => NULL),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
+		'total_exempt' => array('type' => 'float', 'null' => false, 'default' => '0'),
+		'total_no_exempt' => array('type' => 'float', 'null' => false, 'default' => '0'),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'number' => array('column' => array('number', 'type'), 'unique' => 1)),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);
@@ -44,6 +46,7 @@ class ordersSchema extends CakeSchema {
 		'price' => array('type' => 'float', 'null' => false, 'default' => NULL),
 		'tax' => array('type' => 'float', 'null' => false, 'default' => '0'),
 		'apportionment' => array('type' => 'float', 'null' => false, 'default' => '0'),
+		'exempt' => array('type' => 'boolean', 'null' => false, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1)),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);
@@ -71,6 +74,8 @@ class ordersSchema extends CakeSchema {
 		'organization_id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'invoice_id' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 36, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'status' => array('type' => 'string', 'null' => false, 'default' => 'DRAFT', 'length' => 20, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
+		'modified' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1), 'number' => array('column' => 'number', 'unique' => 1)),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);

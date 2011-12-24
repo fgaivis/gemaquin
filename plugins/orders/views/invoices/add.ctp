@@ -63,7 +63,7 @@
 						__('Tax', true),
 					);
 				if (isset($this->data['PrePurchaseOrder'])) {
-					$headres[] = __('Apportionment', true);
+					$headers[] = __('Apportionment', true);
 				}
 					echo $html->tableHeaders($headers);
 				?>
@@ -76,12 +76,14 @@
 							__('Quantity', true),
 							__('Price', true),
 							__('Tax', true),
+							__('Exempt', true),
 						));
 				?>	<?php endif; ?>
 				<?php foreach ($items as $index => $item) : ?>
 					<tr class="item">
 						<td><?php echo $item['Item']['barcode']; ?></td>
 						<td><?php echo $item['Item']['name']; ?></td>
+						<td><?php echo $item['Item']['description']; ?></td>
 						<?php if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])): ?>
 							<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
 						<?php elseif (isset($this->data['SalesOrder'])): ?>
@@ -106,6 +108,10 @@
 								<?php echo $this->Form->hidden('InvoicesItem.' . $index . '.apportionment', array('index' => $index));
 									echo '<span class="apportionment-label" index="' . $index .'"></span>'; 
 								?>
+							</td>
+						<?php elseif (isset($this->data['SalesOrder'])): ?>
+							<td>
+								<?php echo $this->Form->input('InvoicesItem.' . $index . '.exempt', array('type' => 'checkbox', 'class' => 'item-exempt', 'index' => $index, 'label' => false, 'div' => false)); ?>
 							</td>
 						<?php endif;?>
 					</tr>	

@@ -58,7 +58,7 @@ class InvoicesItem extends AppModel {
 			'quantity' => array(
 				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Quantity', true))),
 			'tax' => array(
-				'numeric' => array('rule' => array('numeric'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Tax', true))),
+				'numeric' => array('rule' => array('numeric'), 'required' => false, 'allowEmpty' => true, 'message' => __('Please enter a Tax', true))),
 		);
 	}
 

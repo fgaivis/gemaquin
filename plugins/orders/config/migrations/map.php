@@ -24,5 +24,9 @@ $map = array(
 		'add_created_date_for_invoices' => 'M4ea08b1db0a84a4ca665031b94e05dd2'),
 	12 => array(
 		'011_add_created_and_modified_to_sales_orders' => 'M4ef13f68ba584c51a26c307b94e05dd2'),
+	13 => array(
+		'012_add_exempt_field_to_invoice_items' => 'M4ef640f5b2484583b10b0c9c94e05dd2'),
+	14 => array(
+		'013_add_total_exempt_and_total_no_exempt_to_invoices' => 'M4ef647e6d3c44d46be500fe294e05dd2'),
 );
 ?>

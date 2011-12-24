@@ -249,8 +249,10 @@ class SalesOrder extends AppModel {
 
 
 	public function beforeSave() {
-		foreach ($this->data['InvItemsSalesOrder'] as $item)  {
-			ClassRegistry::init('Inventory.InventoryItem')->decrement($item['inventory_item_id'], $item['quantity']);
+		if (!empty($this->data['InvItemsSalesOrder']) && !isset($this->data['SalesOrder']['id'])) {
+			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
+				ClassRegistry::init('Inventory.InventoryItem')->decrement($item['inventory_item_id'], $item['quantity']);
+			}	
 		}
 		return true;
 	}
