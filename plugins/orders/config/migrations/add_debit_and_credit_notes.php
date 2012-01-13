@@ -50,6 +50,7 @@ class M4ef16314c8904850bba16d7994e05dd2 extends CakeMigration {
 					),
 					'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB'),
 				)
+			)
 		),
 		'down' => array(
 			'drop_table' => array(
