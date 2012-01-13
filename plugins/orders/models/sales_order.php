@@ -59,19 +59,19 @@ class SalesOrder extends AppModel {
 	);
 	
 	public $hasMany = array(
-			'InvItemsSalesOrder' => array(
-				'className' => 'Orders.InvItemsSalesOrder',
-				'foreignKey' => 'sales_order_id',
-				'dependent' => false,
-				'conditions' => '',
-				'fields' => '',
-				'order' => '',
-				'limit' => '',
-				'offset' => '',
-				'exclusive' => '',
-				'finderQuery' => '',
-				'counterQuery' => ''
-			),
+		'InvItemsSalesOrder' => array(
+			'className' => 'Orders.InvItemsSalesOrder',
+			'foreignKey' => 'sales_order_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 	);
 /**
  * HABTM association
@@ -249,8 +249,10 @@ class SalesOrder extends AppModel {
 
 
 	public function beforeSave() {
-		foreach ($this->data['InvItemsSalesOrder'] as $item)  {
-			ClassRegistry::init('Inventory.InventoryItem')->decrement($item['inventory_item_id'], $item['quantity']);
+		if (!empty($this->data['InvItemsSalesOrder']) && !isset($this->data['SalesOrder']['id'])) {
+			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
+				ClassRegistry::init('Inventory.InventoryItem')->decrement($item['inventory_item_id'], $item['quantity']);
+			}	
 		}
 		return true;
 	}

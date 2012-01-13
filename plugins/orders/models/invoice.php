@@ -182,6 +182,15 @@ class Invoice extends OrdersAppModel {
 				unset($data['InvoicesItem']);
 			}
 			$data['Invoice'] = array_filter($data['Invoice']);
+			$data['Invoice']['total_exempt'] = 0;
+			$data['Invoice']['total_no_exempt'] = 0;
+			foreach ($invoicesItem['InvoicesItem'] as $invoiceItem) {
+				if ($invoiceItem['exempt']) {
+					$data['Invoice']['total_exempt'] += $invoiceItem['price'];
+				} else { 
+					$data['Invoice']['total_no_exempt'] += $invoiceItem['price'];
+				}
+			}
 			$resultinv = $this->saveAll($data);
 			
 			if (!empty($invoicesItem['InvoicesItem'])) {
@@ -284,7 +293,7 @@ class Invoice extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$invoice = $this->find('first', array(
-			'contain' => array('InvoicesItem.Item', 'PrePurchaseOrder', 'PurchaseOrder' => 'Provider', 'SalesOrder' => 'Client', 'Organization'),
+			'contain' => array('InvoicesItem.Item', 'PrePurchaseOrder', 'PurchaseOrder' => 'Provider', 'SalesOrder' => 'Client', 'Organization', 'Organization.Contact' => array('conditions' => array('Contact.role' => null))),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 		//debug($invoice);
@@ -349,6 +358,21 @@ class Invoice extends OrdersAppModel {
 		return $result;
 	}
 	
+	public function findInventoryItem($orderId, $itemId) {
+		ClassRegistry::flush();
+		$inventoryItems =  ClassRegistry::init('Orders.InvItemsSalesOrder')->find('all', array(
+			'contain' => array(
+				'InventoryItem' => array(
+					'conditions' => array('InventoryItem.item_id' => $itemId))),
+			'conditions' => array('InvItemsSalesOrder.sales_order_id' => $orderId)
+		));
+		foreach($inventoryItems as $inventoryItem) {
+			if (isset($inventoryItem['InventoryItem']['id'])) {
+				return $inventoryItem['InventoryItem'];
+			}
+		}
+	}
+
 	public function saveAttachments($invoice) {
 		$this->getDataSource()->begin($this);
 		$this->create();
@@ -356,4 +380,5 @@ class Invoice extends OrdersAppModel {
 		$this->getDataSource()->commit($this);
 		return true;
 	}
+	
 }

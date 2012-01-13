@@ -5,6 +5,8 @@ $map = array(
 	2 => array(
 		'002_add_quantity_left_to_inventory_items' => 'M4ec0396f9770479c88a2157b94e05dd2'),
 	3 => array(
-		'003_add_certificate_field_to_inventory_item' => 'M4ecf06380cdc4545b3377c1f94e05dd2'),
+		'003_add_elaboration_date_to_inventory_items' => 'M4ecf06380cdc4545b3377c1f94e05dd2'),
+	4 => array(
+		'003_add_elaboration_date_to_inventory_items' => 'M4ef13a310bb44d0aa5c12f0d94e05dd2'),
 );
 ?>
