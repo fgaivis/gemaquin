@@ -74,7 +74,7 @@ foreach ($addresses as $address):
 	</tr>
 <?php endforeach; ?>
 </table>
-<?php echo $this->element('paging',array('plugin'=>'templates')); ?>
+<footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
 
 

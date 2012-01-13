@@ -54,7 +54,7 @@
 
 	<section id="secondary_bar">
 		<div class="user">
-			<p><?php if (isset($username)) : echo $username; ?><?php endif; ?></p>
+			<p><?php if (isset($userData)) : echo $userData['User']['username']; ?><?php endif; ?></p>
 			<!-- <a class="logout_user" href="#" title="Logout">Logout</a> -->
 		</div>
 		<div class="breadcrumbs_container">
@@ -63,10 +63,10 @@
 	</section><!-- end of secondary bar -->
 
 	<aside id="sidebar" class="column">
-		<form class="quick_search">
-			<input class="quick_search" type="text" value="<?php echo __('Buscar', true)?>" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+		<!-- <form class="quick_search">
+			<input class="quick_search" type="text" value="<?php //echo __('Buscar', true)?>" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
 		</form>
-		<hr/>
+		<hr/> -->
 		<h3><?php echo __('Clientes', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nuevo cliente', true), array('controller' => 'clients', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>

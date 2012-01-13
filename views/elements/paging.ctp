@@ -15,8 +15,8 @@ if (empty($Paginator) || !is_a($Paginator, 'PaginatorHelper')) {
 ?>
 <?php if ($Paginator->hasNext() || $Paginator->hasPrev()): ?>
 	<div class="paging">
-		<?php echo $Paginator->prev('prev', array(), null, array('class' => 'disabled'));?>
+		<?php echo $Paginator->prev('< Anterior', array(), null, array('class' => 'disabled'));?>
 		<?php echo $Paginator->numbers(array('separator' => ' '));?>
-		<?php echo $Paginator->next('next', array(), null, array('class' => 'disabled'));?>
+		<?php echo $Paginator->next('Siguiente >', array(), null, array('class' => 'disabled'));?>
 	</div>
 <?php endif; ?>

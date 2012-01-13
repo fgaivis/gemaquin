@@ -30,6 +30,8 @@
  */
 class AppController extends Controller {
 
+	
+	public $paginate = array('limit' => 50);
 /**
  * Components
  *

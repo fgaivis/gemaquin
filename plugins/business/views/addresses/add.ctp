@@ -5,7 +5,11 @@
 	<fieldset>
 
 	<?php
-		echo $this->Form->input('organization_id');
+		$default = array();
+		if (!empty($this->params['pass'])) {
+			$default = array('default' => $this->params['pass'][0], 'type' => 'hidden');
+		}
+		echo $this->Form->input('organization_id', $default);
 		echo $this->Form->input('type');
 		echo $this->Form->input('phone');
 		echo $this->Form->input('address_1');
