@@ -33,8 +33,15 @@ class InvoicesController extends AppController {
  * @access public
  */
 	public function view($id = null) {
+		if (!empty($this->data)) {
+			if ($this->Invoice->saveAttachments($this->data)) {
+				$this->redirect(array('controller' => 'invoices', 'action' => 'view', $id));
+			}
+			$this->Session->setFlash(__('Could not save files', true));
+		}
 		try {
 			$invoice = $this->Invoice->view($id);
+			$this->data['Invoice']['id'] = $id;
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));

@@ -57,7 +57,7 @@ class InventoryItemsController extends InventoryAppController {
 			$result = $this->InventoryItem->add($this->data['InventoryItem']);
 			if ($result === true) {
 				$this->Session->setFlash(__('The inventory item has been saved', true));
-				$this->redirect(array('controller' => 'inventory_entries', 'action' => 'index'));
+				$this->redirect(array('controller' => 'inventory_items', 'action' => 'load_certificates', $entry));
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
@@ -128,6 +128,20 @@ class InventoryItemsController extends InventoryAppController {
 		);
 		$this->index($entry);
 		$this->layout = 'print';
+	}
+
+	public function load_certificates($entry) {
+		if (!empty($this->data)) {
+			if ($this->InventoryItem->saveAttachments($this->data)) {
+				$this->redirect(array('controller' => 'inventory_entries', 'action' => 'index'));
+			}
+			$this->Session->setFlash(__('Could not save files', true));
+		}
+		$this->paginate['limit'] = 10000;
+		$this->index($entry);
+		if (empty($this->data)) {
+			$this->data['InventoryItem'] = Set::classicExtract($this->viewVars['inventoryItems'], '{n}.InventoryItem');
+		}
 	}
 
 	public function labels($entry) {

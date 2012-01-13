@@ -64,7 +64,6 @@ class InventoryEntriesController extends AppController {
 				}
 			} catch (OutOfBoundsException $e) {
 				$this->Session->setFlash($e->getMessage());
-				//$this->redirect('/');
 			}
 		}
 		$purchaseOrders = $this->InventoryEntry->PurchaseOrder->find('list');

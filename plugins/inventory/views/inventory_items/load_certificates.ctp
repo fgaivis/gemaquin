@@ -1,5 +1,6 @@
 <div class="items index">
-<header><h3><?php __('Inventory Entries'); ?></h3></header>
+<header><h3><?php __('Inventory Entry'); ?></h3></header>
+<?php echo $this->Form->create('InventoryItem', array('type' => 'file', 'url' => $this->passedArgs)); ?>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php __('Item'); ?></th>
@@ -31,16 +32,13 @@ foreach ($inventoryItems as $i => $item):
 			<?php echo $item['InventoryItem']['quantity']; ?>
 		</td>
 		<td>
-			<?php
-				if ($item['InventoryItem']['certificate']) {
-					echo $this->Html->link(__('view', true), '/files/certificates/' . $item['InventoryItem']['certificate']);
-				} else {
-					__('N/A');
-				}
-			?>
+		<?php
+			echo $this->Form->input("InventoryItem.$i.id");
+			echo $this->Form->file("InventoryItem.$i.file");
+		?>
 		</td>
 	</tr>
 <?php endforeach; ?>
 </table>
-<?php echo $this->element('paging',array('plugin'=>'templates')); ?>
+<?php echo $this->Form->end(__('Send Files', true)); ?>
 </div>

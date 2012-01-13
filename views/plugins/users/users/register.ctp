@@ -24,8 +24,16 @@
 						)
 					);
 			echo $this->Form->input('tos', array(
-				'label' => __d('users', 'I have read and agreed to ', true) . $this->Html->link(__d('users', 'Terms of Service', true), array('controller' => 'pages', 'action' => 'tos')), 
-				'error' => __d('users', 'You must verify you have read the Terms of Service', true)
+			    'type' => 'hidden',
+			    'value' => true
+			));
+			echo $this->Form->input('active', array(
+			    'type' => 'hidden',
+			    'value' => true
+			));
+			echo $this->Form->input('email_authenticated', array(
+			    'type' => 'hidden',
+			    'value' => true
 			));
 			echo $this->Form->end(__d('users', 'Submit',true));
 	?>

@@ -10,13 +10,13 @@ class Invoice extends OrdersAppModel {
  * @access public
  */
 	public $name = 'Invoice';
-	
+
+	public $displayField = 'human_name';
+
 /**
  * Types
  */
 	const DRAFT = 'DRAFT';
-	const CREDITNOTE = 'CREDITNOTE';
-	const DEBITNOTE = 'DEBITNOTE';
 	const SALES = 'SALES';
 	const PURCHASE = 'PURCHASE';
 	const SERVICE = 'SERVICE';
@@ -118,6 +118,21 @@ class Invoice extends OrdersAppModel {
 	);
 
 
+	public $hasAndBelongsToMany = array(
+		'CreditNote' => array(
+			'className' => 'Orders.CreditNote',
+			'associationForeignKey' => 'note_id',
+			'foreignKey' => 'invoice_id',
+			'with' => 'Order.InvoicesNote',
+		),
+		'DebitNote' => array(
+			'className' => 'Orders.DebitNote',
+			'associationForeignKey' => 'note_id',
+			'foreignKey' => 'invoice_id',
+			'with' => 'Order.InvoicesNote',
+		)
+	);
+
 /**
  * Constructor
  *
@@ -131,6 +146,13 @@ class Invoice extends OrdersAppModel {
 		$this->validate = array(
 			'type' => array(
 				'notempty' => array('rule' => array('notempty'), 'required' => true, 'allowEmpty' => false, 'message' => __('Please enter a Type', true))),
+		);
+		$this->virtualFields = array(
+			'human_name' => "CONCAT(
+				{$this->alias}.number,
+				' - ' ,
+				(select o.name from organizations o where {$this->alias}.organization_id = o.id)
+			)"
 		);
 	}
 
@@ -188,6 +210,17 @@ class Invoice extends OrdersAppModel {
         if (!$this->exists()) {
             $this->data['Invoice']['number'] = $this->_invoiceNumber($this->data['Invoice']['type']);
         }
+		if (!empty($this->data[$this->alias]['file']) && $this->data[$this->alias]['file']['error'] == 0) {
+			$newPath = APP . 'webroot' . DS . 'files' . DS . 'invoices' . DS;
+			if (count(explode('.', $this->data[$this->alias]['file']['name'])) > 1) {
+				$ext = array_pop(explode('.', $this->data[$this->alias]['file']['name']));	
+			} else {
+				$ext = array_pop(explode('/', $this->data[$this->alias]['file']['type']));	
+			}
+			move_uploaded_file($this->data[$this->alias]['file']['tmp_name'], $newPath . $this->id . '.' . $ext);
+			$this->data[$this->alias]['hard_copy'] = $this->id . '.' . $ext;
+		}
+		
         return true;
     }
 
@@ -314,5 +347,13 @@ class Invoice extends OrdersAppModel {
 		));
 		unset($this->hasOne['PrePurchaseOrder']['type']);
 		return $result;
+	}
+	
+	public function saveAttachments($invoice) {
+		$this->getDataSource()->begin($this);
+		$this->create();
+		$this->save($invoice, false, array('id', 'hard_copy'));
+		$this->getDataSource()->commit($this);
+		return true;
 	}
 }

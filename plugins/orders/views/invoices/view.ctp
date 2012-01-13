@@ -1,11 +1,6 @@
 <div class="invoices view">
 <header><h3><?php  __('Invoice');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $invoice['Invoice']['id']; ?>
-			&nbsp;
-		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Number'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $invoice['Invoice']['number']; ?>
@@ -66,6 +61,19 @@
 			<?php echo $invoice['Invoice']['type']; ?>
 			&nbsp;
 		</dd>
+		<?php if (empty($invoice['Invoice']['hard_copy'])): ?>
+			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Type'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+				<?php 
+					echo $this->Form->create('Invoice',  array('type' => 'file', 'url' => $this->passedArgs));
+					echo $this->Form->input("Invoice.id");
+					echo $this->Form->file("Invoice.file");
+					echo $this->Form->end(__('Send Hard Copy', true));
+				?>
+			</dd>
+		<?php else: ?>	
+			<?php echo $this->Html->link(__('Hard Copy', true), '/files/invoices/' . $invoice['Invoice']['hard_copy']) ?>
+		<?php endif;?>
 	</dl>
 	<?php if($invoice['Invoice']['type'] === Invoice::SALES) : ?>
 	<footer>

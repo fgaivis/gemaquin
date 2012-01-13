@@ -79,7 +79,6 @@ class InventoryItem extends InventoryAppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
-			$data[$this->alias]['quantity_left'] = $data[$this->alias]['quantity'];
 			$result = $this->saveAll($data);
 			if ($result !== false) {
 				ClassRegistry::init('Inventory.Inventory')->add($data);
@@ -90,6 +89,23 @@ class InventoryItem extends InventoryAppModel {
 			return $return;
 		}
 	}
+
+    public function beforeSave() {
+		if (!$this->id) {
+			$this->data[$this->alias]['quantity_left'] = $this->data[$this->alias]['quantity'];
+		}
+		if (!empty($this->data[$this->alias]['file']) && $this->data[$this->alias]['file']['error'] == 0) {
+			$newPath = APP . 'webroot' . DS . 'files' . DS . 'certificates' . DS;
+			if (count(explode('.', $this->data[$this->alias]['file']['name'])) > 1) {
+				$ext = array_pop(explode('.', $this->data[$this->alias]['file']['name']));	
+			} else {
+				$ext = array_pop(explode('/', $this->data[$this->alias]['file']['type']));	
+			}
+			move_uploaded_file($this->data[$this->alias]['file']['tmp_name'], $newPath . $this->id . '.' . $ext);
+			$this->data[$this->alias]['certificate'] = $this->id . '.' . $ext;
+		}
+        return true;
+    }
 
 /**
  * Edits an existing Inventory Item.
@@ -193,5 +209,14 @@ class InventoryItem extends InventoryAppModel {
 		ClassRegistry::init('Inventory.Inventory')->decrement($item[$this->alias]['item_id'], $quantity);
 	}
 
+
+	public function saveAttachments($items) {
+		$this->getDataSource()->begin($this);
+		foreach ($items[$this->alias] as $item) {
+			$this->create();
+			$this->save($item, false, array('id', 'certificate'));
+		}
+		$this->getDataSource()->commit($this);
+		return true;
+	}
 }
-?>
