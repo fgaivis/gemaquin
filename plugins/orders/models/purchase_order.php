@@ -102,6 +102,20 @@ class PurchaseOrder extends AppModel {
 	);
 
 
+    public $actsAs = array('Search.Searchable');
+
+    public $filterArgs = array(
+        array('name' => 'from_date', 'type' => 'expression', 'method' => 'makeFromCondition', 'field' => 'PurchaseOrder.created >= ?'),
+        array('name' => 'to_date', 'type' => 'expression', 'method' => 'makeToCondition', 'field' => 'PurchaseOrder.created <= ?'),
+    );
+
+    public function makeFromCondition($data = array()) {
+        return array('PurchaseOrder.created >=' => $data['from_date']);
+    }
+
+    public function makeToCondition($data = array()) {
+        return array('PurchaseOrder.created >=' => $data['to_date']);
+    }
 
 /**
  * Constructor

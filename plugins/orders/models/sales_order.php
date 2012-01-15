@@ -98,7 +98,20 @@ class SalesOrder extends AppModel {
 		)
 	);
 
+    public $actsAs = array('Search.Searchable');
 
+    public $filterArgs = array(
+        array('name' => 'from_date', 'type' => 'query', 'method' => 'makeFromCondition'),
+        array('name' => 'to_date', 'type' => 'query', 'method' => 'makeToCondition'),
+    );
+
+    public function makeFromCondition($data = array()) {
+        return array('SalesOrder.created >=' => $data['from_date']);
+    }
+
+    public function makeToCondition($data = array()) {
+        return array('SalesOrder.created <=' => $data['to_date']);
+    }
 
 /**
  * Constructor
@@ -256,5 +269,17 @@ class SalesOrder extends AppModel {
 		}
 		return true;
 	}
+
+    public function bestSelling() {
+        $sql = 'SELECT Item.name, Item.barcode, Item.sales_factor, Item.package_factor, Category.name, COUNT(InvItemsSalesOrder.id) AS quantity FROM inv_items_sales_orders InvItemsSalesOrder, inventory_items ii, items Item LEFT JOIN categories Category ON Category.id = Item.category_id WHERE Item.id = ii.item_id AND ii.id = InvItemsSalesOrder.inventory_item_id GROUP BY Item.name,Item.barcode ORDER BY quantity DESC';
+        $items = $this->query($sql);
+        return $items;
+    }
+
+    public function bestSellingQuantity() {
+        $sql = 'SELECT Item.name, Item.barcode, Item.sales_factor, Item.package_factor, Category.name, SUM( InvItemsSalesOrder.quantity ) AS quantity FROM inv_items_sales_orders InvItemsSalesOrder, inventory_items ii, items Item LEFT JOIN categories Category ON Category.id = Item.category_id WHERE Item.id = ii.item_id AND ii.id = InvItemsSalesOrder.inventory_item_id GROUP BY Item.name,Item.barcode ORDER BY quantity DESC';
+        $items = $this->query($sql);
+        return $items;
+    }
 }
 ?>

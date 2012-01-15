@@ -4,6 +4,19 @@
 		<?php __('Sales Orders');?></h3>
 	</header>
 
+    <?php
+
+        if (!$isReport) {
+            echo $this->Form->create(null, array(
+                'url' => array_merge(array('action' => 'index'), $this->params['pass'])
+            ));
+            echo $this->Form->input('from_date', array('div' => false, 'label' => __('From', true)));
+            echo $this->Form->input('to_date', array('div' => false, 'label' => __('To', true)));
+            echo $this->Form->submit(__('Search', true), array('div' => false));
+            echo $this->Form->end();
+        }
+
+    ?>
 	<table cellpadding="0" cellspacing="0">
 		<tr>
 			<!-- <th><?php //echo $this->Paginator->sort('id');?>
@@ -59,10 +72,15 @@ foreach ($salesOrders as $salesOrder):
 	
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
+
+<?php if (!$isReport) {
+    echo $this->Html->link(__('View report', true), array('action' => 'index', true));
+    ?>
 <div class="actions">
 	<ul>
 		<li><?php echo $this->Html->link(__('New Sales Order', true), array('controller' => 'sales_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
 	</ul>
 </div>
 
+<?php } ?>
 

@@ -133,6 +133,20 @@ class Invoice extends OrdersAppModel {
 		)
 	);
 
+    public $actsAs = array('Search.Searchable');
+
+    public $filterArgs = array(
+        array('name' => 'from_date', 'type' => 'expression', 'method' => 'makeFromCondition', 'field' => 'Invoice.created >= ?'),
+        array('name' => 'to_date', 'type' => 'expression', 'method' => 'makeToCondition', 'field' => 'Invoice.created <= ?'),
+    );
+
+    public function makeFromCondition($data = array()) {
+        return array('Invoice.created >=' => $data['from_date']);
+    }
+
+    public function makeToCondition($data = array()) {
+        return array('Invoice.created >=' => $data['to_date']);
+    }
 /**
  * Constructor
  *

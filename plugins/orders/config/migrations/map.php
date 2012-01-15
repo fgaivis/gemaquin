@@ -32,5 +32,6 @@ $map = array(
 		'011_add_hard_copy_field_to_invoices' => 'M4ecf15892f1045df841d7e2194e05dd2'),
 	16 => array(
 		'add_debit_and_credit_notes' => 'M4ef16314c8904850bba16d7994e05dd2'),
+    17 => array('014_add_created_and_modified_date_to_purchase_orders' => 'M4f13430221304c5bac2c09e094e05dd2')
 );
 ?>

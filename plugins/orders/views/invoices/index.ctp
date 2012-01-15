@@ -1,6 +1,20 @@
 <div class="invoices index">
 <header><h3><?php __('Invoices');?></h3></header>
 
+    <?php
+
+    if (!$isReport) {
+        echo $this->Form->create(null, array(
+            'url' => array_merge(array('action' => 'index'), $this->params['pass'])
+        ));
+        echo $this->Form->input('from_date', array('div' => false, 'label' => __('From', true)));
+        echo $this->Form->input('to_date', array('div' => false, 'label' => __('To', true)));
+        echo $this->Form->submit(__('Search', true), array('div' => false));
+        echo $this->Form->end();
+    }
+
+
+    ?>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('number');?></th>
@@ -57,3 +71,5 @@ foreach ($invoices as $invoice):
 </table>
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
+
+<?php echo (!$isReport ? $this->Html->link(__('View report', true),array_merge(array('action' => 'index', true), $this->params['named'])) : ''); ?>

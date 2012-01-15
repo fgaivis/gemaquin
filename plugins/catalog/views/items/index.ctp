@@ -1,6 +1,16 @@
 <div class="items index">
 <header><h3><?php __('Items');?></h3></header>
+    <?php
 
+    echo $this->Form->create(null, array(
+        'url' => array_merge(array('action' => 'index'), $this->params['pass'])
+    ));
+    echo $this->Form->input('name', array('div' => false));
+    echo $this->Form->input('barcode', array('div' => false));
+    echo $this->Form->submit(__('Search', true), array('div' => false));
+    echo $this->Form->end();
+
+    ?>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->

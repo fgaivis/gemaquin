@@ -26,8 +26,22 @@ class Inventory extends InventoryAppModel {
 		)
 	);
 
+    public $actsAs = array('Search.Searchable');
 
-/**
+    public $filterArgs = array(
+        array('name' => 'gt_quantity', 'type' => 'expression', 'method' => 'makeGTQuantityCondition', 'field' => 'Inventory.quantity >= ?'),
+        array('name' => 'lt_quantity', 'type' => 'expression', 'method' => 'makeLTQuantityCondition', 'field' => 'Inventory.quantity <= ?'),
+    );
+
+    public function makeGTQuantityCondition($data = array()) {
+        return array('Inventory.quantity >=' => $data['gt_quantity']);
+    }
+
+    public function makeLTQuantityCondition($data = array()) {
+        return array('Inventory.quantity <=' => $data['lt_quantity']);
+    }
+
+    /**
  * Constructor
  *
  * @param mixed $id Model ID

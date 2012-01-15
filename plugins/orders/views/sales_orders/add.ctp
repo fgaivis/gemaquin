@@ -1,7 +1,7 @@
 
 <div class="purchaseOrders form">
-<?php echo $this->Form->create('SalesOrder', array('id'=>'soadd','url' => array('action' => 'add')));?>
-	<header><h3><?php __('Add Sales Order');?></h3></header>
+    <?php echo $this->Form->create('SalesOrder', array('id'=>'soadd','url' => array('action' => 'add')));?>
+    <header><h3><?php __('Add Sales Order');?></h3></header>
 
 	<fieldset>
 

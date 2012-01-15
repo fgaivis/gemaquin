@@ -1,6 +1,19 @@
 <div class="items index">
 <header><h3><?php __('Inventory');?></h3></header>
+<?php
 
+    if (!$isReport) {
+        echo $this->Form->create(null, array(
+            'url' => array_merge(array('action' => 'stock'), $this->params['pass'])
+        ));
+        echo $this->Form->input('gt_quantity', array('div' => false, 'label' => __('', true)));
+        echo $this->Form->input('lt_quantity', array('div' => false, 'label' => __('', true)));
+        echo $this->Form->submit(__('Search', true), array('div' => false));
+        echo $this->Form->end();
+
+    }
+
+?>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('item_id');?></th>
@@ -35,3 +48,6 @@ foreach ($items as $item):
 </table>
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
+
+
+<?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true)) : ''); ?>

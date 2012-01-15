@@ -16,15 +16,26 @@ class PurchaseOrdersController extends AppController {
  */
 	public $helpers = array('Html', 'Form');
 
+    public $components = array('Search.Prg');
+
+    public $presetVars = array(
+        array('field' => 'from_date', 'type' => 'value', 'modelField' => 'from_date'),
+        array('field' => 'to_date', 'type' => 'value', 'modelField' => 'to_date'),
+    );
 /**
  * Index for purchase order.
  *
  * @access public
  */
-	public function index() {
-		$this->PurchaseOrder->recursive = 0;
-		$this->set('purchaseOrders', $this->paginate());
-	}
+    public function index($isReport = false) {
+        if ($isReport) {
+            $this->layout = 'print';
+        }
+        $this->set('isReport', $isReport);
+        $this->Prg->commonProcess();
+        $this->paginate['conditions'] = $this->PurchaseOrder->parseCriteria($this->passedArgs);
+        $this->set('purchaseOrders', $this->paginate());
+    }
 
 /**
  * View for purchase order.

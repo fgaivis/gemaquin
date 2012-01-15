@@ -8,6 +8,13 @@ class InventoryController extends AppController {
  */
 	public $name = 'Inventory';
 
+    public $components = array('Search.Prg');
+
+    public $presetVars = array(
+        array('field' => 'gt_quantity', 'type' => 'value', 'modelField' => 'gt_quantity'),
+        array('field' => 'lt_quantity', 'type' => 'value', 'modelField' => 'lt_quantity'),
+    );
+
 /**
  * Helpers
  *
@@ -21,9 +28,19 @@ class InventoryController extends AppController {
  * 
  * @access public
  */
-	public function stock() {
+	public function find() {
 		$this->Inventory->recursive = 0;
 		$this->set('items', $this->paginate()); 
 	}
+
+    public function stock($isReport = false) {
+        if ($isReport) {
+            $this->layout = 'print';
+        }
+        $this->set('isReport', $isReport);
+        $this->Prg->commonProcess();
+        $this->paginate['conditions'] = $this->Inventory->parseCriteria($this->passedArgs);
+        $this->set('items', $this->paginate());
+    }
 
 }

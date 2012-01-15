@@ -16,14 +16,25 @@ class SalesOrdersController extends OrdersAppController {
  */
 	public $helpers = array('Html', 'Form');
 
+    public $components = array('Search.Prg');
+
+    public $presetVars = array(
+        array('field' => 'from_date', 'type' => 'value', 'modelField' => 'from_date'),
+        array('field' => 'to_date', 'type' => 'value', 'modelField' => 'to_date'),
+    );
 /**
  * Index for sales order.
  * 
  * @access public
  */
-	public function index() {
-		$this->SalesOrder->recursive = 0;
-		$this->set('salesOrders', $this->paginate()); 
+	public function index($isReport = false) {
+        if ($isReport) {
+            $this->layout = 'print';
+        }
+        $this->set('isReport', $isReport);
+        $this->Prg->commonProcess();
+        $this->paginate['conditions'] = $this->SalesOrder->parseCriteria($this->passedArgs);
+        $this->set('salesOrders', $this->paginate());
 	}
 
 /**
@@ -120,6 +131,24 @@ class SalesOrdersController extends OrdersAppController {
 		));
 		$this->set(compact('items'));
 	}
+
+    public function best_selling_quantity($isReport = false) {
+        if ($isReport) {
+            $this->layout = 'print';
+        }
+        $items = $this->SalesOrder->bestSellingQuantity();
+        $this->set('items', $items);
+        $this->set('isReport', $isReport);
+    }
+
+    public function best_selling($isReport = false) {
+        if ($isReport) {
+            $this->layout = 'print';
+        }
+        $items = $this->SalesOrder->bestSelling();
+        $this->set('items', $items);
+        $this->set('isReport', $isReport);
+    }
 
 }
 ?>
