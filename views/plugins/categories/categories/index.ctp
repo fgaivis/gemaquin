@@ -2,7 +2,7 @@
 <header><h3><?php __d('categories', 'Categories');?></h3></header>
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('category_id');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('category_id');?></th> -->
 	<th><?php echo $this->Paginator->sort('name');?></th>
 	<th><?php echo $this->Paginator->sort('description');?></th>
 	<th class="actions"><?php __d('categories', 'Actions');?></th>
@@ -16,9 +16,9 @@ foreach ($categories as $category):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<td>
-			<?php $category['ParentCategory']['name']; ?>
-		</td>
+		<!-- <td>
+			<?php //$category['ParentCategory']['name']; ?>
+		</td> -->
 		<td>
 			<?php echo $category['Category']['name']; ?>
 		</td>

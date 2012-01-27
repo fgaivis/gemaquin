@@ -4,6 +4,7 @@
 		<?php __('Sales Orders');?></h3>
 	</header>
 
+	<div class="index-filters">
     <?php
 
         if (!$isReport) {
@@ -17,6 +18,7 @@
         }
 
     ?>
+    </div>
 	<table cellpadding="0" cellspacing="0">
 		<tr>
 			<!-- <th><?php //echo $this->Paginator->sort('id');?>
@@ -73,14 +75,15 @@ foreach ($salesOrders as $salesOrder):
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
 
-<?php if (!$isReport) {
-    echo $this->Html->link(__('View report', true), array('action' => 'index', true));
-    ?>
+<?php if (!$isReport): ?>
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('View report', true), array('action' => 'index', true));?></li>
+	</ul>
+</div>
+<?php endif; ?>
 <div class="actions">
 	<ul>
 		<li><?php echo $this->Html->link(__('New Sales Order', true), array('controller' => 'sales_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
 	</ul>
 </div>
-
-<?php } ?>
-

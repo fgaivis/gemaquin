@@ -28,9 +28,9 @@
 		<tr>
 			<th><?php echo $this->Paginator->sort('username');?></th>
 			<th><?php echo $this->Paginator->sort('email');?></th>
-			<th><?php echo $this->Paginator->sort('email_authenticated');?></th>
+			<!-- <th><?php //echo $this->Paginator->sort('email_authenticated');?></th> -->
 			<th><?php echo $this->Paginator->sort('active');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
+			<!--  <th><?php //echo $this->Paginator->sort('created');?></th> -->
 			<th class="actions"><?php __d('users', 'Actions');?></th>
 		</tr>
 			<?php
@@ -48,17 +48,17 @@
 				<td>
 					<?php echo $user[$model]['email']; ?>
 				</td>
-				<td>
-					<?php echo $user[$model]['email_authenticated']; ?>
-				</td>
+				<!-- <td>
+					<?php //echo $user[$model]['email_authenticated']; ?>
+				</td> -->
 				<td>
 					<?php echo $user[$model]['active']; ?>
 				</td>
-				<td>
-					<?php echo $user[$model]['created']; ?>
-				</td>
+				<!-- <td>
+					<?php //echo $user[$model]['created']; ?>
+				</td> -->	
 				<td class="actions">
-					<?php echo $this->Html->link(__d('users', 'View', true), array('action'=>'view', $user[$model]['id'])); ?>
+					<?php echo $this->Html->link(__d('users', 'View', true), array('action'=>'admin_view', $user[$model]['id'])); ?>
 					<?php echo $this->Html->link(__d('users', 'Edit', true), array('action'=>'admin_edit', $user[$model]['id'])); ?>
 					<?php echo $this->Html->link(__d('users', 'Delete', true), array('action'=>'delete', $user[$model]['id']), null, sprintf(__d('users', 'Are you sure you want to delete # %s?', true), $user[$model]['id'])); ?>
 				</td>

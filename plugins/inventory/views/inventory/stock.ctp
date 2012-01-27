@@ -1,5 +1,6 @@
 <div class="items index">
 <header><h3><?php __('Inventory');?></h3></header>
+<div class="index-filters">
 <?php
 
     if (!$isReport) {
@@ -14,6 +15,7 @@
     }
 
 ?>
+</div>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('item_id');?></th>
@@ -49,5 +51,8 @@ foreach ($items as $item):
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
 
-
-<?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true)) : ''); ?>
+<div class="actions">
+	<ul>
+		<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true)) : ''); ?></li>
+	</ul>
+</div>

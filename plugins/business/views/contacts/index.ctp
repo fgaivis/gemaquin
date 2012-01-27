@@ -6,10 +6,10 @@
 	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
 	<th><?php echo $this->Paginator->sort('organization_id');?></th>
 	<th><?php echo $this->Paginator->sort('name');?></th>
-	<th><?php echo $this->Paginator->sort('email');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('email');?></th> -->
 	<th><?php echo $this->Paginator->sort('phone');?></th>
-	<th><?php echo $this->Paginator->sort('mobile');?></th>
-	<th><?php echo $this->Paginator->sort('position');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('mobile');?></th> -->
+	<!-- <th><?php //echo $this->Paginator->sort('position');?></th> -->
 	<!-- <th><?php //echo $this->Paginator->sort('role');?></th>
 	<th><?php //echo $this->Paginator->sort('created');?></th>
 	<th><?php //echo $this->Paginator->sort('modified');?></th>  -->
@@ -33,18 +33,18 @@ foreach ($contacts as $contact):
 		<td>
 			<?php echo $contact['Contact']['name']; ?>
 		</td>
-		<td>
-			<?php echo $contact['Contact']['email']; ?>
-		</td>
+		<!-- <td>
+			<?php //echo $contact['Contact']['email']; ?>
+		</td> -->
 		<td>
 			<?php echo $contact['Contact']['phone']; ?>
 		</td>
-		<td>
-			<?php echo $contact['Contact']['mobile']; ?>
+		<!-- <td>
+			<?php //echo $contact['Contact']['mobile']; ?>
 		</td>
 		<td>
-			<?php echo $contact['Contact']['position']; ?>
-		</td>
+			<?php //echo $contact['Contact']['position']; ?>
+		</td> -->
 		<!-- <td>
 			<?php //echo $contact['Contact']['role']; ?>
 		</td>

@@ -27,7 +27,7 @@
 </div>
 <div class="actions">
 	<ul>
-		<li><?php echo $this->Html->link(__d('users', 'Delete', true), array('action'=>'delete', $this->Form->value('User.id')), null, sprintf(__d('users', 'Are you sure you want to delete # %s?', true), $this->Form->value('User.id'))); ?></li>
-		<li><?php echo $this->Html->link(__d('users', 'List Users', true), array('action'=>'index'));?></li>
+		<li><?php echo $this->Html->link(__d('users', 'Delete', true), array('action'=>'admin_delete', $this->Form->value('User.id')), null, sprintf(__d('users', 'Are you sure you want to delete # %s?', true), $this->Form->value('User.id'))); ?></li>
+		<li><?php echo $this->Html->link(__d('users', 'List Users', true), array('action'=>'admin_index'));?></li>
 	</ul>
 </div>

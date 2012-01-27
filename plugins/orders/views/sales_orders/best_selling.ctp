@@ -44,5 +44,8 @@
     </table>
 
 </div>
-
-<?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'best_selling', true)) : ''); ?>
+<div class="actions">
+	<ul>
+		<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'best_selling', true)) : ''); ?></li>
+	</ul>
+</div>

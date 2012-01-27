@@ -1361,6 +1361,10 @@ msgstr "Editar Orden de Compra"
 msgid "Purchase Orders"
 msgstr "Ordenes de Compra"
 
+#: plugins/orders/views/purchase_orders/index.ctp:4
+msgid "Sales Orders"
+msgstr "Ordenes de Venta"
+
 #: plugins/orders/views/purchase_orders/send.ctp:24
 #: plugins/orders/views/purchase_orders/view.ctp:24
 msgid "Status"
@@ -1537,3 +1541,43 @@ msgstr "Ordenes relacionadas"
 #: Invoice Content
 msgid "Print invoice"
 msgstr "Imprimir factura"
+
+#: Users
+msgid "Add User"
+msgstr "Nuevo Usuario"
+
+#: Users
+msgid "Edit User"
+msgstr "Editar Usuario"
+
+#: Users
+msgid "Username"
+msgstr "Login"
+
+#: Users
+msgid "Active"
+msgstr "Activo"
+
+#: Filtros
+msgid "Search"
+msgstr "Buscar"
+
+#: Filtros
+msgid "From"
+msgstr "Desde"
+
+#: Filtros
+msgid "To"
+msgstr "Hasta"
+
+#: Reportes Inventario
+msgid "View report"
+msgstr "Ver reporte"
+
+#: Reportes Ventas
+msgid "Best Selling Items"
+msgstr "Items mas vendidos"
+
+#: Reportes Ventas
+msgid "Best Selling (Quantity) Items"
+msgstr "Items mas vendidos (Cantidad)"

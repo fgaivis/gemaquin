@@ -6,13 +6,13 @@
 	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
 	<th><?php echo $this->Paginator->sort('code');?></th>
 	<th><?php echo $this->Paginator->sort('name');?></th>
-	<th><?php echo $this->Paginator->sort('description');?></th>
-	<th><?php echo $this->Paginator->sort('country');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('description');?></th>
+	<th><?php //echo $this->Paginator->sort('country');?></th> -->
 	<th><?php echo $this->Paginator->sort('fiscalid');?></th>
 	<th><?php echo $this->Paginator->sort('brand');?></th>
-	<th><?php echo $this->Paginator->sort('business');?></th>
-	<th><?php echo $this->Paginator->sort('created');?></th>
-	<th><?php echo $this->Paginator->sort('modified');?></th>
+	<!-- <th><?php //echo $this->Paginator->sort('business');?></th>
+	<th><?php //echo $this->Paginator->sort('created');?></th>
+	<th><?php //echo $this->Paginator->sort('modified');?></th> -->
 	<th class="actions"><?php __('Actions');?></th>
 </tr>
 <?php
@@ -33,27 +33,27 @@ foreach ($providers as $provider):
 		<td>
 			<?php echo $provider['Provider']['name']; ?>
 		</td>
-		<td>
-			<?php echo $provider['Provider']['description']; ?>
+		<!-- <td>
+			<?php //echo $provider['Provider']['description']; ?>
 		</td>
 		<td>
-			<?php echo $provider['Provider']['country']; ?>
-		</td>
+			<?php //echo $provider['Provider']['country']; ?>
+		</td> -->
 		<td>
 			<?php echo $provider['Provider']['fiscalid']; ?>
 		</td>
 		<td>
 			<?php echo $provider['Provider']['brand']; ?>
 		</td>
-		<td>
-			<?php echo $provider['Provider']['business']; ?>
+		<!-- <td>
+			<?php //echo $provider['Provider']['business']; ?>
 		</td>
 		<td>
-			<?php echo $provider['Provider']['created']; ?>
+			<?php //echo $provider['Provider']['created']; ?>
 		</td>
 		<td>
-			<?php echo $provider['Provider']['modified']; ?>
-		</td>
+			<?php //echo $provider['Provider']['modified']; ?>
+		</td> -->
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $provider['Provider']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $provider['Provider']['id'])); ?>

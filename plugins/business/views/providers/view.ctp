@@ -55,7 +55,7 @@
 </div>
 
 <div class="related index">
-	<h3><?php __('Related Addresses');?></h3>
+<header><h3><?php __('Related Addresses');?></h3></header>
 	<?php if (!empty($provider['Address'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
@@ -63,8 +63,8 @@
 		<th><?php //__('Organization Id'); ?></th> -->
 		<th><?php __('Type'); ?></th>
 		<th><?php __('Phone'); ?></th>
-		<th><?php __('Address 1'); ?></th>
-		<th><?php __('Address 2'); ?></th>
+		<!-- <th><?php //__('Address 1'); ?></th>
+		<th><?php //__('Address 2'); ?></th> -->
 		<th><?php __('City'); ?></th>
 		<th><?php __('State'); ?></th>
 		<th><?php __('Country'); ?></th>
@@ -87,8 +87,8 @@
 			<td><?php //echo $address['organization_id'];?></td> -->
 			<td><?php echo $address['type'];?></td>
 			<td><?php echo $address['phone'];?></td>
-			<td><?php echo $address['address_1'];?></td>
-			<td><?php echo $address['address_2'];?></td>
+			<!-- <td><?php //echo $address['address_1'];?></td>
+			<td><?php //echo $address['address_2'];?></td> -->
 			<td><?php echo $address['city'];?></td>
 			<td><?php echo $address['state'];?></td>
 			<td><?php echo $address['country'];?></td>
@@ -113,7 +113,7 @@
 	</div>
 	
 <div class="related index">
-	<h3><?php __('Related Bank Accounts');?></h3>
+<header><h3><?php __('Related Bank Accounts');?></h3></header>
 	<?php if (!empty($provider['BankAccount'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
@@ -123,8 +123,8 @@
 		<th><?php __('Currency'); ?></th>
 		<th><?php __('Type'); ?></th>
 		<th><?php __('Number'); ?></th>
-		<th><?php __('Address 1'); ?></th>
-		<th><?php __('Address 2'); ?></th>
+		<!-- <th><?php //__('Address 1'); ?></th>
+		<th><?php //__('Address 2'); ?></th> -->
 		<th><?php __('Country'); ?></th>
 		<!-- <th><?php //__('Iban'); ?></th>
 		<th><?php //__('Aba'); ?></th>
@@ -149,8 +149,8 @@
 			<td><?php echo $bankAccount['currency'];?></td>
 			<td><?php echo $bankAccount['type'];?></td>
 			<td><?php echo $bankAccount['number'];?></td>
-			<td><?php echo $bankAccount['address_1'];?></td>
-			<td><?php echo $bankAccount['address_2'];?></td>
+			<!-- <td><?php //echo $bankAccount['address_1'];?></td>
+			<td><?php //echo $bankAccount['address_2'];?></td> -->
 			<td><?php echo $bankAccount['country'];?></td>
 			<!-- <td><?php //echo $bankAccount['iban'];?></td>
 			<td><?php //echo $bankAccount['aba'];?></td>
@@ -175,14 +175,14 @@
 	</div>
 	
 <div class="related index">
-	<h3><?php __('Related Contacts');?></h3>
+<header><h3><?php __('Related Contacts');?></h3></header>
 	<?php if (!empty($provider['Contact'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<!-- <th><?php //__('Id'); ?></th>
 		<th><?php //__('Organization Id'); ?></th> -->
 		<th><?php __('Name'); ?></th>
-		<th><?php __('Email'); ?></th>
+		<!-- <th><?php //__('Email'); ?></th> -->
 		<th><?php __('Phone'); ?></th>
 		<th><?php __('Mobile'); ?></th>
 		<th><?php __('Position'); ?></th>
@@ -203,7 +203,7 @@
 			<!-- <td><?php //echo $contact['id'];?></td>
 			<td><?php //echo $contact['organization_id'];?></td>  -->
 			<td><?php echo $contact['name'];?></td>
-			<td><?php echo $contact['email'];?></td>
+			<!-- <td><?php //echo $contact['email'];?></td> -->
 			<td><?php echo $contact['phone'];?></td>
 			<td><?php echo $contact['mobile'];?></td>
 			<td><?php echo $contact['position'];?></td>

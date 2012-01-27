@@ -1,7 +1,8 @@
 <header><h3><?php echo sprintf(__('Delete Provider "%s"?', true), $provider['Provider']['name']); ?></h3></header>
-<p>
+<p class="delete-warn">
 	<?php __('Be aware that your Provider and all associated data will be deleted if you confirm!'); ?>
 </p>
+<div class="delete-form">
 <?php
 	echo $this->Form->create('Provider', array(
 		'url' => array(
@@ -14,4 +15,4 @@
 	echo $form->submit(__('Continue', true));
 	echo $form->end();
 ?>
-
+</div>

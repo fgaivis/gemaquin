@@ -30,7 +30,7 @@
 		echo $this->Tree->generate($categories, array('element' => 'categories/tree_item', 'class' => 'categorytree', 'id' => 'categorytree'));
 	endif; ?>
 	<ul class="actions">
-		<li><?php echo $this->Html->link(__d('categories', 'Add category', true), array('action' => 'admin_add')); ?></li>
+		<li class="as-button"><?php echo $this->Html->link(__d('categories', 'Add category', true), array('action' => 'admin_add')); ?></li>
 	</ul>
 </div>
 

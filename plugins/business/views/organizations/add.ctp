@@ -16,5 +16,5 @@
 		echo $this->Form->input('type');
 	?>
 	</fieldset>
-<?php echo $this->Form->end('Submit');?>
+<?php echo $this->Form->end(__d('default', 'Submit', true));?>
 </div>

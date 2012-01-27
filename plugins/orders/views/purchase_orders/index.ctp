@@ -3,7 +3,8 @@
 		<h3>
 		<?php __('Purchase Orders');?></h3>
 	</header>
-
+	
+	<div class="index-filters">
     <?php
 
     if (!$isReport) {
@@ -17,6 +18,7 @@
     }
 
     ?>
+    </div>
 	<table cellpadding="0" cellspacing="0">
 		<tr>
 			<!-- <th><?php //echo $this->Paginator->sort('id');?>
@@ -74,14 +76,15 @@ foreach ($purchaseOrders as $purchaseOrder):
 </div>
 
 
-<?php if (!$isReport) {
-    echo $this->Html->link(__('View report', true), array('action' => 'index', true));
-?>
+<?php if (!$isReport): ?>
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('View report', true), array('action' => 'index', true));?></li>
+	</ul>
+</div>
+<?php endif; ?>
 <div class="actions">
     <ul>
         <li><?php echo $this->Html->link(__('Nueva orden de compras', true), array('controller' => 'purchase_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
     </ul>
 </div>
-<?php } ?>
-
-

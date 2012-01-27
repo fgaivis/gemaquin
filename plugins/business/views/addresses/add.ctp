@@ -21,5 +21,5 @@
 		echo $this->Form->input('notes');
 	?>
 	</fieldset>
-<?php echo $this->Form->end('Submit');?>
+<?php echo $this->Form->end(__d('default', 'Submit', true));?>
 </div>
