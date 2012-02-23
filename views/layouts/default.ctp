@@ -124,6 +124,7 @@
 		<ul class="toggle">
 			<!-- <li class="icn_settings"><a href="#">Opciones</a></li>
 			<li class="icn_security"><a href="#">Cambiar Password</a></li> -->
+			<li class="icn_view_users"><?php echo $this->Html->link(__('Cambiar contraseña', true), array('controller' => 'users', 'action' => 'change_password', 'plugin' => 'users'))?></li>
 			<li class="icn_jump_back"><?php echo $this->Html->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout', 'plugin' => 'users'))?></li>
 		</ul>
 		<!-- *** NO USADO / Ejemplo de iconos interesantes *** -->
