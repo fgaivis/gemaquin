@@ -1,11 +1,11 @@
 <div class="providers view">
 <header><h3><?php  __('Provider');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $provider['Provider']['id']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $provider['Provider']['id']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Code'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $provider['Provider']['code']; ?>

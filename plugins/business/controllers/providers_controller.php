@@ -17,6 +17,14 @@ class ProvidersController extends BusinessAppController {
 	public $helpers = array('Html', 'Form');
 
 /**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 50, 'order' => array('Provider.name' => 'asc'));
+
+/**
  * Index for provider.
  *
  * @access public

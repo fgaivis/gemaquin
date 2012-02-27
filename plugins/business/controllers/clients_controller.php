@@ -15,6 +15,14 @@ class ClientsController extends BusinessAppController {
  * @access public
  */
 	public $helpers = array('Html', 'Form');
+	
+/**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 50, 'order' => array('Client.name' => 'asc'));
 
 /**
  * Index for client.
