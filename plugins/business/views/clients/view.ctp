@@ -40,19 +40,44 @@
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $client['Client']['business']; ?>
 			&nbsp;
-		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		</dd>		
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Phone'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $client['Client']['created']; ?>
+			<?php echo $client['Client']['phone']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Fax'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $client['Client']['modified']; ?>
+			<?php echo $client['Client']['fax']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Email'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $client['Client']['email']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Website'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $client['Client']['website']; ?>
+			&nbsp;
+		</dd>		
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Created'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $client['Client']['created']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Modified'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $client['Client']['modified']; ?>
+			&nbsp;
+		</dd> -->
 	</dl>
 </div>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $client['Client']['id'])); ?></li>
+		</ul>
+	</div>
 
 <div class="related index">
 	<header><h3><?php __('Related Addresses');?></h3></header>
@@ -171,7 +196,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'bank_accounts', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'bank_accounts', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $client['Client']['id']))?></li>
 		</ul>
 	</div>
 
@@ -224,7 +249,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nueva contacto', true), array('controller' => 'contacts', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+			<li><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'contacts', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $client['Client']['id']))?></li>
 		</ul>
 	</div>	
 

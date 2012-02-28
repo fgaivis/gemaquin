@@ -3,9 +3,12 @@
 	<header><h3><?php __('Add Bank Account');?></h3></header>
 
 	<fieldset>
-
 	<?php
-		echo $this->Form->input('organization_id');
+		$default = array();
+		if (!empty($this->params['pass'])) {
+			$default = array('default' => $this->params['pass'][0], 'type' => 'hidden');
+		}
+		echo $this->Form->input('organization_id', $default);
 		echo $this->Form->input('bank_name');
 		echo $this->Form->input('currency');
 		echo $this->Form->input('type');

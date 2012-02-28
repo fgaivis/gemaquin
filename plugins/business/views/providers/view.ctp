@@ -41,18 +41,43 @@
 			<?php echo $provider['Provider']['business']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Phone'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $provider['Provider']['created']; ?>
+			<?php echo $provider['Provider']['phone']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Fax'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $provider['Provider']['modified']; ?>
+			<?php echo $provider['Provider']['fax']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Email'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $provider['Provider']['email']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Website'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $provider['Provider']['website']; ?>
+			&nbsp;
+		</dd>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Created'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $provider['Provider']['created']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Modified'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $provider['Provider']['modified']; ?>
+			&nbsp;
+		</dd> -->
 	</dl>
 </div>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $provider['Provider']['id'])); ?></li>
+		</ul>
+	</div>
 
 <div class="related index">
 <header><h3><?php __('Related Addresses');?></h3></header>
@@ -108,7 +133,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nueva dirección', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+			<li><?php echo $this->Html->link(__('Nueva dirección', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
 		</ul>
 	</div>
 	
@@ -170,7 +195,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
 		</ul>
 	</div>
 	
@@ -222,7 +247,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
+			<li><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
 		</ul>
 	</div>
 	

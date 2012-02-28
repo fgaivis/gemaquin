@@ -13,6 +13,10 @@
 		echo $this->Form->input('fiscalid');
 		echo $this->Form->input('brand');
 		echo $this->Form->input('business');
+		echo $this->Form->input('phone');
+		echo $this->Form->input('fax');
+		echo $this->Form->input('email');
+		echo $this->Form->input('website');
 	?>
 	</fieldset>
 <?php //echo $this->Form->end('Submit');?>

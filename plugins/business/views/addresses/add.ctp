@@ -3,7 +3,6 @@
 	<header><h3><?php __('Add Address');?></h3></header>
 
 	<fieldset>
-
 	<?php
 		$default = array();
 		if (!empty($this->params['pass'])) {
