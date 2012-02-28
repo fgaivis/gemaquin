@@ -195,7 +195,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
+			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'bank_accounts', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
 		</ul>
 	</div>
 	
@@ -247,7 +247,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
+			<li><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'contacts', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
 		</ul>
 	</div>
 	

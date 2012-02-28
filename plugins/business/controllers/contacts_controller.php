@@ -52,7 +52,14 @@ class ContactsController extends BusinessAppController {
 			$result = $this->Contact->add($this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('The contact has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('action' => 'index'));
+				$id = $this->Contact->data['Contact']['organization_id'];
+				$organization = $this->Contact->Organization->find('first', array('conditions' => array('Organization.id' => $id)));
+				if($organization['Organization']['type'] === 'Client'){
+					$this->redirect(array('controller' => 'clients', 'action' => 'view', $id));
+				}else{
+					$this->redirect(array('controller' => 'providers', 'action' => 'view', $id));
+				}
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());

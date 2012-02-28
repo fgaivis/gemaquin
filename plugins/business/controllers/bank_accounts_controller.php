@@ -52,7 +52,14 @@ class BankAccountsController extends BusinessAppController {
 			$result = $this->BankAccount->add($this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('The bank account has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				//$this->redirect(array('action' => 'index'));
+				$id = $this->BankAccount->data['BankAccount']['organization_id'];
+				$organization = $this->BankAccount->Organization->find('first', array('conditions' => array('Organization.id' => $id)));
+				if($organization['Organization']['type'] === 'Client'){
+					$this->redirect(array('controller' => 'clients', 'action' => 'view', $id));
+				}else{
+					$this->redirect(array('controller' => 'providers', 'action' => 'view', $id));
+				}
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
