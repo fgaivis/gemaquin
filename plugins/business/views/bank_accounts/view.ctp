@@ -1,11 +1,11 @@
 <div class="bankAccounts view">
 <header><h3><?php  __('Bank Account');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $bankAccount['BankAccount']['id']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Id'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $bankAccount['BankAccount']['id']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Organization'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $this->Html->link($bankAccount['Organization']['name'], array('controller' => 'organizations', 'action' => 'view', $bankAccount['Organization']['id'])); ?>
@@ -66,16 +66,16 @@
 			<?php echo $bankAccount['BankAccount']['notes']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $bankAccount['BankAccount']['created']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Created'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $bankAccount['BankAccount']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $bankAccount['BankAccount']['modified']; ?>
+		<dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Modified'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $bankAccount['BankAccount']['modified']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 	</dl>
 </div>
 

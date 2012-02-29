@@ -1,11 +1,11 @@
 <div class="organizations view">
 <header><h3><?php  __('Organization');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $organization['Organization']['id']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Id'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $organization['Organization']['id']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Code'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $organization['Organization']['code']; ?>
@@ -46,16 +46,16 @@
 			<?php echo $organization['Organization']['type']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $organization['Organization']['created']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Created'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $organization['Organization']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $organization['Organization']['modified']; ?>
+		<dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Modified'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $organization['Organization']['modified']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 	</dl>
 </div>
 
