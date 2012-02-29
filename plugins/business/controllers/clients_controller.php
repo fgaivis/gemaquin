@@ -23,6 +23,25 @@ class ClientsController extends BusinessAppController {
  * @access public
  */	
 	public $paginate = array('limit' => 50, 'order' => array('Client.name' => 'asc'));
+	
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Search.Prg');
+
+
+ /**
+ * Valid search fields
+ *
+ * @var array
+ */
+	public $presetVars = array(
+		array('field' => 'code', 'type' => 'value'),
+		array('field' => 'name', 'type' => 'value'),
+		array('field' => 'fiscalid', 'type' => 'value')
+	);
 
 /**
  * Index for client.
@@ -30,6 +49,8 @@ class ClientsController extends BusinessAppController {
  * @access public
  */
 	public function index() {
+		$this->Prg->commonProcess();
+		$this->paginate['conditions'] = $this->Client->parseCriteria($this->passedArgs);
 		$this->Client->recursive = 0;
 		$this->set('clients', $this->paginate());
 	}

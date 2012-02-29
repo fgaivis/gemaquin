@@ -31,6 +31,19 @@ class Contact extends BusinessAppModel {
 			'order' => ''
 		)
 	);
+	
+	public $actsAs = array('Search.Searchable');
+	
+/**
+ * Filter args attribute to be used by the Searchable behavior
+ *
+ * @var array
+ * @access public
+ */
+	public $filterArgs = array(
+		array('name' => 'name', 'type' => 'like', 'field' => 'name'),
+		array('name' => 'organization_id', 'type' => 'like', 'field' => 'organization_id')
+	);
 
 
 /**

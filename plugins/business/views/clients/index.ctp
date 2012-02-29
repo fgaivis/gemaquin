@@ -1,6 +1,19 @@
 <div class="clients index">
 <header><h3><?php __('Clients');?></h3></header>
+	<div class="index-filters">
+	<?php
 
+    echo $this->Form->create(null, array(
+        'url' => array_merge(array('action' => 'index'), $this->params['pass'])
+    ));
+    echo $this->Form->input('code', array('div' => false));
+    echo $this->Form->input('name', array('div' => false));
+    echo $this->Form->input('fiscalid', array('div' => false));
+    echo $this->Form->submit(__('Search', true), array('div' => false));
+    echo $this->Form->end();
+
+    ?>
+    </div>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('code');?></th>

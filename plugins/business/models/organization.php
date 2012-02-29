@@ -90,6 +90,20 @@ class Organization extends BusinessAppModel {
 			'with' => 'Catalog.ItemsOrganization'
 		)
 	);
+	
+	public $actsAs = array('Search.Searchable');
+	
+/**
+ * Filter args attribute to be used by the Searchable behavior
+ *
+ * @var array
+ * @access public
+ */
+	public $filterArgs = array(
+		array('name' => 'code', 'type' => 'like', 'field' => 'code'),
+		array('name' => 'name', 'type' => 'like', 'field' => 'name'),
+		array('name' => 'fiscalid', 'type' => 'like', 'field' => 'fiscalid')
+	);
 
 /**
  * Constructor

@@ -15,6 +15,14 @@ class ItemsController extends CatalogAppController {
  * @access public
  */
 	public $helpers = array('Html', 'Form');
+	
+/**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 50, 'order' => array('Item.name' => 'asc'));
 
 /**
  * Components

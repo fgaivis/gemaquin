@@ -23,6 +23,24 @@ class ContactsController extends BusinessAppController {
  * @access public
  */	
 	public $paginate = array('limit' => 50, 'order' => array('Contact.name' => 'asc'));
+	
+/**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Search.Prg');
+
+
+ /**
+ * Valid search fields
+ *
+ * @var array
+ */
+	public $presetVars = array(
+		array('field' => 'name', 'type' => 'value'),
+		array('field' => 'organization_id', 'type' => 'value')
+	);
 
 /**
  * Index for contact.
@@ -30,6 +48,8 @@ class ContactsController extends BusinessAppController {
  * @access public
  */
 	public function index() {
+		$this->Prg->commonProcess();
+		$this->paginate['conditions'] = $this->Contact->parseCriteria($this->passedArgs);
 		$this->Contact->recursive = 0;
 		$this->set('contacts', $this->paginate()); 
 	}

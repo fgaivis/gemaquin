@@ -626,6 +626,10 @@ html ul.tabs li:last-child,html ul.tabs li:last-child a {
 }
 
 /* Actions on index */
+#category-menu ul.actions {
+	list-style-type: none;
+}
+
 .actions {
 	margin-top: 12px;
 }

@@ -25,11 +25,32 @@ class ProvidersController extends BusinessAppController {
 	public $paginate = array('limit' => 50, 'order' => array('Provider.name' => 'asc'));
 
 /**
+ * Components
+ *
+ * @var array
+ */
+	public $components = array('Search.Prg');
+
+
+ /**
+ * Valid search fields
+ *
+ * @var array
+ */
+	public $presetVars = array(
+		array('field' => 'code', 'type' => 'value'),
+		array('field' => 'name', 'type' => 'value'),
+		array('field' => 'fiscalid', 'type' => 'value')
+	);
+
+/**
  * Index for provider.
  *
  * @access public
  */
 	public function index() {
+		$this->Prg->commonProcess();
+		$this->paginate['conditions'] = $this->Provider->parseCriteria($this->passedArgs);
 		$this->Provider->recursive = 0;
 		$this->set('providers', $this->paginate());
 	}
