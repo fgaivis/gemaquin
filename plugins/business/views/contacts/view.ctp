@@ -53,4 +53,9 @@
 		</dd> -->
 	</dl>
 </div>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $contact['Contact']['id'])); ?></li>
+		</ul>
+	</div>
 

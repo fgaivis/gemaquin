@@ -4,8 +4,8 @@
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
-	<th><?php echo $this->Paginator->sort('organization_id');?></th>
 	<th><?php echo $this->Paginator->sort('name');?></th>
+	<th><?php echo $this->Paginator->sort('organization_id');?></th>
 	<!-- <th><?php //echo $this->Paginator->sort('email');?></th> -->
 	<th><?php echo $this->Paginator->sort('phone');?></th>
 	<!-- <th><?php //echo $this->Paginator->sort('mobile');?></th> -->
@@ -28,10 +28,10 @@ foreach ($contacts as $contact):
 			<?php //echo $contact['Contact']['id']; ?>
 		</td> -->
 		<td>
-			<?php echo $this->Html->link($contact['Organization']['name'], array('controller' => 'organizations', 'action' => 'view', $contact['Organization']['id'])); ?>
+			<?php echo $contact['Contact']['name']; ?>
 		</td>
 		<td>
-			<?php echo $contact['Contact']['name']; ?>
+			<?php echo $this->Html->link($contact['Organization']['name'], array('controller' => 'organizations', 'action' => 'view', $contact['Organization']['id'])); ?>
 		</td>
 		<!-- <td>
 			<?php //echo $contact['Contact']['email']; ?>
