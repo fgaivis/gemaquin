@@ -1,24 +1,17 @@
 <?php
 
-class ImporterShell extends Shell {
+class ItemsImporterShell extends Shell {
 
 	public function main() {
-		$this->clients();
 		$this->providers();
 		$this->items();
-		$this->out('Todo pepito papaaa!');
+		$this->out('Todo pepito brother!');
 	}
-
-	public function clients() {
-		$Client = ClassRegistry::init('Business.Client');
-		$Client->Behaviors->attach('Utils.CsvImport', array('delimiter' => ','));
-		$Client->importCSV(CONFIGS . 'clients.csv');
-	}
-
+	
 	public function providers() {
 		$Provider = ClassRegistry::init('Business.Provider');
 		$Provider->Behaviors->attach('Utils.CsvImport', array('delimiter' => ','));
-		$Provider->importCSV(CONFIGS . 'providers.csv');
+		$Provider->importCSV(CONFIGS . 'providers_v2.csv');
 	}
 
 	public function items() {
