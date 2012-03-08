@@ -1,11 +1,11 @@
 <div class="items view">
 <header><h3><?php  __('Item');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $item['Item']['id']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $item['Item']['id']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $item['Item']['name']; ?>
