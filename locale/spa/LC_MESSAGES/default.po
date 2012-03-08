@@ -1597,3 +1597,11 @@ msgstr "Items mas vendidos"
 #: Reportes Ventas
 msgid "Best Selling (Quantity) Items"
 msgstr "Items mas vendidos (Cantidad)"
+
+#: Inventario
+msgid "Gt Quantity"
+msgstr "Cantidad =>"
+
+#: Inventario
+msgid "Lt Quantity"
+msgstr "Cantidad <="
