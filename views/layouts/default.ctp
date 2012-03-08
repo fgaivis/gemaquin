@@ -30,7 +30,7 @@
 <meta name="description" content="Sistema Administrativo y Contable. SIAPHP" />
 <meta name="keywords" content="Venezuela, Dynamtek, Soluciones, Factura, Pedido, Organizacion, Cliente, Proveedor, Venta, Compra, Farmacia, Industria, Importacion" />
 
-	<title><?php echo __('Siaplus 2 - ').$title_for_layout; ?></title>
+	<title><?php echo __('Siaplus 2 - ').__($title_for_layout, true); ?></title>
 	
 	<?php echo $this->Html->meta('icon'); ?>
 	<?php 
@@ -47,7 +47,7 @@
 	<header id="header">
 		<hgroup>
 			<h1 class="site_title"><p style="margin: 0;" align="center"><a href="/"><?php echo $this->Html->image('sia2-logo_black.png', array())?></a></p></h1>
-			<h2 class="section_title"><?php echo __('Representaciones IV Gemaquin - ').$title_for_layout; ?></h2>
+			<h2 class="section_title"><?php echo __('Representaciones IV Gemaquin - ').__($title_for_layout, true); ?></h2>
 			<div class="btn_view_site"><?php echo $this->Html->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout', 'plugin' => 'users'))?></div>
 		</hgroup>
 	</header> <!-- end of header bar -->

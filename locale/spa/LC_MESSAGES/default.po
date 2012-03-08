@@ -1478,13 +1478,21 @@ msgstr "Siaplus 2 - Representaciones IV Gemaquin C.A."
 msgid "Categorías"
 msgstr "Categorías"
 
+#: views/pages/home.ctp:16
+msgid "Category"
+msgstr "Categoría"
+
+#: views/pages/home.ctp:16
+msgid "Categories"
+msgstr "Categorías"
+
 #: views/plugins/categories/categories/index.ctp:37
 msgid "View as Tree"
 msgstr "Ver como árbol"
 
 #: webroot/test.php:88
 msgid "Debug setting does not allow access to this url."
-msgstr "Debug setting does not allow access to this url."
+msgstr "La configuracion de DEBUG no le permite acceso a este url."
 
 #: webroot/*.php:88
 msgid "Submit"
@@ -1541,6 +1549,14 @@ msgstr "Ordenes relacionadas"
 #: Invoice Content
 msgid "Print invoice"
 msgstr "Imprimir factura"
+
+#: Users
+msgid "Users"
+msgstr "Usuarios"
+
+#: Users
+msgid "User"
+msgstr "Usuario"
 
 #: Users
 msgid "Add User"
