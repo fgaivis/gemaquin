@@ -34,6 +34,9 @@
 		<?php __('Siaplus 2 - Representaciones IV Gemaquin C.A.'); ?>
 		<?php //echo $title_for_layout; ?>
 	</title>
+	<?php echo $this->Html->script('jquery.min'); ?>
+	<?php echo $this->Html->script('jquery.tablesorter.min'); ?>
+	<?php echo $this->Html->script('jquery.equalHeight'); ?>
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->css('main');
