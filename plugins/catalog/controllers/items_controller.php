@@ -39,7 +39,7 @@ class ItemsController extends CatalogAppController {
  */
 	public $presetVars = array(
 		array('field' => 'name', 'type' => 'value'),
-		array('field' => 'barcode', 'type' => 'value'),
+		array('field' => 'organization_id', 'type' => 'value'),
 		array('field' => 'purchase_order', 'type' => 'value')
 	);
 
@@ -52,6 +52,8 @@ class ItemsController extends CatalogAppController {
 		$this->Prg->commonProcess();
 		$this->paginate['conditions'] = $this->Item->parseCriteria($this->passedArgs);
 		$this->Item->recursive = 0;
+		$organizations = $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('name' => 'asc')));
+		$this->set(compact('organizations'));
 		$this->set('items', $this->paginate());
 	}
 

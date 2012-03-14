@@ -101,7 +101,7 @@ class Item extends CatalogAppModel {
  */
 	public $filterArgs = array(
 		array('name' => 'name', 'type' => 'like', 'field' => 'name'),
-		array('name' => 'barcode', 'type' => 'like', 'field' => 'barcode'),
+		array('name' => 'organization_id', 'type' => 'query', 'method' => 'makeProviderCondition'),
 		array('name' => 'purchase_order', 'type' => 'query', 'method' => 'makeOrderCondition')
 	);
 
@@ -258,6 +258,18 @@ class Item extends CatalogAppModel {
 				'conditions' => array('ItemsPurchaseOrder.purchase_order_id' => $order, 'ItemsPurchaseOrder.item_id = Item.id')
 			)
 		)), true);
+	}
+	
+	public function makeProviderCondition($data) {
+		$organization = $data['organization_id'];
+		$this->bindModel(array('belongsTo' => array(
+			'ItemsOrganization' => array(
+				'className' => 'Catalog.ItemsOrganization',
+				'foreignKey' => false,
+				'type' => 'inner',
+				'conditions' => array('ItemsOrganization.organization_id' => $organization, 'ItemsOrganization.item_id = Item.id')
+			)
+		)), false);
 	}
 
 	public function beforeImport($data) {
