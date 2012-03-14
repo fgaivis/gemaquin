@@ -1,6 +1,6 @@
 <h2><?php echo sprintf(__('Delete Sales Order "%s"?', true), $salesOrder['SalesOrder']['title']); ?></h2>
 <p class="delete-warn">	
-	<?php __('Be aware that your Sales Order and all associated data will be deleted if you confirm!'); ?>
+	<?php __('Be aware that your Order and all associated data will be deleted if you confirm!'); ?>
 </p>
 <div class="delete-form">
 <?php

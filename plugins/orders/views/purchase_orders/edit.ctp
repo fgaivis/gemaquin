@@ -22,7 +22,7 @@
 				echo $html->tableHeaders(array(
 					__('Code', true),
 					__('Item', true),
-					__('Description', true),
+					//__('Description', true),
 					__('Package', true),
 					__('Quantity', true),
 					__('Actions', true)
@@ -32,7 +32,7 @@
 				<tr class="item" id="<?php echo 'row' . $item['id']?>">
 				    <td><?php echo $item['barcode']; ?></td>
 				    <td><?php echo $item['name']; ?></td>
-				    <td><?php echo $item['description']; ?></td>
+				    <!-- <td><?php //echo $item['description']; ?></td> -->
 				    <td><?php echo $item['package_factor']; ?></td>
 				    <td><?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.quantity', array('label' => false, 'div' => false)); ?></td>
 				    <td>

@@ -58,7 +58,7 @@ function addItem(itemId) {
 			    row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
 			    row.append(
 				    '<td>' +
-					    '<a href="#" class="delete" item="'+ data.content.Item.id +'">Delete</a>' +
+					    '<a href="#" class="delete" item="'+ data.content.Item.id +'">Eliminar</a>' +
 					    '<input type="hidden" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][item_id]" value="'+  data.content.Item.id +'">' +
 				    '</td>'
 			    );

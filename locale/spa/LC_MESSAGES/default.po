@@ -236,6 +236,14 @@ msgstr "Agregar Dirección"
 msgid "Delete Address of \"%s\"?"
 msgstr "Eliminar Dirección de \"%s\"?"
 
+#: plugins/business/views/addresses/delete.ctp:1
+msgid "Delete Purchase Order \"%s\"?"
+msgstr "Eliminar Orden de Compra \"%s\"?"
+
+#: plugins/business/views/addresses/delete.ctp:1
+msgid "Delete Sales Order \"%s\"?"
+msgstr "Eliminar Orden de Venta \"%s\"?"
+
 #: plugins/business/views/addresses/delete.ctp:3
 msgid "Be aware that your Address and all associated data will be deleted if you confirm!"
 msgstr "La Dirección y toda la data asociada será eliminada luego de su confirmación!"
@@ -1121,6 +1129,14 @@ msgstr "Items de factura eliminados"
 #: plugins/orders/controllers/items_purchase_orders_controller.php:54
 msgid "The items purchase order has been saved"
 msgstr "Los items de la orden de compra han sido guardados"
+
+#: plugins/inventory/views/inventory_items/delete.ctp:3
+msgid "Be aware that your Order and all associated data will be deleted if you confirm!"
+msgstr "La orden y toda la data asociada será eliminada luego de su confirmación!"
+
+#: plugins/inventory/views/inventory_items/delete.ctp:3
+msgid "Be aware that your Order Item and all associated data will be deleted if you confirm!"
+msgstr "La orden y toda la data asociada será eliminada luego de su confirmación!"
 
 #: plugins/orders/controllers/items_purchase_orders_controller.php:79
 msgid "Items Purchase Order saved"
