@@ -51,6 +51,8 @@ class ContactsController extends BusinessAppController {
 		$this->Prg->commonProcess();
 		$this->paginate['conditions'] = $this->Contact->parseCriteria($this->passedArgs);
 		$this->Contact->recursive = 0;
+		$organizations = $this->Contact->Organization->find('list', array('order' => array('name' => 'asc')));
+		$this->set(compact('organizations'));
 		$this->set('contacts', $this->paginate()); 
 	}
 

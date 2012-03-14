@@ -7,7 +7,7 @@
         'url' => array_merge(array('action' => 'index'), $this->params['pass'])
     ));
     echo $this->Form->input('name', array('div' => false));
-    echo $this->Form->input('organization_id', array('div' => false));
+    echo $this->Form->input('organization_id', array('div' => false, 'empty' =>__('Select',true)));
     echo $this->Form->submit(__('Search', true), array('div' => false));
     echo $this->Form->end();
 
