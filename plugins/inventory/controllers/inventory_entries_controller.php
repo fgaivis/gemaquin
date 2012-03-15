@@ -15,6 +15,14 @@ class InventoryEntriesController extends AppController {
  * @access public
  */
 	public $helpers = array('Html', 'Form');
+	
+/**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 50, 'order' => array('InventoryEntry.created' => 'desc'));
 
 /**
  * Index for inventory entry.

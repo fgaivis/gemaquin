@@ -78,17 +78,18 @@
 							__('Tax', true),
 							__('Exempt', true),
 						));
-				?>	<?php endif; ?>
+				?>	
+			<?php endif; ?>
 				<?php foreach ($items as $index => $item) : ?>
 					<tr class="item">
 						<td><?php echo $item['Item']['barcode']; ?></td>
 						<td><?php echo $item['Item']['name']; ?></td>
-						<td><?php echo $item['Item']['description']; ?></td>
-						<?php if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])): ?>
-							<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
-						<?php elseif (isset($this->data['SalesOrder'])): ?>
-							<td><?php echo $item['InvItemsSalesOrder']['quantity']; ?></td>
-						<?php endif;?>
+						<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
+						<!-- <?php //if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])): ?>
+							<td><?php //echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
+						<?php //elseif (isset($this->data['SalesOrder'])): ?>
+							<td><?php //echo $item['InvItemsSalesOrder']['quantity']; ?></td>
+						<?php //endif;?> -->
 						<td>
 							<?php 
 								echo $this->Form->hidden('InvoicesItem.' . $index . '.item_id', array('value' => $item['Item']['id']));

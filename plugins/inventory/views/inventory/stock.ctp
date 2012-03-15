@@ -20,6 +20,7 @@
 <tr>
 	<th><?php echo $this->Paginator->sort('item_id');?></th>
 	<th><?php echo $this->Paginator->sort('batch');?></th>
+	<th><?php echo $this->Paginator->sort('elaboration_date');?></th>
 	<th><?php echo $this->Paginator->sort('expiration_date');?></th>
 	<th><?php echo $this->Paginator->sort('quantity');?></th>
 </tr>
@@ -34,10 +35,13 @@ foreach ($items as $item):
 	<tr<?php echo $class;?>>
 		<td>
 			<?php echo $this->Html->link($item['Item']['name'], array(
-				'plugin' => 'catalog', 'controller' => 'items', 'action' => 'view', $item['Item']['id'])); ?>
+				'plugin' => 'catalog', 'controller' => 'items', 'action' => 'view', $item['Inventory']['item_id'])); ?>
 		</td>
 		<td>
 			<?php echo $item['Inventory']['batch']; ?>
+		</td>
+		<td>
+			<?php echo $item['Inventory']['elaboration_date']; ?>
 		</td>
 		<td>
 			<?php echo $item['Inventory']['expiration_date']; ?>

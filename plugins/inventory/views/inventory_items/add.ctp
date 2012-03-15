@@ -10,6 +10,7 @@
 		<ul>
 		</ul>
 	</div>
+	<br />
 	<?php echo $this->Form->create(null, array('id' => 'inventoryLoad', 'url' => array($entry)));?>
 	<div class="module width_3_quarter" id="inventoryTable">
 		<header>
@@ -20,6 +21,7 @@
 				echo $html->tableHeaders(array(
 					__('Item', true),
 					__('Batch', true),
+					__('Elaboration Date', true),
 					__('Expiration Date', true),
 					__('Quantity', true),
 					__('Actions', true)

@@ -4,6 +4,7 @@
 <tr>
 	<th><?php __('Item'); ?></th>
 	<th><?php __('Batch'); ?></th>
+	<th><?php __('Elaboration Date'); ?></th>
 	<th><?php __('Expiration Date'); ?></th>
 	<th><?php __('Quantity'); ?></th>
 	<th><?php __('Attachment'); ?></th>
@@ -23,6 +24,9 @@ foreach ($inventoryItems as $i => $item):
 		</td>
 		<td>
 			<?php echo $item['InventoryItem']['batch']; ?>
+		</td>
+		<td>
+			<?php echo $item['InventoryItem']['elaboration_date']; ?>
 		</td>
 		<td>
 			<?php echo $item['InventoryItem']['expiration_date']; ?>

@@ -458,8 +458,8 @@ section#main {
 }
 
 .width_3_quarter {
-	width: 62%;
-	margin-right: 0;
+	width: 95%;
+	margin-left: 24px;
 	float: left;
 }
 

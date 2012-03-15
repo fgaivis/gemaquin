@@ -1059,8 +1059,32 @@ msgid "Batch"
 msgstr "Lote"
 
 #: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Elaboration Date"
+msgstr "Fecha de Elaboración"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
 msgid "Expiration Date"
 msgstr "Fecha de Expiración"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Retest Date"
+msgstr "Fecha de Reevaluación"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Extension Date"
+msgstr "Fecha de Extensión"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Send Files"
+msgstr "Cargar archivos"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Details"
+msgstr "Detalles"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Load Certificates"
+msgstr "Cargar Certificados"
 
 #: plugins/inventory/views/inventory_items/add.ctp:24
 #: plugins/inventory/views/inventory_items/view.ctp:19
