@@ -1552,7 +1552,7 @@ msgstr "Seguro"
 
 #: webroot/*.php
 msgid "Shipping"
-msgstr "Envio"
+msgstr "Flete"
 
 #: webroot/*.php
 msgid "Customs Tax"
@@ -1564,7 +1564,7 @@ msgstr "Costos aduanales"
 
 #: webroot/*.php
 msgid "Internal Shipping"
-msgstr "Envio interno"
+msgstr "Flete interno"
 
 #: alejandro's apportionment
 msgid "Apportionment"
