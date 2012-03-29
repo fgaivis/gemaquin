@@ -67,6 +67,7 @@
 			<input class="quick_search" type="text" value="<?php //echo __('Buscar', true)?>" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
 		</form>
 		<hr/> -->
+		<?php if($userData['User']['role'] != '3'): ?>
 		<h3><?php echo __('Clientes', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nuevo cliente', true), array('controller' => 'clients', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
@@ -90,6 +91,7 @@
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva categoria', true), array('controller' => 'categories', 'action' => 'admin_add', 'plugin' => 'categories'))?></li>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar categorias', true), array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories'))?></li>
 		</ul>
+		<?php endif;?>
 		<h3><?php echo __('Items', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nuevo item', true), array('controller' => 'items', 'action' => 'add', 'plugin' => 'catalog', 'admin' => false))?></li>
@@ -102,6 +104,7 @@
 			<li class="icn_categories"><?php echo $this->Html->link(__('Reportes de Ingreso', true), array('controller' => 'inventory_entries', 'action' => 'index', 'plugin' => 'inventory', 'admin' => false))?></li>
 			<!-- <li class="icn_categories"><?php //echo $this->Html->link(__('Ver entradas de inventario', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li> -->
 		</ul>
+		<?php if($userData['User']['role'] != '3'): ?>
 		<h3><?php echo __('Ordenes de compra', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de compra', true), array('controller' => 'purchase_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
@@ -114,12 +117,15 @@
             <li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos', true), array('controller' => 'sales_orders', 'action' => 'best_selling', 'plugin' => 'orders', 'admin' => false))?></li>
             <li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos (Cantidad)', true), array('controller' => 'sales_orders', 'action' => 'best_selling_quantity', 'plugin' => 'orders', 'admin' => false))?></li>
         </ul>
+        <?php endif;?>
+        <?php if($userData['User']['role'] === '0'): ?>
 		<h3><?php echo __('Usuarios', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_add_user"><?php echo $this->Html->link(__('Nuevo usuario', true), array('controller' => 'users', 'action' => 'admin_add', 'plugin' => 'users'))?></li>
 			<li class="icn_view_users"><?php echo $this->Html->link(__('Listar usuarios', true), array('controller' => 'users', 'action' => 'admin_index', 'plugin' => 'users'))?></li>
 			<!-- <li class="icn_profile"><a href="#">Your Profile</a></li> -->
 		</ul>
+		<?php endif;?>
 		<h3><?php echo __('Sistema', true); ?></h3>
 		<ul class="toggle">
 			<!-- <li class="icn_settings"><a href="#">Opciones</a></li>
