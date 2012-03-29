@@ -78,7 +78,7 @@ class AppController extends Controller {
  */
 	protected function _setupAuth() {
 		$this->Auth->authorize = 'controller';
-		$this->Auth->fields = array('username' => 'email', 'password' => 'passwd');
+		$this->Auth->fields = array('username' => 'username', 'password' => 'passwd');
 		$this->Auth->loginAction = array('plugin' => 'users', 'admin' => false, 'controller' => 'users', 'action' => 'login');
 		$this->Auth->loginRedirect = '/';
 		$this->Auth->logoutRedirect = '/';

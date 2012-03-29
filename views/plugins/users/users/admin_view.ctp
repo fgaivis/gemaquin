@@ -32,6 +32,7 @@
 <div class="actions">
 	<ul>
 		<li><?php echo $this->Html->link(__d('users', 'Edit User', true), array('action'=>'admin_edit', $user[$model]['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__d('default', 'Reset Password', true), array('action'=>'view', $user[$model]['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__d('users', 'Delete User', true), array('action'=>'admin_delete', $user[$model]['id']), null, sprintf(__d('users', 'Are you sure you want to delete # %s?', true), $user[$model]['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__d('users', 'List Users', true), array('action'=>'admin_index')); ?> </li>
 		<li><?php echo $this->Html->link(__d('users', 'New User', true), array('action'=>'admin_add')); ?> </li>

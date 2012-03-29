@@ -10,14 +10,14 @@
  */
 ?>
 <div class="users form">
-<?php echo $this->Form->create($model);?>
-	<header><h3><?php __('Edit User');?></h3></header>
+<?php echo $this->Form->create($model, array('action' => 'admin_edit'));?>
+	<header><h3><?php __('Reset Password');?></h3></header>
 	<fieldset>
 
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('username');
-		echo $this->Form->input('role', array('options' => array('0'=>'Administrador','1'=>'Gerencia','2'=>'Ventas', '3'=>'Almacen')));
+		echo $this->Form->hidden('username');
+		echo $this->Form->input('passwd', array('label' => __d('default', 'Password', true), 'value' => ''));
 		echo $this->Form->hidden('tos', array('value' => true));
 		echo $this->Form->hidden('active', array('value' => true));
 		echo $this->Form->hidden('email_authenticated', array('value' => true));

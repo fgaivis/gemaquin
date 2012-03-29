@@ -1607,6 +1607,14 @@ msgid "Edit User"
 msgstr "Editar Usuario"
 
 #: Users
+msgid "Reset Password"
+msgstr "Reestablecer contraseña"
+
+#: Users
+msgid "Password"
+msgstr "Contraseña"
+
+#: Users
 msgid "Username"
 msgstr "Login"
 

@@ -18,6 +18,7 @@
 		echo $this->Form->input('username');
 		echo $this->Form->input('email');
 		echo $this->Form->input('passwd');
+		echo $this->Form->input('role', array('options' => array('0'=>'Administrador','1'=>'Gerencia','2'=>'Ventas', '3'=>'Almacen')));
 		echo $this->Form->hidden('tos', array('value' => true));
 		echo $this->Form->hidden('active', array('value' => true));
 		echo $this->Form->hidden('email_authenticated', array('value' => true));
