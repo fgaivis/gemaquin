@@ -111,7 +111,8 @@
 	</table>
 <?php endif; ?>
 </div>
-	
+
+<?php if($userData['User']['role'] != '2'): ?>
 <div class="related index">
 <header><h3><?php __('Related Bank Accounts');?></h3></header>
 	<?php if (!empty($organization['BankAccount'])):?>
@@ -168,6 +169,7 @@
 	</table>
 <?php endif; ?>
 </div>
+<?php endif;?>
 	
 <div class="related index">
 <header><h3><?php __('Related Contacts');?></h3></header>

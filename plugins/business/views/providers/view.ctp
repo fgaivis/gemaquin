@@ -136,7 +136,8 @@
 			<li><?php echo $this->Html->link(__('Nueva dirección', true), array('controller' => 'addresses', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
 		</ul>
 	</div>
-	
+
+<?php if($userData['User']['role'] != '2'): ?>
 <div class="related index">
 <header><h3><?php __('Related Bank Accounts');?></h3></header>
 	<?php if (!empty($provider['BankAccount'])):?>
@@ -198,7 +199,8 @@
 			<li><?php echo $this->Html->link(__('Nueva cuenta bancaria', true), array('controller' => 'bank_accounts', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
 		</ul>
 	</div>
-	
+<?php endif;?>
+
 <div class="related index">
 <header><h3><?php __('Related Contacts');?></h3></header>
 	<?php if (!empty($provider['Contact'])):?>

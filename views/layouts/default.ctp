@@ -100,8 +100,10 @@
 		<h3><?php echo __('Inventario', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_categories"><?php echo $this->Html->link(__('Inventario', true), array('controller' => 'inventory', 'action' => 'stock', 'plugin' => 'inventory', 'admin' => false))?></li>
+			<?php if ($userData['User']['role'] != '1' && $userData['User']['role'] != '2') :?>
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Ingresar a inventario', true), array('controller' => 'inventory_entries', 'action' => 'add', 'plugin' => 'inventory', 'admin' => false))?></li>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Reportes de Ingreso', true), array('controller' => 'inventory_entries', 'action' => 'index', 'plugin' => 'inventory', 'admin' => false))?></li>
+			<?php endif;?>
 			<!-- <li class="icn_categories"><?php //echo $this->Html->link(__('Ver entradas de inventario', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li> -->
 		</ul>
 		<?php if($userData['User']['role'] != '3'): ?>
