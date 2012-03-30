@@ -1653,3 +1653,27 @@ msgstr "Cantidad =>"
 #: Inventario
 msgid "Lt Quantity"
 msgstr "Cantidad <="
+
+#: Generales
+msgid "Yes"
+msgstr "Sí"
+
+#: Generales
+msgid "No"
+msgstr "No"
+
+#: Generales
+msgid "Administrator"
+msgstr "Administrador"
+
+#: Generales
+msgid "Manager"
+msgstr "Gerencia"
+
+#: Generales
+msgid "Sales/Purchases"
+msgstr "Ventas/Compras"
+
+#: Generales
+msgid "Stock"
+msgstr "Almacen"

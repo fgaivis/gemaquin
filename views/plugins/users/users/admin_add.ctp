@@ -13,12 +13,20 @@
 <?php echo $this->Form->create($model);?>
 	<header><h3><?php __('Add User');?></h3></header>
 	<fieldset>
+	
+	<?php $roles = array(
+			'0' => __('Administrator', true),
+			'1' => __('Manager', true),
+			'2' => __('Sales/Purchases', true),
+			'3' => __('Stock', true)
+		);
+	?>
 
 	<?php
 		echo $this->Form->input('username');
 		echo $this->Form->input('email');
 		echo $this->Form->input('passwd', array('label' => __d('default', 'Password', true)));
-		echo $this->Form->input('role', array('options' => array('0'=>'Administrador','1'=>'Gerencia','2'=>'Ventas/Compras', '3'=>'Almacen')));
+		echo $this->Form->input('role', array('options' => $roles));
 		echo $this->Form->hidden('tos', array('value' => true));
 		echo $this->Form->hidden('active', array('value' => true));
 		echo $this->Form->hidden('email_authenticated', array('value' => true));

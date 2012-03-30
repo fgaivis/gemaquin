@@ -12,7 +12,13 @@
 <div class="users index">
 	<!-- <h2><?php //__d('users', 'Users');?></h2>
 	<h3><?php //__d('users', 'Filter'); ?></h3> -->
-	
+	<?php $roles = array(
+			'0' => __('Administrator', true),
+			'1' => __('Manager', true),
+			'2' => __('Sales/Purchases', true),
+			'3' => __('Stock', true)
+		);
+	?>
 	<header><h3><?php __d('users', 'Users');?></h3></header>
 	<div class="index-filters">
 	<?php 
@@ -30,7 +36,7 @@
 		<tr>
 			<th><?php echo $this->Paginator->sort('username');?></th>
 			<th><?php echo $this->Paginator->sort('email');?></th>
-			<!-- <th><?php //echo $this->Paginator->sort('email_authenticated');?></th> -->
+			<th><?php echo $this->Paginator->sort('role');?></th>
 			<th><?php echo $this->Paginator->sort('active');?></th>
 			<!--  <th><?php //echo $this->Paginator->sort('created');?></th> -->
 			<th class="actions"><?php __d('users', 'Actions');?></th>
@@ -50,11 +56,11 @@
 				<td>
 					<?php echo $user[$model]['email']; ?>
 				</td>
-				<!-- <td>
-					<?php //echo $user[$model]['email_authenticated']; ?>
-				</td> -->
 				<td>
-					<?php echo $user[$model]['active']; ?>
+					<?php echo $roles[$user[$model]['role']]; ?>
+				</td>
+				<td>
+					<?php echo $user[$model]['active'] !=0 ? __d('default', 'Yes') : __d('default', 'No') ; ?>
 				</td>
 				<!-- <td>
 					<?php //echo $user[$model]['created']; ?>
