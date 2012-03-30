@@ -14,15 +14,17 @@
 	<h3><?php //__d('users', 'Filter'); ?></h3> -->
 	
 	<header><h3><?php __d('users', 'Users');?></h3></header>
+	<div class="index-filters">
 	<?php 
-		//echo $this->Form->create($model, array('action' => 'index'));
-		//echo $this->Form->input('username', array(
-			//'label' => __d('users', 'Username', true)));
-		//echo $this->Form->input('email', array(
-			//'label' => __d('users', 'Email', true)));
-		//echo $this->Form->end(__d('users', 'Search', true));
+		echo $this->Form->create($model, array('action' => 'admin_search'));
+		echo $this->Form->input('username', array('div' => false,
+			'label' => __d('users', 'Username', true)));
+		echo $this->Form->input('email', array('div' => false,
+			'label' => __d('users', 'Email', true)));
+		echo $this->Form->submit(__d('users', 'Search', true), array('div' => false));
+		echo $this->Form->end();
 	?>
-
+	</div>
 	<?php echo $this->element('paging'); ?>
 	<table cellpadding="0" cellspacing="0">
 		<tr>
