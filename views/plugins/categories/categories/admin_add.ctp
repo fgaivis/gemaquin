@@ -6,7 +6,7 @@
 
 	<?php
 		$default = empty($this->params['pass'][0]) ? '' : $this->params['pass'][0];
-		echo $this->Form->input('category_id', array('empty' => true, 'default' => $default));
+		echo $this->Form->input('category_id', array('empty' => true, 'default' => $default, 'label' => __d('default', 'Parent Category', true)));
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');
 	?>

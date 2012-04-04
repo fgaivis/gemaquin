@@ -1079,6 +1079,14 @@ msgid "Send Files"
 msgstr "Cargar archivos"
 
 #: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Files"
+msgstr "Archivos"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Send Hard Copy"
+msgstr "Cargar archivos"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
 msgid "Details"
 msgstr "Detalles"
 
@@ -1677,3 +1685,7 @@ msgstr "Ventas/Compras"
 #: Generales
 msgid "Stock"
 msgstr "Almacen"
+
+#: Generales
+msgid "Parent Category"
+msgstr "Categoría padre"

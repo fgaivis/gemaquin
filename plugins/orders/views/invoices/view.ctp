@@ -62,7 +62,7 @@
 			&nbsp;
 		</dd>
 		<?php if (empty($invoice['Invoice']['hard_copy'])): ?>
-			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Type'); ?></dt>
+			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Files'); ?></dt>
 			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 				<?php 
 					echo $this->Form->create('Invoice',  array('type' => 'file', 'url' => $this->passedArgs));
