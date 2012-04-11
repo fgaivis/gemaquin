@@ -22,6 +22,8 @@
 	<th><?php echo $this->Paginator->sort('batch');?></th>
 	<th><?php echo $this->Paginator->sort('elaboration_date');?></th>
 	<th><?php echo $this->Paginator->sort('expiration_date');?></th>
+	<th><?php echo $this->Paginator->sort('retest_date');?></th>
+	<th><?php echo $this->Paginator->sort('extension_date');?></th>
 	<th><?php echo $this->Paginator->sort('quantity');?></th>
 </tr>
 <?php
@@ -34,8 +36,13 @@ foreach ($items as $item):
 ?>
 	<tr<?php echo $class;?>>
 		<td>
+		<?php if($userData['User']['role'] != '0'): ?>
 			<?php echo $this->Html->link($item['Item']['name'], array(
 				'plugin' => 'catalog', 'controller' => 'items', 'action' => 'view', $item['Inventory']['item_id'])); ?>
+		<?php else: ?>
+			<?php echo $this->Html->link($item['Item']['name'], array(
+				'plugin' => 'inventory', 'controller' => 'inventory', 'action' => 'edit', $item['Inventory']['id'])); ?>
+		<?php endif; ?>
 		</td>
 		<td>
 			<?php echo $item['Inventory']['batch']; ?>
@@ -45,6 +52,12 @@ foreach ($items as $item):
 		</td>
 		<td>
 			<?php echo $item['Inventory']['expiration_date']; ?>
+		</td>
+		<td>
+			<?php echo $item['Inventory']['retest_date']; ?>
+		</td>
+		<td>
+			<?php echo $item['Inventory']['extension_date']; ?>
 		</td>
 		<td>
 			<?php echo $item['Inventory']['quantity']; ?>
