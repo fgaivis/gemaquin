@@ -20,6 +20,8 @@
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');
 		echo $this->Form->input('barcode');
+		echo $this->Form->input('max_quantity');
+		echo $this->Form->input('min_quantity');
 		echo $this->Form->input('package_factor');
 		echo $this->Form->input('sales_factor');
 		echo $this->Form->input('weight');

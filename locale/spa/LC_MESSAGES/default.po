@@ -1127,6 +1127,14 @@ msgid "Max Debt"
 msgstr "Monto Máximo Deuda"
 
 #: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Min Quantity"
+msgstr "Existencia Mínima"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Max Quantity"
+msgstr "Existencia Máxima"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
 msgid "Actual Debt"
 msgstr "Deuda Actual"
 
