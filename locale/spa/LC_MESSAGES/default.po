@@ -1229,9 +1229,25 @@ msgstr "La Orden de Compra ha sido enviada"
 msgid "An error has occurred sending the purchase order"
 msgstr "Ha ocurrido un error durante el envío de la Orden de Compra"
 
+#: plugins/orders/controllers/purchase_orders_controller.php:73
+msgid "An error has occurred voiding the purchase order"
+msgstr "Ha ocurrido un error anulando la Orden de Compra"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:73
+msgid "An error has occurred voiding the sales order"
+msgstr "Ha ocurrido un error anulando la Orden de Venta"
+
 #: plugins/orders/controllers/purchase_orders_controller.php:100
 msgid "Purchase Order saved"
 msgstr "Orden de Compra guardada"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:100
+msgid "Purchase Order void"
+msgstr "Orden de Compra anulada"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:100
+msgid "Sales Order void"
+msgstr "Orden de Venta anulada"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:129
 msgid "Purchase order deleted"
@@ -1425,6 +1441,10 @@ msgstr "Orden de Compra"
 msgid "Add Purchase Order"
 msgstr "Agregar Orden de Compra"
 
+#: plugins/orders/views/purchase_orders/add.ctp:4
+msgid "Add Sales Order"
+msgstr "Agregar Orden de Venta"
+
 #: plugins/orders/views/purchase_orders/add.ctp:11
 #: plugins/orders/views/purchase_orders/edit.ctp:10
 msgid "Select"
@@ -1443,6 +1463,10 @@ msgstr "Paquete"
 #: plugins/orders/views/purchase_orders/edit.ctp:3
 msgid "Edit Purchase Order"
 msgstr "Editar Orden de Compra"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:3
+msgid "Edit Sales Order"
+msgstr "Editar Orden de Venta"
 
 #: plugins/orders/views/purchase_orders/index.ctp:4
 msgid "Purchase Orders"
@@ -1728,6 +1752,10 @@ msgstr "Almacen"
 #: Generales
 msgid "Parent Category"
 msgstr "Categoría padre"
+
+#: Generales
+msgid "Void"
+msgstr "Anular"
 
 #: Status Ordenes
 msgid "DRAFT"

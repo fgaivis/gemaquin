@@ -227,6 +227,25 @@ class PurchaseOrder extends AppModel {
             return false;
         }
 	}
+	
+	public function void($id) {
+	    $purchaseOrder = $this->find('first', array(
+			'conditions' => array(
+				"{$this->alias}.{$this->primaryKey}" => $id,
+				)));
+				
+		if (empty($purchaseOrder)) {
+			throw new OutOfBoundsException(__('Invalid Purchase Order', true));
+		}
+		
+		$purchaseOrder['PurchaseOrder']['status'] = PurchaseOrder::VOID;
+		$result = $this->save($purchaseOrder);
+		if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+	}
 
 /**
  * Validates the deletion

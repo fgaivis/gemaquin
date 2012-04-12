@@ -65,7 +65,13 @@ foreach ($purchaseOrders as $purchaseOrder):
 			<?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) : ?>
 				<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $purchaseOrder['PurchaseOrder']['id'])); ?>
 				<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $purchaseOrder['PurchaseOrder']['id'])); ?>
-			 <?php endif; ?>
+			<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::SENT) : ?>
+				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
+			<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::INVOICED) : ?>
+				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
+			<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::PREINVOICED) : ?>
+				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
+			<?php endif; ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

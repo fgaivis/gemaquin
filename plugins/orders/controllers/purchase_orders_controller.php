@@ -134,6 +134,28 @@ class PurchaseOrdersController extends AppController {
 		$this->set(compact('organizations', 'invoices', 'items'));
 
 	}
+	
+/**
+ * Void for purchase order.
+ *
+ * @param string $id, purchase order id
+ * @access public
+ */
+	public function void($id = null) {
+		try {
+			$result = $this->PurchaseOrder->void($id);
+			if ($result === true) {
+            	$this->Session->setFlash(__('Purchase Order void', true));
+			} else {
+			    $this->Session->setFlash(__('An error has occurred voiding the purchase order', true));
+			}
+	    	$this->redirect(array('action' => 'view', $id));
+		} catch (OutOfBoundsException $e) {
+			$this->Session->setFlash($e->getMessage());
+			$this->redirect('/');
+		}
+
+	}
 
 /**
  * Delete for purchase order.

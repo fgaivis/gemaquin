@@ -101,11 +101,34 @@ class SalesOrdersController extends OrdersAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
-		$organizations = $this->SalesOrder->Organization->find('list');
+		$organizations = $this->SalesOrder->Client->find('list');
 		$invoices = $this->SalesOrder->Invoice->find('list');
 		$inventoryItems = $this->SalesOrder->InventoryItem->find('list');
+		$this->set('salesOrder', $this->data);
 		$this->set(compact('organizations', 'invoices', 'inventoryItems'));
  
+	}
+	
+/**
+ * Void for sales order.
+ *
+ * @param string $id, purchase order id
+ * @access public
+ */
+	public function void($id = null) {
+		try {
+			$result = $this->SalesOrder->void($id);
+			if ($result === true) {
+            	$this->Session->setFlash(__('Sales Order void', true));
+			} else {
+			    $this->Session->setFlash(__('An error has occurred voiding the sales order', true));
+			}
+	    	$this->redirect(array('action' => 'view', $id));
+		} catch (OutOfBoundsException $e) {
+			$this->Session->setFlash($e->getMessage());
+			$this->redirect('/');
+		}
+
 	}
 
 /**

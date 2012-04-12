@@ -22,6 +22,12 @@ $(function(){
             $('#save').attr('disabled','disabled');
 		}
 	});
+   	if ($("#clients").val() != '') { //edit
+   	   	$("#clients").change();
+   	   	$("#orderTable").show();
+	    $('#save').removeAttr('disabled');
+	    $('#clients').attr('disabled', 'disabled');
+   	}
 
 	$(".delete").live("click",function() {
 	    $(this).parent().parent().remove();

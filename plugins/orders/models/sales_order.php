@@ -169,6 +169,7 @@ class SalesOrder extends AppModel {
  */
 	public function edit($id = null, $data = null) {
 		$salesOrder = $this->find('first', array(
+			'contain' => array('InventoryItem.Item', 'Client', 'Invoice', 'InvItemsSalesOrder'),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
@@ -220,6 +221,25 @@ class SalesOrder extends AppModel {
 		} else {
 			return false;
 		}
+	}
+	
+	public function void($id) {
+	    $salesOrder = $this->find('first', array(
+			'conditions' => array(
+				"{$this->alias}.{$this->primaryKey}" => $id,
+				)));
+				
+		if (empty($salesOrder)) {
+			throw new OutOfBoundsException(__('Invalid Sales Order', true));
+		}
+		
+		$salesOrder['SalesOrder']['status'] = PurchaseOrder::VOID;
+		$result = $this->save($salesOrder);
+		if ($result) {
+            return true;
+        } else {
+            return false;
+        }
 	}
 
 /**

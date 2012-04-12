@@ -13,7 +13,7 @@
 
 	?>
 
-	<div class="module width_quarter" id="items"></div>
+	<div class="module width_3_quarter" id="items"></div>
 	<div class="module width_3_quarter" id="orderTable">
 		<header>
 		<h3><?php __('Order Content') ?></h3>
@@ -34,4 +34,3 @@
 <?php echo $this->Form->end(array('label'=>__('Save', true),'id'=>'save'));?>
 </div>
 <?php $this->Html->script('/orders/js/views/sales_orders/add',array('inline'=>false)) ?>
-
