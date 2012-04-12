@@ -55,7 +55,7 @@ foreach ($salesOrders as $salesOrder):
 			<?php echo $this->Html->link($salesOrder['Client']['name'], array('controller' => 'clients', 'action' => 'view', 'plugin' => 'business', $salesOrder['Client']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $salesOrder['SalesOrder']['status'];  ?>
+			<?php echo __d('default', $salesOrder['SalesOrder']['status'], true);  ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($salesOrder['Invoice']['number'], array('controller' => 'invoices', 'action' => 'view', $salesOrder['Invoice']['id'])); ?>

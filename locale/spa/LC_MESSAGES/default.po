@@ -1728,3 +1728,39 @@ msgstr "Almacen"
 #: Generales
 msgid "Parent Category"
 msgstr "Categoría padre"
+
+#: Status Ordenes
+msgid "DRAFT"
+msgstr "EN EDICION"
+
+#: Status Ordenes
+msgid "SENT"
+msgstr "ENVIADA"
+
+#: Status Ordenes
+msgid "APPROVED"
+msgstr "APROBADA"
+
+#: Status Ordenes
+msgid "PREINVOICED"
+msgstr "PROFORMA"
+
+#: Status Ordenes
+msgid "INVOICED"
+msgstr "FACTURADA"
+
+#: Status Ordenes
+msgid "DISPATCHED"
+msgstr "DESPACHADA"
+
+#: Status Ordenes
+msgid "RECEIVED"
+msgstr "RECIBIDA"
+
+#: Status Ordenes
+msgid "COMPLETED"
+msgstr "COMPLETADA"
+
+#: Status Ordenes
+msgid "VOID"
+msgstr "ANULADA"

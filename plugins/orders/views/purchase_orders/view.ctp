@@ -23,7 +23,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Status'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $purchaseOrder['PurchaseOrder']['status']; ?>
+			<?php echo __d('default', $purchaseOrder['PurchaseOrder']['status'], true);  ?>
 			&nbsp;
 		</dd>
 	</dl>

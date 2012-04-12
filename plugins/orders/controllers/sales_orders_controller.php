@@ -15,6 +15,14 @@ class SalesOrdersController extends OrdersAppController {
  * @access public
  */
 	public $helpers = array('Html', 'Form');
+	
+/**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 20, 'order' => array('SalesOrder.number' => 'desc'));
 
     public $components = array('Search.Prg');
 

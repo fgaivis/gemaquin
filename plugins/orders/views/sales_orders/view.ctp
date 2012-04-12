@@ -24,7 +24,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Status'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $salesOrder['SalesOrder']['status']; ?>
+			<?php echo __d('default', $salesOrder['SalesOrder']['status'], true);  ?>
 			&nbsp;
 		</dd>
 	</dl>

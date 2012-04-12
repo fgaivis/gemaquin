@@ -15,6 +15,14 @@ class PurchaseOrdersController extends AppController {
  * @access public
  */
 	public $helpers = array('Html', 'Form');
+	
+/**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 20, 'order' => array('PurchaseOrder.number' => 'desc'));
 
     public $components = array('Search.Prg');
 
