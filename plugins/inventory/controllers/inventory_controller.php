@@ -44,6 +44,30 @@ class InventoryController extends AppController {
     }
     
 /**
+ * Add for inventory.
+ *
+ * @access public
+ */
+	public function add() {
+		try {
+			$result = $this->Inventory->add($this->data);
+			if ($result === true) {
+				$this->Session->setFlash(__('Inventory Item saved', true));
+				$this->redirect(array('action' => 'stock'));
+								
+			} else {
+				$this->data = $result;
+			}
+		} catch (OutOfBoundsException $e) {
+			$this->Session->setFlash($e->getMessage());
+			$this->redirect('/');
+		}
+		$items = $this->Inventory->Item->find('list');
+		$this->set(compact('items'));
+ 
+	}
+    
+/**
  * Edit for inventory.
  *
  * @param string $id, inventory item id 

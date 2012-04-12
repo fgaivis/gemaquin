@@ -1127,6 +1127,10 @@ msgid "Inventory"
 msgstr "Inventario"
 
 #: plugins/inventory/views/inventory_items/view.ctp:2
+msgid "New Inventory Item"
+msgstr "Nuevo Item de inventario"
+
+#: plugins/inventory/views/inventory_items/view.ctp:2
 msgid "Inventory Item"
 msgstr "Item de inventario"
 
