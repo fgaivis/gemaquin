@@ -11,6 +11,9 @@
 		echo $this->Form->input('retest_date', array('type' => 'text', 'label' => __d('default', 'Retest Date', true)));
 		echo $this->Form->input('extension_date', array('type' => 'text', 'label' => __d('default', 'Extension Date', true)));
 		echo $this->Form->input('quantity');
+		echo $this->Form->input('availability');
+		echo $this->Form->input('purchase_cost');
+		echo $this->Form->input('individual_cost');
 	?>
 	</fieldset>
 <?php //echo $this->Form->end('Submit');?>

@@ -25,6 +25,10 @@
 	<th><?php echo $this->Paginator->sort('retest_date');?></th>
 	<th><?php echo $this->Paginator->sort('extension_date');?></th>
 	<th><?php echo $this->Paginator->sort('quantity');?></th>
+	<th><?php echo $this->Paginator->sort('availability');?></th>
+	<?php if($userData['User']['role'] != '3'): ?>
+	<th><?php echo $this->Paginator->sort('individual_cost');?></th>
+	<?php endif; ?>
 </tr>
 <?php
 $i = 0;
@@ -62,6 +66,14 @@ foreach ($items as $item):
 		<td>
 			<?php echo $item['Inventory']['quantity']; ?>
 		</td>
+		<td>
+			<?php echo $item['Inventory']['availability']; ?>
+		</td>
+		<?php if($userData['User']['role'] != '3'): ?>
+		<td>
+			<?php echo $item['Inventory']['individual_cost']; ?>
+		</td>
+		<?php endif; ?>
 	</tr>
 <?php endforeach; ?>
 </table>

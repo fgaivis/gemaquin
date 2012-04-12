@@ -3,6 +3,17 @@
 	<header><h3><?php __('Edit Item');?></h3></header>
 
 	<fieldset>
+	
+	<?php $pack_types = array(
+			'' => __('', true),
+			'SACO' => __('SACO', true),
+			'TAMBOR' => __('TAMBOR', true),
+			'CARBOLLA' => __('CARBOLLA', true),
+			'CAJA' => __('CAJA', true),
+			'BIDON' => __('BIDON', true),
+			'ENVASE' => __('ENVASE', true)
+		);
+	?>
 
 	<?php
 		echo $this->Form->input('id');
@@ -12,6 +23,7 @@
 		echo $this->Form->input('package_factor');
 		echo $this->Form->input('sales_factor');
 		echo $this->Form->input('weight');
+		echo $this->Form->input('package_type', array('options' => $pack_types));
 		echo $this->Form->input('country');
 		echo $this->Form->input('industry');
 		echo $this->Form->input('category_id');

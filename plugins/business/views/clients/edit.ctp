@@ -17,6 +17,8 @@
 		echo $this->Form->input('fax');
 		echo $this->Form->input('email');
 		echo $this->Form->input('website');
+		echo $this->Form->input('max_debt');
+		echo $this->Form->input('actual_debt');
 	?>
 	</fieldset>
 <?php //echo $this->Form->end('Submit');?>

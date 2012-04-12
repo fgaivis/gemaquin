@@ -897,6 +897,13 @@ msgstr "Código de Barras"
 msgid "Package Factor"
 msgstr "Factor de Empaque"
 
+#: plugins/catalog/views/items/view.ctp:24
+#: plugins/orders/views/invoices/view.ctp:92
+#: plugins/orders/views/purchase_orders/send.ctp:41
+#: plugins/orders/views/purchase_orders/view.ctp:41
+msgid "Package Type"
+msgstr "Tipo de Empaque"
+
 #: plugins/catalog/views/items/view.ctp:29
 #: plugins/orders/views/invoices/view.ctp:93
 #: plugins/orders/views/purchase_orders/send.ctp:42
@@ -1102,6 +1109,26 @@ msgstr "Cargar Certificados"
 #: plugins/orders/views/purchase_orders/edit.ctp:27
 msgid "Quantity"
 msgstr "Cantidad"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Availability"
+msgstr "Disponibles"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Purchase Cost"
+msgstr "Costo Total Compra"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Individual Cost"
+msgstr "Costo/Item"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Max Debt"
+msgstr "Monto Máximo Deuda"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Actual Debt"
+msgstr "Deuda Actual"
 
 #: plugins/inventory/views/inventory_items/add.ctp:31
 #: plugins/orders/views/purchase_orders/add.ctp:35

@@ -21,7 +21,7 @@
 	<th><?php //echo $this->Paginator->sort('barcode');?></th> -->
 	<th><?php echo $this->Paginator->sort('package_factor');?></th>
 	<th><?php echo $this->Paginator->sort('sales_factor');?></th>
-	<th><?php echo $this->Paginator->sort('weight');?></th>
+	<th><?php echo $this->Paginator->sort('package_type');?></th>
 	<!-- <th><?php //echo $this->Paginator->sort('country');?></th>
 	<th><?php //echo $this->Paginator->sort('industry');?></th>
 	<th><?php //echo $this->Paginator->sort('category_id');?></th> -->
@@ -55,7 +55,7 @@ foreach ($items as $item):
 			<?php echo $item['Item']['sales_factor']; ?>
 		</td>
 		<td>
-			<?php echo $item['Item']['weight']; ?>
+			<?php echo $item['Item']['package_type']; ?>
 		</td>
 		<!-- <td>
 			<?php //echo $item['Item']['country']; ?>
