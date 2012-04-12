@@ -5,13 +5,21 @@
 	<fieldset>
 	<?php
 		$default = array();
+		$d_phone = array();
+		$d_email = array();
 		if (!empty($this->params['pass'])) {
 			$default = array('default' => $this->params['pass'][0], 'type' => 'hidden');
+			if (!empty($this->params['pass'][1])) {
+				$d_phone = array('default' => $this->params['pass'][1], 'type' => 'text');
+			}
+			if (!empty($this->params['pass'][2])) {
+				$d_email = array('default' => $this->params['pass'][2], 'type' => 'text');
+			}
 		}
 		echo $this->Form->input('organization_id', $default);
 		echo $this->Form->input('name');
-		echo $this->Form->input('email');
-		echo $this->Form->input('phone');
+		echo $this->Form->input('email', $d_email);
+		echo $this->Form->input('phone', $d_phone);
 		echo $this->Form->input('mobile');
 		echo $this->Form->input('position');
 		echo $this->Form->input('role');

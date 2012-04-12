@@ -5,7 +5,7 @@
 	<fieldset>
 
 	<?php
-		echo $this->Form->input('code');
+		echo $this->Form->input('code', array('value' => $next_code));
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');
 		echo $this->Form->input('country');

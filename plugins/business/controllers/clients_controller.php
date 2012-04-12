@@ -89,7 +89,11 @@ class ClientsController extends BusinessAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-
+		$organization = ClassRegistry::init('Organization');
+		$org_code = $organization->find('first', array('fields' => 'MAX(CAST(Organization.code AS SIGNED))'));
+		$max_code = $org_code[0]['MAX(CAST(Organization.code AS SIGNED))'] + 1;
+		
+		$this->set('next_code', $max_code);
 	}
 
 /**

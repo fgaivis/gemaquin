@@ -249,7 +249,7 @@
 </div>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'contacts', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id']))?></li>
+			<li><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'contacts', 'action' => 'add', 'plugin' => 'business', 'admin' => false, $provider['Provider']['id'], $provider['Provider']['phone'], $provider['Provider']['email']))?></li>
 		</ul>
 	</div>
 	
