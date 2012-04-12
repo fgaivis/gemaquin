@@ -8,5 +8,7 @@ $map = array(
 		'003_add_yafiscalid_to_organizations' => 'M4ef1304133644785b7b92a7694e05dd2'),
 	4 => array(
 		'004_add_faxphoneweb_to_organizations' => 'M4ef1304133644785b7b92a7694e05dd6'),
+	5 => array(
+		'005_add_client_debt_to_organizations' => 'M4ef1304133644785b7b92a7694e06dd7'),
 );
 ?>

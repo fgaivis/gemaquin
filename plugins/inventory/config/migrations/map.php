@@ -12,5 +12,7 @@ $map = array(
  		'005_add_extension_dates_to_inventory_items' => 'M4ef13a310bb44d0aa5c12f0d94e07dd4'),
 	6 => array(
  		'006_add_elab_exten_retest_dates_to_inventory' => 'M4ef13a310bb44d0aa5c12f0d94e08dd5'),
+	7 => array(
+ 		'007_add_availab_purcha_cost_to_inventory' => 'M4ef13a310bb44d0aa5c12f0d94e09dd6'),
 );
 ?>
