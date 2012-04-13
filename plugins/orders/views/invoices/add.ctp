@@ -59,12 +59,12 @@
 						__('Code', true),
 						__('Item', true),
 						__('Quantity', true),
-						__('Price', true),
-						__('Tax', true),
+						__('Unit Price', true),
+						__('Total Price', true),
 					);
-				if (isset($this->data['PrePurchaseOrder'])) {
-					$headers[] = __('Apportionment', true);
-				}
+				/*if (isset($this->data['PrePurchaseOrder'])) {
+					//$headers[] = __('Apportionment', true);
+				}*/
 					echo $html->tableHeaders($headers);
 				?>
 			<?php else: ?>
@@ -72,9 +72,8 @@
 					echo $html->tableHeaders(array(
 							__('Code', true),
 							__('Item', true),
-							__('Description', true),
 							__('Quantity', true),
-							__('Price', true),
+							__('Unit Price', true),
 							__('Tax', true),
 							__('Exempt', true),
 						));
@@ -84,12 +83,11 @@
 					<tr class="item">
 						<td><?php echo $item['Item']['barcode']; ?></td>
 						<td><?php echo $item['Item']['name']; ?></td>
-						<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
-						<!-- <?php //if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])): ?>
-							<td><?php //echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
-						<?php //elseif (isset($this->data['SalesOrder'])): ?>
-							<td><?php //echo $item['InvItemsSalesOrder']['quantity']; ?></td>
-						<?php //endif;?> -->
+						<?php if(!(isset($this->data['SalesOrder']))) : ?>
+							<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
+						<?php else : ?>
+							<td><?php echo $item['InvItemsSalesOrder']['quantity']; ?></td>
+						<?php endif;?>
 						<td>
 							<?php 
 								echo $this->Form->hidden('InvoicesItem.' . $index . '.item_id', array('value' => $item['Item']['id']));
@@ -99,30 +97,36 @@
 									echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['InvItemsSalesOrder']['quantity']));
 								}
 								echo $this->Form->input('InvoicesItem.' . $index . '.price', array('index' => $index, 'label' => false, 'div' => false, 'class' => 'item-price'));
+								echo $this->Form->hidden('InvoicesItem.' . $index . '.individual_cost', array('index' => $index));
 							?>
 						</td>
 						<td>
-							<?php echo $this->Form->input('InvoicesItem.' . $index . '.tax', array('class' => 'item-tax', 'index' => $index, 'label' => false, 'div' => false)); ?>
+							<?php echo $this->Form->hidden('InvoicesItem.' . $index . '.purchase_cost', array('index' => $index));
+									echo '<span class="total_price-label" index="' . $index .'"></span>'; 
+							?>
 						</td>
 						<?php if (isset($this->data['PrePurchaseOrder'])): ?>
-							<td>
-								<?php echo $this->Form->hidden('InvoicesItem.' . $index . '.apportionment', array('index' => $index));
-									echo '<span class="apportionment-label" index="' . $index .'"></span>'; 
+							<!-- <td>
+								<?php //echo $this->Form->hidden('InvoicesItem.' . $index . '.apportionment', array('index' => $index));
+									//echo '<span class="apportionment-label" index="' . $index .'"></span>'; 
 								?>
-							</td>
+							</td>  -->
 						<?php elseif (isset($this->data['SalesOrder'])): ?>
 							<td>
+								<?php echo $this->Form->input('InvoicesItem.' . $index . '.tax', array('class' => 'item-tax', 'index' => $index, 'label' => false, 'div' => false)); ?>
 								<?php echo $this->Form->input('InvoicesItem.' . $index . '.exempt', array('type' => 'checkbox', 'class' => 'item-exempt', 'index' => $index, 'label' => false, 'div' => false)); ?>
 							</td>
 						<?php endif;?>
 					</tr>	
-				<?php endforeach; ?>	
-				
+				<?php endforeach; ?>				
 			</table>
 		</div>
 <?php endif; ?>	
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>
 </div>
-<?php $this->Html->script('/orders/js/views/invoices/add',array('inline'=>false)) ?>
-
+<?php if(!(isset($this->data['SalesOrder']))): ?>
+	<?php $this->Html->script('/orders/js/views/invoices/add',array('inline'=>false)) ?>
+<?php else: ?>
+	<?php $this->Html->script('/orders/js/views/invoices/add-sales',array('inline'=>false)) ?>
+<?php endif; ?>

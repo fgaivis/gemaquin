@@ -1230,6 +1230,10 @@ msgid "An error has occurred sending the purchase order"
 msgstr "Ha ocurrido un error durante el envío de la Orden de Compra"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:73
+msgid "An error has occurred saving the invoice"
+msgstr "Ha ocurrido un error guardando la factura"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:73
 msgid "An error has occurred voiding the purchase order"
 msgstr "Ha ocurrido un error anulando la Orden de Compra"
 
@@ -1414,6 +1418,14 @@ msgstr "Item de Factura"
 #: plugins/orders/views/invoices_items/view.ctp:24
 msgid "Price"
 msgstr "Precio"
+
+#: plugins/orders/views/invoices_items/view.ctp:24
+msgid "Unit Price"
+msgstr "Precio Unitario (Bs.)"
+
+#: plugins/orders/views/invoices_items/view.ctp:24
+msgid "Total Price"
+msgstr "Precio Total (Bs.)"
 
 #: plugins/orders/views/items_purchase_orders/add.ctp:3
 msgid "Add Items Purchase Order"
@@ -1792,3 +1804,19 @@ msgstr "COMPLETADA"
 #: Status Ordenes
 msgid "VOID"
 msgstr "ANULADA"
+
+#: Tipos de Facturas
+msgid "SALES"
+msgstr "VENTA"
+
+#: Tipos de Facturas
+msgid "PURCHASE"
+msgstr "COMPRA"
+
+#: Tipos de Facturas
+msgid "SERVICE"
+msgstr "SERVICIO"
+
+#: Tipos de Facturas
+msgid "DRAFTINV"
+msgstr "PROFORMA"

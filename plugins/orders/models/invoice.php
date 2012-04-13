@@ -194,19 +194,25 @@ class Invoice extends OrdersAppModel {
 			if (!empty($data['InvoicesItem'])) {
 				$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
 				unset($data['InvoicesItem']);
+			}			
+			if($data['Invoice']['subtotal'] === '' || $data['Invoice']['tax'] === '' || $data['Invoice']['total'] === '') {
+				throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
 			}
+			
 			$data['Invoice'] = array_filter($data['Invoice']);
 			$data['Invoice']['total_exempt'] = 0;
 			$data['Invoice']['total_no_exempt'] = 0;
-			foreach ($invoicesItem['InvoicesItem'] as $invoiceItem) {
-				if ($invoiceItem['exempt']) {
-					$data['Invoice']['total_exempt'] += $invoiceItem['price'];
-				} else { 
-					$data['Invoice']['total_no_exempt'] += $invoiceItem['price'];
+			if (isset($data['SalesOrder'])) {
+				foreach ($invoicesItem['InvoicesItem'] as $invoiceItem) {
+					if ($invoiceItem['exempt']) {
+						$data['Invoice']['total_exempt'] += $invoiceItem['price'];
+					} else { 
+						$data['Invoice']['total_no_exempt'] += $invoiceItem['price'];
+					}
 				}
 			}
 			$resultinv = $this->saveAll($data);
-			
+						
 			if (!empty($invoicesItem['InvoicesItem'])) {
 				foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
 					$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
@@ -220,7 +226,10 @@ class Invoice extends OrdersAppModel {
 			} else {
 				throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
 			}
-			return $return;
+			return $result;
+		}
+		else {
+			return false;
 		}
 	}
 

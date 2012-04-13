@@ -1,5 +1,5 @@
 $(function(){
-	$('.item-price,.item-tax,.outgoings,#InvoiceTotal').change(function() {
+	$('.item-price').change(function() {
 		var total = (isNaN(parseFloat($('#InvoiceTotal').val())) ? 0 : parseFloat($('#InvoiceTotal').val()));
 		var insurance = (isNaN(parseFloat($('#InvoiceInsurance').val())) ? 0 : parseFloat($('#InvoiceInsurance').val()));
 		var shipping = (isNaN(parseFloat($('#InvoiceShipping').val())) ? 0 : parseFloat($('#InvoiceShipping').val()));
@@ -8,51 +8,25 @@ $(function(){
 		var intShipping = (isNaN(parseFloat($('#InvoiceInternalShipping').val())) ? 0 : parseFloat($('#InvoiceInternalShipping').val()));
 		var outgoings  = insurance + shipping + customsTax + customsAdm + intShipping;
 		total = total + outgoings;
-		if (total > 0) {
+		//Calculo de precio total por renglon
 			var index = $(this).attr('index');
 			if (index === undefined) {
 				$('.item-price').each(function(index){
+					var quantity = $('#InvoicesItem' + index + 'Quantity').val();
 					var price = (isNaN(parseFloat($(this).val())) ? 0 : parseFloat($(this).val()));
-					var tax = (isNaN(parseFloat($('.item-tax[index=' + index + ']').val())) ? 0 : parseFloat($('.item-tax[index=' + index + ']').val()));
-					var apportionment = ((price + tax) / total);
-					$('#InvoicesItem' + index + 'Apportionment').val(apportionment);
-					$('.apportionment-label[index=' + index + ']').html(apportionment);
+					var total_price = (price * quantity);
+					$('#InvoicesItem' + index + 'IndividualCost').val(price);
+					$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
+					$('.total_price-label[index=' + index + ']').html(total_price);
 				});
 			} else {
-				var price = (isNaN(parseFloat($('.item-price[index=' + index + ']').val())) ? 0 : parseFloat($('.item-price[index=' + index + ']').val()));
-				var tax = (isNaN(parseFloat($('.item-tax[index=' + index + ']').val())) ? 0 : parseFloat($('.item-tax[index=' + index + ']').val()));
-				var apportionment = ((price + tax) / total);
-				$('#InvoicesItem' + index + 'Apportionment').val(apportionment);
-				$('.apportionment-label[index=' + index + ']').html(apportionment);
-			}
-			
-		} else {
-			var index = $(this).attr('index');
-			if (index === undefined) {
-				$('.apportionment-label').each(function(index){
-					$('#InvoicesItem' + index + 'Apportionment').val(0);
-					$(this).html('');
-				});
-			} else {
-				$('#InvoicesItem' + index + 'Apportionment').val(0);
-				$('.apportionment-label[index=' + index + ']').html('');
-			}
-			
-		}
-	});
-	$('.item-exempt').change(function() {
-		var index = $(this).attr('index');
-		var checked = $(this).attr('checked');
-		if (index != undefined) {
-			$('.invoice-tax[index=' + index + ']').val(0);
-			if (checked) {
-				$('.item-tax[index=' + index + ']').attr('disabled', 'disabled');
-			} else {
-				$('.item-tax[index=' + index + ']').removeAttr('disabled');
-			}
-			
-		} 
-	});
-		
+				var quantity = $('#InvoicesItem' + index + 'Quantity').val();
+				var price = (isNaN(parseFloat($(this).val())) ? 0 : parseFloat($(this).val()));
+				var total_price = (price * quantity);
+				$('#InvoicesItem' + index + 'IndividualCost').val(price);
+				$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
+				$('.total_price-label[index=' + index + ']').html(total_price);
+			}			
+	});		
 });
 

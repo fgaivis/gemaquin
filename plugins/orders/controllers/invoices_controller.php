@@ -77,6 +77,9 @@ class InvoicesController extends AppController {
 					$this->Session->setFlash(__('The invoice has been saved', true));
 					$this->redirect(array('action' => 'index'));
 				}
+				else {
+					$this->Session->setFlash(__('An error has occurred saving the invoice', true));
+				}
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());

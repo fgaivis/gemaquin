@@ -1,6 +1,7 @@
 <div class="invoices index">
 <header><h3><?php __('Invoices');?></h3></header>
 
+	<div class="index-filters">
     <?php
 
     if (!$isReport) {
@@ -15,6 +16,7 @@
 
 
     ?>
+    </div>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('number');?></th>
@@ -59,7 +61,7 @@ foreach ($invoices as $invoice):
 			<?php echo $this->Number->format($invoice['Invoice']['total']); ?>
 		</td>
 		<td>
-			<?php echo $invoice['Invoice']['type']; ?>
+			<?php echo $invoice['Invoice']['type'] === Invoice::DRAFT ? __d('default', 'DRAFTINV', true) : __d('default', $invoice['Invoice']['type'], true); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $invoice['Invoice']['id'])); ?>
@@ -72,4 +74,12 @@ foreach ($invoices as $invoice):
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
 
-<?php echo (!$isReport ? $this->Html->link(__('View report', true),array_merge(array('action' => 'index', true), $this->params['named'])) : ''); ?>
+
+<?php if (!$isReport): ?>
+<div class="actions">
+	<ul>
+		<li><?php echo $this->Html->link(__('View report', true),array_merge(array('action' => 'index', true), $this->params['named'])); ?></li>
+	</ul>
+</div>
+<?php endif; ?>
+
