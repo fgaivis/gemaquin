@@ -21,6 +21,7 @@
 /tmp/sessions/*
 /media/*
 /webroot/index.php
+/webroot/files/*
 
 ## Development
 cake.bat

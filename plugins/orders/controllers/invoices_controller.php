@@ -145,8 +145,8 @@ class InvoicesController extends AppController {
 			$this->redirect('/');
 		}
 		$organizations = $this->Invoice->Organization->find('list');
-		$items = $this->Invoice->Item->find('list');
-		$this->set(compact('organizations', 'items'));
+		//$items = $this->Invoice->Item->find('list');
+		$this->set(compact('organizations')); //$this->set(compact('organizations', 'items'));
  
 	}
 

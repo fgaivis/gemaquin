@@ -84,6 +84,7 @@
 	</footer>
 	<?php endif; ?>
 </div>
+<?php if($invoice['Invoice']['type'] != Invoice::SERVICE) : ?>
 <div class="view related">
 	<?php if (isset($invoice['PurchaseOrder']['id']) || isset($invoice['PrePurchaseOrder']['id']) || isset($invoice['SalesOrder']['id'])):?>
 		<?php 
@@ -154,4 +155,4 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-</div>
+</div><?php endif;?>
