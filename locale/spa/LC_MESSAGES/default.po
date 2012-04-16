@@ -1835,7 +1835,7 @@ msgstr "PROFORMA"
 
 #: Campos de Facturas
 msgid "Exempt"
-msgstr "Exento"Attachment
+msgstr "Exento"
 
 #: Varios
 msgid "Attachment"
