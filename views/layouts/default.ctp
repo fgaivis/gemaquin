@@ -116,11 +116,19 @@
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de venta', true), array('controller' => 'sales_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar ordenes de venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
-            <li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos', true), array('controller' => 'sales_orders', 'action' => 'best_selling', 'plugin' => 'orders', 'admin' => false))?></li>
-            <li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos (Cantidad)', true), array('controller' => 'sales_orders', 'action' => 'best_selling_quantity', 'plugin' => 'orders', 'admin' => false))?></li>
+        </ul>
+        <h3><?php echo __('Facturas', true); ?></h3>
+        <ul class="toggle">
+        	<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva factura de compra', true), array('controller' => 'invoices', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
+        	<li class="icn_categories"><?php echo $this->Html->link(__('Listar facturas', true), array('controller' => 'invoices', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
         </ul>
         <?php endif;?>
         <?php if($userData['User']['role'] === '0'): ?>
+        <h3><?php echo __('Reportes', true); ?></h3>
+        <ul>
+        	<li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos', true), array('controller' => 'sales_orders', 'action' => 'best_selling', 'plugin' => 'orders', 'admin' => false))?></li>
+            <li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos (Cantidad)', true), array('controller' => 'sales_orders', 'action' => 'best_selling_quantity', 'plugin' => 'orders', 'admin' => false))?></li>
+        </ul>
 		<h3><?php echo __('Usuarios', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_add_user"><?php echo $this->Html->link(__('Nuevo usuario', true), array('controller' => 'users', 'action' => 'admin_add', 'plugin' => 'users'))?></li>

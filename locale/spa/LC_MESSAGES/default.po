@@ -241,6 +241,10 @@ msgid "Delete Purchase Order \"%s\"?"
 msgstr "Eliminar Orden de Compra \"%s\"?"
 
 #: plugins/business/views/addresses/delete.ctp:1
+msgid "Delete Invoice \"%s\"?"
+msgstr "Eliminar Factura \"%s\"?"
+
+#: plugins/business/views/addresses/delete.ctp:1
 msgid "Delete Sales Order \"%s\"?"
 msgstr "Eliminar Orden de Venta \"%s\"?"
 
@@ -1094,6 +1098,10 @@ msgid "Send Hard Copy"
 msgstr "Cargar archivos"
 
 #: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Hard Copy"
+msgstr "Copia de Original"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
 msgid "Details"
 msgstr "Detalles"
 
@@ -1204,6 +1212,10 @@ msgstr "Los items de la orden de compra han sido guardados"
 #: plugins/inventory/views/inventory_items/delete.ctp:3
 msgid "Be aware that your Order and all associated data will be deleted if you confirm!"
 msgstr "La orden y toda la data asociada será eliminada luego de su confirmación!"
+
+#: plugins/inventory/views/inventory_items/delete.ctp:3
+msgid "Be aware that your Invoice and all associated data will be deleted if you confirm!"
+msgstr "La factura y toda la data asociada será eliminada luego de su confirmación!"
 
 #: plugins/inventory/views/inventory_items/delete.ctp:3
 msgid "Be aware that your Order Item and all associated data will be deleted if you confirm!"

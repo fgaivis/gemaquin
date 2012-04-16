@@ -58,7 +58,7 @@
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Type'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $invoice['Invoice']['type']; ?>
+			<?php echo $invoice['Invoice']['type'] === Invoice::DRAFT ? __d('default', 'DRAFTINV', true) : __d('default', $invoice['Invoice']['type'], true); ?>
 			&nbsp;
 		</dd>
 		<?php if (empty($invoice['Invoice']['hard_copy'])): ?>
@@ -66,13 +66,16 @@
 			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 				<?php 
 					echo $this->Form->create('Invoice',  array('type' => 'file', 'url' => $this->passedArgs));
-					echo $this->Form->input("Invoice.id");
+					echo $this->Form->input("Invoice.id", array('value' => $invoice['Invoice']['id']));
 					echo $this->Form->file("Invoice.file");
 					echo $this->Form->end(__('Send Hard Copy', true));
 				?>
 			</dd>
 		<?php else: ?>	
-			<?php echo $this->Html->link(__('Hard Copy', true), '/files/invoices/' . $invoice['Invoice']['hard_copy']) ?>
+			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Files'); ?></dt>
+			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+				<?php echo $this->Html->link(__('Hard Copy', true), '/files/invoices/' . $invoice['Invoice']['hard_copy']) ?>
+			</dd>
 		<?php endif;?>
 	</dl>
 	<?php if($invoice['Invoice']['type'] === Invoice::SALES) : ?>
@@ -104,12 +107,13 @@
 		<tr>
 			<td><?php echo $order['number'];?></td>
 			<?php if(isset($invoice['SalesOrder']['id'])): ?>
-			<td><?php echo $order['Client']['name'];?></td>
-			<td><?php echo $order['status'];?></td>
+				<td><?php echo $order['Client']['name'];?></td>
+			<?php elseif (isset($invoice['PrePurchaseOrder']['id'])) : ?>
+				<td><?php echo $invoice['Organization']['name'];?></td>
 			<?php else:?>
-			<td><?php echo $order['Provider']['name'];?></td>
-			<td><?php echo $order['status'];?></td>
+				<td><?php echo $order['Provider']['name'];?></td>
 			<?php endif; ?>
+			<td><?php echo __d('default', $order['status'], true);  ?></td>
 		</tr>
 	</table>
 	<?php endif;?>

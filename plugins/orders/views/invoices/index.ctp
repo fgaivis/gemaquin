@@ -19,8 +19,9 @@
     </div>
 <table cellpadding="0" cellspacing="0">
 <tr>
-	<th><?php echo $this->Paginator->sort('number');?></th>
 	<th><?php echo $this->Paginator->sort('organization_id');?></th>
+	<th><?php echo $this->Paginator->sort('number');?></th>
+	<th><?php echo $this->Paginator->sort('control');?></th>
 	<th><?php echo $this->Paginator->sort('subtotal');?></th>
 	<th><?php echo $this->Paginator->sort('tax');?></th>
 	<th><?php echo $this->Paginator->sort('total');?></th>
@@ -37,9 +38,6 @@ foreach ($invoices as $invoice):
 ?>
 	<tr<?php echo $class;?>>
 		<td>
-			<?php echo $invoice['Invoice']['number']; ?>
-		</td>
-		<td>
 			<?php
 				$controller = $invoice['Invoice']['type'] === Invoice::SALES ? 'clients' : 'providers';
 			?>
@@ -52,21 +50,29 @@ foreach ($invoices as $invoice):
 			?>
 		</td>
 		<td>
-			<?php echo $this->Number->format($invoice['Invoice']['subtotal']); ?>
-		</td>   
-		<td>           
-			<?php echo $this->Number->format($invoice['Invoice']['tax']); ?>
+			<?php echo $invoice['Invoice']['number']; ?>
 		</td>
 		<td>
-			<?php echo $this->Number->format($invoice['Invoice']['total']); ?>
+			<?php echo $invoice['Invoice']['control']; ?>
+		</td>
+		<td>
+			<?php echo $this->Number->format($invoice['Invoice']['subtotal'], array('places' => 2, 'before' => 'Bs. ', 'escape' => false, 'decimals' => ',', 'thousands' => '.')); ?>
+		</td>   
+		<td>           
+			<?php echo $this->Number->format($invoice['Invoice']['tax'], array('places' => 2, 'before' => 'Bs. ', 'escape' => false, 'decimals' => ',', 'thousands' => '.')); ?>
+		</td>
+		<!--  --><td>
+			<?php echo $this->Number->format($invoice['Invoice']['total'], array('places' => 2, 'before' => 'Bs. ', 'escape' => false, 'decimals' => ',', 'thousands' => '.')); ?>
 		</td>
 		<td>
 			<?php echo $invoice['Invoice']['type'] === Invoice::DRAFT ? __d('default', 'DRAFTINV', true) : __d('default', $invoice['Invoice']['type'], true); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $invoice['Invoice']['id'])); ?>
+		<?php if($userData['User']['role'] === '0'): ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $invoice['Invoice']['id'])); ?>
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $invoice['Invoice']['id'])); ?>
+		<?php endif; ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

@@ -40,10 +40,12 @@
 			echo $this->Form->hidden('SalesOrder.id');
 		} else {
 			echo $this->Form->input('organization_id');
+			echo $this->Form->input('number');
+			echo $this->Form->input('control');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total');
-			echo $this->Form->input('type');
+			echo $this->Form->hidden('type', array('value' => Invoice::SERVICE));
 		}
 		
 	?>

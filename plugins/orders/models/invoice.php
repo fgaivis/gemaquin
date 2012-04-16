@@ -251,8 +251,7 @@ class Invoice extends OrdersAppModel {
 			}
 			move_uploaded_file($this->data[$this->alias]['file']['tmp_name'], $newPath . $this->id . '.' . $ext);
 			$this->data[$this->alias]['hard_copy'] = $this->id . '.' . $ext;
-		}
-		
+		}		
         return true;
     }
 
