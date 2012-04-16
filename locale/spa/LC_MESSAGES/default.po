@@ -1844,3 +1844,43 @@ msgstr "Adjuntos"
 #: Varios
 msgid "Download"
 msgstr "Descargar"
+
+#: Reportes
+msgid "Goods Reception"
+msgstr "Recepción de Insumos"
+
+#: Reportes
+msgid "Reception"
+msgstr "Recepción"
+
+#: Reportes
+msgid "Page"
+msgstr "Página"
+
+#: Reportes
+msgid "Provider ID"
+msgstr "Código Proveedor"
+
+#: Reportes
+msgid "Goods"
+msgstr "Insumos"
+
+#: Reportes
+msgid "Manufacturing Date"
+msgstr "Fecha de Manufactura"
+
+#: Reportes
+msgid "Conditions"
+msgstr "Condiciones de Recepción"
+
+#: Reportes
+msgid "Exceeding units"
+msgstr "Excedente de unidades"
+
+#: Reportes
+msgid "Damaged units"
+msgstr "Unidades dañadas"
+
+#: Reportes
+msgid "Total units"
+msgstr "Unidades totales"
