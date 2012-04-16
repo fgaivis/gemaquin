@@ -4,15 +4,15 @@
 			<?php foreach($inventoryItems as $i => $item): ?>
 			<table style="width:100%">
 				<tr>
-					<td style="width:25%">Gemaquin</td>
+					<td style="width:25%">Representaciones IV Gemaquin C.A. - RIF: J-30269764-6</td>
 					<td style="width:75%"><h1><?php __('Goods Reception'); ?></h1></td>
 				</tr>
 			</table>
 			<h2><?php __('Reception'); ?></h2>
 			<table style="width:100%">
 				<tr>
-					<td style="width:25%"><?php __('Inventory Entry Number'); ?></td>
-					<td style="width:25%"><?php echo $item['InventoryItem']['inventory_entry_id']; ?></td>
+					<td style="width:25%"><?php __('Purchase Order'); ?></td>
+					<td style="width:25%"><?php echo $item['PurchaseOrder']['number']; ?></td>
 					<td style="width:25%"><?php __('Page'); ?></td>
 					<td style="width:25%"><?php echo ($i + 1) ?></td>
 				</tr>
@@ -27,14 +27,14 @@
 					<td style="width:25%"><?php echo $this->Time->format(time(), '%x %r'); ?></td>
 				</tr>
 				<tr>
-					<td style="width:25%"><?php __('Purchase Order'); ?></td>
-					<td style="width:25%"><?php echo $item['PurchaseOrder']['number']; ?></td>
 					<td style="width:25%"><?php __('Invoice'); ?></td>
 					<td style="width:25%">
 						<?php if (!empty($item['PurchaseOrder']['Invoice']['number'])) : ?>
 							<?php echo $item['PurchaseOrder']['Invoice']['number']; ?>
 						<?php endif; ?>
 					</td>
+					<td style="width:25%"></td>
+					<td style="width:25%"></td>
 				</tr>
 			</table>
 			<h2><?php __('Goods'); ?></h2>
@@ -47,7 +47,7 @@
 				</tr>
 				<tr>
 					<td style="width:25%"><?php __('Manufacturing Date'); ?></td>
-					<td style="width:25%"> </td>
+					<td style="width:25%"><?php echo $this->Time->format($item['InventoryItem']['elaboration_date'], '%x'); ?></td>
 					<td style="width:25%"><?php __('Expiration Date'); ?></td>
 					<td style="width:25%"><?php echo $this->Time->format($item['InventoryItem']['expiration_date'], '%x'); ?></td>
 				</tr>				
