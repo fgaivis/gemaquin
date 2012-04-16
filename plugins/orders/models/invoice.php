@@ -211,8 +211,12 @@ class Invoice extends OrdersAppModel {
 					}
 				}
 			}
+			if($data['Invoice']['type'] === Invoice::SERVICE){
+				$resultitem = true;
+				$data['Organization']['id'] = $data['Invoice']['organization_id'];
+			}
 			$resultinv = $this->saveAll($data);
-						
+			
 			if (!empty($invoicesItem['InvoicesItem'])) {
 				foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
 					$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
@@ -240,7 +244,9 @@ class Invoice extends OrdersAppModel {
  */
     public function beforeSave() {
         if (!$this->exists()) {
-            $this->data['Invoice']['number'] = $this->_invoiceNumber($this->data['Invoice']['type']);
+        	if($this->data['Invoice']['type'] === Invoice::SALES) {
+        		$this->data['Invoice']['number'] = $this->_invoiceNumber($this->data['Invoice']['type']);
+        	}
         }
 		if (!empty($this->data[$this->alias]['file']) && $this->data[$this->alias]['file']['error'] == 0) {
 			$newPath = APP . 'webroot' . DS . 'files' . DS . 'invoices' . DS;
