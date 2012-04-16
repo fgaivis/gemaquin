@@ -27,6 +27,17 @@ $(function(){
 				$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
 				$('.total_price-label[index=' + index + ']').html(total_price);
 			}			
-	});		
+	});
 });
-
+//Cargando precios la primera vez automaticamente
+function updatePrices() {
+	$('.item-price').each(function(index){
+		var quantity = $('#InvoicesItem' + index + 'Quantity').val();
+		var price = (isNaN(parseFloat($(this).val())) ? 0 : parseFloat($(this).val()));
+		var total_price = (price * quantity);
+		$('#InvoicesItem' + index + 'IndividualCost').val(price);
+		$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
+		$('.total_price-label[index=' + index + ']').html(total_price);
+	});
+}
+updatePrices();
