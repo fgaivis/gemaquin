@@ -4,7 +4,7 @@
 			<div style="border:1px solid black; height:250px; margin-top:15px;page-break-inside:avoid; padding:0 10px">
 				<h2 style="text-align:center; font-size:14px">Identificación de Insumos</h2>
 				<h3 style="text-align:center; font-size:13px">Representaciones IV Gemaquin C.A. - RIF: J-30269764-6</h3>
-				<h3 style="text-align:center; font-size:13px">Email: representaciones.gemaquin@gmail.com</h3>
+				<h3 style="text-align:center; font-size:13px">Email: gemaquin@cantv.net</h3>
 				<div style="font-size:13px">
 					Descripcion: <?php echo $item['Item']['name']; ?>
 				</div>
