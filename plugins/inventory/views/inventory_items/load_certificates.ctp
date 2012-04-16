@@ -33,7 +33,7 @@ foreach ($inventoryItems as $i => $item):
 		</td>
 		<td>
 		<?php
-			echo $this->Form->input("InventoryItem.$i.id");
+			echo $this->Form->input("InventoryItem.$i.id", array('value' => $item['InventoryItem']['id']));
 			echo $this->Form->file("InventoryItem.$i.file");
 		?>
 		</td>

@@ -37,7 +37,7 @@ foreach ($inventoryItems as $i => $item):
 		<td>
 			<?php
 				if ($item['InventoryItem']['certificate']) {
-					echo $this->Html->link(__('view', true), '/files/certificates/' . $item['InventoryItem']['certificate']);
+					echo $this->Html->link(__('Download', true), '/files/certificates/' . $item['InventoryItem']['certificate']);
 				} else {
 					__('N/A');
 				}

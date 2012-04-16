@@ -274,7 +274,7 @@ class Invoice extends OrdersAppModel {
  *
  */
     public function getControlNumber() {
-        return str_pad($this->field('MAX(control)') + 1, 11, '0', STR_PAD_LEFT);
+        return str_pad($this->field('MAX(control)', array('type' => Invoice::SALES)) + 1, 11, '0', STR_PAD_LEFT);
     }
 
 /**

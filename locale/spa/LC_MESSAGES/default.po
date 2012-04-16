@@ -1832,3 +1832,15 @@ msgstr "SERVICIO"
 #: Tipos de Facturas
 msgid "DRAFTINV"
 msgstr "PROFORMA"
+
+#: Campos de Facturas
+msgid "Exempt"
+msgstr "Exento"Attachment
+
+#: Varios
+msgid "Attachment"
+msgstr "Adjuntos"
+
+#: Varios
+msgid "Download"
+msgstr "Descargar"
