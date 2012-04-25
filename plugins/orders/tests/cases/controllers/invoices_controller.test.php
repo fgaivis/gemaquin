@@ -74,7 +74,7 @@ class InvoicesControllerTestCase extends AppTestCase {
 	public function testInstance() {
 		$this->assertIsA($this->Invoices, 'InvoicesController');
 		//$this->assertIsA($this->Invoices->
-Notice: Undefined variable: currentModelName in /home/ajibarra/work/www/htdocs/gemaquin/plugins/templates/vendors/shells/templates/cakedc/classes/test.ctp on line 157
+/*Notice: Undefined variable: currentModelName in /home/ajibarra/work/www/htdocs/gemaquin/plugins/templates/vendors/shells/templates/cakedc/classes/test.ctp on line 157
 
 Call Stack:
     0.0013     517988   1. {main}() /home/ajibarra/work/www/htdocs/cakephp/cake/console/cake.php:0
@@ -99,7 +99,7 @@ Call Stack:
     1.0193    5756740   7. TemplateTask->generate() /home/ajibarra/work/www/htdocs/cakephp/cake/console/libs/tasks/test.php:142
     1.0203    5852388   8. include('/home/ajibarra/work/www/htdocs/gemaquin/plugins/templates/vendors/shells/templates/cakedc/classes/test.ctp') /home/ajibarra/work/www/htdocs/cakephp/cake/console/libs/tasks/template.php:144
 
-');
+');*/
 	}
 
 

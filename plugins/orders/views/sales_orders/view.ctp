@@ -72,11 +72,16 @@
 <?php endif; ?>
 </div>
 <div class="actions">
-<?php //if ($salesOrder['SalesOrder']['status'] == SalesOrder::DRAFT) :?>
-	<?php //echo $this->Form->create('SalesOrder', array('url' => array('action' => 'send')));?>
-	<?php //echo $this->Form->hidden('SalesOrder.id', array('value' => $salesOrder['SalesOrder']['id']));?>
-	<?php //echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
-<?php //endif;?>
+<ul>
+    <li><?php echo $this->Html->link(__('Listar ordenes de venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+</ul>
+<br/><br/>
+<div style="margin-left: 18px;">
+<?php if ($salesOrder['SalesOrder']['status'] == SalesOrder::DRAFT) :?>
+	<?php echo $this->Form->create('SalesOrder', array('url' => array('action' => 'send')));?>
+	<?php echo $this->Form->hidden('SalesOrder.id', array('value' => $salesOrder['SalesOrder']['id']));?>
+	<?php echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
+<?php endif;?>
 <?php if (in_array($salesOrder['SalesOrder']['status'], array(SalesOrder::DRAFT, SalesOrder::SENT))) : ?>
 	<?php echo $this->Form->create('SalesOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
 	<?php echo $this->Form->hidden('SalesOrder.id', array('value' => $salesOrder['SalesOrder']['id']));?>
@@ -84,4 +89,5 @@
 	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::SALES));?>
 	<?php echo $this->Form->end(array('label'=>__('Add Invoice', true),'id'=>'addInvoice'));?>
 <?php endif;?>
+</div>
 </div>

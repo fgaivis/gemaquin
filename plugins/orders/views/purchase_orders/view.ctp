@@ -72,7 +72,7 @@
 </div>
 <div class="actions">
 <ul>
-    <li><?php echo $this->Html->link(__('Listar ordenes de compras', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+    <li><?php echo $this->Html->link(__('Listar ordenes de compra', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 </ul>
 <br/><br/>
 <div style="margin-left: 18px;">

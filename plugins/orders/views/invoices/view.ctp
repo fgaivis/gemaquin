@@ -41,6 +41,7 @@
 			<?php echo $invoice['Invoice']['shipping']; ?>
 			&nbsp;
 		</dd>
+		<?php if($invoice['Invoice']['type'] != Invoice::SALES) : ?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Customs Tax'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $invoice['Invoice']['customs_tax']; ?>
@@ -56,11 +57,13 @@
 			<?php echo $invoice['Invoice']['internal_shipping']; ?>
 			&nbsp;
 		</dd>
+		<?php endif; ?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Type'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $invoice['Invoice']['type'] === Invoice::DRAFT ? __d('default', 'DRAFTINV', true) : __d('default', $invoice['Invoice']['type'], true); ?>
 			&nbsp;
 		</dd>
+		<?php if($invoice['Invoice']['type'] != Invoice::SALES) : ?>
 		<?php if (empty($invoice['Invoice']['hard_copy'])): ?>
 			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Files'); ?></dt>
 			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
@@ -77,11 +80,15 @@
 				<?php echo $this->Html->link(__('Hard Copy', true), '/files/invoices/' . $invoice['Invoice']['hard_copy']) ?>
 			</dd>
 		<?php endif;?>
+		<?php endif;?>
 	</dl>
 	<?php if($invoice['Invoice']['type'] === Invoice::SALES) : ?>
-	<footer>
-		<p style="margin-left: 10px;"><?php echo $this->Html->link(__('Print invoice', true), array('action' => 'print_invoice', $invoice['Invoice']['id'])); ?></p>
-	</footer>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Print invoice', true), array('action' => 'print_invoice', $invoice['Invoice']['id'])); ?></li>
+		</ul>
+	</div>
+	<br/>
 	<?php endif; ?>
 </div>
 <?php if($invoice['Invoice']['type'] != Invoice::SERVICE) : ?>
@@ -125,7 +132,7 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php __('Name'); ?></th>
-		<th><?php __('Description'); ?></th>
+		<!-- <th><?php //__('Description'); ?></th> -->
 		<th><?php __('Barcode'); ?></th>
 		<th><?php __('Package Factor'); ?></th>
 		<th><?php __('Sales Factor'); ?></th>
@@ -143,7 +150,7 @@
 		?>
 		<tr<?php echo $class;?>>
 			<td><?php echo $item['Item']['name'];?></td>
-			<td><?php echo $item['Item']['description'];?></td>
+			<!-- <td><?php //echo $item['Item']['description'];?></td> -->
 			<td><?php echo $item['Item']['barcode'];?></td>
 			<td><?php echo $item['Item']['package_factor'];?></td>
 			<td><?php echo $item['Item']['sales_factor'];?></td>
@@ -155,4 +162,5 @@
 	<?php endforeach; ?>
 	</table>
 <?php endif; ?>
-</div><?php endif;?>
+</div>
+<?php endif;?>

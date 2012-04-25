@@ -80,6 +80,17 @@ class SalesOrdersController extends OrdersAppController {
 		$this->set(compact('organizations'));
  
 	}
+	
+	public function send() {
+		$result = $this->SalesOrder->send($this->data);
+		if ($result === true) {
+            //TODO Enviar correo al encargado
+            $this->Session->setFlash(__('The sales order has been send', true));
+		} else {
+		    $this->Session->setFlash(__('An error has occurred sending the sales order', true));
+		}
+	    $this->redirect(array('action' => 'view',$this->data['SalesOrder']['id']));
+	}
 
 /**
  * Edit for sales order.

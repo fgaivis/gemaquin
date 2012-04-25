@@ -194,14 +194,22 @@ class Invoice extends OrdersAppModel {
 			if (!empty($data['InvoicesItem'])) {
 				$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
 				unset($data['InvoicesItem']);
-			}			
+			}		
 			if($data['Invoice']['subtotal'] === '' || $data['Invoice']['tax'] === '' || $data['Invoice']['total'] === '') {
 				throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
 			}
+			if($data['Invoice']['type'] === Invoice::SERVICE){
+				if($data['Invoice']['total_exempt'] === '' || $data['Invoice']['total_no_exempt'] === '' || $data['Invoice']['number'] === ''
+						|| $data['Invoice']['control'] === '') {
+					throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
+				}
+			}
 			
-			$data['Invoice'] = array_filter($data['Invoice']);
-			$data['Invoice']['total_exempt'] = 0;
-			$data['Invoice']['total_no_exempt'] = 0;
+			if($data['Invoice']['type'] != Invoice::SERVICE){
+				$data['Invoice'] = array_filter($data['Invoice']);
+				$data['Invoice']['total_exempt'] = 0;
+				$data['Invoice']['total_no_exempt'] = 0;
+			}
 			if (isset($data['SalesOrder'])) {
 				foreach ($invoicesItem['InvoicesItem'] as $invoiceItem) {
 					if ($invoiceItem['exempt']) {
@@ -210,10 +218,17 @@ class Invoice extends OrdersAppModel {
 						$data['Invoice']['total_no_exempt'] += $invoiceItem['price'];
 					}
 				}
+				//Calcular subtotal, tax, total
+				$data['Invoice']['subtotal'] = $data['Invoice']['total_exempt'] + $data['Invoice']['total_no_exempt'];
+				$data['Invoice']['tax'] = ($data['Invoice']['total_no_exempt'] * 12) / 100;
+				$data['Invoice']['total'] = $data['Invoice']['subtotal'] + $data['Invoice']['tax'];
 			}
 			if($data['Invoice']['type'] === Invoice::SERVICE){
 				$resultitem = true;
-				$data['Organization']['id'] = $data['Invoice']['organization_id'];
+				$data['Organization']['id'] = $data['Invoice']['organization_id'];				
+				$inv_exempt = $data['Invoice']['total_exempt'];
+				$inv_no_exempt = $data['Invoice']['total_no_exempt'];
+				$data['Invoice']['subtotal'] = $inv_exempt + $inv_no_exempt;
 			}
 			$resultinv = $this->saveAll($data);
 			

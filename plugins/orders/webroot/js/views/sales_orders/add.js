@@ -63,7 +63,7 @@ function addItem(inventoryItemId) {
 			    row.append('<td><input class="item_qty" type="text" name="data[InvItemsSalesOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
 			    row.append(
 				    '<td>' +
-					    '<a href="#" class="delete" item="'+ data.content.Item.id +'">Delete</a>' +
+					    '<a href="#" class="delete" item="'+ data.content.Item.id +'">Eliminar</a>' +
 					    '<input type="hidden" name="data[InvItemsSalesOrder][' + itemsQuantity + '][inventory_item_id]" value="'+  data.content.InventoryItem.id +'">' +
 				    '</td>'
 			    );

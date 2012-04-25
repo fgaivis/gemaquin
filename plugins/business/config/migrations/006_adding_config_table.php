@@ -18,7 +18,7 @@ class M4d8a7b88c2544244bb7221f494e06dd3 extends CakeMigration {
 	public $migration = array(
 		'up' => array(
 			'create_table' => array(
-				'configuration' => array(
+				'configurations' => array(
 					'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary'),
 					'name' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 200),
 					'description' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 200),
@@ -32,7 +32,7 @@ class M4d8a7b88c2544244bb7221f494e06dd3 extends CakeMigration {
 		),
 		'down' => array(
 			'drop_table' => array(
-				'configuration'
+				'configurations'
 			),
 		),
 	);

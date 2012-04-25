@@ -1125,3 +1125,12 @@ p.delete-warn {
 .index-filters label, .index-filters input {
 	margin-right: 8px;
 }
+
+/* Dates */
+button.ui-datepicker-trigger {
+	margin-left: 12px;
+}
+
+#ui-datepicker-div {
+	width: 240px;	
+}

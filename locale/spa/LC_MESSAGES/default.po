@@ -1237,9 +1237,17 @@ msgstr "La Orden de Compra ha sido guardada"
 msgid "The purchase order has been send"
 msgstr "La Orden de Compra ha sido enviada"
 
+#: plugins/orders/controllers/purchase_orders_controller.php:71
+msgid "The sales order has been send"
+msgstr "La Orden de Venta ha sido enviada"
+
 #: plugins/orders/controllers/purchase_orders_controller.php:73
 msgid "An error has occurred sending the purchase order"
 msgstr "Ha ocurrido un error durante el envío de la Orden de Compra"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:73
+msgid "An error has occurred sending the sales order"
+msgstr "Ha ocurrido un error durante el envío de la Orden de Venta"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:73
 msgid "An error has occurred saving the invoice"
@@ -1327,6 +1335,30 @@ msgstr "Una Orden de Compra debe tener al menos un Item"
 #: plugins/orders/views/invoices/add.ctp:3
 msgid "Add Invoice"
 msgstr "Agregar factura"
+
+#: plugins/orders/views/invoices/add.ctp:3
+msgid "Add Purchase Invoice"
+msgstr "Agregar factura de compra"
+
+#: plugins/orders/views/invoices/add.ctp:3
+msgid "Add Draft Invoice"
+msgstr "Agregar factura proforma"
+
+#: plugins/orders/views/invoices/add.ctp:3
+msgid "Add Sales Invoice"
+msgstr "Agregar factura de venta"
+
+#: plugins/orders/views/invoices/add.ctp:3
+msgid "Add Service Invoice"
+msgstr "Agregar factura de servicio"
+
+#: plugins/orders/views/invoices/add.ctp:3
+msgid "Total No Exempt"
+msgstr "Subtotal no exento"
+
+#: plugins/orders/views/invoices/add.ctp:3
+msgid "Total Exempt"
+msgstr "Subtotal exento"
 
 #: plugins/orders/views/invoices/edit.ctp:3
 #: plugins/orders/views/invoices/view.ctp:38

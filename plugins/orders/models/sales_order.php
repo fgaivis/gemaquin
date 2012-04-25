@@ -214,7 +214,7 @@ class SalesOrder extends AppModel {
 	}
 	
 	public function send($data) {
-		$data['SalesOrder']['status'] = PurchaseOrder::SENT;
+		$data['SalesOrder']['status'] = SalesOrder::SENT;
 		$result = $this->save($data);
 		if ($result) {
 			return true;

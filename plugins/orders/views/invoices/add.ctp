@@ -1,10 +1,24 @@
 <div class="invoices form">
 <?php echo $this->Form->create('Invoice', array('url' => array('action' => 'add')));?>
+	
+	<header><h3>
+	<?php if (!empty($this->data['PurchaseOrder'])) : ?>
+		<?php __('Add Purchase Invoice'); ?>
+	<?php elseif (!empty($this->data['PrePurchaseOrder'])) : ?>
+		<?php __('Add Draft Invoice'); ?>
+	<?php elseif (!empty($this->data['SalesOrder'])) : ?>
+		<?php __('Add Sales Invoice'); ?>
+	<?php else : ?>
+		<?php __('Add Service Invoice'); ?>
+	<?php endif; ?>
+	</h3></header>
+
 	<fieldset>
 	<?php
 		echo $this->Form->hidden('Organization.id');
 		echo $this->Form->hidden('Invoice.type');
 		if (!empty($this->data['PurchaseOrder'])) {
+			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
 			echo $this->Form->input('control');
 			echo $this->Form->input('subtotal');
@@ -19,6 +33,7 @@
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 			echo $this->Form->hidden('PurchaseOrder.id');					
 		} else if (!empty($this->data['PrePurchaseOrder'])) {
+			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
 			echo $this->Form->input('subtotal');
 			echo $this->Form->input('tax');
@@ -33,9 +48,9 @@
 			echo $this->Form->hidden('PrePurchaseOrder.id');
 		} else if (!empty($this->data['SalesOrder'])) {
 			echo $this->Form->input('control');
-			echo $this->Form->input('subtotal');
-			echo $this->Form->input('tax');
-			echo $this->Form->input('total');
+			echo $this->Form->hidden('subtotal', array('value' => 0));
+			echo $this->Form->hidden('tax', array('value' => 0));
+			echo $this->Form->hidden('total', array('value' => 0));
 			echo $this->Form->input('insurance', array('class' => 'outgoings'));
 			echo $this->Form->input('internal_shipping', array('class' => 'outgoings'));
 			echo $this->Form->hidden('SalesOrder.id', array('value' => $this->data['SalesOrder']['id']));
@@ -43,9 +58,12 @@
 			echo $this->Form->hidden('SalesOrder.id');
 		} else {
 			echo $this->Form->input('organization_id');
+			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
 			echo $this->Form->input('control');
-			echo $this->Form->input('subtotal');
+			echo $this->Form->hidden('subtotal', array('value' => 0));
+			echo $this->Form->input('total_no_exempt');
+			echo $this->Form->input('total_exempt');
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total');
 			echo $this->Form->hidden('type', array('value' => Invoice::SERVICE));
@@ -79,8 +97,9 @@
 							__('Item', true),
 							__('Quantity', true),
 							__('Unit Price', true),
-							__('Tax', true),
 							__('Exempt', true),
+							__('Tax', true),
+							__('Total Price', true),
 						));
 				?>	
 			<?php endif; ?>
@@ -105,6 +124,16 @@
 								echo $this->Form->hidden('InvoicesItem.' . $index . '.individual_cost', array('index' => $index));
 							?>
 						</td>
+						<?php if (isset($this->data['SalesOrder'])): ?>
+						<td>
+							<?php echo $this->Form->input('InvoicesItem.' . $index . '.exempt', array('type' => 'checkbox', 'class' => 'item-exempt', 'index' => $index, 'label' => false, 'div' => false)); ?>
+						</td>
+						<td>
+							<?php echo $this->Form->hidden('InvoicesItem.' . $index . '.tax', array('class' => 'item-tax', 'index' => $index, 'label' => false, 'div' => false));
+									echo '<span class="tax-label" index="' . $index .'"></span>';
+							?>
+						</td>
+						<?php endif;?>
 						<td>
 							<?php echo $this->Form->hidden('InvoicesItem.' . $index . '.purchase_cost', array('index' => $index));
 									echo '<span class="total_price-label" index="' . $index .'"></span>'; 
@@ -117,10 +146,7 @@
 								?>
 							</td>  -->
 						<?php elseif (isset($this->data['SalesOrder'])): ?>
-							<td>
-								<?php echo $this->Form->input('InvoicesItem.' . $index . '.tax', array('class' => 'item-tax', 'index' => $index, 'label' => false, 'div' => false)); ?>
-								<?php echo $this->Form->input('InvoicesItem.' . $index . '.exempt', array('type' => 'checkbox', 'class' => 'item-exempt', 'index' => $index, 'label' => false, 'div' => false)); ?>
-							</td>
+							<!-- NADA -->
 						<?php endif;?>
 					</tr>	
 				<?php endforeach; ?>				
