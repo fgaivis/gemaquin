@@ -89,5 +89,10 @@
 	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::SALES));?>
 	<?php echo $this->Form->end(array('label'=>__('Add Invoice', true),'id'=>'addInvoice'));?>
 <?php endif;?>
+<?php if (in_array($salesOrder['SalesOrder']['status'], array(SalesOrder::SENT, SalesOrder::APPROVED, SalesOrder::INVOICED))) : ?>
+    <?php echo $this->Form->create('DeliveryNote', array('url' => array('plugin' => 'orders', 'controller' => 'delivery_notes', 'action' => 'add')));?>
+    <?php echo $this->Form->hidden('sales_order_id', array('value' => $salesOrder['SalesOrder']['id']));?>
+    <?php echo $this->Form->end(array('label'=>__('Add Delivery Note', true),'id'=>'addDeliveryNote'));?>
+<?php endif;?>
 </div>
 </div>

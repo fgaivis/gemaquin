@@ -35,6 +35,8 @@ $map = array(
     17 => array(
     	'014_add_created_and_modified_date_to_purchase_orders' => 'M4f13430221304c5bac2c09e094e05dd2'),
     18 => array(
-    	'015_add_item_costs_to_invoice_items' => 'M4ef13a310bb44d0aa5c12f0d94e10dd7')
+    	'015_add_item_costs_to_invoice_items' => 'M4ef13a310bb44d0aa5c12f0d94e10dd7'),
+    19 => array(
+        '016_delivery_notes' => 'M4fa69a108098481bb1f00c4b94e05dd2'),
 );
 ?>

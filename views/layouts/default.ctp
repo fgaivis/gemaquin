@@ -112,10 +112,14 @@
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de compra', true), array('controller' => 'purchase_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar ordenes de compra', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		</ul>
-		<h3><?php echo __('Ordenes de venta', true); ?></h3>
-		<ul class="toggle">
-			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de venta', true), array('controller' => 'sales_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
-			<li class="icn_categories"><?php echo $this->Html->link(__('Listar ordenes de venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+        <h3><?php echo __('Ordenes de venta', true); ?></h3>
+        <ul class="toggle">
+            <li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de venta', true), array('controller' => 'sales_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
+            <li class="icn_categories"><?php echo $this->Html->link(__('Listar ordenes de venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+        </ul>
+        <h3><?php echo __('Notas de Entrega', true); ?></h3>
+        <ul class="toggle">
+            <li class="icn_categories"><?php echo $this->Html->link(__('Listar notas de entrega', true), array('controller' => 'delivery_notes', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
         </ul>
         <h3><?php echo __('Facturas', true); ?></h3>
         <ul class="toggle">
