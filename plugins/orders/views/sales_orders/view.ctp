@@ -37,7 +37,7 @@
 	<tr>
 		<!-- <th><?php //__('Id'); ?></th> -->
 		<th><?php __('Name'); ?></th>
-		<th><?php __('Description'); ?></th>
+		<!-- <th><?php //__('Description'); ?></th> -->
 		<th><?php __('Barcode'); ?></th>
 		<th><?php __('Package Factor'); ?></th>
 		<th><?php __('Sales Factor'); ?></th>
@@ -58,7 +58,7 @@
 		<tr<?php echo $class;?>>
 			<!-- <td><?php //echo $item['id'];?></td> -->
 			<td><?php echo $item['Item']['name'];?></td>
-			<td><?php echo $item['Item']['description'];?></td>
+			<!-- <td><?php //echo $item['Item']['description'];?></td> -->
 			<td><?php echo $item['Item']['barcode'];?></td>
 			<td><?php echo $item['Item']['package_factor'];?></td>
 			<td><?php echo $item['Item']['sales_factor'];?></td>

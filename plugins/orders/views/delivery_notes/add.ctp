@@ -15,6 +15,7 @@
             __('Code', true),
             __('Item', true),
             __('Package', true),
+            __('Ordered', true),
             __('Quantity', true)
         ));
         ?>
@@ -23,6 +24,7 @@
             <td><?php echo $item['Item']['barcode']; ?></td>
             <td><?php echo $item['Item']['name']; ?></td>
             <td><?php echo $item['Item']['package_factor']; ?></td>
+            <td><?php echo $item['InvItemsSalesOrder']['quantity']; ?></td>
             <td><?php echo $this->Form->input('InvItemsSoDlvNote.' . $key . '.quantity', array('label' => false, 'div' => false)); ?>
                 <?php echo $this->Form->input('InvItemsSoDlvNote.' . $key . '.inv_items_sales_order_id', array('type' => 'hidden', 'value' => $item['InvItemsSalesOrder']['id'])); ?>
             </td>
@@ -31,6 +33,6 @@
     </table>
 </div>
 
-        <?php echo $this->Form->end('Submit');?>
+        <?php echo $this->Form->end(__('Submit', true));?>
     </fieldset>
         </div>

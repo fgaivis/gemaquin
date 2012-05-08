@@ -1,14 +1,14 @@
 <div class="deliveryNotes view">
-<h2><?php  __('Delivery Note');?></h2>
+<header><h3><?php  __('Delivery Note');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $deliveryNote['DeliveryNote']['id']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $deliveryNote['DeliveryNote']['id']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Sales Order'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $this->Html->link($deliveryNote['SalesOrder']['id'], array('controller' => 'sales_orders', 'action' => 'view', $deliveryNote['SalesOrder']['id'])); ?>
+			<?php echo $this->Html->link($deliveryNote['SalesOrder']['number'], array('controller' => 'sales_orders', 'action' => 'view', $deliveryNote['SalesOrder']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Number'); ?></dt>
@@ -16,41 +16,47 @@
 			<?php echo $deliveryNote['DeliveryNote']['number']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $deliveryNote['DeliveryNote']['created']; ?>
+		<!-- <dt<?php// if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $deliveryNote['DeliveryNote']['created']; ?>
 			&nbsp;
 		</dd>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $deliveryNote['DeliveryNote']['modified']; ?>
+		<dt<?php //if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $deliveryNote['DeliveryNote']['modified']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 	</dl>
 </div>
 <div class="module width_3_quarter">
 	<h3></h3>
-	<?php if (!empty($deliveryNote['InvItemsSoDlvNote'])):?>
+	<?php if (!empty($deliveryNote['InvItemsSalesOrder'])):?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php __('Id'); ?></th>
-		<th><?php __('Inv Items Sales Order Id'); ?></th>
-		<th><?php __('Delivery Note Id'); ?></th>
+		<!-- <th><?php //__('Id'); ?></th> -->
+		<th><?php __('Item'); ?></th>
+		<th><?php __('Batch'); ?></th>
+		<th><?php __('Barcode'); ?></th>
+		<th><?php __('Package Factor'); ?></th>
+		<th><?php __('Sales Factor'); ?></th>
 		<th><?php __('Quantity'); ?></th>
 	</tr>
 	<?php
 		$i = 0;
-		foreach ($deliveryNote['InvItemsSoDlvNote'] as $invItemsSoDlvNote):
+		foreach ($deliveryNote['InvItemsSalesOrder'] as $invItemsSalesOrder):
 			$class = null;
 			if ($i++ % 2 == 0) {
 				$class = ' class="altrow"';
 			}
 		?>
 		<tr<?php echo $class;?>>
-			<td><?php echo $invItemsSoDlvNote['id'];?></td>
-			<td><?php echo $invItemsSoDlvNote['inv_items_sales_order_id'];?></td>
-			<td><?php echo $invItemsSoDlvNote['delivery_note_id'];?></td>
-			<td><?php echo $invItemsSoDlvNote['quantity'];?></td>
+			<!-- <td><?php //echo $invItemsSoDlvNote['id'];?></td> -->
+			<td><?php echo $invItemsSalesOrder['InventoryItem']['Item']['name'];?></td>
+			<td><?php echo $invItemsSalesOrder['InventoryItem']['batch'];?></td>
+			<td><?php echo $invItemsSalesOrder['InventoryItem']['Item']['barcode'];?></td>
+			<td><?php echo $invItemsSalesOrder['InventoryItem']['Item']['package_factor'];?></td>
+			<td><?php echo $invItemsSalesOrder['InventoryItem']['Item']['sales_factor'];?></td>
+			<td><?php echo $invItemsSalesOrder['quantity'];?></td>
 		</tr>
 	<?php endforeach; ?>
 	</table>

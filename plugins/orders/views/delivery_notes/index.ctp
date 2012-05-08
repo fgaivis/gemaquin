@@ -1,11 +1,11 @@
 <div class="deliveryNotes index">
-<h2><?php __('Delivery Notes');?></h2>
-<p>
+<header><h3><?php __('Delivery Notes');?></h3></header>
+<!-- <p>
 <?php
-echo $this->Paginator->counter(array(
+/*echo $this->Paginator->counter(array(
 'format' => __('Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%', true)
-));
-?></p>
+));*/
+?></p> -->
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<th><?php echo $this->Paginator->sort('sales_order_id');?></th>
@@ -33,7 +33,7 @@ foreach ($deliveryNotes as $deliveryNote):
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $deliveryNote['DeliveryNote']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $deliveryNote['DeliveryNote']['id'])); ?>
+			<?php //echo $this->Html->link(__('Edit', true), array('action' => 'edit', $deliveryNote['DeliveryNote']['id'])); ?>
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $deliveryNote['DeliveryNote']['id'])); ?>
 		</td>
 	</tr>

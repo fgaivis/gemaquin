@@ -112,15 +112,19 @@
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de compra', true), array('controller' => 'purchase_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar ordenes de compra', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		</ul>
+		<?php endif;?>
         <h3><?php echo __('Ordenes de venta', true); ?></h3>
         <ul class="toggle">
+            <?php if($userData['User']['role'] != '3'): ?>
             <li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de venta', true), array('controller' => 'sales_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
+            <?php endif;?>
             <li class="icn_categories"><?php echo $this->Html->link(__('Listar ordenes de venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
         </ul>
         <h3><?php echo __('Notas de Entrega', true); ?></h3>
         <ul class="toggle">
             <li class="icn_categories"><?php echo $this->Html->link(__('Listar notas de entrega', true), array('controller' => 'delivery_notes', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
         </ul>
+        <?php if($userData['User']['role'] != '3'): ?>
         <h3><?php echo __('Facturas', true); ?></h3>
         <ul class="toggle">
         	<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva factura de servicio', true), array('controller' => 'invoices', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>

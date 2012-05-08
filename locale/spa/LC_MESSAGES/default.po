@@ -1241,6 +1241,10 @@ msgstr "La Orden de Compra ha sido enviada"
 msgid "The sales order has been send"
 msgstr "La Orden de Venta ha sido enviada"
 
+#: plugins/orders/controllers/purchase_orders_controller.php:71
+msgid "The delivery note has been saved"
+msgstr "La Nota de entrega ha sido creada"
+
 #: plugins/orders/controllers/purchase_orders_controller.php:73
 msgid "An error has occurred sending the purchase order"
 msgstr "Ha ocurrido un error durante el envío de la Orden de Compra"
@@ -1500,6 +1504,26 @@ msgstr "Agregar Orden de Compra"
 #: plugins/orders/views/purchase_orders/add.ctp:4
 msgid "Add Sales Order"
 msgstr "Agregar Orden de Venta"
+
+#: plugins/orders/views/purchase_orders/add.ctp:4
+msgid "Add Delivery Note"
+msgstr "Agregar nota de entrega"
+
+#: plugins/orders/views/purchase_orders/add.ctp:4
+msgid "A delivery note must have at least one item"
+msgstr "La nota de entrega debe contener al menos un (1) item"
+
+#: plugins/orders/views/purchase_orders/add.ctp:4
+msgid "Delivery Note Content"
+msgstr "Contenido de la nota de entrega"
+
+#: plugins/orders/views/purchase_orders/add.ctp:4
+msgid "Delivery Notes"
+msgstr "Notas de entrega"
+
+#: plugins/orders/views/purchase_orders/add.ctp:4
+msgid "Delivery Note"
+msgstr "Nota de entrega"
 
 #: plugins/orders/views/purchase_orders/add.ctp:11
 #: plugins/orders/views/purchase_orders/edit.ctp:10
@@ -1872,6 +1896,10 @@ msgstr "Exento"
 #: Varios
 msgid "Attachment"
 msgstr "Adjuntos"
+
+#: Varios
+msgid "Ordered"
+msgstr "Ordenados"
 
 #: Varios
 msgid "Download"

@@ -177,6 +177,7 @@ class DeliveryNote extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$deliveryNote = $this->find('first', array(
+			'contain' => array('InvItemsSalesOrder.InventoryItem.Item', 'SalesOrder'),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 

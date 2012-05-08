@@ -71,7 +71,7 @@ class DeliveryNotesControllersControllerTestCase extends AppTestCase {
  * @return void
  * @access public
  */
-	public function testInstance() {
+	/*public function testInstance() {
 		$this->assertIsA($this->DeliveryNotesControllers, 'DeliveryNotesControllersController');
 		//$this->assertIsA($this->DeliveryNotesControllers-><pre class="cake-debug"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr1-trace').style.display = (document.getElementById('cakeErr1-trace').style.display == 'none' ? '' : 'none');"><b>Notice</b> (8)</a>: Undefined variable: currentModelName [<b>APP/plugins/templates/vendors/shells/templates/cakedc/classes/test.ctp</b>, line <b>157</b>]<div id="cakeErr1-trace" class="cake-stack-trace" style="display: none;"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr1-code').style.display = (document.getElementById('cakeErr1-code').style.display == 'none' ? '' : 'none')">Code</a> | <a href="javascript:void(0);" onclick="document.getElementById('cakeErr1-context').style.display = (document.getElementById('cakeErr1-context').style.display == 'none' ? '' : 'none')">Context</a><div id="cakeErr1-code" class="cake-code-dump" style="display: none;"><pre><code><span style="color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;testInstance()&nbsp;{</span></code>
 <code><span style="color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;assertIsA($this-&gt;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$className&nbsp;?&gt;</span>,&nbsp;'<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$fullClassName</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">?&gt;</span>');</span></code>
@@ -155,6 +155,6 @@ ShellDispatcher::ShellDispatcher() - CORE/cake/console/cake.php, line 139
 
 
 
-	
+	*/
 }
 ?>
