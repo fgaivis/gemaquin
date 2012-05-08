@@ -7,6 +7,14 @@ class DeliveryNotesController extends OrdersAppController {
  * @access public
  */
 	public $name = 'DeliveryNotes';
+	
+/**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 20, 'order' => array('DeliveryNote.created' => 'desc'));
 
 
 /**
