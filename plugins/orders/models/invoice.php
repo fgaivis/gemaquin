@@ -313,6 +313,9 @@ class Invoice extends OrdersAppModel {
 		$this->set($invoice);
 
 		if (!empty($data)) {
+			if($data['Invoice']['type'] === Invoice::SERVICE){
+				$data['Invoice']['subtotal'] = $data['Invoice']['total_no_exempt'] + $data['Invoice']['total_exempt'];
+			}
 			$this->set($data);
 			$result = $this->save(null, true);
 			if ($result) {

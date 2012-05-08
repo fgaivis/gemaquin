@@ -36,12 +36,12 @@
 			<?php echo $invoice['Invoice']['insurance']; ?>
 			&nbsp;
 		</dd>
+		<?php if($invoice['Invoice']['type'] != Invoice::SALES) : ?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Shipping'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $invoice['Invoice']['shipping']; ?>
 			&nbsp;
 		</dd>
-		<?php if($invoice['Invoice']['type'] != Invoice::SALES) : ?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Customs Tax'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $invoice['Invoice']['customs_tax']; ?>
@@ -52,12 +52,12 @@
 			<?php echo $invoice['Invoice']['customs_adm']; ?>
 			&nbsp;
 		</dd>
+		<?php endif; ?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Internal Shipping'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $invoice['Invoice']['internal_shipping']; ?>
 			&nbsp;
 		</dd>
-		<?php endif; ?>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Type'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $invoice['Invoice']['type'] === Invoice::DRAFT ? __d('default', 'DRAFTINV', true) : __d('default', $invoice['Invoice']['type'], true); ?>
