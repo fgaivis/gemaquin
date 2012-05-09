@@ -72,12 +72,12 @@ class ItemsControllerTestCase extends AppTestCase {
  * @access public
  */
 	public function testInstance() {
-		$this->assertIsA($this->Items, 'ItemsController');
+	/*	$this->assertIsA($this->Items, 'ItemsController');
 		//$this->assertIsA($this->Items->
 Notice: Undefined variable: currentModelName in /home/ajibarra/work/www/htdocs/gemaquin/plugins/templates/vendors/shells/templates/cakedc/classes/test.ctp on line 157
 , '
 Notice: Undefined variable: currentModelName in /home/ajibarra/work/www/htdocs/gemaquin/plugins/templates/vendors/shells/templates/cakedc/classes/test.ctp on line 157
-');
+');*/
 	}
 
 

@@ -1,19 +1,17 @@
 <div class="configurations form">
-<?php echo $this->Form->create('Configuration');?>
+<?php echo $this->Form->create('Configuration', array('url' => array('action' => 'add')));?>
 	<fieldset>
-		<legend><?php __('Add Configuration'); ?></legend>
+ 		<legend><?php __('Add Configuration');?></legend>
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');
 		echo $this->Form->input('value');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit', true));?>
+<?php echo $this->Form->end('Submit');?>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
 	<ul>
-
 		<li><?php echo $this->Html->link(__('List Configurations', true), array('action' => 'index'));?></li>
 	</ul>
 </div>

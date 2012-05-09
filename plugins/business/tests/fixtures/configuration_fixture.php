@@ -1,9 +1,21 @@
 <?php
-/* Configuration Fixture generated on: 2012-04-18 21:24:29 : 1334800469 */
+/* Configuration Fixture generated on: 2012-05-09 09:05:56 : 1336572116 */
 class ConfigurationFixture extends CakeTestFixture {
-	var $name = 'Configuration';
+/**
+ * Name
+ *
+ * @var string
+ * @access public
+ */
+	public $name = 'Configuration';
 
-	var $fields = array(
+/**
+ * Fields
+ *
+ * @var array
+ * @access public
+ */
+	public $fields = array(
 		'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary', 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'name' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 200, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
 		'description' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 200, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
@@ -12,12 +24,20 @@ class ConfigurationFixture extends CakeTestFixture {
 		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
 
-	var $records = array(
+/**
+ * Records
+ *
+ * @var array
+ * @access public
+ */
+	public $records = array(
 		array(
-			'id' => '4f8f7055-d7e4-443f-b683-05f694e05dd2',
+			'id' => '4faa78d4-71e4-4cb3-8743-091f94e05dd2',
 			'name' => 'Lorem ipsum dolor sit amet',
 			'description' => 'Lorem ipsum dolor sit amet',
 			'value' => 'Lorem ipsum dolor sit amet'
 		),
 	);
+
 }
+?>

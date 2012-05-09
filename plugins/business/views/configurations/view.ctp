@@ -24,10 +24,9 @@
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Edit Configuration', true), array('action' => 'edit', $configuration['Configuration']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Configuration', true), array('action' => 'delete', $configuration['Configuration']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $configuration['Configuration']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Delete Configuration', true), array('action' => 'delete', $configuration['Configuration']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Configurations', true), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Configuration', true), array('action' => 'add')); ?> </li>
 	</ul>

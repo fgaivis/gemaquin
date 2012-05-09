@@ -38,5 +38,7 @@ $map = array(
     	'015_add_item_costs_to_invoice_items' => 'M4ef13a310bb44d0aa5c12f0d94e10dd7'),
     19 => array(
         '016_delivery_notes' => 'M4fa69a108098481bb1f00c4b94e05dd2'),
+    20 => array(
+        '017_create_table_payments' => 'M4fa69a108098481bb1f00c4b94e06dd3'),
 );
 ?>
