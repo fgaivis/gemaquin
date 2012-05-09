@@ -40,5 +40,7 @@ $map = array(
         '016_delivery_notes' => 'M4fa69a108098481bb1f00c4b94e05dd2'),
     20 => array(
         '017_create_table_payments' => 'M4fa69a108098481bb1f00c4b94e06dd3'),
+    21 => array(
+        '018_create_table_retentions' => 'M4fa69a108098481bb1f00c4b94e07dd4'),
 );
 ?>
