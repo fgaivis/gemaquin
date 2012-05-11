@@ -213,9 +213,9 @@ class Invoice extends OrdersAppModel {
 			if (isset($data['SalesOrder'])) {
 				foreach ($invoicesItem['InvoicesItem'] as $invoiceItem) {
 					if ($invoiceItem['exempt']) {
-						$data['Invoice']['total_exempt'] += $invoiceItem['price'];
+						$data['Invoice']['total_exempt'] += $invoiceItem['price'] * $invoiceItem['quantity'];
 					} else { 
-						$data['Invoice']['total_no_exempt'] += $invoiceItem['price'];
+						$data['Invoice']['total_no_exempt'] += $invoiceItem['price'] * $invoiceItem['quantity'];
 					}
 				}
 				//Calcular subtotal, tax, total

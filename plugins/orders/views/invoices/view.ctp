@@ -136,9 +136,9 @@
 		<th><?php __('Barcode'); ?></th>
 		<th><?php __('Package Factor'); ?></th>
 		<th><?php __('Sales Factor'); ?></th>
-		<th><?php __('Weight'); ?></th>
-		<th><?php __('Country'); ?></th>
-		<th><?php __('Industry'); ?></th>
+		<th><?php __('Quantity'); ?></th>
+		<th><?php __('Unit Price'); ?></th>
+		<th><?php __('Total Price'); ?></th>
 	</tr>
 	<?php
 		$i = 0;
@@ -154,9 +154,9 @@
 			<td><?php echo $item['Item']['barcode'];?></td>
 			<td><?php echo $item['Item']['package_factor'];?></td>
 			<td><?php echo $item['Item']['sales_factor'];?></td>
-			<td><?php echo $item['Item']['weight'];?></td>
-			<td><?php echo $item['Item']['country'];?></td>
-			<td><?php echo $item['Item']['industry'];?></td>
+			<td><?php echo $item['quantity'];?></td>
+			<td><?php echo $item['individual_cost'];?></td>
+			<td><?php echo $item['quantity'] * $item['individual_cost'];?></td>
 			
 		</tr>
 	<?php endforeach; ?>

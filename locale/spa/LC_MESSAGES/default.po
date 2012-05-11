@@ -1463,6 +1463,10 @@ msgstr "Items de Factura"
 msgid "Invoices Item"
 msgstr "Item de Factura"
 
+#: plugins/orders/views/invoices_items/view.ctp:2
+msgid "No enough quantity left for this item"
+msgstr "No existen items disponibles para este pedido"
+
 #: plugins/orders/views/invoices_items/view.ctp:24
 msgid "Price"
 msgstr "Precio"
