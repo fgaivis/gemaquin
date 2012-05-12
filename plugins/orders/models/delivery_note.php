@@ -119,9 +119,30 @@ class DeliveryNote extends OrdersAppModel {
 		if (!empty($data)) {
 			$this->create();
             if (!empty($data['InvItemsSoDlvNote'])){
+                foreach($data['InvItemsSoDlvNote'] as $item) {
+                    $invItemSo = $this->InvItemsSalesOrder->find('first', array('conditions' => array('InvItemsSalesOrder.id' => $item['inv_items_sales_order_id'])));
+                    $invItemSo['InvItemsSalesOrder']['quantity_remaining'] = $invItemSo['InvItemsSalesOrder']['quantity_remaining'] - $item['quantity'];
+                    if ($invItemSo['InvItemsSalesOrder']['quantity_remaining'] < 0) {
+                        $this->invalidate('quantity', __('Quantity should not be greater than quantity remaining', true));
+                        return false;
+                    }
+                    $invItemSo['InvItemsSalesOrder']['id'] = $item['inv_items_sales_order_id'];
+                    $data['InvItemsSalesOrder'][] =  $invItemSo['InvItemsSalesOrder'];
+                }
                 $result = $this->saveAll($data);
                 if ($result !== false) {
-                    $this->data = array_merge($data, $result);
+                    $this->InvItemsSalesOrder->saveAll($data['InvItemsSalesOrder']);
+                    ClassRegistry::flush();
+                    $remainingItems = ClassRegistry::init('Orders.InvItemsSalesOrder')->getRemainingItems($data['DeliveryNote']['sales_order_id']);
+                    if (empty($remainingItems)) {
+                        $salesOrder = array(
+                            'SalesOrder' => array(
+                                'id' => $data['DeliveryNote']['sales_order_id'],
+                                'status' => SalesOrder::COMPLETED,
+                            )
+                        );
+                        $this->SalesOrder->save($salesOrder);
+                    }
                     return true;
                 } else {
                     throw new OutOfBoundsException(__('Could not save the Delivery Note, please check your inputs.', true));

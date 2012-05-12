@@ -212,16 +212,26 @@ class SalesOrder extends AppModel {
 
 		return $salesOrder;
 	}
-	
-	public function send($data) {
-		$data['SalesOrder']['status'] = SalesOrder::SENT;
-		$result = $this->save($data);
-		if ($result) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+
+    public function send($data) {
+        $data['SalesOrder']['status'] = SalesOrder::SENT;
+        $result = $this->save($data);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function complete($data) {
+        $data['SalesOrder']['status'] = SalesOrder::COMPLETED;
+        $result = $this->save($data);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 	
 	public function void($id) {
 	    $salesOrder = $this->find('first', array(

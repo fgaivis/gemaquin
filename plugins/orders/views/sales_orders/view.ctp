@@ -41,7 +41,8 @@
 		<th><?php __('Barcode'); ?></th>
 		<th><?php __('Package Factor'); ?></th>
 		<th><?php __('Sales Factor'); ?></th>
-		<th><?php __('Quantity'); ?></th>
+        <th><?php __('Quantity'); ?></th>
+        <th><?php __('Quantity Remaining'); ?></th>
 		<!-- <th><?php //__('Country'); ?></th>
 		<th><?php //__('Industry'); ?></th> 
 		<th><?php //__('Category Id'); ?></th> -->
@@ -62,8 +63,9 @@
 			<td><?php echo $item['Item']['barcode'];?></td>
 			<td><?php echo $item['Item']['package_factor'];?></td>
 			<td><?php echo $item['Item']['sales_factor'];?></td>
-			<td><?php echo $salesOrder['InvItemsSalesOrder'][$itm]['quantity'];?></td>
-			<!-- <td><?php //echo $item['country'];?></td>
+            <td><?php echo $salesOrder['InvItemsSalesOrder'][$itm]['quantity'];?></td>
+            <td><?php echo $salesOrder['InvItemsSalesOrder'][$itm]['quantity_remaining'];?></td>
+            <!-- <td><?php //echo $item['country'];?></td>
 			<td><?php //echo $item['industry'];?></td>
 			<td><?php //echo $item['category_id'];?></td> -->
 		</tr>
@@ -89,10 +91,15 @@
 	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::SALES));?>
 	<?php echo $this->Form->end(array('label'=>__('Add Invoice', true),'id'=>'addInvoice'));?>
 <?php endif;?>
-<?php if (in_array($salesOrder['SalesOrder']['status'], array(SalesOrder::SENT, SalesOrder::APPROVED, SalesOrder::INVOICED))) : ?>
+ <?php if ($showAddDeliveryNote && in_array($salesOrder['SalesOrder']['status'], array(SalesOrder::SENT, SalesOrder::APPROVED, SalesOrder::INVOICED))) : ?>
     <?php echo $this->Form->create('DeliveryNote', array('url' => array('plugin' => 'orders', 'controller' => 'delivery_notes', 'action' => 'add')));?>
     <?php echo $this->Form->hidden('sales_order_id', array('value' => $salesOrder['SalesOrder']['id']));?>
     <?php echo $this->Form->end(array('label'=>__('Add Delivery Note', true),'id'=>'addDeliveryNote'));?>
-<?php endif;?>
+ <?php endif;?>
+ <?php if (in_array($salesOrder['SalesOrder']['status'], array(SalesOrder::SENT, SalesOrder::INVOICED, SalesOrder::DISPATCHED,SalesOrder::RECEIVED))) : ?>
+    <?php echo $this->Form->create('SalesOrder', array('url' => array('action' => 'complete')));?>
+    <?php echo $this->Form->hidden('SalesOrder.id', array('value' => $salesOrder['SalesOrder']['id']));?>
+    <?php echo $this->Form->end(array('label'=>__('Complete', true),'id'=>'complete'));?>
+ <?php endif;?>
 </div>
 </div>

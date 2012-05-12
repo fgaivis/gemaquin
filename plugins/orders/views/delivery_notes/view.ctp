@@ -43,7 +43,8 @@
 	</tr>
 	<?php
 		$i = 0;
-		foreach ($deliveryNote['InvItemsSalesOrder'] as $invItemsSalesOrder):
+        foreach ($deliveryNote['InvItemsSalesOrder'] as $invItemsSalesOrder):
+            if (!empty($invItemsSalesOrder['InvItemsSoDlvNote']) && $invItemsSalesOrder['InvItemsSoDlvNote']['quantity'] > 0):
 			$class = null;
 			if ($i++ % 2 == 0) {
 				$class = ' class="altrow"';
@@ -56,9 +57,10 @@
 			<td><?php echo $invItemsSalesOrder['InventoryItem']['Item']['barcode'];?></td>
 			<td><?php echo $invItemsSalesOrder['InventoryItem']['Item']['package_factor'];?></td>
 			<td><?php echo $invItemsSalesOrder['InventoryItem']['Item']['sales_factor'];?></td>
-			<td><?php echo $invItemsSalesOrder['quantity'];?></td>
+			<td><?php echo $invItemsSalesOrder['InvItemsSoDlvNote']['quantity'];?></td>
 		</tr>
-	<?php endforeach; ?>
+	<?php   endif;
+            endforeach; ?>
 	</table>
 <?php endif; ?>
 

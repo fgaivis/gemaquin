@@ -58,6 +58,11 @@ class DeliveryNotesController extends OrdersAppController {
             if ($result === true) {
                 $this->Session->setFlash(__('The delivery note has been saved', true));
                 $this->redirect(array('action' => 'index'));
+            } else {
+                if (!empty($this->DeliveryNote->validationErrors['quantity'])) {
+                   $this->Session->setFlash($this->DeliveryNote->validationErrors['quantity']);
+                }
+
             }
         } catch (OutOfBoundsException $e) {
             $this->Session->setFlash($e->getMessage());
@@ -65,7 +70,12 @@ class DeliveryNotesController extends OrdersAppController {
             $this->Session->setFlash($e->getMessage());
             $this->redirect(array('action' => 'index'));
         }
-       $salesOrder = $this->DeliveryNote->SalesOrder->find('first', array('contain' => array('InventoryItem.Item'), 'conditions' => array('SalesOrder.id' => $this->data['DeliveryNote']['sales_order_id'])));
+        $salesOrder = $this->DeliveryNote->SalesOrder->find('first', array('contain' => array('InventoryItem.Item'), 'conditions' => array('SalesOrder.id' => $this->data['DeliveryNote']['sales_order_id'])));
+        ClassRegistry::flush();
+        $remainingItems = ClassRegistry::init('Orders.InvItemsSalesOrder')->getRemainingItems($this->data['DeliveryNote']['sales_order_id']);
+        if (empty($remainingItems)) {
+            $this->redirect(array('action' => 'index'));
+        };
         $this->set(compact('salesOrder'));
  
 	}

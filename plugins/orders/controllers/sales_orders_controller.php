@@ -54,11 +54,14 @@ class SalesOrdersController extends OrdersAppController {
 	public function view($id = null) {
 		try {
 			$salesOrder = $this->SalesOrder->view($id);
+            ClassRegistry::flush();
+            $remainingItems = ClassRegistry::init('Orders.InvItemsSalesOrder')->getRemainingItems($id);
+            $showAddDeliveryNote = !empty($remainingItems);
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->set(compact('salesOrder')); 
+		$this->set(compact('salesOrder', 'showAddDeliveryNote'));
 	}
 
 /**
@@ -80,17 +83,28 @@ class SalesOrdersController extends OrdersAppController {
 		$this->set(compact('organizations'));
  
 	}
-	
-	public function send() {
-		$result = $this->SalesOrder->send($this->data);
-		if ($result === true) {
+
+    public function send() {
+        $result = $this->SalesOrder->send($this->data);
+        if ($result === true) {
             //TODO Enviar correo al encargado
             $this->Session->setFlash(__('The sales order has been send', true));
-		} else {
-		    $this->Session->setFlash(__('An error has occurred sending the sales order', true));
-		}
-	    $this->redirect(array('action' => 'view',$this->data['SalesOrder']['id']));
-	}
+        } else {
+            $this->Session->setFlash(__('An error has occurred sending the sales order', true));
+        }
+        $this->redirect(array('action' => 'view',$this->data['SalesOrder']['id']));
+    }
+
+    public function complete() {
+        $result = $this->SalesOrder->complete($this->data);
+        if ($result === true) {
+            //TODO Enviar correo al encargado
+            $this->Session->setFlash(__('The sales order has been completed', true));
+        } else {
+            $this->Session->setFlash(__('An error has occurred completing the sales order', true));
+        }
+        $this->redirect(array('action' => 'view',$this->data['SalesOrder']['id']));
+    }
 
 /**
  * Edit for sales order.

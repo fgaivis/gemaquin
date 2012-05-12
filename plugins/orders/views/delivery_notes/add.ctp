@@ -16,20 +16,24 @@
             __('Item', true),
             __('Package', true),
             __('Ordered', true),
+            __('Quantity Remaining', true),
             __('Quantity', true)
         ));
         ?>
-        <?php foreach ($salesOrder['InventoryItem'] as $key => $item) : ?>
+        <?php foreach ($salesOrder['InventoryItem'] as $key => $item) :
+                if ($item['InvItemsSalesOrder']['quantity_remaining'] > 0): ?>
         <tr class="item" id="<?php echo 'row' . $item['Item']['id']?>">
             <td><?php echo $item['Item']['barcode']; ?></td>
             <td><?php echo $item['Item']['name']; ?></td>
             <td><?php echo $item['Item']['package_factor']; ?></td>
             <td><?php echo $item['InvItemsSalesOrder']['quantity']; ?></td>
-            <td><?php echo $this->Form->input('InvItemsSoDlvNote.' . $key . '.quantity', array('label' => false, 'div' => false)); ?>
+            <td><?php echo $item['InvItemsSalesOrder']['quantity_remaining']; ?></td>
+            <td><?php echo $this->Form->input('InvItemsSoDlvNote.' . $key . '.quantity', array('value' => $item['InvItemsSalesOrder']['quantity_remaining'] ,'label' => false, 'div' => false)); ?>
                 <?php echo $this->Form->input('InvItemsSoDlvNote.' . $key . '.inv_items_sales_order_id', array('type' => 'hidden', 'value' => $item['InvItemsSalesOrder']['id'])); ?>
             </td>
         </tr>
-        <?php endforeach;?>
+        <?php   endif;
+                endforeach;?>
     </table>
 </div>
 

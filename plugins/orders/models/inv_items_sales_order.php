@@ -165,5 +165,15 @@ class InvItemsSalesOrder extends AppModel {
 	}
 
 
+    function getRemainingItems($salesOrderId) {
+        $remainingItems = $this->find('all', array(
+            'conditions' => array(
+                'InvItemsSalesOrder.sales_order_id' => $salesOrderId,
+                'InvItemsSalesOrder.quantity_remaining > ' => 0
+            )
+        ));
+        return $remainingItems;
+    }
+
 }
 ?>
