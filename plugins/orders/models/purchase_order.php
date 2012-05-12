@@ -218,15 +218,25 @@ class PurchaseOrder extends AppModel {
 		return $purchaseOrder;
 	}
 
-	public function send($data) {
-	    $data['PurchaseOrder']['status'] = PurchaseOrder::SENT;
-		$result = $this->save($data);
-		if ($result) {
+    public function send($data) {
+        $data['PurchaseOrder']['status'] = PurchaseOrder::SENT;
+        $result = $this->save($data);
+        if ($result) {
             return true;
         } else {
             return false;
         }
-	}
+    }
+
+    public function complete($data) {
+        $data['PurchaseOrder']['status'] = PurchaseOrder::COMPLETED;
+        $result = $this->save($data);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 	
 	public function void($id) {
 	    $purchaseOrder = $this->find('first', array(

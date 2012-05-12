@@ -83,16 +83,27 @@ class PurchaseOrdersController extends AppController {
 		$this->set(compact('organizations'));
 	}
 
-	public function send() {
-		$result = $this->PurchaseOrder->send($this->data);
-		if ($result === true) {
+    public function send() {
+        $result = $this->PurchaseOrder->send($this->data);
+        if ($result === true) {
             //TODO Enviar correo al encargado
-            $this->Session->setFlash(__('The purchase order has been send', true));
-		} else {
-		    $this->Session->setFlash(__('An error has occurred sending the purchase order', true));
-		}
-	    $this->redirect(array('action' => 'view',$this->data['PurchaseOrder']['id']));
-	}
+            $this->Session->setFlash(__('The purchase order has been sent', true));
+        } else {
+            $this->Session->setFlash(__('An error has occurred sending the purchase order', true));
+        }
+        $this->redirect(array('action' => 'view',$this->data['PurchaseOrder']['id']));
+    }
+
+    public function complete() {
+        $result = $this->PurchaseOrder->complete($this->data);
+        if ($result === true) {
+            //TODO Enviar correo al encargado
+            $this->Session->setFlash(__('The purchase order has been completed', true));
+        } else {
+            $this->Session->setFlash(__('An error has occurred completing the purchase order', true));
+        }
+        $this->redirect(array('action' => 'view',$this->data['PurchaseOrder']['id']));
+    }
 
 	public function fill_items($organization_id) {
 		$items = $this->PurchaseOrder->Provider->ItemsOrganization->find('all',array(

@@ -88,7 +88,7 @@ class SalesOrdersController extends OrdersAppController {
         $result = $this->SalesOrder->send($this->data);
         if ($result === true) {
             //TODO Enviar correo al encargado
-            $this->Session->setFlash(__('The sales order has been send', true));
+            $this->Session->setFlash(__('The sales order has been sent', true));
         } else {
             $this->Session->setFlash(__('An error has occurred sending the sales order', true));
         }

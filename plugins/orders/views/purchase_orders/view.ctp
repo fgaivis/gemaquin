@@ -95,5 +95,10 @@
 	<?php echo $this->Form->hidden('Invoice.type', array('value' => Invoice::DRAFT));?>
 	<?php echo $this->Form->end(array('label'=>__('Add Draft Invoice', true),'id'=>'addInvoice'));?>
 <?php endif;?>
+<?php if (in_array($purchaseOrder['PurchaseOrder']['status'], array(PurchaseOrder::SENT, PurchaseOrder::INVOICED, PurchaseOrder::DISPATCHED,PurchaseOrder::RECEIVED))) : ?>
+    <?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'complete')));?>
+    <?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
+    <?php echo $this->Form->end(array('label'=>__('Complete', true),'id'=>'complete'));?>
+<?php endif;?>
 </div>
 </div>
