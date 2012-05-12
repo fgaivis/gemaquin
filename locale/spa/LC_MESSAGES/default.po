@@ -1233,6 +1233,10 @@ msgstr "Items de Orden de Compra eliminados"
 msgid "The purchase order has been saved"
 msgstr "La Orden de Compra ha sido guardada"
 
+#: plugins/orders/controllers/purchase_orders_controller.php:54
+msgid "The purchase order has been completed"
+msgstr "La Orden de Compra ha sido completada"
+
 #: plugins/orders/controllers/purchase_orders_controller.php:71
 msgid "The purchase order has been send"
 msgstr "La Orden de Compra ha sido enviada"
@@ -1244,6 +1248,10 @@ msgstr "La Orden de Venta ha sido enviada"
 #: plugins/orders/controllers/purchase_orders_controller.php:71
 msgid "The delivery note has been saved"
 msgstr "La Nota de entrega ha sido creada"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:71
+msgid "The sales order has been completed"
+msgstr "La Orden de Venta ha sido completada"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:73
 msgid "An error has occurred sending the purchase order"
@@ -1486,6 +1494,10 @@ msgstr "Precio Total (Bs.)"
 #: plugins/orders/views/items_purchase_orders/add.ctp:3
 msgid "Add Items Purchase Order"
 msgstr "Agregar Items de Orden de Compra"
+
+#: plugins/orders/views/items_purchase_orders/add.ctp:3
+msgid "Add Inventory Item"
+msgstr "Agregar Item al Inventario"
 
 #: plugins/orders/views/items_purchase_orders/edit.ctp:3
 msgid "Edit Items Purchase Order"
@@ -1844,6 +1856,10 @@ msgstr "Categoría padre"
 #: Generales
 msgid "Void"
 msgstr "Anular"
+
+#: Generales
+msgid "Complete"
+msgstr "Completar"
 
 #: Status Ordenes
 msgid "DRAFT"

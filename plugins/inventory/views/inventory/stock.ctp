@@ -7,8 +7,10 @@
         echo $this->Form->create(null, array(
             'url' => array_merge(array('action' => 'stock'), $this->params['pass'])
         ));
-        echo $this->Form->input('gt_quantity', array('div' => false, 'label' => __('', true)));
+        //echo $this->Form->input('gt_quantity', array('div' => false, 'label' => __('', true)));
         echo $this->Form->input('lt_quantity', array('div' => false, 'label' => __('', true)));
+        echo $this->Form->input('organization_id', array('div' => false, 'label' => __('Provider', true), 'empty' =>__('Select',true)));
+        //echo $this->Form->hidden('z_quantity', array('value' => 1));
         echo $this->Form->submit(__('Search', true), array('div' => false));
         echo $this->Form->end();
 

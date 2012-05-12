@@ -11,8 +11,10 @@ class InventoryController extends AppController {
     public $components = array('Search.Prg');
 
     public $presetVars = array(
-        array('field' => 'gt_quantity', 'type' => 'value', 'modelField' => 'gt_quantity'),
+        array('field' => 'z_quantity', 'type' => 'value', 'modelField' => 'z_quantity'),
+    	array('field' => 'gt_quantity', 'type' => 'value', 'modelField' => 'gt_quantity'),
         array('field' => 'lt_quantity', 'type' => 'value', 'modelField' => 'lt_quantity'),
+        array('field' => 'organization_id', 'type' => 'value', 'modelField' => 'organization_id'),
     );
 
 /**
@@ -22,6 +24,14 @@ class InventoryController extends AppController {
  * @access public
  */
 	public $helpers = array('Html', 'Form');
+	
+/**
+ * Paginate / Index Ordering
+ *
+ * @var array
+ * @access public
+ */	
+	public $paginate = array('limit' => 50, 'order' => array('Item.name' => 'asc'));
 
 /**
  * Index for inventory.
@@ -39,8 +49,13 @@ class InventoryController extends AppController {
         }
         $this->set('isReport', $isReport);
         $this->Prg->commonProcess();
+        
+    	$this->passedArgs['z_quantity'] = 1;
+        //if(!empty($this->passedArgs)) { print_r($this->passedArgs); }
         $this->paginate['conditions'] = $this->Inventory->parseCriteria($this->passedArgs);
         $this->set('items', $this->paginate());
+        $organizations = ClassRegistry::init('Business.Organization')->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('name' => 'asc')));
+        $this->set(compact('organizations'));
     }
     
 /**

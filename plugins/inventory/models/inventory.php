@@ -29,10 +29,16 @@ class Inventory extends InventoryAppModel {
     public $actsAs = array('Search.Searchable');
 
     public $filterArgs = array(
-        array('name' => 'gt_quantity', 'type' => 'expression', 'method' => 'makeGTQuantityCondition', 'field' => 'Inventory.quantity >= ?'),
+        array('name' => 'z_quantity', 'type' => 'expression', 'method' => 'makeZQuantityCondition', 'field' => 'Inventory.quantity >= ?'),
+    	array('name' => 'gt_quantity', 'type' => 'expression', 'method' => 'makeGTQuantityCondition', 'field' => 'Inventory.quantity >= ?'),
         array('name' => 'lt_quantity', 'type' => 'expression', 'method' => 'makeLTQuantityCondition', 'field' => 'Inventory.quantity <= ?'),
+        array('name' => 'organization_id', 'type' => 'query', 'method' => 'makeProviderCondition'),
     );
 
+	public function makeZQuantityCondition($data = array()) {
+        return array('Inventory.quantity >=' => $data['z_quantity']);
+    }
+    
     public function makeGTQuantityCondition($data = array()) {
         return array('Inventory.quantity >=' => $data['gt_quantity']);
     }
@@ -40,6 +46,18 @@ class Inventory extends InventoryAppModel {
     public function makeLTQuantityCondition($data = array()) {
         return array('Inventory.quantity <=' => $data['lt_quantity']);
     }
+    
+	public function makeProviderCondition($data) {
+		$organization = $data['organization_id'];
+		$this->bindModel(array('belongsTo' => array(
+			'ItemsOrganization' => array(
+				'className' => 'Catalog.ItemsOrganization',
+				'foreignKey' => false,
+				'type' => 'inner',
+				'conditions' => array('ItemsOrganization.organization_id' => $organization, 'ItemsOrganization.item_id = Inventory.item_id')
+			)
+		)), false);
+	}
 
     /**
  * Constructor
