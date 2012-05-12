@@ -92,6 +92,8 @@ class InventoryItem extends InventoryAppModel {
 
     public function beforeSave() {
 		if (!$this->id) {
+			//TODO Chequear en la Orden de Compra lo ordenado y setear el quantity remaining de los items segun sea necesario..
+			//TODO si todos los items de la orden tienen su quantity_remaining en 0, se cierra la orden
 			$this->data[$this->alias]['quantity_left'] = $this->data[$this->alias]['quantity'];
 		}
 		if (!empty($this->data[$this->alias]['file']) && $this->data[$this->alias]['file']['error'] == 0) {
@@ -198,7 +200,7 @@ class InventoryItem extends InventoryAppModel {
 			throw new Exception(__('You need to confirm to delete this Inventory Item', true));
 		}
 	}
-
+	//TODO Chequear bien este decrement
 	public function decrement($id, $quantity) {
 		$item = $this->read(array('quantity_left', 'item_id'), $id);
 		if ($item[$this->alias]['quantity_left'] < $quantity) {

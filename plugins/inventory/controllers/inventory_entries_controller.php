@@ -74,7 +74,8 @@ class InventoryEntriesController extends AppController {
 				$this->Session->setFlash($e->getMessage());
 			}
 		}
-		$purchaseOrders = $this->InventoryEntry->PurchaseOrder->find('list');
+		//TODO Colocar solo las ordenes aun abiertas
+		$purchaseOrders = $this->InventoryEntry->PurchaseOrder->find('list', array('order' => array('PurchaseOrder.created' => 'desc')));
 		$this->set(compact('purchaseOrders'));
 	}
 

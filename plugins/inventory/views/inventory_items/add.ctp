@@ -33,6 +33,7 @@
 <?php echo $this->Form->end(array('label'=>__('Save', true), 'id'=>'save')); ?>
 </div>
 <script>
-var items = <?php echo json_encode($items); ?>
+var items = <?php echo json_encode($items); ?>;
+var order_items = <?php echo json_encode($order_items); ?>;
 </script>
 <?php $this->Html->script('/inventory/js/views/inventory_items/add', array('inline'=>false)); ?>

@@ -1459,6 +1459,10 @@ msgstr "Editar Item de Factura"
 msgid "Invoices Items"
 msgstr "Items de Factura"
 
+#: plugins/orders/views/invoices_items/index.ctp:2
+msgid "Inventory Items"
+msgstr "Items de la Entrada"
+
 #: plugins/orders/views/invoices_items/view.ctp:2
 msgid "Invoices Item"
 msgstr "Item de Factura"

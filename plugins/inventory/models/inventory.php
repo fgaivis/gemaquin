@@ -63,6 +63,7 @@ class Inventory extends InventoryAppModel {
  * @return array
  * @access public
  */
+	//TODO Setear availability la primera vez
 	public function add($data = null) {
 		if (!empty($data)) {
 			if (isset($data[0])) {
@@ -186,14 +187,15 @@ class Inventory extends InventoryAppModel {
 			throw new Exception(__('You need to confirm to delete this Inventory', true));
 		}
 	}
-
+	//TODO Chequear bien este decrement, deberia ser segun availability y no solo segun item_id sino por lote y demas 
+	// Availability son los quantity menos los ordenados
 	public function decrement($itemId, $quantity) {
 		$item = $this->find('first', array(
 			'contain' => false,
 			'conditions' => array('Inventory.item_id' => $itemId)
 		));
 		if ($item[$this->alias]['quantity'] < $quantity) {
-			throw new Exception(__('No enough quantity left for this item', true));
+			throw new Exception(__('No enough quantity left for this item eer', true));
 		}
 		$this->id = $item[$this->alias]['id'];
 		$this->saveField('quantity', $item[$this->alias]['quantity'] - $quantity);

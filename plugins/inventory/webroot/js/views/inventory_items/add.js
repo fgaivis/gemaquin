@@ -1,3 +1,10 @@
+var o_items = window.order_items;
+
+oItems = [];
+for (var i =0; i < o_items.length; i++) {
+	oItems.push(o_items[i].Item.id);
+}
+
 $(function(){
 	$(".delete").live("click",function() {
 	    $(this).parent().parent().remove();
@@ -5,7 +12,7 @@ $(function(){
 		    $('#save').attr('disabled','disabled');
 	    }
     });
-
+	
 	setupAutoComplete(window.items);
 });
 
@@ -37,6 +44,11 @@ function setupAutoComplete(data) {
 function addItem(item) {
 	var itemsQuantity = $(".item").length;
 	var currentItem = $("#row" + item.Item.id);
+	
+	var in_order = false;
+	if(oItems.indexOf(item.Item.id) != -1){
+		in_order = true;
+	}
 
 	if (currentItem.length == 0) {
 	    var row = $('<tr class="item" id="row' + item.Item.id + '">'); 
@@ -45,15 +57,27 @@ function addItem(item) {
 		row.append('<td><input type="text" name="data[InventoryItem][' + itemsQuantity + '][elaboration_date]" value="2020-01-01"></td>');
 		row.append('<td><input type="text" name="data[InventoryItem][' + itemsQuantity + '][expiration_date]" value="2020-01-01"></td>');
 	    row.append('<td><input type="text" class="quantity" name="data[InventoryItem][' + itemsQuantity + '][quantity]" value="1"></td>');
-	    row.append(
-		    '<td>' +
-			    '<a class="delete" item="'+ item.Item.id +'">Eliminar</a>' +
-			    '<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][item_id]" value="'+  item.Item.id +'">' +
-				'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][purchase_order_id]" value="'+ $('#InventoryItemPurchaseOrderId').val() +'">' +
-				'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][inventory_entry_id]" value="'+ $('#InventoryItemInventoryEntryId').val() +'">' +
-				'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][transaction]" value="'+ $('#InventoryItemTransaction').val() +'">' +
-		    '</td>'
-	    );
+	    if(in_order){
+	    	row.append(
+			    '<td>' +
+				    '<a class="delete" item="'+ item.Item.id +'">Eliminar</a>' +
+				    '<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][item_id]" value="'+  item.Item.id +'">' +
+					'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][purchase_order_id]" value="'+ $('#InventoryItemPurchaseOrderId').val() +'">' +
+					'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][inventory_entry_id]" value="'+ $('#InventoryItemInventoryEntryId').val() +'">' +
+					'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][transaction]" value="'+ $('#InventoryItemTransaction').val() +'">' +
+			    '</td>'
+		    );
+	    }else{
+	    	row.append(
+				    '<td>' +
+					    '<a class="delete" item="'+ item.Item.id +'">Eliminar</a>' +
+					    '<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][item_id]" value="'+  item.Item.id +'">' +
+						'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][purchase_order_id]" value="0">' +
+						'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][inventory_entry_id]" value="'+ $('#InventoryItemInventoryEntryId').val() +'">' +
+						'<input type="hidden" name="data[InventoryItem][' + itemsQuantity + '][transaction]" value="'+ $('#InventoryItemTransaction').val() +'">' +
+				    '</td>'
+			    );
+	    }
 	    $("#inventoryTable").show().find('table').append(row);
 		row.effect('highlight');
 	    $('#save').removeAttr('disabled');

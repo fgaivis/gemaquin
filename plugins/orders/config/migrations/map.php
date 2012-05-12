@@ -42,5 +42,7 @@ $map = array(
         '017_create_table_payments' => 'M4fa69a108098481bb1f00c4b94e06dd3'),
     21 => array(
         '018_create_table_retentions' => 'M4fa69a108098481bb1f00c4b94e07dd4'),
+    22 => array(
+        '019_add_quantity_remaining_items_orders' => 'M4fa69a108098481bb1f00c4b94e08dd5'),
 );
 ?>

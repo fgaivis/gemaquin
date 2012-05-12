@@ -70,7 +70,11 @@ class InventoryItemsController extends InventoryAppController {
 			'contain' => array(),
 			'conditions' => $this->InventoryItem->Item->parseCriteria(array('purchase_order' => $order))
 		));
-		$this->set(compact('order', 'transaction', 'items', 'entry'));
+		$order_items = $this->InventoryItem->PurchaseOrder->ItemsPurchaseOrder->find('all', array(
+			'contain' => array('Item'),
+			'conditions' => array('purchase_order_id' => $order)
+		));
+		$this->set(compact('order', 'transaction', 'items', 'order_items', 'entry'));
 	}
 
 /**

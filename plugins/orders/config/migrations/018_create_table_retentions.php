@@ -36,7 +36,7 @@ class M4fa69a108098481bb1f00c4b94e07dd4 extends CakeMigration {
             ),
 		),
 		'down' => array(
-			'drop_table' => array('payment')
+			'drop_table' => array('retentions')
 		),
 	);
 

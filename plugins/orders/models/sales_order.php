@@ -280,7 +280,7 @@ class SalesOrder extends AppModel {
 		}
 	}
 
-
+	//TODO Cambiar el decrement
 	public function beforeSave() {
 		if (!empty($this->data['InvItemsSalesOrder']) && !isset($this->data['SalesOrder']['id'])) {
 			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
