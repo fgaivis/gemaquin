@@ -58,7 +58,7 @@ class InventoryEntriesController extends AppController {
 		$conditions[] = $subQueryExpression;
 		
 		$inventoryEntries = $this->InventoryEntry->find('all', compact('conditions'));
-		$this->set('inventoryEntries', $this->paginate($conditions));		
+		$this->set('inventoryEntries', $this->paginate($conditions));	
 	}
 
 /**
