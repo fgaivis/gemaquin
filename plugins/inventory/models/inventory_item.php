@@ -92,8 +92,7 @@ class InventoryItem extends InventoryAppModel {
 
     public function beforeSave() {
 		if (!$this->id) {
-			//TODO Chequear en la Orden de Compra lo ordenado y setear el quantity remaining de los items segun sea necesario..
-			//TODO si todos los items de la orden tienen su quantity_remaining en 0, se cierra la orden
+			ClassRegistry::init('Orders.PurchaseOrder')->checkEntryItems($this->data[$this->alias]['purchase_order_id'], $this->data);			
 			$this->data[$this->alias]['quantity_left'] = $this->data[$this->alias]['quantity'];
 		}
 		if (!empty($this->data[$this->alias]['file']) && $this->data[$this->alias]['file']['error'] == 0) {
@@ -200,14 +199,13 @@ class InventoryItem extends InventoryAppModel {
 			throw new Exception(__('You need to confirm to delete this Inventory Item', true));
 		}
 	}
-	//TODO Chequear bien este decrement
+	//TODO Chequear bien este decrement, falta cuando es NOTA DE ENTREGA
 	public function decrement($id, $quantity) {
 		$item = $this->read(array('quantity_left', 'item_id', 'batch'), $id);
 		if ($item[$this->alias]['quantity_left'] < $quantity) {
 			throw new Exception(__('No enough quantity left for this item', true));
 		}
 		$this->id = $id;
-		//TODO Esto no se debe hacer aqui sino en la NOTA de ENTREGA
 		$this->saveField('quantity_left', $item[$this->alias]['quantity_left'] - $quantity);
 		ClassRegistry::init('Inventory.Inventory')->decrement($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity);
 	}

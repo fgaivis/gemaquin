@@ -41,6 +41,7 @@
 		<th><?php __('Package Factor'); ?></th>
 		<th><?php __('Sales Factor'); ?></th>
 		<th><?php __('Quantity'); ?></th>
+		<th><?php __('Quantity Remaining'); ?></th>
 		<!-- <th><?php //__('Country'); ?></th>
 		<th><?php //__('Industry'); ?></th> 
 		<th><?php //__('Category Id'); ?></th> -->
@@ -62,6 +63,7 @@
 			<td><?php echo $item['package_factor'];?></td>
 			<td><?php echo $item['sales_factor'];?></td>
 			<td><?php echo $purchaseOrder['ItemsPurchaseOrder'][$itm]['quantity'];?></td>
+			<td><?php echo $purchaseOrder['ItemsPurchaseOrder'][$itm]['quantity_remaining'];?></td>
 			<!-- <td><?php //echo $item['country'];?></td>
 			<td><?php //echo $item['industry'];?></td>
 			<td><?php //echo $item['category_id'];?></td> -->

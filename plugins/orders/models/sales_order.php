@@ -183,6 +183,11 @@ class SalesOrder extends AppModel {
 		$this->set($salesOrder);
 
 		if (!empty($data)) {
+			if (!empty($data['InvItemsSalesOrder'])){
+				for ($i= 0; $i < count($data['InvItemsSalesOrder']); $i++){
+					$data['InvItemsSalesOrder'][$i]['quantity_remaining'] = $data['InvItemsSalesOrder'][$i]['quantity'];
+				}
+			}
 			$this->set($data);
 			$result = $this->save(null, true);
 			if ($result) {

@@ -1242,7 +1242,7 @@ msgid "The purchase order has been completed"
 msgstr "La Orden de Compra ha sido completada"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:71
-msgid "The purchase order has been send"
+msgid "The purchase order has been sent"
 msgstr "La Orden de Compra ha sido enviada"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:71
@@ -1976,3 +1976,7 @@ msgstr "Unidades dañadas"
 #: Reportes
 msgid "Total units"
 msgstr "Unidades totales"
+
+#: Otros
+msgid "Could not save the inventory, please check your inputs."
+msgstr "Ha ocurrido un error, favor verifique sus datos"

@@ -81,14 +81,13 @@ class Inventory extends InventoryAppModel {
  * @return array
  * @access public
  */
-	//TODO Setear availability la primera vez
 	public function add($data = null) {
 		if (!empty($data)) {
 			if (isset($data[0])) {
 				$newData = array();
 				foreach ($data as &$item) {
 					$inStock = $this->find('first', array(
-						'fields' => array('id', 'quantity'),
+						'fields' => array('id', 'quantity', 'availability'),
 						'recursive' => -1,
 						'conditions' => array(
 							'item_id' => $item['item_id'],
@@ -97,7 +96,10 @@ class Inventory extends InventoryAppModel {
 					));
 					if ($inStock) {
 						$item['id'] = $inStock[$this->alias]['id'];
+						$item['availability'] = $inStock[$this->alias]['availability'] + $item['quantity'];
 						$item['quantity'] += $inStock[$this->alias]['quantity'];
+					}else{
+						$item['availability'] = $item['quantity'];
 					}
 					$newData[]['Inventory'] = $item;
 				}
@@ -112,6 +114,17 @@ class Inventory extends InventoryAppModel {
 			}
 			return $return;
 		}
+	}
+	
+	public function beforeSave() {
+		//if ($this->data[$this->alias]['purchase_order_id']) {
+			$individual_cost = ClassRegistry::init('Orders.PurchaseOrder')->getItemPurchaseCost($this->data[$this->alias]['purchase_order_id'], $this->data);			
+			if($individual_cost){
+				$this->data[$this->alias]['individual_cost'] = $individual_cost;
+				$this->data[$this->alias]['purchase_cost'] += $this->data[$this->alias]['quantity'] * $individual_cost;
+			}
+		//}
+		return true;
 	}
 
 /**
@@ -205,8 +218,7 @@ class Inventory extends InventoryAppModel {
 			throw new Exception(__('You need to confirm to delete this Inventory', true));
 		}
 	}
-	//TODO Chequear bien este decrement, deberia ser segun availability y no solo segun item_id sino por lote
-	// Availability son los quantity menos los ordenados
+	//TODO Chequear bien este decrement, falta cuando es NOTA DE ENTREGA
 	public function decrement($itemId, $batch, $quantity) {
 		$item = $this->find('first', array(
 			'contain' => false,

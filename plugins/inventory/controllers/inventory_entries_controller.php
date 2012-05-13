@@ -101,9 +101,11 @@ class InventoryEntriesController extends AppController {
 				$this->Session->setFlash($e->getMessage());
 			}
 		}
-		//TODO Colocar solo las ordenes aun abiertas => No Anuladas y No Completadas
 		$purchaseOrders = $this->InventoryEntry->PurchaseOrder->find('list', array(
-			'conditions' => array("NOT" => array('PurchaseOrder.status' => array(PurchaseOrder::VOID, PurchaseOrder::COMPLETED))),
+			'conditions' => array(
+				//"NOT" => array('PurchaseOrder.status' => array(PurchaseOrder::VOID, PurchaseOrder::COMPLETED)),
+				array('PurchaseOrder.status' => array(PurchaseOrder::INVOICED)),
+			),
 			'order' => array('PurchaseOrder.created' => 'desc')));
 		$this->set(compact('purchaseOrders'));
 	}

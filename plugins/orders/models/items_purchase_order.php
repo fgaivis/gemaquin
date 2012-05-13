@@ -172,6 +172,16 @@ class ItemsPurchaseOrder extends AppModel {
 			throw new Exception(__('You need to confirm to delete this Items Purchase Order', true));
 		}
 	}
+	
+	function getRemainingItems($purchaseOrderId) {
+        $remainingItems = $this->find('all', array(
+            'conditions' => array(
+                'ItemsPurchaseOrder.purchase_order_id' => $purchaseOrderId,
+                'ItemsPurchaseOrder.quantity_remaining > ' => 0
+            )
+        ));
+        return $remainingItems;
+    }
 
 
 }

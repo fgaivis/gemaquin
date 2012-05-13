@@ -151,7 +151,7 @@ class PurchaseOrder extends AppModel {
 			if (!empty($data['ItemsPurchaseOrder'])){
 				for ($i= 0; $i < count($data['ItemsPurchaseOrder']); $i++){
 					$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
-				}	
+				}
 			    $result = $this->saveAll($data);
 			    if ($result !== false) {
 				    $this->data = array_merge($data, $result);
@@ -189,6 +189,9 @@ class PurchaseOrder extends AppModel {
 		if (!empty($data['ItemsPurchaseOrder'])){
 			$data['PurchaseOrder']['id'] = $id;
 			$this->ItemsPurchaseOrder->deleteAll(array('purchase_order_id' => $id));
+			for ($i= 0; $i < count($data['ItemsPurchaseOrder']); $i++){
+				$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+			}
 			$result = $this->saveAll($data);
 			if ($result !== false) {
 				$this->data = $data;
@@ -297,7 +300,58 @@ class PurchaseOrder extends AppModel {
 			throw new Exception(__('You need to confirm to delete this Purchase Order', true));
 		}
 	}
-
+	
+	public function checkEntryItems($id = null, $data = array()){
+		$item_id = $data['InventoryItem']['item_id'];
+		$item_quantity = $data['InventoryItem']['quantity'];
+		$item_purchase_order = $this->ItemsPurchaseOrder->find('first', array(
+			'conditions' => array(
+				'ItemsPurchaseOrder.purchase_order_id' => $id,
+				'ItemsPurchaseOrder.item_id' => $item_id,	
+			)
+		));
+		if(!empty($item_purchase_order)){
+			$item_purchase_order['ItemsPurchaseOrder']['quantity_remaining'] =  $item_purchase_order['ItemsPurchaseOrder']['quantity_remaining'] - $item_quantity;
+			$this->ItemsPurchaseOrder->save($item_purchase_order['ItemsPurchaseOrder']);
+		}
+		
+		$purchaseOrder = $this->find('first', array(
+			'conditions' => array(
+				"{$this->alias}.{$this->primaryKey}" => $id,
+			)));
+		if(!empty($purchaseOrder)){
+			$remaining_items = $this->ItemsPurchaseOrder->getRemainingItems($id);
+			if(empty($remaining_items)){
+				$purchaseOrder['PurchaseOrder']['status'] = PurchaseOrder::RECEIVED;
+				$this->save($purchaseOrder['PurchaseOrder']);
+			}
+		}
+	}
+	
+	public function getItemPurchaseCost($id = null, $data = array()){
+		$purchaseOrder = $this->find('first', array(
+			'conditions' => array(
+				"{$this->alias}.{$this->primaryKey}" => $id,
+			)));
+		if(!empty($purchaseOrder)){
+			if($purchaseOrder['PurchaseOrder']['status'] === PurchaseOrder::INVOICED){
+				$invoice_id = $purchaseOrder['PurchaseOrder']['invoice_id'];
+				$item_id = $data['Inventory']['item_id'];
+				
+				$inv_item = ClassRegistry::init('Orders.InvoicesItem')->find('first', array(
+					'conditions' => array(
+						'InvoicesItem.invoice_id' => $invoice_id,
+						'InvoicesItem.item_id' => $item_id,
+					)
+				));
+				
+				$item_cost = $inv_item['InvoicesItem']['individual_cost'];
+				return $item_cost;
+			}
+		}else{
+			return null;
+		}
+	}
 
 }
 
