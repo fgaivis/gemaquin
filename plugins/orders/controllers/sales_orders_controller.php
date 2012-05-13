@@ -183,7 +183,8 @@ class SalesOrdersController extends OrdersAppController {
 			'contain'=>'Item',
 			'conditions' => array(
 				'InventoryItem.quantity_left >' => 0
-			)
+			),
+			'order' => array('Item.name' => 'asc')
 		));
 		$this->set(compact('items'));
 	}

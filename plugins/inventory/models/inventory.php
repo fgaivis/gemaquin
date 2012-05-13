@@ -205,18 +205,18 @@ class Inventory extends InventoryAppModel {
 			throw new Exception(__('You need to confirm to delete this Inventory', true));
 		}
 	}
-	//TODO Chequear bien este decrement, deberia ser segun availability y no solo segun item_id sino por lote y demas 
+	//TODO Chequear bien este decrement, deberia ser segun availability y no solo segun item_id sino por lote
 	// Availability son los quantity menos los ordenados
-	public function decrement($itemId, $quantity) {
+	public function decrement($itemId, $batch, $quantity) {
 		$item = $this->find('first', array(
 			'contain' => false,
-			'conditions' => array('Inventory.item_id' => $itemId)
+			'conditions' => array('Inventory.item_id' => $itemId, 'Inventory.batch' => $batch)
 		));
 		if ($item[$this->alias]['quantity'] < $quantity) {
-			throw new Exception(__('No enough quantity left for this item eer', true));
+			throw new Exception(__('No enough quantity left for this item ', true));
 		}
 		$this->id = $item[$this->alias]['id'];
-		$this->saveField('quantity', $item[$this->alias]['quantity'] - $quantity);
+		$this->saveField('availability', $item[$this->alias]['availability'] - $quantity);
 	}
 
 }

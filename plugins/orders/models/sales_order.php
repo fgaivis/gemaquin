@@ -144,6 +144,9 @@ class SalesOrder extends AppModel {
 		if (!empty($data)) {
 			$this->create();
 			if (!empty($data['InvItemsSalesOrder'])){
+				for ($i= 0; $i < count($data['InvItemsSalesOrder']); $i++){
+					$data['InvItemsSalesOrder'][$i]['quantity_remaining'] = $data['InvItemsSalesOrder'][$i]['quantity'];
+				}
 			    $result = $this->saveAll($data);
 			    if ($result !== false) {
 				    $this->data = array_merge($data, $result);

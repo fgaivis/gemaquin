@@ -202,13 +202,14 @@ class InventoryItem extends InventoryAppModel {
 	}
 	//TODO Chequear bien este decrement
 	public function decrement($id, $quantity) {
-		$item = $this->read(array('quantity_left', 'item_id'), $id);
+		$item = $this->read(array('quantity_left', 'item_id', 'batch'), $id);
 		if ($item[$this->alias]['quantity_left'] < $quantity) {
 			throw new Exception(__('No enough quantity left for this item', true));
 		}
 		$this->id = $id;
+		//TODO Esto no se debe hacer aqui sino en la NOTA de ENTREGA
 		$this->saveField('quantity_left', $item[$this->alias]['quantity_left'] - $quantity);
-		ClassRegistry::init('Inventory.Inventory')->decrement($item[$this->alias]['item_id'], $quantity);
+		ClassRegistry::init('Inventory.Inventory')->decrement($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity);
 	}
 
 

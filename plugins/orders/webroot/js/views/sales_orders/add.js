@@ -39,10 +39,16 @@ $(function(){
     });
     $('.item_qty').live('change', function(e) {
         var row = $(this).closest('tr');
-        var qty = row.data('qty_left');
+        //var qty = row.data('qty_left');
+        var qty = row.find('#qty_left').val();
         console.log(e);
-        if ($(this).val() > qty) {
-            alert('No hay suficientes items en el inventario');
+        if(parseInt($(this).val())){        
+	        if (parseInt($(this).val()) > parseInt(qty)) {
+	            alert('No hay suficientes items en el inventario');
+	            return false;
+	        }
+        }else{
+        	alert('El valor ingresado debe ser numerico');
             return false;
         }
     });
@@ -65,6 +71,7 @@ function addItem(inventoryItemId) {
 				    '<td>' +
 					    '<a href="#" class="delete" item="'+ data.content.Item.id +'">Eliminar</a>' +
 					    '<input type="hidden" name="data[InvItemsSalesOrder][' + itemsQuantity + '][inventory_item_id]" value="'+  data.content.InventoryItem.id +'">' +
+					    '<input type="hidden" id="qty_left" value="'+  data.content.InventoryItem.quantity_left +'">' +
 				    '</td>'
 			    );
                 row.data('qty_left',  data.content.InventoryItem.quantity_left);

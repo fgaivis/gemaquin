@@ -149,6 +149,9 @@ class PurchaseOrder extends AppModel {
 		if (!empty($data)) {
 			$this->create();
 			if (!empty($data['ItemsPurchaseOrder'])){
+				for ($i= 0; $i < count($data['ItemsPurchaseOrder']); $i++){
+					$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+				}	
 			    $result = $this->saveAll($data);
 			    if ($result !== false) {
 				    $this->data = array_merge($data, $result);

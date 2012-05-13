@@ -1119,6 +1119,10 @@ msgid "Quantity"
 msgstr "Cantidad"
 
 #: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Quantity Remaining"
+msgstr "Cantidad Restante"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
 msgid "Availability"
 msgstr "Disponibles"
 
@@ -1242,8 +1246,12 @@ msgid "The purchase order has been send"
 msgstr "La Orden de Compra ha sido enviada"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:71
-msgid "The sales order has been send"
+msgid "The sales order has been sent"
 msgstr "La Orden de Venta ha sido enviada"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:71
+msgid "The sales order has been saved"
+msgstr "La Orden de Venta ha sido guardada"
 
 #: plugins/orders/controllers/purchase_orders_controller.php:71
 msgid "The delivery note has been saved"
