@@ -16,6 +16,10 @@ class InventoryEntriesController extends AppController {
  */
 	public $helpers = array('Html', 'Form');
 	
+	/*public $presetVars = array(
+        array('field' => 'not_empty', 'type' => 'value', 'modelField' => 'z_quantity'),
+    );*/
+	
 /**
  * Paginate / Index Ordering
  *
@@ -30,8 +34,31 @@ class InventoryEntriesController extends AppController {
  * @access public
  */
 	public function index() {
-		$this->InventoryEntry->recursive = 0;
-		$this->set('inventoryEntries', $this->paginate()); 
+		/*$this->InventoryEntry->recursive = 0;
+		$this->set('inventoryEntries', $this->paginate());*/		
+		
+		$conditionsSubQuery['`InventoryItem`.`inventory_entry_id` <>'] = 0;
+		$dbo = $this->InventoryEntry->getDataSource();
+		$subQuery = $dbo->buildStatement(
+		    array(
+		        'fields' => array('`InventoryItem`.`inventory_entry_id`'),
+		        'table' => $dbo->fullTableName(ClassRegistry::init('Inventory.InventoryItem')),
+		        'alias' => 'InventoryItem',
+		        'limit' => null,
+		        'offset' => null,
+		        'joins' => array(),
+		        'conditions' => $conditionsSubQuery,
+		        'order' => null,
+		        'group' => null
+		    ),
+		    $this->InventoryEntry
+		);
+		$subQuery = ' `InventoryEntry`.`id` IN (' . $subQuery . ') ';
+		$subQueryExpression = $dbo->expression($subQuery);		
+		$conditions[] = $subQueryExpression;
+		
+		$inventoryEntries = $this->InventoryEntry->find('all', compact('conditions'));
+		$this->set('inventoryEntries', $this->paginate($conditions));		
 	}
 
 /**
