@@ -1123,6 +1123,10 @@ msgid "Quantity Remaining"
 msgstr "Cantidad por Entregar"
 
 #: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Quantity should not be greater than quantity remaining"
+msgstr "La cantidad no debe ser mayor a la cantidad por entregar"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
 msgid "Availability"
 msgstr "Disponibles"
 

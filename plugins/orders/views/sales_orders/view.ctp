@@ -84,7 +84,7 @@
 	<?php echo $this->Form->hidden('SalesOrder.id', array('value' => $salesOrder['SalesOrder']['id']));?>
 	<?php echo $this->Form->end(array('label'=>__('Send', true),'id'=>'send'));?>
 <?php endif;?>
-<?php if (in_array($salesOrder['SalesOrder']['status'], array(SalesOrder::DRAFT, SalesOrder::SENT))) : ?>
+<?php if ($salesOrder['SalesOrder']['status'] == SalesOrder::SENT) :?>
 	<?php echo $this->Form->create('SalesOrder', array('url' => array('plugin' => 'orders', 'controller' => 'invoices', 'action' => 'add')));?>
 	<?php echo $this->Form->hidden('SalesOrder.id', array('value' => $salesOrder['SalesOrder']['id']));?>
 	<?php echo $this->Form->hidden('Organization.id', array('value' => $salesOrder['Client']['id']));?>

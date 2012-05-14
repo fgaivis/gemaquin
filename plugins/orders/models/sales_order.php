@@ -160,7 +160,16 @@ class SalesOrder extends AppModel {
 			return $return;
 		}
 	}
-
+	
+	public function beforeSave() {
+		if (!empty($this->data['InvItemsSalesOrder']) && !isset($this->data['SalesOrder']['id'])) {
+			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
+				ClassRegistry::init('Inventory.InventoryItem')->decrement($item['inventory_item_id'], $item['quantity']);
+			}	
+		}
+		return true;
+	}
+	
 /**
  * Edits an existing Sales Order.
  *
@@ -296,16 +305,6 @@ class SalesOrder extends AppModel {
 			$this->validate = $tmp;
 			throw new Exception(__('You need to confirm to delete this Sales Order', true));
 		}
-	}
-
-	//TODO Cambiar el decrement
-	public function beforeSave() {
-		if (!empty($this->data['InvItemsSalesOrder']) && !isset($this->data['SalesOrder']['id'])) {
-			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
-				ClassRegistry::init('Inventory.InventoryItem')->decrement($item['inventory_item_id'], $item['quantity']);
-			}	
-		}
-		return true;
 	}
 
     public function bestSelling() {

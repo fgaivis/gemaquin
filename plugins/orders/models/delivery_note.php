@@ -138,7 +138,7 @@ class DeliveryNote extends OrdersAppModel {
                         $salesOrder = array(
                             'SalesOrder' => array(
                                 'id' => $data['DeliveryNote']['sales_order_id'],
-                                'status' => SalesOrder::COMPLETED,
+                                'status' => SalesOrder::DISPATCHED,
                             )
                         );
                         $this->SalesOrder->save($salesOrder);
@@ -152,6 +152,17 @@ class DeliveryNote extends OrdersAppModel {
             }
 			return $return;
 		}
+	}
+	
+	public function beforeSave() {
+		if (!empty($this->data['InvItemsSalesOrder'])) {
+			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
+				//print_r($item);
+				ClassRegistry::init('Inventory.InventoryItem')->decrementExistance($item['inventory_item_id'], $item['quantity']);
+				//exit();
+			}	
+		}
+		return true;		
 	}
 
 /**

@@ -199,7 +199,7 @@ class InventoryItem extends InventoryAppModel {
 			throw new Exception(__('You need to confirm to delete this Inventory Item', true));
 		}
 	}
-	//TODO Chequear bien este decrement, falta cuando es NOTA DE ENTREGA
+	
 	public function decrement($id, $quantity) {
 		$item = $this->read(array('quantity_left', 'item_id', 'batch'), $id);
 		if ($item[$this->alias]['quantity_left'] < $quantity) {
@@ -208,6 +208,20 @@ class InventoryItem extends InventoryAppModel {
 		$this->id = $id;
 		$this->saveField('quantity_left', $item[$this->alias]['quantity_left'] - $quantity);
 		ClassRegistry::init('Inventory.Inventory')->decrement($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity);
+	}
+	
+	public function decrementExistance($id, $quantity) {
+		//echo '<br/><br/><br/>';		
+		$item = $this->read(array('quantity', 'item_id', 'batch'), $id);
+		if ($item[$this->alias]['quantity'] < $quantity) {
+			throw new Exception(__('No enough quantity left for this item', true));
+		}
+		//print_r($item);
+		//echo '<br/><br/><br/>';
+		//exit();
+		$this->id = $id;
+		$this->saveField('quantity', $item[$this->alias]['quantity'] - $quantity);
+		ClassRegistry::init('Inventory.Inventory')->decrementExistance($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity);
 	}
 
 

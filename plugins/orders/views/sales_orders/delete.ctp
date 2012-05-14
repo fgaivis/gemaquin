@@ -1,4 +1,4 @@
-<h2><?php echo sprintf(__('Delete Sales Order "%s"?', true), $salesOrder['SalesOrder']['title']); ?></h2>
+<header><h3><?php echo sprintf(__('Delete Sales Order "%s"?', true), $salesOrder['SalesOrder']['number']); ?></h3></header>
 <p class="delete-warn">	
 	<?php __('Be aware that your Order and all associated data will be deleted if you confirm!'); ?>
 </p>
