@@ -118,11 +118,20 @@ class Inventory extends InventoryAppModel {
 	
 	public function beforeSave() {
 		//if ($this->data[$this->alias]['purchase_order_id']) {
-			$individual_cost = ClassRegistry::init('Orders.PurchaseOrder')->getItemPurchaseCost($this->data[$this->alias]['purchase_order_id'], $this->data);			
-			if($individual_cost){
-				$this->data[$this->alias]['individual_cost'] = $individual_cost;
-				$this->data[$this->alias]['purchase_cost'] += $this->data[$this->alias]['quantity'] * $individual_cost;
-			}
+		/*print_r($this->data);
+		echo '<br/><br/><br/>';
+		exit();*/
+		
+		$individual_cost = ClassRegistry::init('Orders.PurchaseOrder')->getItemPurchaseCost($this->data[$this->alias]['purchase_order_id'], $this->data);			
+		if($individual_cost){
+			$this->data[$this->alias]['individual_cost'] = $individual_cost;
+			$this->data[$this->alias]['purchase_cost'] = $this->data[$this->alias]['quantity'] * $individual_cost;
+		}
+		
+		/*print_r($this->data);
+		echo '<br/><br/><br/>';
+		exit();*/
+		
 		//}
 		return true;
 	}

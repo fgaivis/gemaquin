@@ -334,7 +334,7 @@ class PurchaseOrder extends AppModel {
 				"{$this->alias}.{$this->primaryKey}" => $id,
 			)));
 		if(!empty($purchaseOrder)){
-			if($purchaseOrder['PurchaseOrder']['status'] === PurchaseOrder::INVOICED){
+			if($purchaseOrder['PurchaseOrder']['status'] === PurchaseOrder::INVOICED || $purchaseOrder['PurchaseOrder']['status'] === PurchaseOrder::RECEIVED){
 				$invoice_id = $purchaseOrder['PurchaseOrder']['invoice_id'];
 				$item_id = $data['Inventory']['item_id'];
 				
