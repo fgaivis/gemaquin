@@ -165,7 +165,13 @@ class SalesOrder extends AppModel {
 		if (!empty($this->data['InvItemsSalesOrder']) && !isset($this->data['SalesOrder']['id'])) {
 			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
 				ClassRegistry::init('Inventory.InventoryItem')->decrement($item['inventory_item_id'], $item['quantity']);
-			}	
+			}
+		} elseif (!empty($this->data['InvItemsSalesOrder']) && isset($this->data['SalesOrder']['id'])) {
+			/*print_r($this->data);
+			exit();*/	
+			foreach ($this->data['InvItemsSalesOrder'] as $item)  {
+				ClassRegistry::init('Inventory.InventoryItem')->recalculateQty($item['id'], $item['inventory_item_id'], $item['quantity']);
+			}
 		}
 		return true;
 	}
@@ -190,20 +196,22 @@ class SalesOrder extends AppModel {
 			throw new OutOfBoundsException(__('Invalid Sales Order', true));
 		}
 		$this->set($salesOrder);
-
+		
 		if (!empty($data)) {
 			if (!empty($data['InvItemsSalesOrder'])){
 				for ($i= 0; $i < count($data['InvItemsSalesOrder']); $i++){
 					$data['InvItemsSalesOrder'][$i]['quantity_remaining'] = $data['InvItemsSalesOrder'][$i]['quantity'];
 				}
 			}
-			$this->set($data);
-			$result = $this->save(null, true);
-			if ($result) {
-				$this->data = $result;
-				return true;
+			$data[$this->alias]['id'] = $salesOrder[$this->alias]['id'];
+			//$this->set($data);
+			//$result = $this->save(null, true);
+			$result = $this->saveAll($data);	
+			if ($result !== false) {
+			    $this->data = $data;
+			    return true;
 			} else {
-				return $data;
+			    throw new OutOfBoundsException(__('Could not save the Sales Order, please check your inputs.', true));
 			}
 		} else {
 			return $salesOrder;
@@ -252,7 +260,8 @@ class SalesOrder extends AppModel {
 	
 	public function void($id) {
 	    $salesOrder = $this->find('first', array(
-			'conditions' => array(
+			'contain' => array('InventoryItem.Item', 'Client', 'Invoice', 'InvItemsSalesOrder'),
+	    	'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
 				
@@ -263,6 +272,8 @@ class SalesOrder extends AppModel {
 		$salesOrder['SalesOrder']['status'] = PurchaseOrder::VOID;
 		$result = $this->save($salesOrder);
 		if ($result) {
+			//Se resetean las cantidades ordenadas
+			$this->resetExistance($salesOrder, false);
             return true;
         } else {
             return false;
@@ -280,6 +291,7 @@ class SalesOrder extends AppModel {
  */
 	public function validateAndDelete($id = null, $data = array()) {
 		$salesOrder = $this->find('first', array(
+			'contain' => array('InventoryItem.Item', 'Client', 'Invoice', 'InvItemsSalesOrder'),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id,
 				)));
@@ -298,6 +310,9 @@ class SalesOrder extends AppModel {
 
 			$this->set($data);
 			if ($this->validates()) {
+				//Se resetean las cantidades ordenadas
+				$this->resetExistance($salesOrder);
+				//Se borra la orden				
 				if ($this->delete($data['SalesOrder']['id'])) {
 					return true;
 				}
@@ -317,6 +332,12 @@ class SalesOrder extends AppModel {
         $sql = 'SELECT Item.name, Item.barcode, Item.sales_factor, Item.package_factor, Category.name, SUM( InvItemsSalesOrder.quantity ) AS quantity FROM inv_items_sales_orders InvItemsSalesOrder, inventory_items ii, items Item LEFT JOIN categories Category ON Category.id = Item.category_id WHERE Item.id = ii.item_id AND ii.id = InvItemsSalesOrder.inventory_item_id GROUP BY Item.name,Item.barcode ORDER BY quantity DESC';
         $items = $this->query($sql);
         return $items;
+    }
+    
+    public function resetExistance($salesOrder = null, $deletion = true) {
+    	foreach ($salesOrder['InvItemsSalesOrder'] as $item) {
+    		ClassRegistry::init('Inventory.InventoryItem')->resetQuantities($item['id'], $item['inventory_item_id'], $item['quantity'], $deletion);
+    	}
     }
 }
 ?>

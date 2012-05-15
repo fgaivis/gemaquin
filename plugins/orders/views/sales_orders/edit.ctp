@@ -17,7 +17,7 @@
     	    'label'=>__('Client',true),
 		    'empty' =>__('Select',true)
         ));
-
+		//echo $this->Form->input('InvItemsSalesOrder.' . $key . '.id', array('type' => 'hidden', 'value' => $item['InvItemsSalesOrder']['id']));
 	?>
 	
 	<div class="module width_3_quarter" id="items"></div>
@@ -46,6 +46,7 @@
 				    	<?php echo $this->Html->link(__('Delete', true), '#', array('item' => $item['id'], 'class' => 'delete')); ?>
 						<?php echo $this->Form->input('InvItemsSalesOrder.' . $key . '.item_id', array('type' => 'hidden', 'value' => $item['Item']['id'])); ?>
 						<?php echo $this->Form->input('InvItemsSalesOrder.' . $key . '.id', array('type' => 'hidden', 'value' => $item['InvItemsSalesOrder']['id'])); ?>
+						<?php echo $this->Form->input('InvItemsSalesOrder.' . $key . '.inventory_item_id', array('type' => 'hidden', 'value' => $item['InvItemsSalesOrder']['inventory_item_id'])); ?>
 					</td>
 				</tr>
 			<?php endforeach;?>

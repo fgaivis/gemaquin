@@ -223,8 +223,58 @@ class InventoryItem extends InventoryAppModel {
 		$this->saveField('quantity', $item[$this->alias]['quantity'] - $quantity);
 		ClassRegistry::init('Inventory.Inventory')->decrementExistance($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity);
 	}
+	
+	public function recalculateQty($so_item_id, $id, $quantity) {
+		$inv_item_so = ClassRegistry::init('Orders.InvItemsSalesOrder')->find('first',
+			array(
+				'conditions' => array('InvItemsSalesOrder.id' => $so_item_id),		
+			)
+		);
+		
+		if(!empty($inv_item_so)) {
+			$qty_ordered = $inv_item_so['InvItemsSalesOrder']['quantity'];
+			$item = $this->read(array('quantity_left', 'item_id', 'batch'), $id);
+			$qty_recalculation = $item[$this->alias]['quantity_left'] + $qty_ordered; 
+			
+			if ($qty_recalculation < $quantity) {
+				throw new Exception(__('No enough quantity left for this item', true));
+			}
+			$this->id = $id;
+			$this->saveField('quantity_left', $qty_recalculation - $quantity);
+			ClassRegistry::init('Inventory.Inventory')->recalculateQty($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity, $qty_ordered);	
+		} else {
+			$this->decrement($id, $quantity);
+		}
+	}
 
-
+	public function resetQuantities($so_item_id, $id, $quantity, $deletion = true) {
+		$inv_item_so = ClassRegistry::init('Orders.InvItemsSalesOrder')->find('first',
+			array(
+				'conditions' => array('InvItemsSalesOrder.id' => $so_item_id),		
+			)
+		);
+		
+		if(!empty($inv_item_so) && $deletion) {
+			$qty_ordered = $inv_item_so['InvItemsSalesOrder']['quantity'];
+			$item = $this->read(array('quantity_left', 'item_id', 'batch'), $id);
+			$qty_recalculation = $item[$this->alias]['quantity_left'] + $qty_ordered; 
+			
+			$this->id = $id;
+			$this->saveField('quantity_left', $qty_recalculation);
+			ClassRegistry::init('Inventory.Inventory')->resetQuantities($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity, $qty_ordered);	
+		} else {
+			if(!empty($inv_item_so)) {
+				$qty_remaining = $inv_item_so['InvItemsSalesOrder']['quantity_remaining'];
+				$item = $this->read(array('quantity_left', 'item_id', 'batch'), $id);
+				$qty_recalc = $item[$this->alias]['quantity_left'] + $qty_remaining;
+				
+				$this->id = $id;
+				$this->saveField('quantity_left', $qty_recalc);
+				ClassRegistry::init('Inventory.Inventory')->resetQuantities($item[$this->alias]['item_id'], $item[$this->alias]['batch'], $quantity, $qty_remaining);
+			}
+		}
+	}
+	
 	public function saveAttachments($items) {
 		$this->getDataSource()->begin($this);
 		foreach ($items[$this->alias] as $item) {

@@ -248,5 +248,29 @@ class Inventory extends InventoryAppModel {
 		$this->id = $item[$this->alias]['id'];
 		$this->saveField('quantity', $item[$this->alias]['quantity'] - $quantity);
 	}
+	
+	public function recalculateQty($itemId, $batch, $quantity, $qty_ordered) {
+		$item = $this->find('first', array(
+			'contain' => false,
+			'conditions' => array('Inventory.item_id' => $itemId, 'Inventory.batch' => $batch)
+		));
+		$qty_recalculation = $item[$this->alias]['availability'] + $qty_ordered;
+		if ($item[$this->alias]['quantity'] < $quantity) {
+			throw new Exception(__('No enough quantity left for this item ', true));
+		}
+		$this->id = $item[$this->alias]['id'];
+		$this->saveField('availability', $qty_recalculation - $quantity);
+	}
+	
+	public function resetQuantities($itemId, $batch, $quantity, $qty_ordered) {
+		$item = $this->find('first', array(
+			'contain' => false,
+			'conditions' => array('Inventory.item_id' => $itemId, 'Inventory.batch' => $batch)
+		));
+		$qty_recalculation = $item[$this->alias]['availability'] + $qty_ordered;
+		$this->id = $item[$this->alias]['id'];
+		$this->saveField('availability', $qty_recalculation);
+		
+	}
 
 }

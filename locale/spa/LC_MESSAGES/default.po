@@ -1297,6 +1297,14 @@ msgstr "Orden de Compra anulada"
 msgid "Sales Order void"
 msgstr "Orden de Venta anulada"
 
+#: plugins/orders/controllers/purchase_orders_controller.php:100
+msgid "Sales Order saved"
+msgstr "Orden de Venta guardada"
+
+#: plugins/orders/controllers/purchase_orders_controller.php:100
+msgid "Sales Order deleted"
+msgstr "Orden de Venta eliminada"
+
 #: plugins/orders/controllers/purchase_orders_controller.php:129
 msgid "Purchase order deleted"
 msgstr "Orden de Compra eliminada"

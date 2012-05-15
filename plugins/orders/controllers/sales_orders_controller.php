@@ -117,8 +117,7 @@ class SalesOrdersController extends OrdersAppController {
 			$result = $this->SalesOrder->edit($id, $this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('Sales Order saved', true));
-				$this->redirect(array('action' => 'view', $this->SalesOrder->data['SalesOrder']['id']));
-				
+				$this->redirect(array('action' => 'view', $this->SalesOrder->data['SalesOrder']['id']));				
 			} else {
 				$this->data = $result;
 			}
