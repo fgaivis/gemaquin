@@ -13,9 +13,12 @@ $(function(){
 					var price = (isNaN(parseFloat($(this).val())) ? 0 : parseFloat($(this).val()));
 					var tax = (((price * quantity) * 12) / 100);
 					var total_price = ((price * quantity) + tax);
+					var cost = $('.cost-label[index=' + index + ']').html();
+					var profit_margin = (((price - cost) * 100) / cost);
 					$('#InvoicesItem' + index + 'IndividualCost').val(price);
 					$('#InvoicesItem' + index + 'Tax').val(tax);
 					$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
+					$('.profit-label[index=' + index + ']').html(profit_margin.toFixed(2) + "%");
 					$('.tax-label[index=' + index + ']').html(tax);
 					$('.total_price-label[index=' + index + ']').html(total_price);
 				});
@@ -24,9 +27,12 @@ $(function(){
 				var price = (isNaN(parseFloat($(this).val())) ? 0 : parseFloat($(this).val()));
 				var tax = (((price * quantity) * 12) / 100);
 				var total_price = ((price * quantity) + tax);
+				var cost = $('.cost-label[index=' + index + ']').html();
+				var profit_margin = (((price - cost) * 100) / cost);
 				$('#InvoicesItem' + index + 'IndividualCost').val(price);
 				$('#InvoicesItem' + index + 'Tax').val(tax);
 				$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
+				$('.profit-label[index=' + index + ']').html(profit_margin.toFixed(2) + "%");
 				$('.tax-label[index=' + index + ']').html(tax);
 				$('.total_price-label[index=' + index + ']').html(total_price);
 			}

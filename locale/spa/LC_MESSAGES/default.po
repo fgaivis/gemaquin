@@ -1874,6 +1874,10 @@ msgid "Parent Category"
 msgstr "Categoría padre"
 
 #: Generales
+msgid "Profit"
+msgstr "% Ganancia"
+
+#: Generales
 msgid "Void"
 msgstr "Anular"
 

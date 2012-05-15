@@ -272,5 +272,17 @@ class Inventory extends InventoryAppModel {
 		$this->saveField('availability', $qty_recalculation);
 		
 	}
+	
+	public function getPurchaseCost($itemId, $batch) {
+		$item = $this->find('first', array(
+			'contain' => false,
+			'conditions' => array('Inventory.item_id' => $itemId, 'Inventory.batch' => $batch)
+		));
+		if (isset($item[$this->alias]['individual_cost'])) {
+			return $item[$this->alias]['individual_cost'];
+		} else {
+			return 0;	
+		}		
+	}
 
 }

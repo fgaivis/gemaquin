@@ -93,9 +93,11 @@
 			<?php else: ?>
 				<?php
 					echo $html->tableHeaders(array(
-							__('Code', true),
+							//__('Code', true),
 							__('Item', true),
 							__('Quantity', true),
+							__('Individual Cost', true),
+							__('Profit', true),
 							__('Unit Price', true),
 							__('Exempt', true),
 							__('Tax', true),
@@ -105,12 +107,17 @@
 			<?php endif; ?>
 				<?php foreach ($items as $index => $item) : ?>
 					<tr class="item">
-						<td><?php echo $item['Item']['barcode']; ?></td>
+						<!-- <td><?php //echo $item['Item']['barcode']; ?></td> -->
 						<td><?php echo $item['Item']['name']; ?></td>
 						<?php if(!(isset($this->data['SalesOrder']))) : ?>
 							<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
 						<?php else : ?>
 							<td><?php echo $item['InvItemsSalesOrder']['quantity']; ?></td>
+							<td>
+								<?php echo $item['purchase_cost'];
+									  echo '<span style="display:none" class="cost-label" index="' . $index .'">'.$item['purchase_cost'].'</span>'; ?>
+							</td>
+							<td><?php echo '<span class="profit-label" index="' . $index .'"></span>'; ?></td>
 						<?php endif;?>
 						<td>
 							<?php 

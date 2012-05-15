@@ -110,6 +110,12 @@ class InvoicesController extends AppController {
 				'conditions' => array(
 					'SalesOrder.id' => $this->data['SalesOrder']['id'])));
 			$items = $items['InventoryItem'];
+			$temp_items = array();
+			foreach ($items as $item) {
+				$item['purchase_cost'] = ClassRegistry::init('Inventory.Inventory')->getPurchaseCost($item['item_id'], $item['batch']);
+				array_push($temp_items,$item);
+			}
+			$items = $temp_items;
 			$this->data['Invoice']['control'] = $this->Invoice->getControlNumber();
 		}
 		if (isset($this->data['PurchaseOrder']) && count($this->data['Invoice']) === 1) { //Significa que solo esta cargado el tipo del Invoice
