@@ -43,29 +43,41 @@ class CreditNotesController extends OrdersAppController {
 	}
 
 /**
+ * View for credit note.
+ *
+ * @param string $id, credit note id 
+ * @access public
+ */
+	public function print_note($id) {
+		$this->layout = 'print';
+		$this->view($id);
+	}
+
+/**
  * Add for credit note.
  * 
  * @access public
  */
-	public function add() {
+	public function add($invoiceId) {
 		try {
+			if (!empty($this->data)) {
+				$this->data['InvoicesNote']['invoice_id'] = $invoiceId;	
+			}
 			$result = $this->CreditNote->add($this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('The credit note has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller' => 'invoices', 'action' => 'view', $invoiceId));
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
 		} catch (Exception $e) {
 			$this->Session->setFlash($e->getMessage());
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller' => 'invoices', 'action' => 'view', $invoiceId));
 		}
-		$invoices = $this->CreditNote->Invoice->find('list', array(
-			'conditions' => array('type' => Invoice::SALES),
-			'order' => array('number' => 'desc')
+		$invoice = ClassRegistry::init('Orders.Invoice')->find('first', array(
+			'conditions' => array('Invoice.id' => $invoiceId)
 		));
-		$this->set(compact('invoices'));
- 
+		$this->set(compact('invoice'));
 	}
 
 /**
@@ -88,12 +100,6 @@ class CreditNotesController extends OrdersAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
-		$invoices = $this->CreditNote->Invoice->find('list', array(
-			'conditions' => array('type' => Invoice::SALES),
-			'order' => array('number' => 'desc')
-		));
-		$this->set(compact('invoices'));
- 
 	}
 
 /**

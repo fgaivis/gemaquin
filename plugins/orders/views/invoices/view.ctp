@@ -82,14 +82,21 @@
 		<?php endif;?>
 		<?php endif;?>
 	</dl>
-	<?php if($invoice['Invoice']['type'] === Invoice::SALES) : ?>
 	<div class="actions">
 		<ul>
+	<?php if($invoice['Invoice']['type'] === Invoice::SALES) : ?>
+			<li>
+				<?php echo $this->Html->link(__('Generate Credit Note', true), array('controller' => 'credit_notes', 'action' => 'add', $invoice['Invoice']['id'])); ?>
+			</li>
+			<li>
+				<?php echo $this->Html->link(__('Generate Debit Note', true), array('controller' => 'debit_notes', 'action' => 'add', $invoice['Invoice']['id'])); ?>
+			</li>
 			<li><?php echo $this->Html->link(__('Print invoice', true), array('action' => 'print_invoice', $invoice['Invoice']['id'])); ?></li>
-		</ul>
-	</div>
-	<br/>
 	<?php endif; ?>
+		</ul>
+		<br/>
+		<br/>
+	</div>
 </div>
 <?php if($invoice['Invoice']['type'] != Invoice::SERVICE) : ?>
 <div class="view related">
@@ -163,4 +170,60 @@
 	</table>
 <?php endif; ?>
 </div>
+<?php if (!empty($invoice['CreditNote'])):?>
+<div class="view related">
+	<h3><?php __('Related Credit Notes');?></h3>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Number'); ?></th>
+		<th><?php __('Amount'); ?></th>
+		<th><?php __('Note'); ?></th>
+		<th><?php __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($invoice['CreditNote'] as $note):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $note['number'];?></td>
+			<td><?php echo $note['amount'];?></td>
+			<td><?php echo h($note['note']);?></td>
+			<td><?php echo $this->Html->link(__('Print', true), array('controller' => 'credit_notes', 'action' => 'print_note', $note['id']))?></td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+</div>
+<?php endif; ?>
+<?php if (!empty($invoice['DebitNote'])):?>
+<div class="view related">
+	<h3><?php __('Related Debit Notes');?></h3>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Number'); ?></th>
+		<th><?php __('Amount'); ?></th>
+		<th><?php __('Note'); ?></th>
+		<th><?php __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($invoice['DebitNote'] as $note):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $note['number'];?></td>
+			<td><?php echo $note['amount'];?></td>
+			<td><?php echo h($note['note']);?></td>
+			<td><?php echo $this->Html->link(__('Print', true), array('controller' => 'debit_notes', 'action' => 'print_note', $note['id']))?></td>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+</div>
+<?php endif; ?>
 <?php endif;?>

@@ -2,6 +2,7 @@
 <header><h3><?php __('Credit Notes');?></h3></header>
 <table cellpadding="0" cellspacing="0">
 <tr>
+	<th><?php echo $this->Paginator->sort('number');?></th>
 	<th><?php echo $this->Paginator->sort('amount');?></th>
 	<th><?php echo $this->Paginator->sort('note');?></th>
 	<th><?php echo $this->Paginator->sort('created');?></th>
@@ -17,6 +18,9 @@ foreach ($creditNotes as $creditNote):
 	}
 ?>
 	<tr<?php echo $class;?>>
+		<td>
+			<?php echo $creditNote['CreditNote']['number']; ?>
+		</td>
 		<td>
 			<?php echo $creditNote['CreditNote']['amount']; ?>
 		</td>
@@ -37,10 +41,4 @@ foreach ($creditNotes as $creditNote):
 <?php endforeach; ?>
 </table>
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
-</div>
-
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('New Credit Note', true), array('action' => 'add')); ?></li>
-	</ul>
 </div>

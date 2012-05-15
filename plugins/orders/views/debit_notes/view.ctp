@@ -23,34 +23,3 @@
 		</dd>
 	</dl>
 </div>
-<div class="related view">
-	<header><h3><?php  __('Related Invoices');?></h3></header>
-	<?php if (!empty($debitNote['Invoice'])):?>
-	<table cellpadding = "0" cellspacing = "0">
-	<tr>
-		<th><?php __('Number'); ?></th>
-		<th><?php __('Client'); ?></th>
-	</tr>
-	<?php
-		$i = 0;
-		foreach ($debitNote['Invoice'] as $invoice):
-			$class = null;
-			if ($i++ % 2 == 0) {
-				$class = ' class="altrow"';
-			}
-		?>
-		<tr<?php echo $class;?>>
-			<td><?php
-				echo $this->Html->link($invoice['number'], array(
-					'plugin' => 'orders',
-					'controller' => 'invoices',
-					'action' => 'view',
-					$invoice['id']
-				));
-			?></td>
-			<td><?php echo $invoice['Organization']['name'];?></td>
-		</tr>
-	<?php endforeach; ?>
-	</table>
-<?php endif; ?>
-</div>

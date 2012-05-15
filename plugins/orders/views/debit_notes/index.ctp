@@ -3,6 +3,7 @@
 
 <table cellpadding="0" cellspacing="0">
 <tr>
+	<th><?php echo $this->Paginator->sort('number');?></th>
 	<th><?php echo $this->Paginator->sort('amount');?></th>
 	<th><?php echo $this->Paginator->sort('note');?></th>
 	<th><?php echo $this->Paginator->sort('created');?></th>
@@ -18,6 +19,9 @@ foreach ($debitNotes as $debitNote):
 	}
 ?>
 	<tr<?php echo $class;?>>
+		<td>
+			<?php echo $debitNote['DebitNote']['number']; ?>
+		</td>
 		<td>
 			<?php echo $debitNote['DebitNote']['amount']; ?>
 		</td>
@@ -38,10 +42,4 @@ foreach ($debitNotes as $debitNote):
 <?php endforeach; ?>
 </table>
 <?php echo $this->element('paging',array('plugin'=>'templates')); ?>
-</div>
-
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('New Debit Note', true), array('action' => 'add')); ?></li>
-	</ul>
 </div>

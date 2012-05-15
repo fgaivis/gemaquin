@@ -16,12 +16,11 @@ class CreditNote extends OrdersAppModel {
  */
 	public $validate = array();
 
-	public $hasAndBelongsToMany = array(
-		'Invoice' => array(
-			'className' => 'Orders.Invoice',
+	public $hasOne = array(
+		'InvoicesNote' => array(
+			'className' => 'Orders.InvoicesNote',
 			'foreignKey' => 'note_id',
-			'associationForeignKey' => 'invoice_id',
-			'with' => 'Order.InvoicesNote',
+			'dependent' => true
 		)
 	);
 
@@ -57,7 +56,7 @@ class CreditNote extends OrdersAppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
-			$result = $this->save($data);
+			$result = $this->saveAll($data);
 			if ($result !== false) {
 				$this->data = array_merge($data, $result);
 				return true;
@@ -89,8 +88,7 @@ class CreditNote extends OrdersAppModel {
 		$this->set($creditNote);
 
 		if (!empty($data)) {
-			$this->set($data);
-			$result = $this->save(null, true);
+			$result = $this->saveAll($data);
 			if ($result) {
 				$this->data = $result;
 				return true;
@@ -112,7 +110,7 @@ class CreditNote extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$creditNote = $this->find('first', array(
-			'contain' => array('Invoice' => 'Organization'),
+			'contain' => array('InvoicesNote' => array('Invoice' => 'Organization')),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 
@@ -160,6 +158,26 @@ class CreditNote extends OrdersAppModel {
 			throw new Exception(__('You need to confirm to delete this Credit Note', true));
 		}
 	}
+
+/**
+ * Sets the note number
+ *
+ * @return boolean
+ */
+    public function beforeSave() {
+        if (!$this->exists()) {
+        	$this->data[$this->alias]['number'] = $this->_generateNumber();
+        }	
+        return true;
+    }
+
+/**
+ * Returns the next invoice number for a type
+ *
+ */
+    protected function _generateNumber() {
+        return $this->field('MAX(number)') + 1;
+    }
 
 
 }

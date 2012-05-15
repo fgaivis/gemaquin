@@ -339,7 +339,16 @@ class Invoice extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$invoice = $this->find('first', array(
-			'contain' => array('InvoicesItem.Item', 'PrePurchaseOrder', 'PurchaseOrder' => 'Provider', 'SalesOrder' => 'Client', 'Organization', 'Organization.Contact' => array('conditions' => array('Contact.role' => null))),
+			'contain' => array(
+				'InvoicesItem.Item',
+				'PrePurchaseOrder',
+				'PurchaseOrder' => 'Provider',
+				'SalesOrder' => 'Client',
+				'Organization',
+				'Organization.Contact' => array('conditions' => array('Contact.role' => null)),
+				'CreditNote',
+				'DebitNote'
+			),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
 		//debug($invoice);
