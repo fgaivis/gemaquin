@@ -209,14 +209,22 @@ class DeliveryNote extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$deliveryNote = $this->find('first', array(
-			'contain' => array('InvItemsSalesOrder.InventoryItem.Item', 'SalesOrder'),
+			'contain' => array('InvItemsSalesOrder.InventoryItem.Item', 'SalesOrder', 'SalesOrder.Invoice.Organization'),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
-
+		
+		$organization_id = $deliveryNote['SalesOrder']['organization_id'];
+		$organization = ClassRegistry::init('Business.Organization')->find('first',
+			array('conditions' => array('Organization.id' => $organization_id))
+		);
+		$addressOrganization = ClassRegistry::init('Business.Contact')->find('first',
+			array('conditions' => array('Contact.organization_id' => $organization_id))
+		);
+		$deliveryNote['Organization'] = $organization['Organization'];
+		$deliveryNote['Contact'] = $addressOrganization['Contact'];
 		if (empty($deliveryNote)) {
 			throw new OutOfBoundsException(__('Invalid Delivery Note', true));
 		}
-
 		return $deliveryNote;
 	}
 

@@ -1,23 +1,21 @@
 <?php $this->Number->addFormat('Bs', array('before' => 'Bs. ', 'thousands' => '.', 'decimals' => ',')); ?>
 <div id="main" style="padding:20px">
-	<table class="invoice-client" style="margin-top:10px;width:100%">
+	<hr style="margin-top: 120px;">
+	<table class="invoice-client" style="margin-top:20px;width:100%">
 		<tr>
-			<td colspan="3">
-				Nombre o razón social: 
-				<?php echo $invoice['Organization']['name']; ?>
-			</td>
-			
+			<td colspan="2">Cliente: <b><?php echo $invoice['Organization']['name']; ?></b></td>
+			<!-- <td></td> -->		
 		</tr>
 		<tr>
-			<td colspan="3">Dirección Fiscal: <?php echo (isset($invoice['Organization']['Contact'][0]) ? $invoice['Organization']['Contact'][0]['name'] : 'N/A'); ?></td>
+			<td colspan="2">Dirección: <?php echo (isset($invoice['Organization']['Contact'][0]) ? $invoice['Organization']['Contact'][0]['name'] : 'N/A'); ?></td>
+			<!-- <td></td> -->
 		</tr>
 		<tr>
-			<td>Rif: <?php echo $invoice['Organization']['fiscalid']; ?></td>
-			<td>Nit: <?php echo $invoice['Organization']['yafiscalid']; ?></td>
-			
+			<td width="30%">Rif: <b><?php echo $invoice['Organization']['fiscalid']; ?></b></td>
+			<td width="70%">Nit: <?php echo $invoice['Organization']['yafiscalid']; ?></td>			
 		</tr>
 	</table>
-	<table class="invoice-details" style="margin-top:30px;width:100%">
+	<table class="invoice-top" style="margin-top:30px;width:100%">
 		<tr>
 			<th>
 				O/Compra
@@ -90,26 +88,27 @@
 				</td>
 		</tr>
 		<?php endforeach; ?>
+	</table>
+	<table class="invoice-bottom" style="text-align: center; margin-top:30px;width:100%">
 		<tr>
-		<tr>
-			<td colspan="3" align="right">Total Exento</td>
+			<td colspan="3" align="right">Total Exento:</td>
 			<td><?php echo $this->Number->currency($invoice['Invoice']['total_exempt'], ''); ?></td>
-			<td align="right">Subtotal</td>
+			<td align="right">Subtotal:</td>
 			<td align="right"><?php echo $this->Number->currency($invoice['Invoice']['subtotal'], ''); ?></td>
 		</tr>
 		<tr>
-			<td colspan="3" align="right">Base Imponible</td>
+			<td colspan="3" align="right">Base Imponible:</td>
 			<td><?php echo $this->Number->currency($invoice['Invoice']['total_no_exempt'], ''); ?></td>
-			<td align="right">IVA</td>
+			<td align="right">IVA (12%):</td>
 			<td align="right"><?php echo $this->Number->currency($invoice['Invoice']['tax'], ''); ?></td>
 		</tr>
 		<tr>
 			<td colspan="4"></td>
-			<td align="right">Total</td>
+			<td align="right">Total Bs.:</td>
 			<td align="right"><?php echo $this->Number->currency($invoice['Invoice']['total'], ''); ?></td>
 		</tr>
 		<tr>
-			<td colspan="5" align="left">FORMA DE PAGO</td>
+			<td colspan="5" align="left"><b>FORMA DE PAGO</b></td>
 		</tr>
 		<tr>
 			<td colspan="2">CHEQUE</td>
@@ -120,15 +119,13 @@
 			<td>FECHA:</td>
 			<td>BANCO</td>
 			<td>No. REF.</td>
-			<td colspan="2">MONTO BS.F.</td>
+			<td colspan="2">MONTO BS.</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td colspan="2">&nbsp;</td>
-		</tr>
-				
-		
+		</tr>		
 	</table>
 </div>

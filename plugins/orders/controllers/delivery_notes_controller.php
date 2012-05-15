@@ -127,6 +127,11 @@ class DeliveryNotesController extends OrdersAppController {
 			$this->set('deliveryNote', $this->DeliveryNote->data['deliveryNote']);
 		}
 	}
+	
+	public function print_delivery_note($id) {
+		$this->view($id);
+		$this->layout = 'print';
+	}
 
 }
 ?>

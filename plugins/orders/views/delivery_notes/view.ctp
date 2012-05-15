@@ -27,6 +27,11 @@
 			&nbsp;
 		</dd> -->
 	</dl>
+	<div class="actions" style="margin-bottom: 24px;">
+		<ul>
+			<li><?php echo $this->Html->link(__('Print Delivery Note', true), array('action' => 'print_delivery_note', $deliveryNote['DeliveryNote']['id'])); ?></li>
+		</ul>
+	</div>
 </div>
 <div class="module width_3_quarter">
 	<h3></h3>

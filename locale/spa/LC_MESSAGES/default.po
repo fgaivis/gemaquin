@@ -1781,6 +1781,10 @@ msgstr "Ordenes relacionadas"
 msgid "Print invoice"
 msgstr "Imprimir factura"
 
+#: Invoice Content
+msgid "Print Delivery Note"
+msgstr "Imprimir nota de entrega"
+
 #: Users
 msgid "Users"
 msgstr "Usuarios"
@@ -1884,6 +1888,46 @@ msgstr "Anular"
 #: Generales
 msgid "Complete"
 msgstr "Completar"
+
+#: Generales
+msgid "Generate Debit Note"
+msgstr "Generar Nota de Debito"
+
+#: Generales
+msgid "Generate Credit Note"
+msgstr "Generar Nota de Credito"
+
+#: Generales
+msgid "Debit Note"
+msgstr "Nota de Debito"
+
+#: Generales
+msgid "Credit Note"
+msgstr "Nota de Credito"
+
+#: Generales
+msgid "Debit Notes"
+msgstr "Notas de Debito"
+
+#: Generales
+msgid "Credit Notes"
+msgstr "Notas de Credito"
+
+#: Generales
+msgid "Amount"
+msgstr "Monto"
+
+#: Generales
+msgid "Note"
+msgstr "Nota"
+
+#: Generales
+msgid "Create Credit Note for Invoice %s"
+msgstr "Crear Nota de Crédito para la factura %s"
+
+#: Generales
+msgid "Create Debit Note for Invoice %s"
+msgstr "Crear Nota de Débito para la factura %s"
 
 #: Status Ordenes
 msgid "DRAFT"

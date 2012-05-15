@@ -1,5 +1,5 @@
 <div class="debitNotes index">
-<header><h3><?php  __('Debit Note');?></h3></header>
+<header><h3><?php  __('Debit Notes');?></h3></header>
 
 <table cellpadding="0" cellspacing="0">
 <tr>
