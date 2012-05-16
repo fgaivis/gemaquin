@@ -107,7 +107,9 @@
 			<?php endif; ?>
 				<?php foreach ($items as $index => $item) : ?>
 					<tr class="item">
-						<!-- <td><?php //echo $item['Item']['barcode']; ?></td> -->
+					  <?php if(!(isset($this->data['SalesOrder']))): ?>
+						<td><?php echo $item['Item']['barcode']; ?></td>
+					  <?php endif; ?>
 						<td><?php echo $item['Item']['name']; ?></td>
 						<?php if(!(isset($this->data['SalesOrder']))) : ?>
 							<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>

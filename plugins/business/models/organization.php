@@ -256,4 +256,13 @@ class Organization extends BusinessAppModel {
 		$data['Contact'] = array($data['Contact']);
 		return $data;
 	}
+	
+	public function setClientDebt($id, $total){
+		$organization = $this->find('first',
+			array('conditions' => array('Organization.id' => $id))
+		);
+		$new_debt = $organization[$this->alias]['actual_debt'] + $total;
+		$this->id = $id;
+		$this->saveField('actual_debt', $new_debt);
+	}
 }

@@ -253,6 +253,10 @@ class Invoice extends OrdersAppModel {
 			}
 			$result = $resultinv && $resultitem;
 			if ($result !== false) {
+				//if (isset($data['SalesOrder'])) {
+					//Se guarda la deuda del cliente
+					//ClassRegistry::init('Business.Organization')->setClientDebt($data['Organization']['id'], $data['Invoice']['total']);
+				//}
 				$this->data = array_merge($data, $result);
 				return true;
 			} else {
