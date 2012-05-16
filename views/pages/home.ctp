@@ -23,7 +23,9 @@
 		<?php if($userData['User']['role'] != '3'): ?>
 		<li><?php echo $this->Html->link(__('Ordenes de Compra', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Ordenes de Venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Facturas', true), array('controller' => 'invoices', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		<?php endif;?>
+		<li><?php echo $this->Html->link(__('Notas de Entrega', true), array('controller' => 'delivery_notes', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		<?php if($userData['User']['role'] === '0'): ?>
 		<li><?php echo $this->Html->link(__('Usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users'))?></li>
 		<?php endif;?>

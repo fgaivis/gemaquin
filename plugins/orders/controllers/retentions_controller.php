@@ -41,29 +41,43 @@ class RetentionsController extends OrdersAppController {
 		}
 		$this->set(compact('retention')); 
 	}
+	
+	public function print_iva_retention($id) {
+		$this->layout = 'print';
+		$this->view($id);
+	}
+	
+	public function print_islr_retention($id) {
+		$this->layout = 'print';
+		$this->view($id);
+	}
 
 /**
  * Add for retention.
  * 
  * @access public
  */
-	public function add() {
+	public function add($invoiceId) {
 		try {
 			$result = $this->Retention->add($this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('The retention has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller' => 'invoices', 'action' => 'view', $invoiceId));
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
 		} catch (Exception $e) {
 			$this->Session->setFlash($e->getMessage());
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller' => 'invoices', 'action' => 'view', $invoiceId));
 		}
-		$organizations = $this->Retention->Organization->find('list');
+		/*$organizations = $this->Retention->Organization->find('list');
 		$invoices = $this->Retention->Invoice->find('list');
-		$this->set(compact('organizations', 'invoices'));
- 
+		$this->set(compact('organizations', 'invoices'));*/
+ 		
+		$invoice = ClassRegistry::init('Orders.Invoice')->find('first', array(
+			'conditions' => array('Invoice.id' => $invoiceId)
+		));
+		$this->set(compact('invoice'));
 	}
 
 /**

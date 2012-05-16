@@ -92,6 +92,11 @@
 				<?php echo $this->Html->link(__('Generate Debit Note', true), array('controller' => 'debit_notes', 'action' => 'add', $invoice['Invoice']['id'])); ?>
 			</li>
 			<li><?php echo $this->Html->link(__('Print invoice', true), array('action' => 'print_invoice', $invoice['Invoice']['id'])); ?></li>
+	<?php elseif ($invoice['Invoice']['type'] === Invoice::PURCHASE || $invoice['Invoice']['type'] === Invoice::SERVICE) : ?>
+			<li>
+				<?php echo $this->Html->link(__('Generate Retention', true), array('controller' => 'retentions', 'action' => 'add', $invoice['Invoice']['id'])); ?>
+				<br/>
+			</li>
 	<?php endif; ?>
 		</ul>
 		<br/>
@@ -227,3 +232,37 @@
 </div>
 <?php endif; ?>
 <?php endif;?>
+<?php if (!empty($invoice['Invoice']['Retention'])): ?>
+<div class="view related">
+	<h3><?php __('Related Retentions');?></h3>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Type'); ?></th>
+		<th><?php __('Rate'); ?></th>
+		<th><?php __('Amount'); ?></th>
+		<th><?php __('Subtrahend'); ?></th>
+		<th><?php __('Actions'); ?></th>
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($invoice['Invoice']['Retention'] as $retention):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo $retention['Retention']['type'];?></td>
+			<td><?php echo $retention['Retention']['rate'];?></td>
+			<td><?php echo $retention['Retention']['amount'];?></td>
+			<td><?php echo $retention['Retention']['subtrahend'];?></td>
+		  <?php if ($retention['Retention']['type'] === Retention::IVA) : ?>
+			<td><?php echo $this->Html->link(__('Print', true), array('controller' => 'retentions', 'action' => 'print_iva_retention', $retention['Retention']['id']))?></td>
+		  <?php else : ?>
+		  	<td><?php echo $this->Html->link(__('Print', true), array('controller' => 'retentions', 'action' => 'print_islr_retention', $retention['Retention']['id']))?></td>
+		  <?php endif; ?>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+</div>
+<?php endif; ?>

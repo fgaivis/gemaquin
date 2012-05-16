@@ -32,6 +32,10 @@ msgstr "Dirección de envío"
 msgid "The address has been saved"
 msgstr "La dirección ha sido guardada"
 
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "The retention has been saved"
+msgstr "La retención ha sido guardada"
+
 #: plugins/business/controllers/addresses_controller.php:76
 msgid "Address saved"
 msgstr "Dirección guardada"
@@ -1898,6 +1902,10 @@ msgid "Complete"
 msgstr "Completar"
 
 #: Generales
+msgid "Generate Retention"
+msgstr "Generar Retención"
+
+#: Generales
 msgid "Generate Debit Note"
 msgstr "Generar Nota de Debito"
 
@@ -1918,12 +1926,24 @@ msgid "Debit Notes"
 msgstr "Notas de Debito"
 
 #: Generales
+msgid "Related Retentions"
+msgstr "Retenciones Relacionadas"
+
+#: Generales
 msgid "Related Debit Notes"
 msgstr "Notas de Debito Relacionadas"
 
 #: Generales
 msgid "Credit Notes"
 msgstr "Notas de Credito"
+
+#: Generales
+msgid "Retentions"
+msgstr "Retenciones"
+
+#: Generales
+msgid "Retention"
+msgstr "Retención"
 
 #: Generales
 msgid "Related Credit Notes"
@@ -1944,6 +1964,18 @@ msgstr "Nota"
 #: Generales
 msgid "Print"
 msgstr "Imprimir"
+
+#: Generales
+msgid "Rate"
+msgstr "Porcentaje"
+
+#: Generales
+msgid "Subtrahend"
+msgstr "Substraendo"
+
+#: Generales
+msgid "Create Retention for Invoice %s"
+msgstr "Crear Retención para la factura %s"
 
 #: Generales
 msgid "Create Credit Note for Invoice %s"

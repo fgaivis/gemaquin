@@ -7,6 +7,12 @@ class Retention extends OrdersAppModel {
  * @access public
  */
 	public $name = 'Retention';
+	
+/**
+ * Types
+ */
+	const IVA = 'IVA';
+	const ISLR = 'ISLR';
 
 /**
  * Validation parameters - initialized in constructor

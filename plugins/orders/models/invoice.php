@@ -115,6 +115,19 @@ class Invoice extends OrdersAppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'Retention' => array(
+			'className' => 'Orders.Retention',
+			'foreignKey' => 'invoice_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => 'Retention.type',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 	);
 
 
