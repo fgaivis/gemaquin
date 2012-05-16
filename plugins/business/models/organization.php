@@ -265,4 +265,14 @@ class Organization extends BusinessAppModel {
 		$this->id = $id;
 		$this->saveField('actual_debt', $new_debt);
 	}
+	
+	public function getClientDebt($id){
+		echo 'paso';
+		exit();
+		$organization = $this->find('first',
+			array('conditions' => array('Organization.id' => $id))
+		);
+		$debt = $organization[$this->alias]['actual_debt'];
+		return $debt;
+	}
 }

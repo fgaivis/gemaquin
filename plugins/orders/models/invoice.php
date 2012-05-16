@@ -253,10 +253,6 @@ class Invoice extends OrdersAppModel {
 			}
 			$result = $resultinv && $resultitem;
 			if ($result !== false) {
-				//if (isset($data['SalesOrder'])) {
-					//Se guarda la deuda del cliente
-					//ClassRegistry::init('Business.Organization')->setClientDebt($data['Organization']['id'], $data['Invoice']['total']);
-				//}
 				$this->data = array_merge($data, $result);
 				return true;
 			} else {
@@ -278,6 +274,8 @@ class Invoice extends OrdersAppModel {
         if (!$this->exists()) {
         	if($this->data['Invoice']['type'] === Invoice::SALES) {
         		$this->data['Invoice']['number'] = $this->_invoiceNumber($this->data['Invoice']['type']);
+        		ClassRegistry::init('Business.Client')->setClientDebt($this->data['Organization']['id'], $this->data['Invoice']['total']);
+        		//$client_debt = ClassRegistry::init('Business.Client')->getClientDebt($this->data['Organization']['id']);
         	}
         }
 		if (!empty($this->data[$this->alias]['file']) && $this->data[$this->alias]['file']['error'] == 0) {

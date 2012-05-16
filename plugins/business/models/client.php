@@ -34,5 +34,24 @@ class Client extends Organization {
 			throw new Exception(__('You need to confirm to delete this Client', true));
 		}
 	}
+	
+	public function getClientDebt($id){
+		$client = $this->find('first', array(
+			'conditions' => array(
+				"{$this->alias}.{$this->primaryKey}" => $id,
+				)));
+		$debt = $client[$this->alias]['actual_debt'];
+		return $debt;
+	}
+	
+	public function setClientDebt($id, $total){
+		$client = $this->find('first', array(
+			'conditions' => array(
+				"{$this->alias}.{$this->primaryKey}" => $id,
+				)));
+		$new_debt = $client[$this->alias]['actual_debt'] + $total;
+		$this->id = $id;
+		$this->saveField('actual_debt', $new_debt);
+	}
 }
 
