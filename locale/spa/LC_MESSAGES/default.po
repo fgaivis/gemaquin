@@ -1193,6 +1193,14 @@ msgstr "Fecha de Expiración"
 msgid "The invoice has been saved"
 msgstr "La factura ha sido guardada"
 
+#: plugins/orders/controllers/invoices_controller.php:54
+msgid "The debit note has been saved"
+msgstr "La nota de debito ha sido guardada"
+
+#: plugins/orders/controllers/invoices_controller.php:54
+msgid "The credit note has been saved"
+msgstr "La nota de credito ha sido guardada"
+
 #: plugins/orders/controllers/invoices_controller.php:79
 msgid "Invoice saved"
 msgstr "Factura guardada"
@@ -1910,8 +1918,20 @@ msgid "Debit Notes"
 msgstr "Notas de Debito"
 
 #: Generales
+msgid "Related Debit Notes"
+msgstr "Notas de Debito Relacionadas"
+
+#: Generales
 msgid "Credit Notes"
 msgstr "Notas de Credito"
+
+#: Generales
+msgid "Related Credit Notes"
+msgstr "Notas de Credito Relacionadas"
+
+#: Generales
+msgid "Concept"
+msgstr "Concepto"
 
 #: Generales
 msgid "Amount"
@@ -1920,6 +1940,10 @@ msgstr "Monto"
 #: Generales
 msgid "Note"
 msgstr "Nota"
+
+#: Generales
+msgid "Print"
+msgstr "Imprimir"
 
 #: Generales
 msgid "Create Credit Note for Invoice %s"

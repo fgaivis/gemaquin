@@ -111,10 +111,19 @@ class DebitNote extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$debitNote = $this->find('first', array(
-			'contain' => array('InvoicesNote' => array('Invoice' => 'Organization')),
+			'contain' => array('InvoicesNote' => array('Invoice' => 'SalesOrder')),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
-
+		
+		$organization_id = $debitNote['InvoicesNote']['Invoice']['organization_id'];
+		$organization = ClassRegistry::init('Business.Organization')->find('first',
+			array('conditions' => array('Organization.id' => $organization_id))
+		);
+		$addressOrganization = ClassRegistry::init('Business.Contact')->find('first',
+			array('conditions' => array('Contact.organization_id' => $organization_id))
+		);		
+		$debitNote['Organization'] = $organization['Organization'];
+		$debitNote['Contact'] = $addressOrganization['Contact'];
 		if (empty($debitNote)) {
 			throw new OutOfBoundsException(__('Invalid Debit Note', true));
 		}

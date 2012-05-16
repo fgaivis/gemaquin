@@ -46,5 +46,7 @@ $map = array(
 		'019_add_quantity_remaining_items_orders' => 'M4fa69a108098481bb1f00c4b94e08dd5'),
 	23 => array(
 		'add_number_to_credit_and_debit_notes' => 'M4fb2dcf760d44eb0aa9dd17594e05dd2'),
+	24 => array(
+		'add_concept_to_credit_and_debit_notes' => 'M4fb2dcf760d44eb0aa9dd17594e06dd3'),
 );
 ?>

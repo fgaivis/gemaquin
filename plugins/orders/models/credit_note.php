@@ -110,10 +110,19 @@ class CreditNote extends OrdersAppModel {
  */
 	public function view($id = null) {
 		$creditNote = $this->find('first', array(
-			'contain' => array('InvoicesNote' => array('Invoice' => 'Organization')),
+			'contain' => array('InvoicesNote' => array('Invoice' => 'SalesOrder')),
 			'conditions' => array(
 				"{$this->alias}.{$this->primaryKey}" => $id)));
-
+		
+		$organization_id = $creditNote['InvoicesNote']['Invoice']['organization_id'];
+		$organization = ClassRegistry::init('Business.Organization')->find('first',
+			array('conditions' => array('Organization.id' => $organization_id))
+		);
+		$addressOrganization = ClassRegistry::init('Business.Contact')->find('first',
+			array('conditions' => array('Contact.organization_id' => $organization_id))
+		);		
+		$creditNote['Organization'] = $organization['Organization'];
+		$creditNote['Contact'] = $addressOrganization['Contact'];
 		if (empty($creditNote)) {
 			throw new OutOfBoundsException(__('Invalid Credit Note', true));
 		}
