@@ -11,6 +11,8 @@ $map = array(
 	5 => array(
 		'005_add_client_debt_to_organizations' => 'M4ef1304133644785b7b92a7694e06dd7'),
 	6 => array(
-		'006_adding_config_table' => 'M4d8a7b88c2544244bb7221f494e06dd3')
+		'006_adding_config_table' => 'M4d8a7b88c2544244bb7221f494e06dd3'),
+	7 => array(
+		'007_add_obs_paycond_to_organizations' => 'M4d8a7b88c2544244bb7221f494e08dd5')
 );
 ?>
