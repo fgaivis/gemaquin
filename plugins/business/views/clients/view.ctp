@@ -70,7 +70,17 @@
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $client['Client']['actual_debt']; ?>
 			&nbsp;
-		</dd>		
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Payment Conditions'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $client['Client']['payment_conditions']; ?>
+			&nbsp;
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Observations'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $client['Client']['observations']; ?>
+			&nbsp;
+		</dd>
 		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Created'); ?></dt>
 		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
 			<?php //echo $client['Client']['created']; ?>

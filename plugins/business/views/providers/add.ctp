@@ -16,6 +16,7 @@
 		echo $this->Form->input('fax');
 		echo $this->Form->input('email');
 		echo $this->Form->input('website');
+		echo $this->Form->input('observations', array('type' => 'textarea', 'escape' => false));
 	?>
 	</fieldset>
 <?php //echo $this->Form->end(__('Submit'));?>

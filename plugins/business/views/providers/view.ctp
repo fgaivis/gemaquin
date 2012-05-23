@@ -61,6 +61,11 @@
 			<?php echo $provider['Provider']['website']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Observations'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $provider['Provider']['observations']; ?>
+			&nbsp;
+		</dd>
 		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Created'); ?></dt>
 		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
 			<?php //echo $provider['Provider']['created']; ?>

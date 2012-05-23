@@ -34,7 +34,7 @@
 			<td align="center"><?php echo $invoice['SalesOrder']['number']; ?></td>
 			<td align="center"><?php echo $invoice['Invoice']['number']; ?></td>
 			<td align="center"><?php echo $this->Time->format($invoice['Invoice']['created'], '%d/%m/%Y'); ?></td>
-			<td align="center">30 DIAS</td>
+			<td align="center"><?php echo (!isset($invoice['Organization']['payment_conditions']) ? '30 DIAS' : $invoice['Organization']['payment_conditions']); ?></td>
 		</tr>
 		</table>
 	<table class="invoice-details" style="text-align: center; margin-top:30px;width:100%">
@@ -84,7 +84,7 @@
 					<?php echo $this->Number->currency($item['price'] * $item['quantity'], ''); ?>
 				</td>
 				<td align="right">
-					<?php echo (!$item['exempt'] ? ' 12' : 'N/A') ?>
+					<?php echo (!$item['exempt'] ? ' 12' : '(E)') ?>
 				</td>
 		</tr>
 		<?php endforeach; ?>

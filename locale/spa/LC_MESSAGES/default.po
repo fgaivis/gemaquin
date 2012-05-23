@@ -1946,6 +1946,14 @@ msgid "Retention"
 msgstr "Retención"
 
 #: Generales
+msgid "Payment Conditions"
+msgstr "Condiciones de pago"
+
+#: Generales
+msgid "Observations"
+msgstr "Observaciones"
+
+#: Generales
 msgid "Related Credit Notes"
 msgstr "Notas de Credito Relacionadas"
 

@@ -14,7 +14,7 @@ $(function(){
 					var tax = (((price * quantity) * 12) / 100);
 					var total_price = ((price * quantity) + tax);
 					var cost = $('.cost-label[index=' + index + ']').html();
-					var profit_margin = (((price - cost) * 100) / cost);
+					var profit_margin = (cost != 0) ? (((price - cost) * 100) / cost) : 0;
 					$('#InvoicesItem' + index + 'IndividualCost').val(price);
 					$('#InvoicesItem' + index + 'Tax').val(tax);
 					$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
@@ -28,7 +28,7 @@ $(function(){
 				var tax = (((price * quantity) * 12) / 100);
 				var total_price = ((price * quantity) + tax);
 				var cost = $('.cost-label[index=' + index + ']').html();
-				var profit_margin = (((price - cost) * 100) / cost);
+				var profit_margin = (cost != 0) ? (((price - cost) * 100) / cost) : 0;
 				$('#InvoicesItem' + index + 'IndividualCost').val(price);
 				$('#InvoicesItem' + index + 'Tax').val(tax);
 				$('#InvoicesItem' + index + 'PurchaseCost').val(total_price);
