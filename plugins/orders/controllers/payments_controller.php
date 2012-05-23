@@ -47,23 +47,27 @@ class PaymentsController extends OrdersAppController {
  * 
  * @access public
  */
-	public function add() {
+	public function add($invoiceId) {
 		try {
 			$result = $this->Payment->add($this->data);
 			if ($result === true) {
 				$this->Session->setFlash(__('The payment has been saved', true));
-				$this->redirect(array('action' => 'index'));
+				$this->redirect(array('controller' => 'invoices', 'action' => 'view', $invoiceId));
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());
 		} catch (Exception $e) {
 			$this->Session->setFlash($e->getMessage());
-			$this->redirect(array('action' => 'index'));
+			$this->redirect(array('controller' => 'invoices', 'action' => 'view', $invoiceId));
 		}
-		$organizations = $this->Payment->Organization->find('list');
+		/*$organizations = $this->Payment->Organization->find('list');
 		$invoices = $this->Payment->Invoice->find('list');
-		$this->set(compact('organizations', 'invoices'));
- 
+		$this->set(compact('organizations', 'invoices'));*/
+		
+		$invoice = ClassRegistry::init('Orders.Invoice')->find('first', array(
+			'conditions' => array('Invoice.id' => $invoiceId)
+		));
+		$this->set(compact('invoice')); 
 	}
 
 /**

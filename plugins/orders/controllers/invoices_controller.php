@@ -64,11 +64,19 @@ class InvoicesController extends AppController {
 				for($i = 0; $i < count($invoice['InvoicesItem']); $i++){
 					$invoice['InvoicesItem'][$i]['InventoryItem'] = $this->Invoice->findInventoryItem($invoice['SalesOrder']['id'], $invoice['InvoicesItem'][$i]['item_id']);
 				}
+				$payments = $this->Invoice->Payment->find('all',
+					array('conditions' => array('Payment.invoice_id' => $id))
+				);
+				$invoice['Invoice']['Payment'] = $payments;
 			} else if ($invoice['Invoice']['type'] == Invoice::PURCHASE || $invoice['Invoice']['type'] == Invoice::SERVICE) {
 				$retentions = $this->Invoice->Retention->find('all',
 					array('conditions' => array('Retention.invoice_id' => $id))
 				);
 				$invoice['Invoice']['Retention'] = $retentions;
+				$payments = $this->Invoice->Payment->find('all',
+					array('conditions' => array('Payment.invoice_id' => $id))
+				);
+				$invoice['Invoice']['Payment'] = $payments;
 			}
 		} catch (OutOfBoundsException $e) {
 			$this->Session->setFlash($e->getMessage());

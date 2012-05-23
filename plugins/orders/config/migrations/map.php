@@ -50,5 +50,7 @@ $map = array(
 		'add_concept_to_credit_and_debit_notes' => 'M4fb2dcf760d44eb0aa9dd17594e06dd3'),
 	25 => array(
 		'020_add_comp_number_to_retentions' => 'M4fb2dcf760d44eb0aa9dd17594e07dd5'),
+	26 => array(
+		'021_add_id_number_to_payment' => 'M4fb2dcf760d44eb0aa9dd17594e09dd7'),
 );
 ?>

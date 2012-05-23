@@ -7,6 +7,12 @@ class Payment extends OrdersAppModel {
  * @access public
  */
 	public $name = 'Payment';
+	
+/**
+ * Types
+ */
+	const PURCHASE = 'PURCHASE';
+	const SALES = 'SALES';
 
 /**
  * Validation parameters - initialized in constructor

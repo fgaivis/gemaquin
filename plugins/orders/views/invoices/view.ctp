@@ -91,8 +91,10 @@
 			<li>
 				<?php echo $this->Html->link(__('Generate Debit Note', true), array('controller' => 'debit_notes', 'action' => 'add', $invoice['Invoice']['id'])); ?>
 			</li>
+			<li><?php echo $this->Html->link(__('Register Payment', true), array('controller' => 'payments', 'action' => 'add', $invoice['Invoice']['id'])); ?>
 			<li><?php echo $this->Html->link(__('Print invoice', true), array('action' => 'print_invoice', $invoice['Invoice']['id'])); ?></li>
 	<?php elseif ($invoice['Invoice']['type'] === Invoice::PURCHASE || $invoice['Invoice']['type'] === Invoice::SERVICE) : ?>
+			<li><?php echo $this->Html->link(__('Register Payment', true), array('controller' => 'payments', 'action' => 'add', $invoice['Invoice']['id'])); ?>
 			<li>
 				<?php echo $this->Html->link(__('Generate Retention', true), array('controller' => 'retentions', 'action' => 'add', $invoice['Invoice']['id'])); ?>
 				<br/>
@@ -261,6 +263,33 @@
 		  <?php else : ?>
 		  	<td><?php echo $this->Html->link(__('Print', true), array('controller' => 'retentions', 'action' => 'print_islr_retention', $retention['Retention']['id']))?></td>
 		  <?php endif; ?>
+		</tr>
+	<?php endforeach; ?>
+	</table>
+</div>
+<?php endif; ?>
+<?php if (!empty($invoice['Invoice']['Payment'])): ?>
+<div class="view related">
+	<h3><?php __('Related Payments');?></h3>
+	<table cellpadding = "0" cellspacing = "0">
+	<tr>
+		<th><?php __('Payment Type'); ?></th>
+		<th><?php __('Id Number'); ?></th>
+		<th><?php __('Amount'); ?></th>
+		<!-- <th><?php //__('Actions'); ?></th> -->
+	</tr>
+	<?php
+		$i = 0;
+		foreach ($invoice['Invoice']['Payment'] as $payment):
+			$class = null;
+			if ($i++ % 2 == 0) {
+				$class = ' class="altrow"';
+			}
+		?>
+		<tr<?php echo $class;?>>
+			<td><?php echo __($payment['Payment']['payment_type'], true);?></td>
+			<td><?php echo $payment['Payment']['id_number'];?></td>
+			<td><?php echo $payment['Payment']['amount'];?></td>
 		</tr>
 	<?php endforeach; ?>
 	</table>

@@ -1,23 +1,29 @@
 <div class="payments form">
-<?php echo $this->Form->create('Payment', array('url' => array('action' => 'add')));?>
+<?php //echo $this->Form->create('Payment', array('url' => array('action' => 'add')));?>
+<?php echo $this->Form->create('Payment', array('url' => $this->params['pass']));?>
+	<header><h3><?php echo sprintf(__('Register Payment for Invoice %s', true), $invoice['Invoice']['number']); ?></h3></header>
 	<fieldset>
- 		<legend><?php __('Add Payment');?></legend>
+	
+	<?php $payment_types = array(
+			'CASH' => __('CASH', true),
+			'CHECK' => __('CHECK', true),
+			'TRANSFER' => __('TRANSFER', true),
+			'CREDIT' => __('CREDIT', true)
+		);
+	?>
+	
 	<?php
-		echo $this->Form->input('organization_id');
-		echo $this->Form->input('invoice_id');
-		echo $this->Form->input('type');
-		echo $this->Form->input('payment_type');
+		echo $this->Form->input('invoice_id', array('type' => 'hidden', 'value' => $invoice['Invoice']['id']));
+		echo $this->Form->input('organization_id', array('type' => 'hidden', 'value' => $invoice['Organization']['id']));
+		if($invoice['Invoice']['type'] === Invoice::SALES) {
+			echo $this->Form->input('type', array('type' => 'hidden', 'value' => Payment::SALES));
+		} else {
+			echo $this->Form->input('type', array('type' => 'hidden', 'value' => Payment::PURCHASE));
+		}
+		echo $this->Form->input('payment_type', array('options' => $payment_types));
+		echo $this->Form->input('id_number');
 		echo $this->Form->input('amount');
 	?>
 	</fieldset>
-<?php echo $this->Form->end('Submit');?>
-</div>
-<div class="actions">
-	<ul>
-		<li><?php echo $this->Html->link(__('List Payments', true), array('action' => 'index'));?></li>
-		<li><?php echo $this->Html->link(__('List Organizations', true), array('controller' => 'organizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Organization', true), array('controller' => 'organizations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Invoices', true), array('controller' => 'invoices', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Invoice', true), array('controller' => 'invoices', 'action' => 'add')); ?> </li>
-	</ul>
+<?php echo $this->Form->end(__('Submit', true));?>
 </div>

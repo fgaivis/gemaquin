@@ -128,6 +128,19 @@ class Invoice extends OrdersAppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
+		'Payment' => array(
+			'className' => 'Orders.Payment',
+			'foreignKey' => 'invoice_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => 'Payment.created',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 	);
 
 

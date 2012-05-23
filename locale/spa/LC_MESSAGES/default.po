@@ -36,6 +36,10 @@ msgstr "La dirección ha sido guardada"
 msgid "The retention has been saved"
 msgstr "La retención ha sido guardada"
 
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "The payment has been saved"
+msgstr "El pago ha sido guardado"
+
 #: plugins/business/controllers/addresses_controller.php:76
 msgid "Address saved"
 msgstr "Dirección guardada"
@@ -1930,6 +1934,14 @@ msgid "Related Retentions"
 msgstr "Retenciones Relacionadas"
 
 #: Generales
+msgid "Related Payments"
+msgstr "Pagos Relacionados"
+
+#: Generales
+msgid "Payment Type"
+msgstr "Tipo de Pago"
+
+#: Generales
 msgid "Related Debit Notes"
 msgstr "Notas de Debito Relacionadas"
 
@@ -1948,6 +1960,10 @@ msgstr "Retención"
 #: Generales
 msgid "Payment Conditions"
 msgstr "Condiciones de pago"
+
+#: Generales
+msgid "Register Payment"
+msgstr "Registrar pago"
 
 #: Generales
 msgid "Observations"
@@ -1982,8 +1998,16 @@ msgid "Subtrahend"
 msgstr "Substraendo"
 
 #: Generales
+msgid "Id Number"
+msgstr "Identificador"
+
+#: Generales
 msgid "Create Retention for Invoice %s"
 msgstr "Crear Retención para la factura %s"
+
+#: Generales
+msgid "Register Payment for Invoice %s"
+msgstr "Registrar pago para la factura %s"
 
 #: Generales
 msgid "Create Credit Note for Invoice %s"
@@ -1992,6 +2016,22 @@ msgstr "Crear Nota de Crédito para la factura %s"
 #: Generales
 msgid "Create Debit Note for Invoice %s"
 msgstr "Crear Nota de Débito para la factura %s"
+
+#: Status Ordenes
+msgid "CASH"
+msgstr "EFECTIVO"
+
+#: Status Ordenes
+msgid "CHECK"
+msgstr "CHEQUE"
+
+#: Status Ordenes
+msgid "TRANSFER"
+msgstr "TRANSFERENCIA"
+
+#: Status Ordenes
+msgid "CREDIT"
+msgstr "CREDITO"
 
 #: Status Ordenes
 msgid "DRAFT"
