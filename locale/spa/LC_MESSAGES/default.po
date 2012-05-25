@@ -2144,3 +2144,5 @@ msgstr "Unidades totales"
 #: Otros
 msgid "Could not save the inventory, please check your inputs."
 msgstr "Ha ocurrido un error, favor verifique sus datos"
+
+#: Otros
