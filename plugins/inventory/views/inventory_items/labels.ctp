@@ -1,4 +1,4 @@
-<div style="width:580px;margin:auto">
+<div style="width:580px;margin:0">
 	<?php foreach ($inventoryItems as $item) :?>
 		<?php for ($i=0; $i < $item['InventoryItem']['quantity']; $i++) : ?>
 			<div style="border:1px solid black; height:250px; margin-top:15px;page-break-inside:avoid; padding:0 10px">
