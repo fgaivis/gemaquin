@@ -26,7 +26,11 @@ msgstr "Dirección de Facturación"
 
 #: config/selectables.php:6
 msgid "Shipping Address"
-msgstr "Dirección de envío"
+msgstr "Dirección de env�"
+
+#: config/selectables.php:6
+msgid "Home"
+msgstr "Principal"
 
 #: plugins/business/controllers/addresses_controller.php:54
 msgid "The address has been saved"
