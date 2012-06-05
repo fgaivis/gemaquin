@@ -1,9 +1,9 @@
-<div style="width:380px;margin:0">
+<div style="width:340px;margin:0">
 	<?php foreach ($inventoryItems as $item) :?>
 		<?php for ($i=0; $i < $item['InventoryItem']['quantity']; $i++) : ?>
-			<div style="border:none; height:200px; margin-top:0px;page-break-inside:avoid; padding:0 5px">
+			<div style="border:none; height:260px; margin-top:0px;page-break-inside:avoid; padding:0 5px">
 				<h2 style="text-align:center; font-size:13px">Identificación de Insumos</h2>
-				<h3 style="text-align:center; font-size:12px">Representaciones IV Gemaquin C.A.</h3>
+				<h3 style="text-align:center; font-size:13px">Representaciones IV Gemaquin C.A.</h3>
 				<h3 style="text-align:center; font-size:12px">RIF: J-30269764-6</h3>
 				<h3 style="text-align:center; font-size:12px">Email: gemaquin@cantv.net</h3>
 				<div style="font-size:13px">
