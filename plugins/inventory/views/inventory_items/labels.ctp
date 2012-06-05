@@ -1,4 +1,4 @@
-<div style="width:340px;margin:0">
+<div style="width:332px;margin:0">
 	<?php foreach ($inventoryItems as $item) :?>
 		<?php for ($i=0; $i < $item['InventoryItem']['quantity']; $i++) : ?>
 			<div style="border:none; height:260px; margin-top:0px;page-break-inside:avoid; padding:0 5px">
@@ -18,7 +18,9 @@
 					Empaque: <?php echo $item['Item']['package_factor']; ?>
 				</div>
 				<div style="text-align:center;margin-top:15px">
-					<img src="<?php echo $this->Html->url(array('action' => 'barcode', $item['Item']['barcode'])); ?>" />
+					<?php if($item['Item']['barcode'] != ''): ?>
+						<img width="160px" height="60px" src="<?php echo $this->Html->url(array('action' => 'barcode', $item['Item']['barcode'])); ?>" />
+					<?php endif; ?>
 				</div>
 			</div>
 		<?php endfor;?>
