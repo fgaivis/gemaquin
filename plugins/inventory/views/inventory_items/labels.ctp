@@ -1,4 +1,4 @@
-<div style="width:332px;margin:0">
+<div style="width:330px;margin:0">
 	<?php foreach ($inventoryItems as $item) :?>
 		<?php for ($i=0; $i < $item['InventoryItem']['quantity']; $i++) : ?>
 			<div style="border:none; height:260px; margin-top:0px;page-break-inside:avoid; padding:0 5px">
@@ -19,7 +19,7 @@
 				</div>
 				<div style="text-align:center;margin-top:15px">
 					<?php if($item['Item']['barcode'] != ''): ?>
-						<img width="160px" height="60px" src="<?php echo $this->Html->url(array('action' => 'barcode', $item['Item']['barcode'])); ?>" />
+						<img src="<?php echo $this->Html->url(array('action' => 'barcode', $item['Item']['barcode'])); ?>" />
 					<?php endif; ?>
 				</div>
 			</div>
