@@ -84,9 +84,15 @@ foreach ($items as $item):
 
 <div class="actions">
 	<ul>
+	  <?php if(!$isReport): ?>
 		<?php if($userData['User']['role'] === '0'): ?>
 			<li><?php echo $this->Html->link(__('New Inventory Item', true), array('plugin' => 'inventory','controller' => 'inventory', 'action' => 'add')); ?></li>
 		<?php endif; ?>
-		<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true)) : ''); ?></li>
+		<?php if(!empty($this->data['Inventory'])): ?>
+			<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true, 'organization_id' => $this->data['Inventory']['organization_id'])) : ''); ?></li>
+		<?php else: ?>
+			<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true)) : ''); ?></li>
+		<?php endif; ?>
+	  <?php endif; ?>
 	</ul>
 </div>
