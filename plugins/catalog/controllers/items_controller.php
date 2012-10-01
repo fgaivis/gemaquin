@@ -91,9 +91,9 @@ class ItemsController extends CatalogAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
-		$categories = $this->Item->Category->find('list');
+		$categories = $this->Item->Category->find('list', array('order' => array('Category.name' => 'asc')));
 		$this->set(compact('categories'));
-		$this->set('organizations', $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'))));
+		$this->set('organizations', $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('Organization.name' => 'asc'))));
 
 	}
 
@@ -117,7 +117,7 @@ class ItemsController extends CatalogAppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
-		$categories = $this->Item->Category->find('list');
+		$categories = $this->Item->Category->find('list', array('order' => array('Category.name' => 'asc')));
 		$this->set(compact('categories'));
 		$this->set('organizations', $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('Organization.name' => 'asc'))));
 
