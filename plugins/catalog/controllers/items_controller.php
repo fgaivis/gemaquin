@@ -119,7 +119,7 @@ class ItemsController extends CatalogAppController {
 		}
 		$categories = $this->Item->Category->find('list');
 		$this->set(compact('categories'));
-		$this->set('organizations', $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'))));
+		$this->set('organizations', $this->Item->Organization->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('Organization.name' => 'asc'))));
 
 	}
 
