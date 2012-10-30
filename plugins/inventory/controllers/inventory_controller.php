@@ -90,6 +90,7 @@ class InventoryController extends AppController {
  */
 	public function edit($id = null) {
 		try {
+			//Revisar el caso cuando se cambie el dato del lote ***
 			$result = $this->Inventory->edit($id, $this->data);
 			if ($result === true) {
 				//Cambio los valores de los InventoryItems
@@ -98,8 +99,13 @@ class InventoryController extends AppController {
 										'InventoryItem.batch'=>$this->data['Inventory']['batch'])));
 				
 				foreach ($inventory_items as $i_item){
+					$i_item['InventoryItem']['elaboration_date'] = $this->data['Inventory']['elaboration_date'];
+					$i_item['InventoryItem']['expiration_date'] = $this->data['Inventory']['expiration_date'];
 					$i_item['InventoryItem']['retest_date'] = $this->data['Inventory']['retest_date'];
 					$i_item['InventoryItem']['extension_date'] = $this->data['Inventory']['extension_date'];
+					//Cambio las cantidades
+					$i_item['InventoryItem']['quantity'] = $this->data['Inventory']['quantity'];
+					$i_item['InventoryItem']['quantity_left'] = $this->data['Inventory']['availability'];
 					$inventory_item->save($i_item);
 				}
 				
