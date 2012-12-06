@@ -67,17 +67,21 @@ foreach ($items as $item):
 			<?php //echo $this->Html->link($item['Category']['name'], array('controller' => 'categories', 'action' => 'view', $item['Category']['id'])); ?>
 		</td> -->
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $item['Item']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $item['Item']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $item['Item']['id'])); ?>
-			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $item['Item']['id'])); ?>
+			<?php if($userData['User']['role'] === '0'): ?>
+			&nbsp;|&nbsp; <?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $item['Item']['id'])); ?>
+			<?php endif;?>
 		</td>
 	</tr>
 <?php endforeach; ?>
 </table>
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
+<?php if($userData['User']['role'] === '0'): ?>
 <div class="actions">
 	<ul>
 		<li><?php echo $this->Html->link(__('Nuevo item', true), array('controller' => 'items', 'action' => 'add', 'plugin' => 'catalog', 'admin' => false))?></li>
 	</ul>
 </div>
+<?php endif;?>

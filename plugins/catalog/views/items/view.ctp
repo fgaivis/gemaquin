@@ -85,7 +85,9 @@
 		<th><?php //__('Type'); ?></th> -->
 		<!-- <th><?php //__('Created'); ?></th>
 		<th><?php //__('Modified'); ?></th> -->
+		<?php if($userData['User']['role'] != '3'): ?>
 		<th class="actions"><?php __('Actions');?></th>
+		<?php endif;?>
 	</tr>
 	<?php
 		$i = 0;
@@ -107,11 +109,13 @@
 			<td><?php //echo $organization['type'];?></td> -->
 			<!-- <td><?php //echo $organization['created'];?></td>
 			<td><?php //echo $organization['modified'];?></td> -->
+			<?php if($userData['User']['role'] != '3'): ?>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View', true), array('controller' => 'organizations', 'action' => 'view', 'plugin' => 'business', $organization['id'])); ?>
-				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'organizations', 'action' => 'edit', 'plugin' => 'business', $organization['id'])); ?>
+				<?php echo $this->Html->link(__('View', true), array('controller' => 'providers', 'action' => 'view', 'plugin' => 'business', $organization['id'])); ?> &nbsp;|&nbsp;
+				<?php echo $this->Html->link(__('Edit', true), array('controller' => 'providers', 'action' => 'edit', 'plugin' => 'business', $organization['id'])); ?>
 				<?php //echo $this->Html->link(__('Delete', true), array('controller' => 'organizations', 'action' => 'delete', $organization['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $organization['id'])); ?>
 			</td>
+			<?php endif;?>
 		</tr>
 	<?php endforeach; ?>
 	</table>

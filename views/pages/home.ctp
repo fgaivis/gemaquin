@@ -14,18 +14,22 @@
 		<li><?php echo $this->Html->link(__('Clientes', true), array('controller' => 'clients', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Proveedores', true), array('controller' => 'providers', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Contactos', true), array('controller' => 'contacts', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
+		<?php endif;?>
+		<?php if ($userData['User']['role'] === '0') :?>
 		<li><?php echo $this->Html->link(__('Categorías', true), array('controller' => 'categories', 'action' => 'index', 'plugin' => 'categories'))?></li>
 		<?php endif;?>
-		<?php if ($userData['User']['role'] != '1' && $userData['User']['role'] != '2') :?>
 		<li><?php echo $this->Html->link(__('Items', true), array('controller' => 'items', 'action' => 'index', 'plugin' => 'catalog', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Inventario', true), array('controller' => 'inventory', 'action' => 'stock', 'plugin' => 'inventory', 'admin' => false))?></li>
-		<?php endif;?>
 		<?php if($userData['User']['role'] != '3'): ?>
 		<li><?php echo $this->Html->link(__('Ordenes de Compra', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Ordenes de Venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+		<li><?php echo $this->Html->link(__('Notas de Entrega', true), array('controller' => 'delivery_notes', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Facturas', true), array('controller' => 'invoices', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		<?php endif;?>
+		<?php if($userData['User']['role'] === '3'): ?>
+		<li><?php echo $this->Html->link(__('Ordenes de Venta', true), array('controller' => 'sales_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		<li><?php echo $this->Html->link(__('Notas de Entrega', true), array('controller' => 'delivery_notes', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+		<?php endif;?>
 		<?php if($userData['User']['role'] === '0'): ?>
 		<li><?php echo $this->Html->link(__('Usuarios', true), array('controller' => 'users', 'action' => 'index', 'plugin' => 'users'))?></li>
 		<?php endif;?>

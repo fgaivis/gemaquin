@@ -86,6 +86,8 @@
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nuevo contacto', true), array('controller' => 'contacts', 'action' => 'add', 'plugin' => 'business', 'admin' => false))?></li>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar contactos', true), array('controller' => 'contacts', 'action' => 'index', 'plugin' => 'business', 'admin' => false))?></li>
 		</ul>
+		<?php endif;?>
+		<?php if($userData['User']['role'] === '0'): ?>
 		<h3><?php echo __('Categorias', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva categoria', true), array('controller' => 'categories', 'action' => 'admin_add', 'plugin' => 'categories'))?></li>
@@ -94,7 +96,9 @@
 		<?php endif;?>
 		<h3><?php echo __('Items', true); ?></h3>
 		<ul class="toggle">
+			<?php if($userData['User']['role'] === '0'): ?>
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nuevo item', true), array('controller' => 'items', 'action' => 'add', 'plugin' => 'catalog', 'admin' => false))?></li>
+			<?php endif;?>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar items', true), array('controller' => 'items', 'action' => 'index', 'plugin' => 'catalog', 'admin' => false))?></li>
 		</ul>
 		<h3><?php echo __('Inventario', true); ?></h3>
@@ -106,13 +110,13 @@
 			<?php endif;?>
 			<!-- <li class="icn_categories"><?php //echo $this->Html->link(__('Ver entradas de inventario', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li> -->
 		</ul>
-		<?php if($userData['User']['role'] != '3'): ?>
 		<h3><?php echo __('Ordenes de compra', true); ?></h3>
 		<ul class="toggle">
+			<?php if($userData['User']['role'] != '3'): ?>
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva orden de compra', true), array('controller' => 'purchase_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
+			<?php endif;?>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar ordenes de compra', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
 		</ul>
-		<?php endif;?>
         <h3><?php echo __('Ordenes de venta', true); ?></h3>
         <ul class="toggle">
             <?php if($userData['User']['role'] != '3'): ?>
@@ -127,16 +131,24 @@
         <?php if($userData['User']['role'] != '3'): ?>
         <h3><?php echo __('Facturas', true); ?></h3>
         <ul class="toggle">
+        	<?php if($userData['User']['role'] != '1'): ?>
         	<li class="icn_new_article"><?php echo $this->Html->link(__('Nueva factura de servicio', true), array('controller' => 'invoices', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
+        	<?php endif;?>
         	<li class="icn_categories"><?php echo $this->Html->link(__('Listar facturas', true), array('controller' => 'invoices', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+        	<?php if($userData['User']['role'] === '1'): ?>
+        	<li class="icn_categories"><?php echo $this->Html->link(__('Facturas de venta', true), array('controller' => 'invoices', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+        	<li class="icn_categories"><?php echo $this->Html->link(__('Facturas por cobrar', true), array('controller' => 'invoices', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+        	<?php endif;?>
+        </ul>
+        <?php endif;?>
+        <?php if($userData['User']['role'] === '0' || $userData['User']['role'] === '1'): ?>
+        <h3><?php echo __('Reportes', true); ?></h3>
+        <ul class="toggle">
+        	<li class="icn_tags"><?php echo $this->Html->link(__('Items mas vendidos', true), array('controller' => 'sales_orders', 'action' => 'best_selling', 'plugin' => 'orders', 'admin' => false))?></li>
+            <li class="icn_tags"><?php echo $this->Html->link(__('Items mas vendidos (Cantidad)', true), array('controller' => 'sales_orders', 'action' => 'best_selling_quantity', 'plugin' => 'orders', 'admin' => false))?></li>
         </ul>
         <?php endif;?>
         <?php if($userData['User']['role'] === '0'): ?>
-        <h3><?php echo __('Reportes', true); ?></h3>
-        <ul>
-        	<li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos', true), array('controller' => 'sales_orders', 'action' => 'best_selling', 'plugin' => 'orders', 'admin' => false))?></li>
-            <li class="icn_new_article"><?php echo $this->Html->link(__('Items mas vendidos (Cantidad)', true), array('controller' => 'sales_orders', 'action' => 'best_selling_quantity', 'plugin' => 'orders', 'admin' => false))?></li>
-        </ul>
 		<h3><?php echo __('Usuarios', true); ?></h3>
 		<ul class="toggle">
 			<li class="icn_add_user"><?php echo $this->Html->link(__('Nuevo usuario', true), array('controller' => 'users', 'action' => 'admin_add', 'plugin' => 'users'))?></li>

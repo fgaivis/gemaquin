@@ -62,16 +62,18 @@ foreach ($purchaseOrders as $purchaseOrder):
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $purchaseOrder['PurchaseOrder']['id'])); ?>
-			<?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) : ?>
-				<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $purchaseOrder['PurchaseOrder']['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $purchaseOrder['PurchaseOrder']['id'])); ?>
-			<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::SENT) : ?>
-				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
-			<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::INVOICED) : ?>
-				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
-			<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::PREINVOICED) : ?>
-				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
-			<?php endif; ?>
+			<?php if($userData['User']['role'] != '3'): ?>
+				<?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) : ?>
+					<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $purchaseOrder['PurchaseOrder']['id'])); ?>
+					<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $purchaseOrder['PurchaseOrder']['id'])); ?>
+				<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::SENT) : ?>
+					<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
+				<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::INVOICED) : ?>
+					<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
+				<?php elseif ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::PREINVOICED) : ?>
+					<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $purchaseOrder['PurchaseOrder']['id'])); ?>
+				<?php endif; ?>
+			<?php endif;?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -81,7 +83,7 @@ foreach ($purchaseOrders as $purchaseOrder):
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
 
-
+<?php if($userData['User']['role'] != '3'): ?>
 <?php if (!$isReport): ?>
 <div class="actions">
 	<ul>
@@ -94,3 +96,4 @@ foreach ($purchaseOrders as $purchaseOrder):
         <li><?php echo $this->Html->link(__('Nueva orden de compras', true), array('controller' => 'purchase_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
     </ul>
 </div>
+<?php endif;?>

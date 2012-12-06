@@ -62,16 +62,18 @@ foreach ($salesOrders as $salesOrder):
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $salesOrder['SalesOrder']['id'])); ?>
-			<?php if ($salesOrder['SalesOrder']['status'] == SalesOrder::DRAFT) : ?>
-				<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $salesOrder['SalesOrder']['id'])); ?>
-				<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $salesOrder['SalesOrder']['id'])); ?>
-			<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::SENT) : ?>
-				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $salesOrder['SalesOrder']['id'])); ?>
-			<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::INVOICED) : ?>
-				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $salesOrder['SalesOrder']['id'])); ?>
-			<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::PREINVOICED) : ?>
-				<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $salesOrder['SalesOrder']['id'])); ?>
-			<?php endif; ?>
+			<?php if($userData['User']['role'] != '3'): ?>
+				<?php if ($salesOrder['SalesOrder']['status'] == SalesOrder::DRAFT) : ?>
+					<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $salesOrder['SalesOrder']['id'])); ?>
+					<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $salesOrder['SalesOrder']['id'])); ?>
+				<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::SENT) : ?>
+					<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $salesOrder['SalesOrder']['id'])); ?>
+				<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::INVOICED) : ?>
+					<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $salesOrder['SalesOrder']['id'])); ?>
+				<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::PREINVOICED) : ?>
+					<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $salesOrder['SalesOrder']['id'])); ?>
+				<?php endif; ?>
+			<?php endif;?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -80,7 +82,7 @@ foreach ($salesOrders as $salesOrder):
 	
 <footer><h3><?php echo $this->element('paging'); ?></h3></footer>
 </div>
-
+<?php if($userData['User']['role'] != '3'): ?>
 <?php if (!$isReport): ?>
 <div class="actions">
 	<ul>
@@ -93,3 +95,4 @@ foreach ($salesOrders as $salesOrder):
 		<li><?php echo $this->Html->link(__('New Sales Order', true), array('controller' => 'sales_orders', 'action' => 'add', 'plugin' => 'orders', 'admin' => false))?></li>
 	</ul>
 </div>
+<?php endif;?>
