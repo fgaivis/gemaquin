@@ -13,7 +13,7 @@
 
 	?>
 
-	<div class="module width_quarter" id="items"></div>
+	<div class="module width_3_quarter" id="items"></div>
 	<div class="module width_3_quarter" id="orderTable">
 		<header>
 		<h3><?php __('Order Content') ?></h3>

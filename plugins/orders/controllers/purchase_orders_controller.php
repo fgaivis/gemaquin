@@ -107,10 +107,8 @@ class PurchaseOrdersController extends AppController {
 
 	public function fill_items($organization_id) {
 		$items = $this->PurchaseOrder->Provider->ItemsOrganization->find('all',array(
-			'contain'=>'Item',
-			'conditions' => array(
-				'organization_id'=>$organization_id
-			)
+			'conditions' => array('organization_id' => $organization_id),
+			'contain'=> array('Item' => array('order' => array('Item.name' => 'ASC')))
 		));
 		$items = Set::combine($items,'/Item/id','/Item/name');
 		$this->set(compact('items'));
