@@ -2153,3 +2153,10 @@ msgstr "Ha ocurrido un error, favor verifique sus datos"
 msgid "Payments"
 msgstr "Pagos"
 
+#: Otros
+msgid "Sells By Kg"
+msgstr "Por Kg?"
+
+#: Otros
+msgid "sells_by_kg"
+msgstr "por_kg?"

@@ -24,6 +24,7 @@
 		echo $this->Form->input('package_factor');
 		echo $this->Form->input('sales_factor');
 		echo $this->Form->input('weight');
+		echo $this->Form->input('sells_by_kg');
 		echo $this->Form->input('package_type', array('options' => $pack_types));
 		echo $this->Form->input('country');
 		echo $this->Form->input('industry');

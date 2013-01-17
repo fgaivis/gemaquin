@@ -14,5 +14,9 @@ $map = array(
  		'006_add_elab_exten_retest_dates_to_inventory' => 'M4ef13a310bb44d0aa5c12f0d94e08dd5'),
 	7 => array(
  		'007_add_availab_purcha_cost_to_inventory' => 'M4ef13a310bb44d0aa5c12f0d94e09dd6'),
+	8 => array(
+ 		'008_add_kg_fields_to_inventory' => 'M4ef13a310bb44d0aa5c12f0d95e09dd7'),
+	9 => array(
+ 		'009_add_kg_fields_to_inventory_items' => 'M4ef13a310bb44d0aa5c12f0d96e09dd8'),
 );
 ?>

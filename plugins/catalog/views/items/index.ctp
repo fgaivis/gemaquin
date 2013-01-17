@@ -22,6 +22,7 @@
 	<th><?php echo $this->Paginator->sort('package_factor');?></th>
 	<th><?php echo $this->Paginator->sort('sales_factor');?></th>
 	<th><?php echo $this->Paginator->sort('package_type');?></th>
+	<th><?php echo $this->Paginator->sort('sells_by_kg');?></th>
 	<!-- <th><?php //echo $this->Paginator->sort('country');?></th>
 	<th><?php //echo $this->Paginator->sort('industry');?></th>
 	<th><?php //echo $this->Paginator->sort('category_id');?></th> -->
@@ -56,6 +57,9 @@ foreach ($items as $item):
 		</td>
 		<td>
 			<?php echo $item['Item']['package_type']; ?>
+		</td>
+		<td>
+			<?php echo $item['Item']['sells_by_kg'] == 1 ? __('Yes') : __('No'); ?>
 		</td>
 		<!-- <td>
 			<?php //echo $item['Item']['country']; ?>
