@@ -64,8 +64,8 @@ foreach ($clients as $client):
 			<?php //echo $client['Client']['modified']; ?>
 		</td> -->
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $client['Client']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $client['Client']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $client['Client']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $client['Client']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $client['Client']['id'])); ?>
 		</td>
 	</tr>

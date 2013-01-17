@@ -32,7 +32,7 @@ foreach ($deliveryNotes as $deliveryNote):
 			<?php echo $deliveryNote['DeliveryNote']['created']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $deliveryNote['DeliveryNote']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $deliveryNote['DeliveryNote']['id'])); ?> &nbsp;|&nbsp;
 			<?php //echo $this->Html->link(__('Edit', true), array('action' => 'edit', $deliveryNote['DeliveryNote']['id'])); ?>
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $deliveryNote['DeliveryNote']['id'])); ?>
 		</td>

@@ -68,8 +68,8 @@ foreach ($providers as $provider):
 			<?php //echo $provider['Provider']['modified']; ?>
 		</td> -->
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $provider['Provider']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $provider['Provider']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $provider['Provider']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $provider['Provider']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $provider['Provider']['id'])); ?>
 		</td>
 	</tr>

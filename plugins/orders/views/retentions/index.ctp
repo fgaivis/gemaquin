@@ -56,8 +56,8 @@ foreach ($retentions as $retention):
 			<?php echo $retention['Retention']['modified']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $retention['Retention']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $retention['Retention']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $retention['Retention']['id'])); ?> &nbsp;|&nbsp; 
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $retention['Retention']['id'])); ?> &nbsp;|&nbsp; 
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $retention['Retention']['id'])); ?>
 		</td>
 	</tr>

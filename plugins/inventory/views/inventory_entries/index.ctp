@@ -27,9 +27,9 @@ foreach ($inventoryEntries as $inventoryEntry):
 			<?php echo $this->Html->link($inventoryEntry['PurchaseOrder']['number'], array('plugin' => 'orders', 'controller' => 'purchase_orders', 'action' => 'view', $inventoryEntry['PurchaseOrder']['id'])); ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('Details', true), array('controller' => 'inventory_items', 'action' => 'index', $inventoryEntry['InventoryEntry']['id'])); ?>
-			<?php echo $this->Html->link(__('Load Certificates', true), array('controller' => 'inventory_items', 'action' => 'load_certificates', $inventoryEntry['InventoryEntry']['id'])); ?>
-			<?php echo $this->Html->link(__('Report', true), array('controller' => 'inventory_items', 'action' => 'report', $inventoryEntry['InventoryEntry']['id'])); ?>
+			<?php echo $this->Html->link(__('Details', true), array('controller' => 'inventory_items', 'action' => 'index', $inventoryEntry['InventoryEntry']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Load Certificates', true), array('controller' => 'inventory_items', 'action' => 'load_certificates', $inventoryEntry['InventoryEntry']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Report', true), array('controller' => 'inventory_items', 'action' => 'report', $inventoryEntry['InventoryEntry']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Labels', true), array('controller' => 'inventory_items', 'action' => 'labels', $inventoryEntry['InventoryEntry']['id'])); ?>
 		</td>
 	</tr>

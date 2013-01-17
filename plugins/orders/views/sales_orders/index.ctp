@@ -61,11 +61,11 @@ foreach ($salesOrders as $salesOrder):
 			<?php echo $this->Html->link($salesOrder['Invoice']['number'], array('controller' => 'invoices', 'action' => 'view', $salesOrder['Invoice']['id'])); ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $salesOrder['SalesOrder']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $salesOrder['SalesOrder']['id'])); ?> &nbsp;|&nbsp; 
 			<?php if($userData['User']['role'] != '3'): ?>
 				<?php if ($salesOrder['SalesOrder']['status'] == SalesOrder::DRAFT) : ?>
 					<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $salesOrder['SalesOrder']['id'])); ?>
-					<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $salesOrder['SalesOrder']['id'])); ?>
+					&nbsp;|&nbsp; <?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $salesOrder['SalesOrder']['id'])); ?>
 				<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::SENT) : ?>
 					<?php echo $this->Html->link(__('Void', true), array('action' => 'void', $salesOrder['SalesOrder']['id'])); ?>
 				<?php elseif ($salesOrder['SalesOrder']['status'] == PurchaseOrder::INVOICED) : ?>

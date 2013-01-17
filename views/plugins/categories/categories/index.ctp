@@ -26,7 +26,7 @@ foreach ($categories as $category):
 			<?php echo $category['Category']['description']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__d('categories', 'Edit', true), array('action'=>'admin_edit', $category['Category']['id'])); ?>
+			<?php echo $this->Html->link(__d('categories', 'Edit', true), array('action'=>'admin_edit', $category['Category']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__d('categories', 'Delete', true), array('action'=>'admin_delete', $category['Category']['id']), null, sprintf(__d('categories', 'Are you sure you want to delete # %s?', true), $category['Category']['id'])); ?>
 		</td>
 	</tr>

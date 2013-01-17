@@ -52,8 +52,8 @@ foreach ($payments as $payment):
 			<?php echo $payment['Payment']['modified']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $payment['Payment']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $payment['Payment']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $payment['Payment']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $payment['Payment']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $payment['Payment']['id'])); ?>
 		</td>
 	</tr>

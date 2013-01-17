@@ -59,8 +59,8 @@ foreach ($organizations as $organization):
 			<?php echo $organization['Organization']['modified']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $organization['Organization']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $organization['Organization']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $organization['Organization']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $organization['Organization']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $organization['Organization']['id'])); ?>
 		</td>
 	</tr>

@@ -67,8 +67,8 @@ foreach ($addresses as $address):
 			<?php echo $address['Address']['modified']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $address['Address']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $address['Address']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $address['Address']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $address['Address']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $address['Address']['id'])); ?>
 		</td>
 	</tr>

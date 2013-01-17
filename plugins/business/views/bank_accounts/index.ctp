@@ -75,8 +75,8 @@ foreach ($bankAccounts as $bankAccount):
 			<?php echo $bankAccount['BankAccount']['modified']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $bankAccount['BankAccount']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $bankAccount['BankAccount']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $bankAccount['BankAccount']['id'])); ?> &nbsp;|&nbsp;
+			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $bankAccount['BankAccount']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Delete', true), array('action' => 'delete', $bankAccount['BankAccount']['id'])); ?>
 		</td>
 	</tr>

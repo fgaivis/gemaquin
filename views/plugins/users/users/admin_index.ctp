@@ -66,8 +66,8 @@
 					<?php //echo $user[$model]['created']; ?>
 				</td> -->	
 				<td class="actions">
-					<?php echo $this->Html->link(__d('users', 'View', true), array('action'=>'admin_view', $user[$model]['id'])); ?>
-					<?php echo $this->Html->link(__d('users', 'Edit', true), array('action'=>'admin_edit', $user[$model]['id'])); ?>
+					<?php echo $this->Html->link(__d('users', 'View', true), array('action'=>'admin_view', $user[$model]['id'])); ?> &nbsp;|&nbsp;
+					<?php echo $this->Html->link(__d('users', 'Edit', true), array('action'=>'admin_edit', $user[$model]['id'])); ?> &nbsp;|&nbsp;
 					<?php echo $this->Html->link(__d('users', 'Delete', true), array('action'=>'delete', $user[$model]['id']), null, sprintf(__d('users', 'Are you sure you want to delete # %s?', true), $user[$model]['id'])); ?>
 				</td>
 			</tr>

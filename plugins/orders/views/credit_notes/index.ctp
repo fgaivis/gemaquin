@@ -34,7 +34,7 @@ foreach ($creditNotes as $creditNote):
 			<?php echo $creditNote['CreditNote']['modified']; ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $creditNote['CreditNote']['id'])); ?>
+			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $creditNote['CreditNote']['id'])); ?> &nbsp;|&nbsp;
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $creditNote['CreditNote']['id'])); ?>
 		</td>
 	</tr>
