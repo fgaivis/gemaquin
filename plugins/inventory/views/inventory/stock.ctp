@@ -8,9 +8,11 @@
             'url' => array_merge(array('action' => 'stock'), $this->params['pass'])
         ));
         //echo $this->Form->input('gt_quantity', array('div' => false, 'label' => __('', true)));
-        echo $this->Form->input('lt_quantity', array('div' => false, 'label' => __('', true)));
-        echo $this->Form->input('organization_id', array('div' => false, 'label' => __('Provider', true), 'empty' =>__('Select',true)));
+        //echo $this->Form->input('lt_quantity', array('div' => false, 'label' => __('', true)));
         //echo $this->Form->hidden('z_quantity', array('value' => 1));
+        // Buscar por nombre del item y proveedor
+        echo $this->Form->input('name', array('div' => false, 'label' => __('Name', true)));
+        echo $this->Form->input('organization_id', array('div' => false, 'label' => __('Provider', true), 'empty' =>__('Select',true)));
         echo $this->Form->submit(__('Search', true), array('div' => false));
         echo $this->Form->end();
 
@@ -88,7 +90,11 @@ foreach ($items as $item):
 		<?php if($userData['User']['role'] === '0'): ?>
 			<li><?php echo $this->Html->link(__('New Inventory Item', true), array('plugin' => 'inventory','controller' => 'inventory', 'action' => 'add')); ?></li>
 		<?php endif; ?>
-		<?php if(!empty($this->data['Inventory'])): ?>
+		<?php if(!empty($this->data['Inventory']['name']) && !empty($this->data['Inventory']['organization_id'])): ?>
+			<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true, 'name' => $this->data['Inventory']['name'], 'organization_id' => $this->data['Inventory']['organization_id'])) : ''); ?></li>
+		<?php elseif(!empty($this->data['Inventory']['name'])): ?>
+			<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true, 'name' => $this->data['Inventory']['name'])) : ''); ?></li>
+		<?php elseif(!empty($this->data['Inventory']['organization_id'])): ?>
 			<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true, 'organization_id' => $this->data['Inventory']['organization_id'])) : ''); ?></li>
 		<?php else: ?>
 			<li><?php echo (!$isReport ? $this->Html->link(__('View report', true), array('action' => 'stock', true)) : ''); ?></li>

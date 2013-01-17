@@ -14,6 +14,7 @@ class InventoryController extends AppController {
         array('field' => 'z_quantity', 'type' => 'value', 'modelField' => 'z_quantity'),
     	array('field' => 'gt_quantity', 'type' => 'value', 'modelField' => 'gt_quantity'),
         array('field' => 'lt_quantity', 'type' => 'value', 'modelField' => 'lt_quantity'),
+        array('field' => 'name', 'type' => 'value'),
         array('field' => 'organization_id', 'type' => 'value', 'modelField' => 'organization_id'),
     );
 
@@ -44,9 +45,6 @@ class InventoryController extends AppController {
 	}
 
     public function stock($isReport = false) {
-        if ($isReport) {
-            $this->layout = 'print';
-        }
         $this->set('isReport', $isReport);
         $this->Prg->commonProcess();
         
@@ -56,6 +54,10 @@ class InventoryController extends AppController {
         $this->set('items', $this->paginate());
         $organizations = ClassRegistry::init('Business.Organization')->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('name' => 'asc')));
         $this->set(compact('organizations'));
+    	if ($isReport) {
+            $this->layout = 'print';
+            $this->render('report');
+        }
     }
     
 /**
@@ -77,7 +79,7 @@ class InventoryController extends AppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect('/');
 		}
-		$items = $this->Inventory->Item->find('list');
+		$items = $this->Inventory->Item->find('list', array('order' => array('name' => 'asc')));
 		$this->set(compact('items'));
  
 	}

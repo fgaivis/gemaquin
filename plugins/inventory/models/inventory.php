@@ -32,6 +32,7 @@ class Inventory extends InventoryAppModel {
         array('name' => 'z_quantity', 'type' => 'expression', 'method' => 'makeZQuantityCondition', 'field' => 'Inventory.quantity >= ?'),
     	array('name' => 'gt_quantity', 'type' => 'expression', 'method' => 'makeGTQuantityCondition', 'field' => 'Inventory.quantity >= ?'),
         array('name' => 'lt_quantity', 'type' => 'expression', 'method' => 'makeLTQuantityCondition', 'field' => 'Inventory.quantity <= ?'),
+        array('name' => 'name', 'type' => 'like', 'field' => 'Item.name'),
         array('name' => 'organization_id', 'type' => 'query', 'method' => 'makeProviderCondition'),
     );
 
