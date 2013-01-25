@@ -150,7 +150,14 @@ class PurchaseOrder extends AppModel {
 			$this->create();
 			if (!empty($data['ItemsPurchaseOrder'])){
 				for ($i= 0; $i < count($data['ItemsPurchaseOrder']); $i++){
-					$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+					//$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+					if($this->itemSellsByKg($data['ItemsPurchaseOrder'][$i]['item_id']) == 0){
+						$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+					}else{
+						$data['ItemsPurchaseOrder'][$i]['quantity'] = 0;
+						$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = 0;
+						$data['ItemsPurchaseOrder'][$i]['kg_quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['kg_quantity'];
+					}
 				}
 			    $result = $this->saveAll($data);
 			    if ($result !== false) {
@@ -190,7 +197,14 @@ class PurchaseOrder extends AppModel {
 			$data['PurchaseOrder']['id'] = $id;
 			$this->ItemsPurchaseOrder->deleteAll(array('purchase_order_id' => $id));
 			for ($i= 0; $i < count($data['ItemsPurchaseOrder']); $i++){
-				$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+				//$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+				if($this->itemSellsByKg($data['ItemsPurchaseOrder'][$i]['item_id']) == 0){
+					$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['quantity'];
+				}else{
+					$data['ItemsPurchaseOrder'][$i]['quantity'] = 0;
+					$data['ItemsPurchaseOrder'][$i]['quantity_remaining'] = 0;
+					$data['ItemsPurchaseOrder'][$i]['kg_quantity_remaining'] = $data['ItemsPurchaseOrder'][$i]['kg_quantity'];
+				}
 			}
 			$result = $this->saveAll($data);
 			if ($result !== false) {
@@ -299,6 +313,11 @@ class PurchaseOrder extends AppModel {
 			$this->validate = $tmp;
 			throw new Exception(__('You need to confirm to delete this Purchase Order', true));
 		}
+	}
+	
+	public function itemSellsByKg($item_id = null){
+		$item = ClassRegistry::init('Catalog.Item')->findById($item_id);
+		return $item['Item']['sells_by_kg'];
 	}
 	
 	public function checkEntryItems($id = null, $data = array()){

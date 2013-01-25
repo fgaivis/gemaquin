@@ -2164,3 +2164,7 @@ msgstr "por_kg?"
 #: Otros
 msgid "Quantity / Kg"
 msgstr "Cantidad / Kg"
+
+#: Otros
+msgid "Quantity Remaining (Kg)"
+msgstr "Cantidad por Entregar / Kg"

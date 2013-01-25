@@ -24,6 +24,7 @@
 					__('Code', true),
 					__('Item', true),
 					__('Package', true),
+					__('Sells By Kg', true),
 					__('Quantity / Kg', true),
 					__('Actions', true)
 					));

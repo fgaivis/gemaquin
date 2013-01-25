@@ -24,17 +24,24 @@
 					__('Item', true),
 					//__('Description', true),
 					__('Package', true),
-					__('Quantity', true),
+					__('Sells By Kg', true),
+					__('Quantity / Kg', true),
 					__('Actions', true)
 					));
 			?>
 			<?php foreach ($purchaseOrder['Item'] as $key => $item) : ?>
+			<?php $by_kg = $item['sells_by_kg']; ?>
 				<tr class="item" id="<?php echo 'row' . $item['id']?>">
 				    <td><?php echo $item['barcode']; ?></td>
 				    <td><?php echo $item['name']; ?></td>
 				    <!-- <td><?php //echo $item['description']; ?></td> -->
 				    <td><?php echo $item['package_factor']; ?></td>
-				    <td><?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.quantity', array('label' => false, 'div' => false, 'value' => $item['ItemsPurchaseOrder']['quantity'])); ?></td>
+				    <td><?php echo $by_kg == 0 ? 'No' : 'Si'; ?></td>
+				    <?php if($by_kg == 0) : ?>
+				    	<td><?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.quantity', array('label' => false, 'div' => false, 'value' => $item['ItemsPurchaseOrder']['quantity'])); ?></td>
+				    <?php else:?>
+				    	<td><?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.kg_quantity', array('label' => false, 'div' => false, 'value' => $item['ItemsPurchaseOrder']['kg_quantity'])); ?></td>
+				    <?php endif;?>
 				    <td>
 				    	<?php echo $this->Html->link(__('Delete', true), '#', array('item' => $item['id'], 'class' => 'delete')); ?>
 						<?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.item_id', array('type' => 'hidden', 'value' => $item['id'])); ?>

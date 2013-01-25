@@ -39,9 +39,10 @@
 		<th><?php __('Description'); ?></th>
 		<th><?php __('Barcode'); ?></th>
 		<th><?php __('Package Factor'); ?></th>
-		<th><?php __('Sales Factor'); ?></th>
-		<th><?php __('Quantity'); ?></th>
-		<th><?php __('Quantity Remaining'); ?></th>
+		<!-- <th><?php //__('Sales Factor'); ?></th> -->
+		<th><?php __('Sells By Kg'); ?></th>
+		<th><?php __('Quantity / Kg'); ?></th>
+		<th><?php __('Quantity Remaining (Kg)'); ?></th>
 		<!-- <th><?php //__('Country'); ?></th>
 		<th><?php //__('Industry'); ?></th> 
 		<th><?php //__('Category Id'); ?></th> -->
@@ -55,15 +56,16 @@
 				$class = ' class="altrow"';
 			}
 		?>
+		<?php $by_kg = $item['sells_by_kg'];?>
 		<tr<?php echo $class;?>>
 			<!-- <td><?php //echo $item['id'];?></td> -->
 			<td><?php echo $item['name'];?></td>
 			<td><?php echo $item['description'];?></td>
 			<td><?php echo $item['barcode'];?></td>
 			<td><?php echo $item['package_factor'];?></td>
-			<td><?php echo $item['sales_factor'];?></td>
-			<td><?php echo $item['ItemsPurchaseOrder']['quantity'];?></td>
-			<td><?php echo $item['ItemsPurchaseOrder']['quantity_remaining'];?></td>
+			<td><?php echo $by_kg == 0 ? 'No' : 'Si'; ?></td>
+			<td><?php echo $by_kg == 0 ? $item['ItemsPurchaseOrder']['quantity'] : $item['ItemsPurchaseOrder']['kg_quantity'];?></td>
+			<td><?php echo $by_kg == 0 ? $item['ItemsPurchaseOrder']['quantity_remaining'] : $item['ItemsPurchaseOrder']['kg_quantity_remaining'];?></td>
 			<!-- <td><?php //echo $item['country'];?></td>
 			<td><?php //echo $item['industry'];?></td>
 			<td><?php //echo $item['category_id'];?></td> -->

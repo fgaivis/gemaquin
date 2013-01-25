@@ -55,7 +55,15 @@ function addItem(itemId) {
 			    row.append('<td>'+ data.content.Item.barcode +'</td>');
 			    row.append('<td>'+ data.content.Item.name +'</td>');
 			    row.append('<td>'+ data.content.Item.package_factor +'</td>');
-			    row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
+			    if(data.content.Item.sells_by_kg == 0){
+			    	row.append('<td>'+ 'No' +'</td>');
+			    	row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
+			    }
+			    else{
+			    	row.append('<td>'+ 'Si' +'</td>');
+			    	row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][kg_quantity]" value="1"></td>');
+			    }
+			    //row.append('<td><input type="text" name="data[ItemsPurchaseOrder][' + itemsQuantity + '][quantity]" value="1"></td>');
 			    row.append(
 				    '<td>' +
 					    '<a href="#" class="delete" item="'+ data.content.Item.id +'">Eliminar</a>' +
