@@ -52,5 +52,7 @@ $map = array(
 		'020_add_comp_number_to_retentions' => 'M4fb2dcf760d44eb0aa9dd17594e07dd5'),
 	26 => array(
 		'021_add_id_number_to_payment' => 'M4fb2dcf760d44eb0aa9dd17594e09dd7'),
+	27 => array(
+		'022_add_quantity_kg_items_orders' => 'M4fb2dcf760d44eb0aa9dd17595e09dd8'),
 );
 ?>

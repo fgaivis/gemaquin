@@ -2160,3 +2160,7 @@ msgstr "Por Kg?"
 #: Otros
 msgid "sells_by_kg"
 msgstr "por_kg?"
+
+#: Otros
+msgid "Quantity / Kg"
+msgstr "Cantidad / Kg"

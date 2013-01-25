@@ -12,7 +12,7 @@
 
 	?>
 
-	<div class="module width_quarter" id="items"></div>
+	<div class="module width_3_quarter" id="items"></div>
 	<div class="module width_3_quarter" id="orderTable">
 		<header>
 		<h3><?php __('Order Content') ?></h3>
@@ -34,7 +34,7 @@
 				    <td><?php echo $item['name']; ?></td>
 				    <!-- <td><?php //echo $item['description']; ?></td> -->
 				    <td><?php echo $item['package_factor']; ?></td>
-				    <td><?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.quantity', array('label' => false, 'div' => false)); ?></td>
+				    <td><?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.quantity', array('label' => false, 'div' => false, 'value' => $item['ItemsPurchaseOrder']['quantity'])); ?></td>
 				    <td>
 				    	<?php echo $this->Html->link(__('Delete', true), '#', array('item' => $item['id'], 'class' => 'delete')); ?>
 						<?php echo $this->Form->input('ItemsPurchaseOrder.' . $key . '.item_id', array('type' => 'hidden', 'value' => $item['id'])); ?>

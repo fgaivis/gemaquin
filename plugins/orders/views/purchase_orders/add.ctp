@@ -24,7 +24,7 @@
 					__('Code', true),
 					__('Item', true),
 					__('Package', true),
-					__('Quantity', true),
+					__('Quantity / Kg', true),
 					__('Actions', true)
 					));
 			?>

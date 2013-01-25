@@ -49,7 +49,7 @@
 	</tr>
 	<?php
 		$i = 0;
-		foreach ($purchaseOrder['Item'] as $itm=>$item):
+		foreach ($purchaseOrder['Item'] as $item):
 			$class = null;
 			if ($i++ % 2 == 0) {
 				$class = ' class="altrow"';
@@ -62,8 +62,8 @@
 			<td><?php echo $item['barcode'];?></td>
 			<td><?php echo $item['package_factor'];?></td>
 			<td><?php echo $item['sales_factor'];?></td>
-			<td><?php echo $purchaseOrder['ItemsPurchaseOrder'][$itm]['quantity'];?></td>
-			<td><?php echo $purchaseOrder['ItemsPurchaseOrder'][$itm]['quantity_remaining'];?></td>
+			<td><?php echo $item['ItemsPurchaseOrder']['quantity'];?></td>
+			<td><?php echo $item['ItemsPurchaseOrder']['quantity_remaining'];?></td>
 			<!-- <td><?php //echo $item['country'];?></td>
 			<td><?php //echo $item['industry'];?></td>
 			<td><?php //echo $item['category_id'];?></td> -->
@@ -75,6 +75,9 @@
 <div class="actions">
 <ul>
     <li><?php echo $this->Html->link(__('Listar ordenes de compra', true), array('controller' => 'purchase_orders', 'action' => 'index', 'plugin' => 'orders', 'admin' => false))?></li>
+    <?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) :?>
+    	<li><?php echo $this->Html->link(__('Editar orden de compra', true), array('controller' => 'purchase_orders', 'action' => 'edit', $purchaseOrder['PurchaseOrder']['id']))?></li>
+    <?php endif;?>
 </ul>
 <br/><br/>
 <div style="margin-left: 18px;">
