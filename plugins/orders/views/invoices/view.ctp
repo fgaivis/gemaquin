@@ -91,7 +91,7 @@
 			<li>
 				<?php echo $this->Html->link(__('Generate Debit Note', true), array('controller' => 'debit_notes', 'action' => 'add', $invoice['Invoice']['id'])); ?>
 			</li>
-			<li><?php echo $this->Html->link(__('Register Payment', true), array('controller' => 'payments', 'action' => 'add', $invoice['Invoice']['id'])); ?>
+			<li><?php echo $this->Html->link(__('Register Collection', true), array('controller' => 'payments', 'action' => 'add', $invoice['Invoice']['id'])); ?>
 			<li><?php echo $this->Html->link(__('Print invoice', true), array('action' => 'print_invoice', $invoice['Invoice']['id'])); ?></li>
 	<?php elseif ($invoice['Invoice']['type'] === Invoice::PURCHASE || $invoice['Invoice']['type'] === Invoice::SERVICE) : ?>
 			<li><?php echo $this->Html->link(__('Register Payment', true), array('controller' => 'payments', 'action' => 'add', $invoice['Invoice']['id'])); ?>

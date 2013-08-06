@@ -1098,6 +1098,14 @@ msgid "Extension Date"
 msgstr "Fecha de Extensión"
 
 #: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Elaboration"
+msgstr "Elaboración/Reevaluación"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
+msgid "Expiration"
+msgstr "Expiración/Extensión"
+
+#: plugins/inventory/views/inventory_items/add.ctp:23
 msgid "Send Files"
 msgstr "Cargar archivos"
 
@@ -1406,7 +1414,7 @@ msgstr "Agregar factura de servicio"
 
 #: plugins/orders/views/invoices/add.ctp:3
 msgid "Total No Exempt"
-msgstr "Subtotal no exento"
+msgstr "Base imponible"
 
 #: plugins/orders/views/invoices/add.ctp:3
 msgid "Total Exempt"
@@ -1970,6 +1978,10 @@ msgid "Register Payment"
 msgstr "Registrar pago"
 
 #: Generales
+msgid "Register Collection"
+msgstr "Registrar cobro"
+
+#: Generales
 msgid "Observations"
 msgstr "Observaciones"
 
@@ -1994,6 +2006,10 @@ msgid "Print"
 msgstr "Imprimir"
 
 #: Generales
+msgid "Preview"
+msgstr "Previsualizar"
+
+#: Generales
 msgid "Rate"
 msgstr "Porcentaje"
 
@@ -2012,6 +2028,10 @@ msgstr "Crear Retención para la factura %s"
 #: Generales
 msgid "Register Payment for Invoice %s"
 msgstr "Registrar pago para la factura %s"
+
+#: Generales
+msgid "Register Collection for Invoice %s"
+msgstr "Registrar cobro para la factura %s"
 
 #: Generales
 msgid "Create Credit Note for Invoice %s"
@@ -2168,3 +2188,15 @@ msgstr "Cantidad / Kg"
 #: Otros
 msgid "Quantity Remaining (Kg)"
 msgstr "Cantidad por Entregar / Kg"
+
+#: Otros
+msgid "Provider Code"
+msgstr "Código por proveedor"
+
+#: Otros
+msgid "Provcode"
+msgstr "Código"
+
+#: Otros
+msgid "Back to list"
+msgstr "Volver al listado"

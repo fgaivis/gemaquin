@@ -82,7 +82,7 @@
     <?php endif;?>
 </ul>
 <br/><br/>
-<div style="margin-left: 18px;">
+<div class="multiple-forms" style="margin-left: 18px;">
 <?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::DRAFT) :?>
 	<?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'send')));?>
 	<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>

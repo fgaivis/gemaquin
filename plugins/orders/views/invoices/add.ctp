@@ -21,7 +21,10 @@
 			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
 			echo $this->Form->input('control');
-			echo $this->Form->input('subtotal');
+			//echo $this->Form->input('subtotal');
+			echo $this->Form->hidden('subtotal', array('value' => 0));
+			echo $this->Form->input('total_no_exempt');
+			echo $this->Form->input('total_exempt');
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total', array('class' => 'total'));
 			echo $this->Form->input('insurance', array('class' => 'outgoings'));
@@ -35,9 +38,12 @@
 		} else if (!empty($this->data['PrePurchaseOrder'])) {
 			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
-			echo $this->Form->input('subtotal');
-			echo $this->Form->input('tax');
-			echo $this->Form->input('total', array('class' => 'total'));
+			//echo $this->Form->input('subtotal');
+			echo $this->Form->hidden('subtotal', array('value' => 0));
+			echo $this->Form->input('total_no_exempt', array('class' => 'no-exempt'));
+			echo $this->Form->input('total_exempt', array('class' => 'exempt'));
+			echo $this->Form->input('tax', array('class' => 'tax-input', 'disabled' => true));
+			echo $this->Form->input('total', array('class' => 'total', 'disabled' => true));
 			echo $this->Form->input('insurance', array('class' => 'outgoings'));
 			echo $this->Form->input('shipping', array('class' => 'outgoings'));
 			echo $this->Form->input('customs_tax', array('class' => 'outgoings'));
@@ -112,7 +118,11 @@
 					  <?php endif; ?>
 						<td><?php echo $item['Item']['name']; ?></td>
 						<?php if(!(isset($this->data['SalesOrder']))) : ?>
-							<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
+							<?php if($item['Item']['sells_by_kg'] == 0): ?>
+								<td><?php echo $item['ItemsPurchaseOrder']['quantity']; ?></td>
+							<?php else:?>
+								<td><?php echo $item['ItemsPurchaseOrder']['kg_quantity']; ?></td>
+							<?php endif;?>
 						<?php else : ?>
 							<td><?php echo $item['InvItemsSalesOrder']['quantity']; ?></td>
 							<td>
@@ -125,7 +135,12 @@
 							<?php 
 								echo $this->Form->hidden('InvoicesItem.' . $index . '.item_id', array('value' => $item['Item']['id']));
 								if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])) {
-									echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['ItemsPurchaseOrder']['quantity']));
+									if($item['Item']['sells_by_kg'] == 0) {
+										echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['ItemsPurchaseOrder']['quantity']));	
+									} else {
+										//TODO Revisar si hace falta cambiarlo a kg_quantity
+										echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['ItemsPurchaseOrder']['kg_quantity']));
+									}
 								} else if (isset($this->data['SalesOrder'])) {
 									echo $this->Form->hidden('InvoicesItem.' . $index . '.quantity', array('value' => $item['InvItemsSalesOrder']['quantity']));
 								}

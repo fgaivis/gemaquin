@@ -15,6 +15,9 @@ class InventoryController extends AppController {
     	array('field' => 'gt_quantity', 'type' => 'value', 'modelField' => 'gt_quantity'),
         array('field' => 'lt_quantity', 'type' => 'value', 'modelField' => 'lt_quantity'),
         array('field' => 'name', 'type' => 'value'),
+        array('field' => 'batch', 'type' => 'value'),
+        array('field' => 'from', 'type' => 'value'),
+        array('field' => 'to', 'type' => 'value'),
         array('field' => 'organization_id', 'type' => 'value', 'modelField' => 'organization_id'),
     );
 
@@ -49,7 +52,7 @@ class InventoryController extends AppController {
         $this->Prg->commonProcess();
         
     	$this->passedArgs['z_quantity'] = 1;
-        //if(!empty($this->passedArgs)) { print_r($this->passedArgs); }
+        //if(!empty($this->passedArgs)) { print_r($this->passedArgs); exit(); }
         $this->paginate['conditions'] = $this->Inventory->parseCriteria($this->passedArgs);
         $this->set('items', $this->paginate());
         $organizations = ClassRegistry::init('Business.Organization')->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('name' => 'asc')));

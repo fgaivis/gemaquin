@@ -21,7 +21,8 @@
 		<table>
 			<?php
 				echo $html->tableHeaders(array(
-					__('Code', true),
+					__('Provider Code', true),
+					__('Barcode', true),
 					__('Item', true),
 					__('Package', true),
 					__('Sells By Kg', true),

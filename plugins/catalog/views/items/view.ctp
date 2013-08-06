@@ -16,6 +16,11 @@
 			<?php echo $item['Item']['description']; ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Provider Code'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $item['Item']['provider_code']; ?>
+			&nbsp;
+		</dd>
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Barcode'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $item['Item']['barcode']; ?>
@@ -73,6 +78,16 @@
 		</dd>
 	</dl>
 </div>
+	<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $item['Item']['id'])); ?></li>
+		</ul>
+		<ul class="inner">
+			<li><?php echo $this->Html->link(__('Back to list', true), array('action' => 'index')); ?></li>
+		</ul>
+	</div>
+
+
 
 <div class="related index">
 <header><h3><?php __('Related Organizations');?></h3></header>

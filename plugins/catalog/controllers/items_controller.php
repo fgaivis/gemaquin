@@ -38,6 +38,7 @@ class ItemsController extends CatalogAppController {
  * @var array
  */
 	public $presetVars = array(
+		array('field' => 'provider_code', 'type' => 'value'),
 		array('field' => 'name', 'type' => 'value'),
 		array('field' => 'organization_id', 'type' => 'value'),
 		array('field' => 'purchase_order', 'type' => 'value')

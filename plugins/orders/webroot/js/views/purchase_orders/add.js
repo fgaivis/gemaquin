@@ -52,6 +52,7 @@ function addItem(itemId) {
 			var currentItem = $("#row" + data.content.Item.id);
 			if (currentItem.length == 0) {
 			    var row = $('<tr class="item" id="row' + data.content.Item.id + '">');
+			    row.append('<td>'+ data.content.Item.provider_code +'</td>');
 			    row.append('<td>'+ data.content.Item.barcode +'</td>');
 			    row.append('<td>'+ data.content.Item.name +'</td>');
 			    row.append('<td>'+ data.content.Item.package_factor +'</td>');

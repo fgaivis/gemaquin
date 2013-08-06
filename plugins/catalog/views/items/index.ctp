@@ -6,6 +6,7 @@
     echo $this->Form->create(null, array(
         'url' => array_merge(array('action' => 'index'), $this->params['pass'])
     ));
+    echo $this->Form->input('provider_code', array('div' => false, 'label' => __('Provcode', true)));
     echo $this->Form->input('name', array('div' => false));
     echo $this->Form->input('organization_id', array('div' => false, 'label' => __('Provider', true), 'empty' =>__('Select',true)));
     echo $this->Form->submit(__('Search', true), array('div' => false));
@@ -16,6 +17,7 @@
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
+	<th><?php echo $this->Paginator->sort('provcode');?></th>
 	<th><?php echo $this->Paginator->sort('name');?></th>
 	<!-- <th><?php //echo $this->Paginator->sort('description');?></th>
 	<th><?php //echo $this->Paginator->sort('barcode');?></th> -->
@@ -40,6 +42,9 @@ foreach ($items as $item):
 		<!-- <td>
 			<?php //echo $item['Item']['id']; ?>
 		</td> -->
+		<td>
+			<?php echo $item['Item']['provider_code']; ?>
+		</td>
 		<td>
 			<?php echo $item['Item']['name']; ?>
 		</td>

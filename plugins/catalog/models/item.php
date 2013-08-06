@@ -100,6 +100,7 @@ class Item extends CatalogAppModel {
  * @access public
  */
 	public $filterArgs = array(
+		array('name' => 'provider_code', 'type' => 'like', 'field' => 'provider_code'),
 		array('name' => 'name', 'type' => 'like', 'field' => 'name'),
 		array('name' => 'organization_id', 'type' => 'query', 'method' => 'makeProviderCondition'),
 		array('name' => 'purchase_order', 'type' => 'query', 'method' => 'makeOrderCondition')

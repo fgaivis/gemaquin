@@ -18,6 +18,7 @@
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');
+		echo $this->Form->input('provider_code');
 		echo $this->Form->input('barcode');
 		echo $this->Form->input('max_quantity');
 		echo $this->Form->input('min_quantity');
@@ -36,4 +37,8 @@
 <?php echo $this->Form->end(__d('default', 'Submit', true));?>
 </div>
 
-
+<div class="actions">
+		<ul>
+			<li><?php echo $this->Html->link(__('Back to list', true), array('action' => 'index')); ?></li>
+		</ul>
+</div>

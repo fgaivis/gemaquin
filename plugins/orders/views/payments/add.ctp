@@ -1,7 +1,11 @@
 <div class="payments form">
 <?php //echo $this->Form->create('Payment', array('url' => array('action' => 'add')));?>
 <?php echo $this->Form->create('Payment', array('url' => $this->params['pass']));?>
-	<header><h3><?php echo sprintf(__('Register Payment for Invoice %s', true), $invoice['Invoice']['number']); ?></h3></header>
+	<?php if($invoice['Invoice']['type'] === Invoice::SALES): ?>
+		<header><h3><?php echo sprintf(__('Register Collection for Invoice %s', true), $invoice['Invoice']['number']); ?></h3></header>
+	<?php else: ?>
+		<header><h3><?php echo sprintf(__('Register Payment for Invoice %s', true), $invoice['Invoice']['number']); ?></h3></header>
+	<?php endif; ?>
 	<fieldset>
 	
 	<?php $payment_types = array(

@@ -33,6 +33,9 @@ class Inventory extends InventoryAppModel {
     	array('name' => 'gt_quantity', 'type' => 'expression', 'method' => 'makeGTQuantityCondition', 'field' => 'Inventory.quantity >= ?'),
         array('name' => 'lt_quantity', 'type' => 'expression', 'method' => 'makeLTQuantityCondition', 'field' => 'Inventory.quantity <= ?'),
         array('name' => 'name', 'type' => 'like', 'field' => 'Item.name'),
+        array('name' => 'batch', 'type' => 'like', 'field' => 'batch'),
+        array('name' => 'from', 'type' => 'query', 'method' => 'makeDateFromCondition'),
+        array('name' => 'to', 'type' => 'query', 'method' => 'makeDateToCondition'),
         array('name' => 'organization_id', 'type' => 'query', 'method' => 'makeProviderCondition'),
     );
 
@@ -59,6 +62,23 @@ class Inventory extends InventoryAppModel {
 			)
 		)), false);
 	}
+	
+	public function makeDateCondition($data = array()) {
+        return array('AND' => array(
+        		'OR' => array('Inventory.expiration_date >=' => $data['from'], 'Inventory.extension_date >=' => $data['from']),
+        		'OR' => array('Inventory.expiration_date <=' => $data['to'], 'AND' => array('Inventory.extension_date <=' => $data['to'], 'Inventory.extension_date <>' => '0000-00-00'))
+        ));
+    }
+	
+	public function makeDateFromCondition($data = array()) {
+        return array('OR' => array('Inventory.expiration_date >=' => $data['from'], 'Inventory.extension_date >=' => $data['from']));
+		//return array('OR' => array(' Inventory.expiration_date >=' => $data['from']['year'].'-'.$data['from']['month'].'-'.$data['from']['day']));
+    }
+    
+	public function makeDateToCondition($data = array()) {
+		return array('OR' => array('Inventory.expiration_date <=' => $data['to'], 'AND' => array('Inventory.extension_date <=' => $data['to'], 'Inventory.extension_date <>' => '0000-00-00')));
+        //return array('Inventory.expiration_date <=' => $data['to']['year'].'-'.$data['to']['month'].'-'.$data['to']['day']);
+    }
 
     /**
  * Constructor
