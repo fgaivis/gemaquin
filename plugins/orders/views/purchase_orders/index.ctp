@@ -5,12 +5,31 @@
 	</header>
 	
 	<div class="index-filters">
+	<?php $statuses = array(
+			PurchaseOrder::DRAFT => __(PurchaseOrder::DRAFT, true),
+			PurchaseOrder::SENT => __(PurchaseOrder::SENT, true),
+			PurchaseOrder::APPROVED => __(PurchaseOrder::APPROVED, true),
+			PurchaseOrder::PREINVOICED => __(PurchaseOrder::PREINVOICED, true),
+			PurchaseOrder::INVOICED => __(PurchaseOrder::INVOICED, true),
+			PurchaseOrder::DISPATCHED => __(PurchaseOrder::DISPATCHED, true),
+			PurchaseOrder::RECEIVED => __(PurchaseOrder::RECEIVED, true),
+			PurchaseOrder::COMPLETED => __(PurchaseOrder::COMPLETED, true),
+			PurchaseOrder::VOID => __(PurchaseOrder::VOID, true)
+		);
+	?>
+	
     <?php
 
     if (!$isReport) {
         echo $this->Form->create(null, array(
             'url' => array_merge(array('action' => 'index'), $this->params['pass'])
         ));
+		echo $this->Form->input('number', array('div' => false, 'label' => __('Number', true)));
+		echo $this->Form->input('invoice', array('div' => false, 'label' => __('Invoice', true)));
+        echo $this->Form->input('organization_id', array('div' => false, 'label' => __('Provider', true), 'empty' =>__('Select',true)));
+        echo '<br/>';
+        echo $this->Form->input('status', array('div' => false, 'label' => __('Status', true), 'options' => $statuses, 'empty' =>__('Select',true)));
+        echo '&nbsp;&nbsp;';
         echo $this->Form->input('from_date', array('div' => false, 'label' => __('From', true)));
         echo $this->Form->input('to_date', array('div' => false, 'label' => __('To', true)));
         echo $this->Form->submit(__('Search', true), array('div' => false));
@@ -21,8 +40,8 @@
     </div>
 	<table cellpadding="0" cellspacing="0">
 		<tr>
-			<!-- <th><?php //echo $this->Paginator->sort('id');?>
-			</th> -->
+			<th><?php echo $this->Paginator->sort('created');?>
+			</th>
 			<th><?php echo $this->Paginator->sort('number');?>
 			</th>
 			<th><?php echo $this->Paginator->sort('organization_id');?>
@@ -45,9 +64,9 @@ foreach ($purchaseOrders as $purchaseOrder):
 	}
 ?>
 	<tr<?php echo $class;?>>
-		<!-- <td>
-			<?php //echo $purchaseOrder['PurchaseOrder']['id']; ?>
-		</td> -->
+		<td>
+			<?php echo $purchaseOrder['PurchaseOrder']['created']; ?>
+		</td>
 		<td>
 			<?php echo $purchaseOrder['PurchaseOrder']['number']; ?>
 		</td>

@@ -1402,7 +1402,7 @@ msgstr "Agregar factura de compra"
 
 #: plugins/orders/views/invoices/add.ctp:3
 msgid "Add Draft Invoice"
-msgstr "Agregar factura proforma"
+msgstr "Agregar proforma / cotización"
 
 #: plugins/orders/views/invoices/add.ctp:3
 msgid "Add Sales Invoice"
@@ -1763,7 +1763,7 @@ msgstr "Nuevo cliente"
 
 #: webroot/*.php
 msgid "Add Draft Invoice"
-msgstr "Agregar factura proforma"
+msgstr "Agregar proforma / cotización"
 
 #: webroot/*.php
 msgid "Insurance"
@@ -1851,11 +1851,11 @@ msgstr "Buscar"
 
 #: Filtros
 msgid "From"
-msgstr "Desde"
+msgstr "Fec. Desde"
 
 #: Filtros
 msgid "To"
-msgstr "Hasta"
+msgstr "Fec. Hasta"
 
 #: Reportes Inventario
 msgid "View report"
@@ -2200,3 +2200,27 @@ msgstr "Código"
 #: Otros
 msgid "Back to list"
 msgstr "Volver al listado"
+
+#: Otros
+msgid "PURCHASE ORDER"
+msgstr "ORDEN DE COMPRA"
+
+#: Otros
+msgid "PRODUCT"
+msgstr "PRODUCTO"
+
+#: Otros
+msgid "QUANTITY"
+msgstr "CANTIDAD"
+
+#: Otros
+msgid "PRICE"
+msgstr "PRECIO"
+
+#: Otros
+msgid "DELIVERY"
+msgstr "DESPACHO"
+
+#: Otros
+msgid "INMEDIATE"
+msgstr "INMEDIATO"

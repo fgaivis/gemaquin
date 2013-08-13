@@ -112,7 +112,7 @@ class InvoicesController extends AppController {
 		$items = array();
 		if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])) {
 			$type = isset($this->data['PrePurchaseOrder']) ? 'PrePurchaseOrder' : 'PurchaseOrder';
-			$items = $this->Invoice->PrePurchaseOrder->ItemsPurchaseOrder->find('all', array(
+			$items = $this->Invoice->PurchaseOrder->ItemsPurchaseOrder->find('all', array(
 				'contain' => array('Item'),
 				'order' => 'ItemsPurchaseOrder.item_id',
 				'conditions' => array(
@@ -139,8 +139,7 @@ class InvoicesController extends AppController {
 				$this->data['Invoice']['type'] = Invoice::PURCHASE;
 			}
 		}
-		$this->set(compact('organizations', 'items'));
- 
+		$this->set(compact('organizations', 'items')); 
 	}
 
 /**

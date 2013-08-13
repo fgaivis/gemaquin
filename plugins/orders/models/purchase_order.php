@@ -105,7 +105,11 @@ class PurchaseOrder extends AppModel {
     public $actsAs = array('Search.Searchable');
 
     public $filterArgs = array(
-        array('name' => 'from_date', 'type' => 'expression', 'method' => 'makeFromCondition', 'field' => 'PurchaseOrder.created >= ?'),
+        array('name' => 'number', 'type' => 'value', 'method' => 'like', 'field' => 'number'),
+        array('name' => 'invoice', 'type' => 'value', 'method' => 'like', 'field' => 'Invoice.number'),
+        array('name' => 'organization_id', 'type' => 'value', 'method' => 'like', 'field' => 'Provider.id'),
+        array('name' => 'status', 'type' => 'value', 'method' => 'like', 'field' => 'status'),
+    	array('name' => 'from_date', 'type' => 'expression', 'method' => 'makeFromCondition', 'field' => 'PurchaseOrder.created >= ?'),
         array('name' => 'to_date', 'type' => 'expression', 'method' => 'makeToCondition', 'field' => 'PurchaseOrder.created <= ?'),
     );
 

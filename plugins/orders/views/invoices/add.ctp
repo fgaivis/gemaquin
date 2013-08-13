@@ -17,7 +17,7 @@
 	<?php
 		echo $this->Form->hidden('Organization.id');
 		echo $this->Form->hidden('Invoice.type');
-		if (!empty($this->data['PurchaseOrder'])) {
+		if (!empty($this->data['PurchaseOrder'])) { // Ordenes de Compra - Facturas de Compra de Productos
 			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
 			echo $this->Form->input('control');
@@ -35,24 +35,24 @@
 			echo $this->Form->hidden('PurchaseOrder.id', array('value' => $this->data['PurchaseOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 			echo $this->Form->hidden('PurchaseOrder.id');					
-		} else if (!empty($this->data['PrePurchaseOrder'])) {
+		} else if (!empty($this->data['PrePurchaseOrder'])) { // Ordenes de Compra - Facturas proforma de Compra de Productos
 			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
 			//echo $this->Form->input('subtotal');
 			echo $this->Form->hidden('subtotal', array('value' => 0));
-			echo $this->Form->input('total_no_exempt', array('class' => 'no-exempt'));
-			echo $this->Form->input('total_exempt', array('class' => 'exempt'));
-			echo $this->Form->input('tax', array('class' => 'tax-input', 'disabled' => true));
-			echo $this->Form->input('total', array('class' => 'total', 'disabled' => true));
 			echo $this->Form->input('insurance', array('class' => 'outgoings'));
 			echo $this->Form->input('shipping', array('class' => 'outgoings'));
 			echo $this->Form->input('customs_tax', array('class' => 'outgoings'));
 			echo $this->Form->input('customs_adm', array('class' => 'outgoings'));
 			echo $this->Form->input('internal_shipping', array('class' => 'outgoings'));
+			echo $this->Form->input('total_no_exempt', array('class' => 'no-exempt', 'disabled' => true));
+			echo $this->Form->input('total_exempt', array('class' => 'exempt', 'disabled' => true));
+			echo $this->Form->input('tax', array('class' => 'tax-input', 'disabled' => true));
+			echo $this->Form->input('total', array('class' => 'total', 'disabled' => true));
 			echo $this->Form->hidden('PrePurchaseOrder.id', array('value' => $this->data['PrePurchaseOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 			echo $this->Form->hidden('PrePurchaseOrder.id');
-		} else if (!empty($this->data['SalesOrder'])) {
+		} else if (!empty($this->data['SalesOrder'])) { // Ordenes de Venta - Facturas de venta
 			echo $this->Form->input('control');
 			echo $this->Form->hidden('subtotal', array('value' => 0));
 			echo $this->Form->hidden('tax', array('value' => 0));
@@ -62,7 +62,7 @@
 			echo $this->Form->hidden('SalesOrder.id', array('value' => $this->data['SalesOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 			echo $this->Form->hidden('SalesOrder.id');
-		} else {
+		} else { // Facturas de Servicios
 			echo $this->Form->input('organization_id');
 			echo $this->Form->input('created', array('type' => 'date'));
 			echo $this->Form->input('number');
@@ -77,6 +77,13 @@
 		
 	?>
 <?php if (!empty($items)) : ?>
+	<?php if(!(isset($this->data['SalesOrder']))): ?>
+		<div id="CountOfItems" style="visibility: hidden;"><?php echo count($items); ?></div>
+		<span style="font-weight: bold; color: blue; font-size:14px;">Suma Total de Gastos: </span>
+		<span id="OutgoingsTotal" style="font-weight: bold; color: red; font-size:14px;"></span>
+		<span id="EachText" style="display: none; font-weight: bold; color: black; font-size:14px;"> - Aprox. c/item paga: </span>
+		<span id="OutgoingsEach" style="font-weight: bold; color: black; font-size:14px;"></span>
+	<?php endif; ?>	
 	<div class="module width_full" id="orderTable">
 	<header>
 	<h3><?php __('Invoice Content') ?></h3>
@@ -89,6 +96,8 @@
 						__('Item', true),
 						__('Quantity', true),
 						__('Unit Price', true),
+						__('Exempt', true),
+						__('Tax', true),
 						__('Total Price', true),
 					);
 				/*if (isset($this->data['PrePurchaseOrder'])) {
@@ -114,7 +123,7 @@
 				<?php foreach ($items as $index => $item) : ?>
 					<tr class="item">
 					  <?php if(!(isset($this->data['SalesOrder']))): ?>
-						<td><?php echo $item['Item']['barcode']; ?></td>
+						<td><?php echo $item['Item']['provider_code']; ?></td>
 					  <?php endif; ?>
 						<td><?php echo $item['Item']['name']; ?></td>
 						<?php if(!(isset($this->data['SalesOrder']))) : ?>
@@ -148,7 +157,6 @@
 								echo $this->Form->hidden('InvoicesItem.' . $index . '.individual_cost', array('index' => $index));
 							?>
 						</td>
-						<?php if (isset($this->data['SalesOrder'])): ?>
 						<td>
 							<?php echo $this->Form->input('InvoicesItem.' . $index . '.exempt', array('type' => 'checkbox', 'class' => 'item-exempt', 'index' => $index, 'label' => false, 'div' => false)); ?>
 						</td>
@@ -157,7 +165,6 @@
 									echo '<span class="tax-label" index="' . $index .'"></span>';
 							?>
 						</td>
-						<?php endif;?>
 						<td>
 							<?php echo $this->Form->hidden('InvoicesItem.' . $index . '.purchase_cost', array('index' => $index));
 									echo '<span class="total_price-label" index="' . $index .'"></span>'; 

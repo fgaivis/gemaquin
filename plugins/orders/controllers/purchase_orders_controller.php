@@ -27,7 +27,11 @@ class PurchaseOrdersController extends AppController {
     public $components = array('Search.Prg');
 
     public $presetVars = array(
-        array('field' => 'from_date', 'type' => 'value', 'modelField' => 'from_date'),
+        array('field' => 'number', 'type' => 'value'),
+        array('field' => 'invoice', 'type' => 'value'),
+        array('field' => 'organization_id', 'type' => 'value'),
+        array('field' => 'status', 'type' => 'value'),
+    	array('field' => 'from_date', 'type' => 'value', 'modelField' => 'from_date'),
         array('field' => 'to_date', 'type' => 'value', 'modelField' => 'to_date'),
     );
 /**
@@ -39,6 +43,8 @@ class PurchaseOrdersController extends AppController {
         if ($isReport) {
             $this->layout = 'print';
         }
+        $organizations = ClassRegistry::init('Business.Organization')->find('list',array('conditions' => array('Organization.type'=>'Provider'), 'order' => array('name' => 'asc')));
+        $this->set(compact('organizations'));
         $this->set('isReport', $isReport);
         $this->Prg->commonProcess();
         $this->paginate['conditions'] = $this->PurchaseOrder->parseCriteria($this->passedArgs);
@@ -103,6 +109,12 @@ class PurchaseOrdersController extends AppController {
             $this->Session->setFlash(__('An error has occurred completing the purchase order', true));
         }
         $this->redirect(array('action' => 'view',$this->data['PurchaseOrder']['id']));
+    }
+    
+	public function preview_print() { //$id
+        $this->layout = 'print';
+		$this->view($this->data['PurchaseOrder']['id']);
+		//$this->view($id);
     }
 
 	public function fill_items($organization_id) {
