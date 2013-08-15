@@ -1155,6 +1155,10 @@ msgid "Purchase Cost"
 msgstr "Costo Total Compra"
 
 #: plugins/orders/views/purchase_orders/edit.ctp:27
+msgid "Item Cost"
+msgstr "Costo Item"
+
+#: plugins/orders/views/purchase_orders/edit.ctp:27
 msgid "Individual Cost"
 msgstr "Costo/Item"
 
@@ -1366,6 +1370,11 @@ msgstr "No se pudo guardar la Orden de Compras, favor verifique los campos ingre
 #: plugins/orders/models/purchase_order.php:161;194;226
 msgid "Invalid Purchase Order"
 msgstr "Orden de Compra inválida"
+
+#: plugins/orders/models/invoices_item.php:106;138;160
+#: plugins/orders/models/purchase_order.php:161;194;226
+msgid "Invalid PreInvoice"
+msgstr "Factura proforma inválida"
 
 #: plugins/orders/models/invoices_item.php:178
 #: plugins/orders/models/purchase_order.php:244

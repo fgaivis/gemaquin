@@ -241,6 +241,18 @@ class PurchaseOrder extends AppModel {
 
 		return $purchaseOrder;
 	}
+	
+	public function getPreInvoice($id = null) {
+		$preInvoice = $this->PreInvoice->find('first', array(
+			'conditions' => array(
+				'PreInvoice.id' => $id)));
+
+		if (empty($preInvoice)) {
+			throw new OutOfBoundsException(__('Invalid PreInvoice', true));
+		}
+
+		return $preInvoice;
+	}
 
     public function send($data) {
         $data['PurchaseOrder']['status'] = PurchaseOrder::SENT;

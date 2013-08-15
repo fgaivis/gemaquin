@@ -18,5 +18,7 @@ $map = array(
  		'008_add_kg_fields_to_inventory' => 'M4ef13a310bb44d0aa5c12f0d95e09dd7'),
 	9 => array(
  		'009_add_kg_fields_to_inventory_items' => 'M4ef13a310bb44d0aa5c12f0d96e09dd8'),
+	10 => array(
+ 		'010_add_user_to_inventory_entries' => 'M4ef13a310bb44d0aa5c12f0d96e10dd9'),
 );
 ?>

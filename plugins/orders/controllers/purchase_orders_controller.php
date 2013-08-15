@@ -111,10 +111,26 @@ class PurchaseOrdersController extends AppController {
         $this->redirect(array('action' => 'view',$this->data['PurchaseOrder']['id']));
     }
     
-	public function preview_print() { //$id
+	public function preview_print() {
         $this->layout = 'print';
-		$this->view($this->data['PurchaseOrder']['id']);
-		//$this->view($id);
+        try {
+			$purchaseOrder = $this->PurchaseOrder->view($this->data['PurchaseOrder']['id']);
+		} catch (OutOfBoundsException $e) {
+			$this->Session->setFlash($e->getMessage());
+			$this->redirect(array('action' => 'index'));
+		}
+		if(isset($purchaseOrder['PreInvoice']['id'])) {
+			try {
+				$preInvoice = $this->PurchaseOrder->getPreInvoice($purchaseOrder['PreInvoice']['id']);
+			} catch (OutOfBoundsException $e) {
+				$this->Session->setFlash($e->getMessage());
+				$this->redirect(array('action' => 'index'));
+			}
+			$this->set(compact('purchaseOrder', 'preInvoice'));
+		}
+		else {
+			$this->set(compact('purchaseOrder'));
+		}
     }
 
 	public function fill_items($organization_id) {

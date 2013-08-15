@@ -54,5 +54,11 @@ $map = array(
 		'021_add_id_number_to_payment' => 'M4fb2dcf760d44eb0aa9dd17594e09dd7'),
 	27 => array(
 		'022_add_quantity_kg_items_orders' => 'M4fb2dcf760d44eb0aa9dd17595e09dd8'),
+	28 => array(
+		'023_add_totals_items_orders' => 'M4fb2dcf760d44eb0aa9dd17595e10dd9'),
+	29 => array(
+		'024_add_user_to_orders' => 'M4fb2dcf760d44eb0aa9dd17595e11de0'),
+	30 => array(
+		'025_alter_control_at_invoices' => 'M4fb2dcf760d44eb0aa9dd17595e12de1'),
 );
 ?>

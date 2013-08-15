@@ -108,6 +108,7 @@ class InvoicesController extends AppController {
 			$this->Session->setFlash($e->getMessage());
 			$this->redirect(array('action' => 'index'));
 		}
+		
 		$organizations = $this->Invoice->Organization->find('list');
 		$items = array();
 		if (isset($this->data['PrePurchaseOrder']) || isset($this->data['PurchaseOrder'])) {
@@ -131,7 +132,7 @@ class InvoicesController extends AppController {
 			$items = $temp_items;
 			$this->data['Invoice']['control'] = $this->Invoice->getControlNumber();
 		}
-		if (isset($this->data['PurchaseOrder']) && count($this->data['Invoice']) === 1) { //Significa que solo esta cargado el tipo del Invoice
+		if (isset($this->data['PurchaseOrder']) && count($this->data['Invoice']) === 1) { //Se cargan a la factura los datos de la proforma
 			$invoice = $this->Invoice->getDraft($this->data['PurchaseOrder']['id']);
 			if ($invoice) {
 				$this->data['Invoice'] = $invoice['Invoice'];
@@ -139,7 +140,7 @@ class InvoicesController extends AppController {
 				$this->data['Invoice']['type'] = Invoice::PURCHASE;
 			}
 		}
-		$this->set(compact('organizations', 'items')); 
+		$this->set(compact('organizations', 'items'));
 	}
 
 /**

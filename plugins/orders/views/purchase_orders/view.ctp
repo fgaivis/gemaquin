@@ -91,7 +91,6 @@
 <?php if (in_array($purchaseOrder['PurchaseOrder']['status'], array(PurchaseOrder::SENT, PurchaseOrder::PREINVOICED))) : ?>
 	<?php echo $this->Form->create('PurchaseOrder', array('url' => array('action' => 'preview_print')));?>
 	<?php echo $this->Form->hidden('PurchaseOrder.id', array('value' => $purchaseOrder['PurchaseOrder']['id']));?>
-	<?php //echo $this->Html->link(__('Preview', true), array('controller' => 'purchase_orders', 'action' => 'preview_print', $purchaseOrder['PurchaseOrder']['id']))?>
     <?php echo $this->Form->end(array('label'=>__('Preview', true),'id'=>'preview'));?>
 <?php endif;?>
 <?php if ($purchaseOrder['PurchaseOrder']['status'] == PurchaseOrder::SENT) : ?>

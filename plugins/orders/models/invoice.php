@@ -210,57 +210,73 @@ class Invoice extends OrdersAppModel {
 	public function add($data = null) {
 		if (!empty($data)) {
 			$this->create();
+			//Revisiones y validaciones previas
+			if($data['Invoice']['subtotal'] === '' || $data['Invoice']['tax'] === '' || $data['Invoice']['total'] === '') {
+				throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
+				if($data['Invoice']['type'] === Invoice::SERVICE){
+					if($data['Invoice']['total_exempt'] === '' || $data['Invoice']['total_no_exempt'] === '' || $data['Invoice']['number'] === ''
+							|| $data['Invoice']['control'] === '') {
+						throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
+					}
+				}
+			}
+			//Renombrando el arreglo de items
+			if (!empty($data['InvoicesItem'])) {
+				$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
+				unset($data['InvoicesItem']);
+			}	
+			//Diferenciacion de tipos de ordenes	
 			if (isset($data['PurchaseOrder'])) {
 				$data['PurchaseOrder']['status'] = PurchaseOrder::INVOICED;
 			} else if (isset($data['PrePurchaseOrder'])) {
 				$data['PrePurchaseOrder']['status'] = PurchaseOrder::PREINVOICED;
 			} else if (isset($data['SalesOrder'])) {
 				$data['SalesOrder']['status'] = SalesOrder::INVOICED;
-			}
-			if (!empty($data['InvoicesItem'])) {
-				$invoicesItem['InvoicesItem'] = $data['InvoicesItem'];
-				unset($data['InvoicesItem']);
-			}		
-			if($data['Invoice']['subtotal'] === '' || $data['Invoice']['tax'] === '' || $data['Invoice']['total'] === '') {
-				throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
-			}
-			if($data['Invoice']['type'] === Invoice::SERVICE){
-				if($data['Invoice']['total_exempt'] === '' || $data['Invoice']['total_no_exempt'] === '' || $data['Invoice']['number'] === ''
-						|| $data['Invoice']['control'] === '') {
-					throw new OutOfBoundsException(__('Could not save the invoice, please check your inputs.', true));
-				}
-			}
-			
-			if($data['Invoice']['type'] != Invoice::SERVICE){
-				$data['Invoice'] = array_filter($data['Invoice']);
-				$data['Invoice']['total_exempt'] = 0;
-				$data['Invoice']['total_no_exempt'] = 0;
-			}
-			if (isset($data['SalesOrder'])) {
-				foreach ($invoicesItem['InvoicesItem'] as $invoiceItem) {
-					if ($invoiceItem['exempt']) {
-						$data['Invoice']['total_exempt'] += $invoiceItem['price'] * $invoiceItem['quantity'];
-					} else { 
-						$data['Invoice']['total_no_exempt'] += $invoiceItem['price'] * $invoiceItem['quantity'];
+				if (!empty($invoicesItem['InvoicesItem'])) {
+					foreach ($invoicesItem['InvoicesItem'] as $invoiceItem) {
+						if ($invoiceItem['exempt']) {
+							$data['Invoice']['total_exempt'] += $invoiceItem['price'] * $invoiceItem['quantity'];
+						} else { 
+							$data['Invoice']['total_no_exempt'] += $invoiceItem['price'] * $invoiceItem['quantity'];
+						}
 					}
+				} 
+				else 
+				{
+					$data['Invoice']['total_exempt'] = 0;
+					$data['Invoice']['total_no_exempt'] = 0;
 				}
 				//Calcular subtotal, tax, total
 				$data['Invoice']['subtotal'] = $data['Invoice']['total_exempt'] + $data['Invoice']['total_no_exempt'];
 				$data['Invoice']['tax'] = ($data['Invoice']['total_no_exempt'] * 12) / 100;
 				$data['Invoice']['total'] = $data['Invoice']['subtotal'] + $data['Invoice']['tax'];
 			}
+			//Diferenciacion de tipos de facturas
 			if($data['Invoice']['type'] === Invoice::SERVICE){
 				$resultitem = true;
 				$data['Organization']['id'] = $data['Invoice']['organization_id'];				
 				$inv_exempt = $data['Invoice']['total_exempt'];
 				$inv_no_exempt = $data['Invoice']['total_no_exempt'];
 				$data['Invoice']['subtotal'] = $inv_exempt + $inv_no_exempt;
-			}
+			}			
+			if($data['Invoice']['type'] != Invoice::SERVICE){
+				$data['Invoice'] = array_filter($data['Invoice']);
+				//$data['Invoice']['total_exempt'] = 0;
+				//$data['Invoice']['total_no_exempt'] = 0;
+			}			
 			$resultinv = $this->saveAll($data);
-			
+			//Guardando los items
 			if (!empty($invoicesItem['InvoicesItem'])) {
 				foreach ($invoicesItem['InvoicesItem'] as $index => $invoiceItem) {
 					$invoicesItem['InvoicesItem'][$index]['invoice_id'] = $this->getLastInsertId();
+					if (isset($data['PrePurchaseOrder'])) {
+						$invoicesItem['InvoicesItem'][$index]['purchase_cost'] = 0;
+						$invoicesItem['InvoicesItem'][$index]['individual_cost'] = $invoicesItem['InvoicesItem'][$index]['price'] + $invoicesItem['InvoicesItem'][$index]['tax'];
+					}
+					else if (isset($data['PurchaseOrder'])) {
+						$invoicesItem['InvoicesItem'][$index]['purchase_cost'] = 0;
+						$invoicesItem['InvoicesItem'][$index]['individual_cost'] = $invoicesItem['InvoicesItem'][$index]['price'] + $invoicesItem['InvoicesItem'][$index]['tax'];
+					}
 				}
 				$resultitem = $this->InvoicesItem->saveAll($invoicesItem['InvoicesItem']);
 			}
@@ -273,7 +289,8 @@ class Invoice extends OrdersAppModel {
 			}
 			return $result;
 		}
-		else {
+		else 
+		{
 			return false;
 		}
 	}

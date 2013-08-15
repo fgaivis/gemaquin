@@ -3,6 +3,13 @@
 	$provider = $purchaseOrder['Provider'];
 	$items = $purchaseOrder['Item'];
 	$order = $purchaseOrder['PurchaseOrder'];
+	$preinvoice = isset($purchaseOrder['PreInvoice']) ? $purchaseOrder['PreInvoice'] : array();	
+	if (isset($preInvoice)) {
+		$preinvoice_items = $preInvoice['InvoicesItem'];
+	}
+	else {
+		$preinvoice_items = array();
+	}
 ?>
 <div id="main" style="padding:20px">
 	<table class="invoice-no-border">
@@ -66,33 +73,41 @@
 		<tr>
 			<td width="60%"><span><?php echo $item['name']; ?></span></td>
 			<td width="20%"><span><?php echo $item['sells_by_kg'] ? $item['ItemsPurchaseOrder']['kg_quantity'] . ' Kg' : $item['ItemsPurchaseOrder']['quantity']; ?></span></td>
-			<td width="20%"><span><?php echo $order['draft_invoice_id'] ? 'Precio' : 'N/A'; ?></span></td>
+			<td width="20%"><span>
+			<?php if($order['draft_invoice_id']): ?>
+				<?php foreach ($preinvoice_items as $p_item): ?>
+					<?php echo $p_item['item_id'] === $item['id'] ? $p_item['price'] : ''; ?>
+				<?php endforeach; ?>
+			<?php else: ?>
+				<?php echo 'N/A'; ?>
+			<?php endif; ?>
+			</span></td>
 		</tr>
 		<?php endforeach; ?>
 		<tr>
 			<td width="80%" colspan="2"><span style="font-weight: bold;"><?php echo __('DELIVERY') . ':'; ?></span>
 				<br/><span style="font-weight: bold; font-size: 24px"><?php echo __('INMEDIATE'); ?></span>
 			</td>
-			<td width="20%"></td>
+			<td width="20%"><?php echo 'Base Imponible: ' . $preinvoice['total_no_exempt']; ?></td>
 		</tr>
 		<tr>
 			<td width="80%" colspan="2">
 				<span style="font-weight: bold;">Enviar material de reciente fabricación con su respectivo certificado de análisis</span>
 			</td>
-			<td width="20%"></td>
+			<td width="20%"><?php echo 'Total Exento: ' . $preinvoice['total_exempt']; ?></td>
 		</tr>
 		<tr>
 			<td width="80%" colspan="2">
 				<span style="font-weight: bold;">HORARIO DE RECEPCIÓN DE MERCANCÍA: 8:00 am a 12:00 m / 2:00 pm a 4:30 pm</span>
 			</td>
-			<td width="20%"></td>
+			<td width="20%"><?php echo 'IVA: ' . $preinvoice['tax']; ?></td>
 		</tr>
 		<tr>
 			<td width="80%" colspan="2">
 				<span style="font-weight: bold;">IMPORTANTE:</span>
 				<br/><span style="font-weight: bold;">"EL MATERIAL QUEDA SUJETO A APROBACIÓN POR NUESTRO DPTO. DE CONTROL DE CALIDAD"</span>
 			</td>
-			<td width="20%"></td>
+			<td width="20%"><?php echo 'Total: ' . $preinvoice['total']; ?></td>
 		</tr>
 		<tr>
 			<td width="100%" colspan="3">
