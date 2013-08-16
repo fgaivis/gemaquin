@@ -15,6 +15,8 @@ $map = array(
 	7 => array(
 		'007_add_obs_paycond_to_organizations' => 'M4d8a7b88c2544244bb7221f494e08dd5'),
 	8 => array(
-		'008_adding_tax_table' => 'M4d8a7b88c2544244bb7221f494e09dd6')
+		'008_adding_tax_table' => 'M4d8a7b88c2544244bb7221f494e09dd6'),
+	9 => array(
+		'009_rename_config_table' => 'M4d8a7b88c2544244bb7221f494e10dd7')
 );
 ?>

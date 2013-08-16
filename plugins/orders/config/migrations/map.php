@@ -60,5 +60,7 @@ $map = array(
 		'024_add_user_to_orders' => 'M4fb2dcf760d44eb0aa9dd17595e11de0'),
 	30 => array(
 		'025_alter_control_at_invoices' => 'M4fb2dcf760d44eb0aa9dd17595e12de1'),
+	31 => array(
+		'026_add_tax_id_invoices_items' => 'M4fb2dcf760d44eb0aa9dd17595e13de2'),
 );
 ?>
