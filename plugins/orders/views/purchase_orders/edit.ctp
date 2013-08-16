@@ -9,7 +9,7 @@
     	    'label'=>__('Provider',true),
 		    'empty' =>__('Select',true)
         ));
-
+		echo $this->Form->hidden('user_creator_id',array('value' => $userData['User']['id']));
 	?>
 
 	<div class="module width_3_quarter" id="items"></div>

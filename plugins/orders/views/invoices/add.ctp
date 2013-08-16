@@ -31,6 +31,7 @@
 			echo $this->Form->input('subtotal', array('class' => 'subtotal onlyread', 'readonly' => 'readonly'));
 			echo $this->Form->input('tax', array('class' => 'tax-input onlyread', 'readonly' => 'readonly'));
 			echo $this->Form->input('total', array('class' => 'total onlyread', 'readonly' => 'readonly'));
+			echo $this->Form->hidden('user_creator_id', array('value' => $userData['User']['id']));
 			echo $this->Form->hidden('PurchaseOrder.id', array('value' => $this->data['PurchaseOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else if (!empty($this->data['PrePurchaseOrder'])) { // Ordenes de Compra - Facturas proforma de Compra de Productos
@@ -46,6 +47,7 @@
 			echo $this->Form->input('subtotal', array('class' => 'subtotal onlyread', 'readonly' => 'readonly'));
 			echo $this->Form->input('tax', array('class' => 'tax-input onlyread', 'readonly' => 'readonly'));
 			echo $this->Form->input('total', array('class' => 'total onlyread', 'readonly' => 'readonly'));
+			echo $this->Form->hidden('user_creator_id', array('value' => $userData['User']['id']));
 			echo $this->Form->hidden('PrePurchaseOrder.id', array('value' => $this->data['PrePurchaseOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else if (!empty($this->data['SalesOrder'])) { // Ordenes de Venta - Facturas de venta
@@ -55,6 +57,7 @@
 			echo $this->Form->hidden('total', array('value' => 0));
 			echo $this->Form->input('insurance', array('class' => 'outgoings'));
 			echo $this->Form->input('internal_shipping', array('class' => 'outgoings'));
+			echo $this->Form->hidden('user_creator_id', array('value' => $userData['User']['id']));
 			echo $this->Form->hidden('SalesOrder.id', array('value' => $this->data['SalesOrder']['id']));
 			echo $this->Form->hidden('Invoice.organization_id', array('value' => $this->data['Organization']['id']));
 		} else { // Facturas de Servicios
@@ -68,6 +71,7 @@
 			echo $this->Form->input('tax');
 			echo $this->Form->input('total');
 			echo $this->Form->hidden('type', array('value' => Invoice::SERVICE));
+			echo $this->Form->hidden('user_creator_id', array('value' => $userData['User']['id']));
 		}
 		
 	?>

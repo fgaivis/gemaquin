@@ -26,6 +26,11 @@
 			<?php echo __d('default', $purchaseOrder['PurchaseOrder']['status'], true);  ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('User'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $purchaseOrder['User']['username']; ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 

@@ -43,6 +43,13 @@ class Invoice extends OrdersAppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'User' => array(
+			'className' => 'Users.User',
+			'foreignKey' => 'user_creator_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
 	);
 /**
@@ -390,6 +397,7 @@ class Invoice extends OrdersAppModel {
 				'PurchaseOrder' => 'Provider',
 				'SalesOrder' => 'Client',
 				'Organization',
+				'User',
 				'Organization.Contact' => array('conditions' => array('Contact.role' => null)),
 				'CreditNote',
 				'DebitNote'

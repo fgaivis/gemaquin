@@ -40,6 +40,10 @@
     </div>
 	<table cellpadding="0" cellspacing="0">
 		<tr>
+			<?php if($userData['User']['role'] === '0'): ?>
+			<th><?php echo $this->Paginator->sort('user');?>
+			</th>
+			<?php endif;?>
 			<th><?php echo $this->Paginator->sort('created');?>
 			</th>
 			<th><?php echo $this->Paginator->sort('number');?>
@@ -64,6 +68,11 @@ foreach ($purchaseOrders as $purchaseOrder):
 	}
 ?>
 	<tr<?php echo $class;?>>
+		<?php if($userData['User']['role'] === '0'): ?>
+		<td>
+			<?php echo $purchaseOrder['User']['username']; ?>
+		</td>
+		<?php endif;?>
 		<td>
 			<?php echo $purchaseOrder['PurchaseOrder']['created']; ?>
 		</td>

@@ -130,11 +130,11 @@
 		</tr>
 		<tr>
 			<td width="65%"></td>
-			<td><span style="font-weight: bold;">ESMERALDA TOLEDO</span></td>
+			<td><span style="font-weight: bold;"><?php echo $purchaseOrder['User']['username']; ?></span></td>
 		</tr>
 		<tr>
 			<td width="65%"></td>
-			<td><span style="font-weight: bold;"></span></td>
+			<td><span style="font-weight: bold;"><?php echo $purchaseOrder['User']['email']; ?></span></td>
 		</tr>
 		<tr>
 			<td width="65%"></td>

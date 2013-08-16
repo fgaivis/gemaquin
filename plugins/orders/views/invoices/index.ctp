@@ -19,6 +19,9 @@
     </div>
 <table cellpadding="0" cellspacing="0">
 <tr>
+	<?php if($userData['User']['role'] === '0'): ?>
+	<th><?php echo $this->Paginator->sort('user');?></th>
+	<?php endif;?>
 	<th><?php echo $this->Paginator->sort('organization_id');?></th>
 	<th><?php echo $this->Paginator->sort('number');?></th>
 	<th><?php echo $this->Paginator->sort('control');?></th>
@@ -37,6 +40,11 @@ foreach ($invoices as $invoice):
 	}
 ?>
 	<tr<?php echo $class;?>>
+		<?php if($userData['User']['role'] === '0'): ?>
+		<td>
+			<?php echo $invoice['User']['username']; ?>
+		</td>
+		<?php endif;?>
 		<td>
 			<?php
 				$controller = $invoice['Invoice']['type'] === Invoice::SALES ? 'clients' : 'providers';

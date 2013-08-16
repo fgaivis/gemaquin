@@ -63,6 +63,11 @@
 			<?php echo $invoice['Invoice']['type'] === Invoice::DRAFT ? __d('default', 'DRAFTINV', true) : __d('default', $invoice['Invoice']['type'], true); ?>
 			&nbsp;
 		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('User'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $invoice['User']['username']; ?>
+			&nbsp;
+		</dd>
 		<?php if($invoice['Invoice']['type'] != Invoice::SALES) : ?>
 		<?php if (empty($invoice['Invoice']['hard_copy'])): ?>
 			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Files'); ?></dt>

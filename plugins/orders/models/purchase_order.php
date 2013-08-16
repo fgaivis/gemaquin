@@ -57,7 +57,14 @@ class PurchaseOrder extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)	
+		),
+		'User' => array(
+			'className' => 'Users.User',
+			'foreignKey' => 'user_creator_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
 	);
 
 	public $hasMany = array(
