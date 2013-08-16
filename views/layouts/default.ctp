@@ -141,6 +141,13 @@
         	<?php endif;?>
         </ul>
         <?php endif;?>
+        <?php if($userData['User']['role'] === '0'): ?>
+		<h3><?php echo __('Impuestos', true); ?></h3>
+		<ul class="toggle">
+			<li class="icn_new_article"><?php echo $this->Html->link(__('Nuevo impuesto', true), array('controller' => 'taxes', 'action' => 'add', 'plugin' => 'business'))?></li>
+			<li class="icn_categories"><?php echo $this->Html->link(__('Listar impuestos', true), array('controller' => 'taxes', 'action' => 'index', 'plugin' => 'business'))?></li>
+		</ul>
+		<?php endif;?>
         <?php if($userData['User']['role'] === '0' || $userData['User']['role'] === '1'): ?>
         <h3><?php echo __('Reportes', true); ?></h3>
         <ul class="toggle">
@@ -162,6 +169,9 @@
 			<li class="icn_security"><a href="#">Cambiar Password</a></li> -->
 			<li class="icn_view_users"><?php echo $this->Html->link(__('Cambiar contraseña', true), array('controller' => 'users', 'action' => 'change_password', 'plugin' => 'users'))?></li>
 			<li class="icn_jump_back"><?php echo $this->Html->link(__('Logout', true), array('controller' => 'users', 'action' => 'logout', 'plugin' => 'users'))?></li>
+			<?php if($userData['User']['role'] === '0'): ?>
+				<li class="icn_categories"><?php echo $this->Html->link(__('Parámetros de configuración', true), array('controller' => 'configurations', 'action' => 'index', 'plugin' => 'business'))?></li>
+			<?php endif;?>			
 		</ul>
 		<!-- *** NO USADO / Ejemplo de iconos interesantes *** -->
 		<!-- <h3>Media</h3>

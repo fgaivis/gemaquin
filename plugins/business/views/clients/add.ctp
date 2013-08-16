@@ -25,5 +25,3 @@
 <?php //echo $this->Form->end(__('Submit'));?>
 <?php echo $this->Form->end(__d('default', 'Submit', true));?>
 </div>
-
-

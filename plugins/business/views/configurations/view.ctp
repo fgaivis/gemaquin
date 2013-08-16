@@ -1,11 +1,11 @@
 <div class="configurations view">
-<h2><?php  __('Configuration');?></h2>
+<header><h3><?php  __('Configuration Parameter');?></h3></header>
 	<dl><?php $i = 0; $class = ' class="altrow"';?>
-		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
-		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-			<?php echo $configuration['Configuration']['id']; ?>
+		<!-- <dt<?php //if ($i % 2 == 0) echo $class;?>><?php //__('Id'); ?></dt>
+		<dd<?php //if ($i++ % 2 == 0) echo $class;?>>
+			<?php //echo $configuration['Configuration']['id']; ?>
 			&nbsp;
-		</dd>
+		</dd> -->
 		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Name'); ?></dt>
 		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 			<?php echo $configuration['Configuration']['name']; ?>
@@ -25,9 +25,8 @@
 </div>
 <div class="actions">
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Configuration', true), array('action' => 'edit', $configuration['Configuration']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('Delete Configuration', true), array('action' => 'delete', $configuration['Configuration']['id'])); ?> </li>
+		<li><?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $configuration['Configuration']['id'])); ?> </li>
 		<li><?php echo $this->Html->link(__('List Configurations', true), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Configuration', true), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Configuration Parameter', true), array('action' => 'add')); ?> </li>
 	</ul>
 </div>

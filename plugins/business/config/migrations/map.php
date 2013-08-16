@@ -17,6 +17,8 @@ $map = array(
 	8 => array(
 		'008_adding_tax_table' => 'M4d8a7b88c2544244bb7221f494e09dd6'),
 	9 => array(
-		'009_rename_config_table' => 'M4d8a7b88c2544244bb7221f494e10dd7')
+		'009_rename_config_table' => 'M4d8a7b88c2544244bb7221f494e10dd7'),
+	10 => array(
+		'010_alter_field_percent_taxes' => 'M4d8a7b88c2544244bb7221f494e11dd8')
 );
 ?>

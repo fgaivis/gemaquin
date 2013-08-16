@@ -9,6 +9,14 @@ class Tax extends BusinessAppModel {
 	public $name = 'Tax';
 
 /**
+ * Types
+ */
+	const IVA = 'IVA';
+	const ISLR = 'ISLR';
+	const MUNICIPAL = 'MUNICIPAL';
+	const ESTADAL = 'ESTADAL';
+
+/**
  * Validation parameters - initialized in constructor
  *
  * @var array

@@ -32,6 +32,62 @@ msgstr "Dirección de Envío"
 msgid "Home"
 msgstr "Principal"
 
+#: config/selectables.php:6
+msgid "Configuration Parameter"
+msgstr "Parámetro de Configuración"
+
+#: config/selectables.php:6
+msgid "Configuration Parameters"
+msgstr "Parámetros de Configuración"
+
+#: config/selectables.php:6
+msgid "New Configuration Parameter"
+msgstr "Nuevo parámetro de Configuración"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "Edit Configuration"
+msgstr "Editar parámetro"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "List Configurations"
+msgstr "Listar parámetros"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "The configuration has been saved"
+msgstr "El parámetro ha sido guardado"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "Configuration saved"
+msgstr "El parámetro ha sido guardado"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "The tax has been saved"
+msgstr "El impuesto ha sido guardado"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "Tax saved"
+msgstr "El impuesto ha sido guardado"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "New Tax"
+msgstr "Nuevo impuesto"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "Edit Tax"
+msgstr "Editar impuesto"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "List Taxes"
+msgstr "Listar impuestos"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "Taxes"
+msgstr "Impuestos"
+
+#: plugins/business/controllers/addresses_controller.php:54
+msgid "Tax"
+msgstr "Impuesto"
+
 #: plugins/business/controllers/addresses_controller.php:54
 msgid "The address has been saved"
 msgstr "La dirección ha sido guardada"
@@ -588,6 +644,10 @@ msgstr "Swift"
 #: plugins/business/views/clients/add.ctp:3
 msgid "Add Client"
 msgstr "Agregar cliente"
+
+#: plugins/business/views/clients/add.ctp:3
+msgid "Add Tax"
+msgstr "Agregar impuesto"
 
 #: plugins/business/views/clients/delete.ctp:1
 msgid "Delete Client \"%s\"?"
@@ -2205,6 +2265,10 @@ msgstr "Código por proveedor"
 #: Otros
 msgid "Provcode"
 msgstr "Código"
+
+#: Otros
+msgid "Percent Value"
+msgstr "Porcentaje"
 
 #: Otros
 msgid "Back to list"
