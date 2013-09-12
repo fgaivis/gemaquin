@@ -36,7 +36,7 @@ foreach ($taxes as $tax):
 			<?php echo $tax['Tax']['percent_value']; ?>
 		</td>
 		<td>
-			<?php echo $tax['Tax']['active']; ?>
+			<?php echo $tax['Tax']['active'] == 1 ? __('Yes') : __('No'); ?>
 		</td>
 		<td>
 			<?php echo $tax['Tax']['created']; ?>
