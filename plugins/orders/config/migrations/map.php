@@ -62,5 +62,9 @@ $map = array(
 		'025_alter_control_at_invoices' => 'M4fb2dcf760d44eb0aa9dd17595e12de1'),
 	31 => array(
 		'026_add_tax_id_invoices_items' => 'M4fb2dcf760d44eb0aa9dd17595e13de2'),
+	32 => array(
+		'027_alter_kg_quantity_at_inv_items' => 'M4fb2dcf760d44eb0aa9dd17595e14de3'),
+	33 => array(
+		'028_alter_kg_quantity_at_invoices_po_items' => 'M4fb2dcf760d44eb0aa9dd17595e15de4'),
 );
 ?>
