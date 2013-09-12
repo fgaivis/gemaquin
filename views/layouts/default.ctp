@@ -146,6 +146,7 @@
 		<ul class="toggle">
 			<li class="icn_new_article"><?php echo $this->Html->link(__('Nuevo impuesto', true), array('controller' => 'taxes', 'action' => 'add', 'plugin' => 'business'))?></li>
 			<li class="icn_categories"><?php echo $this->Html->link(__('Listar impuestos', true), array('controller' => 'taxes', 'action' => 'index', 'plugin' => 'business'))?></li>
+			<li class="icn_categories"><?php echo $this->Html->link(__('Total de impuestos', true), array('controller' => 'tax_totalizations', 'action' => 'index', 'plugin' => 'business'))?></li>
 		</ul>
 		<?php endif;?>
         <?php if($userData['User']['role'] === '0' || $userData['User']['role'] === '1'): ?>

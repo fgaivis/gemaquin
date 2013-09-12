@@ -2182,6 +2182,46 @@ msgstr "PROFORMA"
 msgid "Exempt"
 msgstr "Exento"
 
+#: Totalizacion de Impuestos
+msgid "Tax Totalizations"
+msgstr "Totalizaciones de impuestos"
+
+#: Totalizacion de Impuestos
+msgid "Purchases"
+msgstr "Compras"
+
+#: Totalizacion de Impuestos
+msgid "Sales"
+msgstr "Ventas"
+
+#: Totalizacion de Impuestos
+msgid "Tax Relation"
+msgstr "Relacion Impuesto"
+
+#: Totalizacion de Impuestos
+msgid "Tax Withholdings"
+msgstr "Retenciones de Impuesto"
+
+#: Totalizacion de Impuestos
+msgid "Tax Holded"
+msgstr "Impuesto Retenido"
+
+#: Totalizacion de Impuestos
+msgid "Withholdings Relation"
+msgstr "Relacion Retenciones"
+
+#: Totalizacion de Impuestos
+msgid "New Tax Totalization"
+msgstr "Nueva totalizacion de impuestos"
+
+#: Varios
+msgid "Year"
+msgstr "Año"
+
+#: Varios
+msgid "Month"
+msgstr "Mes"
+
 #: Varios
 msgid "Attachment"
 msgstr "Adjuntos"
