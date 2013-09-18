@@ -1,5 +1,5 @@
 <div class="taxes index">
-<header><h3><?php __('Taxes');?></h3></header>
+<header><h3><?php __('Taxes', true);?></h3></header>
 <table cellpadding="0" cellspacing="0">
 <tr>
 	<!-- <th><?php //echo $this->Paginator->sort('id');?></th> -->
