@@ -1840,7 +1840,7 @@ msgstr "Seguro"
 
 #: webroot/*.php
 msgid "Shipping"
-msgstr "Flete"
+msgstr "Flete Externo"
 
 #: webroot/*.php
 msgid "Customs Tax"

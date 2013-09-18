@@ -12,6 +12,8 @@
         ));
 		echo $this->Form->hidden('user_creator_id',array('value' => $userData['User']['id']));
 	?>
+	
+	<input id="search_input" placeholder="Escriba...">
 
 	<div class="module width_3_quarter" id="items"></div>
 	<div class="module width_3_quarter" id="orderTable">
@@ -36,4 +38,4 @@
 <?php echo $this->Form->end(array('label'=>__('Save', true),'id'=>'save'));?>
 </div>
 <?php $this->Html->script('/orders/js/views/purchase_orders/add',array('inline'=>false)) ?>
-
+<?php $this->Html->script('/orders/js/views/purchase_orders/live_filter',array('inline'=>false)) ?>

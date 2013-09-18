@@ -23,7 +23,7 @@ class M4d8a7b88c2544244bb7221f494e09dd6 extends CakeMigration {
 					'name' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 200),
 					'code' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 200),
 					'type' => array('type' => 'string', 'null' => true, 'default' => NULL, 'length' => 200),
-					'percent_value' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 50),
+					'percent_value' => array('type' => 'integer', 'null' => false, 'default' => 0),
 					'active' => array('type' => 'boolean', 'null' => false, 'default' => NULL),
 					'created' => array('type' => 'datetime', 'null' => false, 'default' => NULL),
 					'indexes' => array(

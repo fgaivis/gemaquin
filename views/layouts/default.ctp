@@ -201,6 +201,7 @@
 	<?php echo $this->Html->script('hideshow'); ?>
 	<?php echo $this->Html->script('jquery.tablesorter.min'); ?>
 	<?php echo $this->Html->script('jquery.equalHeight'); ?>
+	<?php echo $this->Html->script('jquery.fastLiveFilter'); ?>
 	<?php echo $this->Html->scriptBlock('App = {};App.basePath = "' . $this->Html->url('/') . '";App.baseUrl = "' . $this->Html->url('/', true) . '";'); ?>
 	<?php echo $scripts_for_layout; ?>
 	<?php echo $this->Js->writeBuffer(); ?>
